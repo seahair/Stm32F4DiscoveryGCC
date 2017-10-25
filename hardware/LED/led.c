@@ -3,6 +3,7 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
 #include "delay.h"
+#include "usart.h"
 
 
 
@@ -17,19 +18,19 @@
 
 
 
-/*void LED_Init(void)
+void LED_Init(void)
 {
 	
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);//Ê¹ÄÜGPIOFÊ±ÖÓ
-	GPIO_InitStructure.GPIO_Pin = LedRed | LedGreen;//LED0ºÍLED1¶Ô
+	GPIO_InitStructure.GPIO_Pin = LEDRED | LEDGREEN;//LED0ºÍLED1¶Ô
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//ÆÕÍšÊä³öÄ£Êœ
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//ÍÆÍìÊä³ö
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//ÉÏÀ­
 	GPIO_Init(GPIOF, &GPIO_InitStructure);//³õÊŒ»¯GPIO
 	
-	GPIO_SetBits(GPIOF, LedRed | LedGreen);//GPIOF9,F10ÉèÖÃžß£¬µÆÃð
+	GPIO_SetBits(GPIOF, LEDRED | LEDGREEN);//GPIOF9,F10ÉèÖÃžß£¬µÆÃð
 
 }
 
@@ -61,7 +62,6 @@ void LedRollBack( u16 pin )
 {
 	(GetLedStatus(pin) == LedStatus_ON)? LedOFF(pin) : LedON(pin) ;
 }
-*/
 
 
 
@@ -70,7 +70,8 @@ void LedRollBack( u16 pin )
 
 
 
-static void LedInitRed( void )
+
+void LedInitRed( void )
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);  //Only support the GPIOF as OutPut
@@ -84,7 +85,7 @@ static void LedInitRed( void )
 	GPIO_SetBits(GPIOF, LEDRED );
 }
 
-static void SetValueLedRed ( u8 value )
+void SetValueLedRed ( u8 value )
 {
 	if(value == LedStatus_ON)
 		GPIO_ResetBits( GPIOF, LEDRED );
@@ -125,7 +126,7 @@ void LedRollBackRed( void )
 
 
 
-static void LedInitGreen( void )
+void LedInitGreen( void )
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);  //Only support the GPIOF as OutPut
@@ -139,7 +140,7 @@ static void LedInitGreen( void )
 	GPIO_SetBits(GPIOF, LEDGREEN );
 }
 
-static void SetValueLedGreen ( u8 value )
+void SetValueLedGreen ( u8 value )
 {
 	if(value == LedStatus_ON)
 		GPIO_ResetBits( GPIOF, LEDGREEN );
@@ -180,28 +181,34 @@ void LedRollBackGreen( void )
 
 LED LedRed;
 LED LedGreen;
-
-void LED_Init( void )
+/*
+void LED_Init_G( void )
 {
-	LedRed.pin = LEDRED;
-	LedRed.LedInit = LedInitRed;
+//	LedRed.pin = LEDRED;
+//	LedRed.LedInit = LedInitRed;
+	printf("LedOnRed is %x \r\n", &LedOnRed);
 	LedRed.LedON = LedOnRed;
+	printf("LedRed.LedON is %x \r\n", &LedRed.LedON);
 	LedRed.LedOFF = LedOffRed;
 	LedRed.SetValue = SetValueLedRed;
 	LedRed.GetLedStatus = GetLedStatusRed;
 	LedRed.LedBlink = LedBlinkRed;
 	LedRed.LedRollBack = LedRollBackRed;
+//	LedRed.LedInit( );
 
-	LedGreen.pin = LEDGREEN;
-	LedGreen.LedInit = LedInitGreen;
+#if 1
+//	LedGreen.pin = LEDGREEN;
+//	LedGreen.LedInit = LedInitGreen;
 	LedGreen.LedON = LedOnGreen;
 	LedGreen.LedOFF = LedOffGreen;
 	LedGreen.GetLedStatus = GetLedStatusGreen;
 	LedGreen.LedBlink = LedBlinkGreen;
 	LedGreen.LedRollBack = LedBlinkGreen;
+//	LedGreen.LedInit( );
+#endif 	
 	
 }
-
+*/
 
 
 

@@ -1,4 +1,5 @@
 #include "stm32f4xx.h"
+#include "hardwareinit.h"
 #include "led.h"
 #include "usart.h"
 #include "delay.h"
@@ -20,8 +21,37 @@
 
 #define ADDR 250000
 
+/*
+void LED_Init_G( void )
+{
+//	LedRed.pin = LEDRED;
+	LedRed.LedInit = LedInitRed;
+	LedRed.LedON = LedOnRed;
+	LedRed.LedOFF = LedOffRed;
+	LedRed.SetValue = SetValueLedRed;
+	LedRed.GetLedStatus = GetLedStatusRed;
+	LedRed.LedBlink = LedBlinkRed;
+	LedRed.LedRollBack = LedRollBackRed;
+	LedRed.LedInit( );
+
+#if 1
+//	LedGreen.pin = LEDGREEN;
+	LedGreen.LedInit = LedInitGreen;
+	LedGreen.LedON = LedOnGreen;
+	LedGreen.LedOFF = LedOffGreen;
+	LedGreen.GetLedStatus = GetLedStatusGreen;
+	LedGreen.LedBlink = LedBlinkGreen;
+	LedGreen.LedRollBack = LedBlinkGreen;
+	LedGreen.LedInit( );
+#endif 	
+	
+}
+*/
+
+
+
 //u32 SramTest[ ADDR ]  __attribute__((at(0x68000000)));
-void HardInit( void );
+//void HardInit( void );
 
 //u8 TIM5CH1_CAPTURE_STA=1;  
 //u32 TIM5CH1_CAPTURE_VAL=2;
@@ -38,7 +68,8 @@ int main(int argc, char *argv[])
 		//PwmTest();
 		//PwmTestDuty();
 		//KeyTest();
-	    //LedBlink( LedRed );
+	//    LedBlink( LEDGREEN );
+//		LedRed.LedBlink = LedBlinkRed;
 		LedRed.LedBlink( 1000 );
 		LedGreen.LedBlink( 500 );
 	/*	if( PadScan(0 ) )
@@ -70,24 +101,5 @@ int main(int argc, char *argv[])
 }
 
 	
-void HardInit( void )
-{
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-	delay_init( 168 );
-//	LedInit( LedRed );
-//	LedInit( LedGreen );	
-	LED_Init( );
-//	BEEP_Init();
-	uart_init( 115200 );
-//	KEY_Init();
-//	EXTIX_Init();
-//	TIM3_Int_Init(5000-1,8400-1);
-//	Tim3Init_ms( 1000 );
-//	TIM14_PWM_Init(500-1,84-1);
-//	Time14PwmInit_HZ( 2000 );
-//	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
-//	PadInit( 8 );
-//	FSMC_SRAM_Init( );
-}
 
 
