@@ -38,8 +38,9 @@ int main(int argc, char *argv[])
 		//PwmTest();
 		//PwmTestDuty();
 		//KeyTest();
-	    LedBlink( LedRed );
-//		SramTest[ ADDR-1 ] = 0x4455;
+	    //LedBlink( LedRed );
+		LedRed.LedBlink( 1000 );
+		LedGreen.LedBlink( 500 );
 	/*	if( PadScan(0 ) )
 		{
 			LedON( LedGreen );
@@ -73,8 +74,9 @@ void HardInit( void )
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	delay_init( 168 );
-	LedInit( LedRed );
-	LedInit( LedGreen );	
+//	LedInit( LedRed );
+//	LedInit( LedGreen );	
+	LED_Init( );
 //	BEEP_Init();
 	uart_init( 115200 );
 //	KEY_Init();
