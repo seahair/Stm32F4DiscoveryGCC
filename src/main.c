@@ -70,8 +70,8 @@ int main(int argc, char *argv[])
 		//KeyTest();
 	//    LedBlink( LEDGREEN );
 //		LedRed.LedBlink = LedBlinkRed;
-		LedRed.LedBlink( 1000 );
-		LedGreen.LedBlink( 500 );
+		LedRed.LedBlink( &LedRed, 1000 );
+		LedGreen.LedBlink( &LedGreen, 500 );
 	/*	if( PadScan(0 ) )
 		{
 			LedON( LedGreen );

@@ -17,7 +17,7 @@
 
 
 
-
+/*
 void LED_Init(void)
 {
 	
@@ -62,15 +62,69 @@ void LedRollBack( u16 pin )
 {
 	(GetLedStatus(pin) == LedStatus_ON)? LedOFF(pin) : LedON(pin) ;
 }
+*/
+
+
+
+void LedInit( LED* led )
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);  //Only support the GPIOF as OutPut
+	GPIO_InitStructure.GPIO_Pin = (*led).pin;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_Init(GPIOF, &GPIO_InitStructure);
+	
+	GPIO_SetBits(GPIOF, (*led).pin );
+}
+
+void SetValue( LED* led, u8 value )
+{
+	if(value == LedStatus_ON)
+		GPIO_ResetBits( GPIOF, (*led).pin );
+	else if( value == LedStatus_OFF )
+		GPIO_SetBits( GPIOF, (*led).pin );
+}
+
+u8 GetLedStatus( LED* led )
+{
+	return GPIO_ReadOutputDataBit( GPIOF, (*led).pin );
+}
+
+void LedOn( LED* led )
+{
+	(*led).SetValue( led, LedStatus_ON );
+}
+
+void LedOff( LED* led )
+{
+	(*led).SetValue( led, LedStatus_OFF );
+}
+
+void LedBlink( LED* led, u16 time )
+{
+	(*led).LedON( led );
+	delay_ms( time );
+	(*led).LedOFF( led );
+	delay_ms( time );
+}
+
+void LedRollBack( LED* led )
+{
+	((*led).GetLedStatus(led) == LedStatus_ON) ? (*led).LedOFF(led) : (*led).LedON(led);
+}
+
+
+LED LedRed;
+LED LedGreen;
 
 
 
 
 
-
-
-
-
+#if 0
 void LedInitRed( void )
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -177,38 +231,8 @@ void LedRollBackGreen( void )
 }
 
 
+#endif
 
-
-LED LedRed;
-LED LedGreen;
-/*
-void LED_Init_G( void )
-{
-//	LedRed.pin = LEDRED;
-//	LedRed.LedInit = LedInitRed;
-	printf("LedOnRed is %x \r\n", &LedOnRed);
-	LedRed.LedON = LedOnRed;
-	printf("LedRed.LedON is %x \r\n", &LedRed.LedON);
-	LedRed.LedOFF = LedOffRed;
-	LedRed.SetValue = SetValueLedRed;
-	LedRed.GetLedStatus = GetLedStatusRed;
-	LedRed.LedBlink = LedBlinkRed;
-	LedRed.LedRollBack = LedRollBackRed;
-//	LedRed.LedInit( );
-
-#if 1
-//	LedGreen.pin = LEDGREEN;
-//	LedGreen.LedInit = LedInitGreen;
-	LedGreen.LedON = LedOnGreen;
-	LedGreen.LedOFF = LedOffGreen;
-	LedGreen.GetLedStatus = GetLedStatusGreen;
-	LedGreen.LedBlink = LedBlinkGreen;
-	LedGreen.LedRollBack = LedBlinkGreen;
-//	LedGreen.LedInit( );
-#endif 	
-	
-}
-*/
 
 
 

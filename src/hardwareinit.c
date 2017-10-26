@@ -7,6 +7,14 @@
 
 void LED_Init_G( void )
 {
+
+	LedRed.pin = LEDRED;
+	LedRed.LedInit( &LedRed );
+
+	LedGreen.pin = LEDGREEN;
+	LedRed.LedInit( &LedGreen );
+
+#if 0
 //	LedRed.pin = LEDRED;
 	LedRed.LedInit = LedInitRed;
 	LedRed.LedON = LedOnRed;
@@ -17,7 +25,6 @@ void LED_Init_G( void )
 	LedRed.LedRollBack = LedRollBackRed;
 	LedRed.LedInit( );
 
-#if 1
 //	LedGreen.pin = LEDGREEN;
 	LedGreen.LedInit = LedInitGreen;
 	LedGreen.LedON = LedOnGreen;
