@@ -8,7 +8,7 @@ BUILD_DIR = build
 OBJS = $(BUILD_DIR)/*.o
 
 TEST = LED
-#TEST += BEEP 
+TEST += BEEP 
 #TEST += KEY
 TEST += USART
 #TEST += EXTI

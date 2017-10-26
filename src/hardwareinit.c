@@ -2,10 +2,11 @@
 #include "led.h"
 #include "usart.h"
 #include "delay.h"
+#include "beep.h"
 //#include "stm32f4xx_rcc.h"
 
 
-void LED_Init_G( void )
+void LED_Init( void )
 {
 
 	LedRed.pin = LEDRED;
@@ -37,6 +38,18 @@ void LED_Init_G( void )
 	
 }
 
+void BEEP_INIT( void )
+{
+	Beep.BeepInit = BeepInit ;
+	Beep.BeepOn = BeepOn ;
+	Beep.BeepOff = BeepOff ;
+	Beep.BeepOnHzTime = BeepOnHzTime ;
+	Beep.PlayMusic = PlayMusic ;
+
+	Beep.BeepInit( );
+}
+
+
 void HardInit( void )
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
@@ -45,8 +58,8 @@ void HardInit( void )
 //	LedInit( LedRed );
 //	LedInit( LedGreen );	
 //	LED_Init( );
-	LED_Init_G( );
-//	BEEP_Init();
+	LED_Init( );
+	BEEP_INIT();
 //	KEY_Init();
 //	EXTIX_Init();
 //	TIM3_Int_Init(5000-1,8400-1);
