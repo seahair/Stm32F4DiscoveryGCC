@@ -8,12 +8,26 @@
 
 void LED_Init( void )
 {
-
+	printf("LedRed Addr is 0x%x\r\n", &LedRed);
 	LedRed.pin = LEDRED;
+	LedRed.LedInit = LedInit;
+	LedRed.LedON = LedOn;
+	LedRed.LedOFF = LedOff;
+	LedRed.SetValue = SetValue;
+	LedRed.GetLedStatus = GetLedStatus;
+	LedRed.LedBlink = LedBlink;
+	LedRed.LedRollBack = LedRollBack;
 	LedRed.LedInit( &LedRed );
 
 	LedGreen.pin = LEDGREEN;
-	LedRed.LedInit( &LedGreen );
+	LedGreen.LedInit = LedInit;
+	LedGreen.LedON = LedOn;
+	LedGreen.LedOFF = LedOff;
+	LedGreen.SetValue = SetValue;
+	LedGreen.GetLedStatus = GetLedStatus;
+	LedGreen.LedBlink = LedBlink;
+	LedGreen.LedRollBack = LedBlink;
+	LedGreen.LedInit( &LedGreen );
 
 #if 0
 //	LedRed.pin = LEDRED;
@@ -57,10 +71,9 @@ void HardInit( void )
 	uart_init( 115200 );
 //	LedInit( LedRed );
 //	LedInit( LedGreen );	
-//	LED_Init( );
 	LED_Init( );
 	BEEP_INIT();
-//	KEY_Init();
+	KeyPinInit( );
 //	EXTIX_Init();
 //	TIM3_Int_Init(5000-1,8400-1);
 //	Tim3Init_ms( 1000 );
