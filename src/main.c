@@ -4,11 +4,11 @@
 #include "usart.h"
 #include "delay.h"
 #include "beep.h"
+#include "key.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
 #include "usart.h"
-#include "key.h"
 #include "delay.h"
 #include "exti.h"
 #include "time.h"
@@ -19,6 +19,7 @@
 #include "pad.h"
 #include "sram.h"*/
 
+void MyKeyTest( u8 key );
 
 int main(int argc, char *argv[])
 {
@@ -26,19 +27,29 @@ int main(int argc, char *argv[])
 	HardInit();
 	while(1)
 	{
-		delay_ms(10);
-
-	//    LedBlink( LEDGREEN );
-//		LedRed.LedBlink = LedBlinkRed;
-		LedRed.LedBlink( &LedRed, 1000 );
-		LedGreen.LedBlink( &LedGreen, 500 );
-
-		Beep.BeepOnHzTime( 200, 2000 );
-		Beep.PlayMusic( );
-
+		delay_ms(1000);
+		KeyTest( MyKeyTest );	
 	}
 }
 
 	
+void MyKeyTest( u8 key )
+{
+	switch (key)
+	{
+		case KEY0:
+				LedRed.LedBlink( &LedRed, 1000 );
+			break;
+		case KEY1:
+				LedGreen.LedBlink( &LedGreen, 5000 );
+			break;
+		case KEY2:
+				LedRed.LedOFF( &LedRed );
+			break;
+		case KEYWK:
+				Beep.PlayMusic( );	
+			break;
+	}
+}
 
 

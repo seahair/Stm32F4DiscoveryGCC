@@ -3,6 +3,8 @@
 #include "usart.h"
 #include "delay.h"
 #include "beep.h"
+#include "key.h"
+#include "iwdg.h"
 //#include "stm32f4xx_rcc.h"
 
 
@@ -55,13 +57,11 @@ void HardInit( void )
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	delay_init( 168 );
 	uart_init( 115200 );
-//	LedInit( LedRed );
-//	LedInit( LedGreen );	
-//	LED_Init( );
+
 	LED_Init( );
 	BEEP_INIT();
-//	KEY_Init();
-//	EXTIX_Init();
+	KeyPinInit( );
+	IwdgStart1S( );
 //	TIM3_Int_Init(5000-1,8400-1);
 //	Tim3Init_ms( 1000 );
 //	TIM14_PWM_Init(500-1,84-1);

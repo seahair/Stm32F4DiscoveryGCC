@@ -9,8 +9,9 @@ OBJS = $(BUILD_DIR)/*.o
 
 TEST = LED
 TEST += BEEP 
-#TEST += KEY
+TEST += KEY
 TEST += USART
+TEST += IWDG 
 #TEST += EXTI
 #TEST += TIME
 #TEST += PWM
@@ -54,6 +55,9 @@ PAD:
 
 SRAM:
 	make -C SRAM
+
+IWDG:
+	make -C IWDG 
 
 #END
 $(OBJS): | $(BUILD_DIR)
