@@ -562,9 +562,15 @@ ADC_TwoSamplingDelay_8Cycles	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/S
 ADC_TwoSamplingDelay_9Cycles	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h	186;"	d
 ADC_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^} ADC_TypeDef;$/;"	t	typeref:struct:__anon90
 ADC_VBATCmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c	/^void ADC_VBATCmd(FunctionalState NewState)                             $/;"	f
+<<<<<<< HEAD
 ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon203
 ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon296
 ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon155
+=======
+ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon261
+ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon242
+ADR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t ADR;                     \/*!< Offset: 0x04C (R\/ )  Auxiliary Feature Register                            *\/$/;"	m	struct:__anon309
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 AESBUSY_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c	68;"	d	file:
 AES_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f413_423xx.s	/^AES_IRQHandler$/;"	l
 AES_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f413_423xx.s	/^AES_IRQHandler  $/;"	l
@@ -691,6 +697,10 @@ APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	247;"	d
 APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	249;"	d
 AR	hardware/BEEP/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+<<<<<<< HEAD
+=======
+AR	hardware/KEY/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 AR	hardware/LED/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/USART/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -746,10 +756,17 @@ BEEPOFF	hardware/BEEP/beep.h	10;"	d
 BEEPON	hardware/BEEP/beep.h	9;"	d
 BEEPPIN	hardware/BEEP/beep.h	8;"	d
 BEEP_INIT	src/hardwareinit.c	/^void BEEP_INIT( void )$/;"	f
+<<<<<<< HEAD
 BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon203
 BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon296
 BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon184
 BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon155
+=======
+BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon261
+BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon242
+BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon279
+BFAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t BFAR;                    \/*!< Offset: 0x038 (R\/W)  BusFault Address Register                             *\/$/;"	m	struct:__anon309
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 BFCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BFCR;          \/*!< LTDC Layerx Blending Factors Configuration Register           Address offset: 0xA0 *\/$/;"	m	struct:__anon127
 BGCLUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BGCLUT[256];   \/*!< DMA2D Background CLUT,                          Address offset:800-BFF *\/$/;"	m	struct:__anon105
 BGCMAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BGCMAR;        \/*!< DMA2D Background CLUT Memory Address Register,  Address offset: 0x30 *\/$/;"	m	struct:__anon105
@@ -796,6 +813,10 @@ BTCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 BTCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BTCR[8];    \/*!< NOR\/PSRAM chip-select control register(BCR) and chip-select timing register(BTR), Address offset: 0x00-1C *\/   $/;"	m	struct:__anon115
 BTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t              BTR;                 \/*!< CAN bit timing register,             Address offset: 0x1C          *\/$/;"	m	struct:__anon95
 BUILD_DIR	hardware/BEEP/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+<<<<<<< HEAD
+=======
+BUILD_DIR	hardware/KEY/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 BUILD_DIR	hardware/LED/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/Makefile	/^BUILD_DIR = build$/;"	m
 BUILD_DIR	hardware/USART/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -810,9 +831,15 @@ BeepOn	hardware/BEEP/beep.c	/^void BeepOn( void )$/;"	f
 BeepOn	hardware/BEEP/beep.h	/^	void (* BeepOn) (void);$/;"	m	struct:_BEEP
 BeepOnHzTime	hardware/BEEP/beep.c	/^void BeepOnHzTime( u16 hz, u32 time )$/;"	f
 BeepOnHzTime	hardware/BEEP/beep.h	/^	void (* BeepOnHzTime) (u16, u32);$/;"	m	struct:_BEEP
+<<<<<<< HEAD
 BitAction	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^}BitAction;$/;"	t	typeref:enum:__anon70
 Bit_RESET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^  Bit_RESET = 0,$/;"	e	enum:__anon70
 Bit_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^  Bit_SET$/;"	e	enum:__anon70
+=======
+BitAction	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^}BitAction;$/;"	t	typeref:enum:__anon46
+Bit_RESET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^  Bit_RESET = 0,$/;"	e	enum:__anon46
+Bit_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h	/^  Bit_SET$/;"	e	enum:__anon46
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 BusFault_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f401xx.s	/^BusFault_Handler$/;"	l
 BusFault_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f40_41xxx.s	/^BusFault_Handler$/;"	l
 BusFault_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f40xx.s	/^BusFault_Handler$/;"	l
@@ -2316,6 +2343,10 @@ CAN_WakeUp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph
 CAN_WakeUp_Failed	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	464;"	d
 CAN_WakeUp_Ok	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	465;"	d
 CC	hardware/BEEP/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+<<<<<<< HEAD
+=======
+CC	hardware/KEY/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 CC	hardware/LED/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/USART/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -3599,11 +3630,20 @@ DEADTIME	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_D
 DEAD_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma2d.c	79;"	d	file:
 DELTA_Q15	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	323;"	d
 DELTA_Q31	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	322;"	d
+<<<<<<< HEAD
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon211
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon305
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon193
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon163
 DEPS	hardware/BEEP/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+=======
+DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon269
+DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon251
+DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon288
+DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon317
+DEPS	hardware/BEEP/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/KEY/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 DEPS	hardware/LED/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/USART/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPolarity	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t DEPolarity;                   \/*!< Data Enable pin polarity$/;"	m	struct:__anon61
@@ -10372,6 +10412,10 @@ GPIO_WriteBit	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPer
 GPSR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GPSR;           \/*!< DSI Host Generic Packet Status Register,                   Address offset: 0x74       *\/$/;"	m	struct:__anon106
 GTPR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t GTPR;       \/*!< USART Guard time and prescaler register, Address offset: 0x18 *\/$/;"	m	struct:__anon139
 GVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GVCIDR;         \/*!< DSI Host Generic VCID Register,                            Address offset: 0x30       *\/$/;"	m	struct:__anon106
+<<<<<<< HEAD
+=======
+GetKeyStatus	hardware/KEY/key.c	/^s8 GetKeyStatus( u8 pin )$/;"	f
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 GetLedStatus	hardware/LED/led.c	/^u8 GetLedStatus( LED* led )$/;"	f
 GetLedStatus	hardware/LED/led.h	/^    u8   (*GetLedStatus) ( LED* );$/;"	m	struct:_LED
 HASH	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2421;"	d
@@ -12211,10 +12255,25 @@ K2LR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 K2RR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t K2RR;       \/*!< CRYP key right register 2,                                Address offset: 0x34 *\/$/;"	m	struct:__anon141
 K3LR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t K3LR;       \/*!< CRYP key left  register 3,                                Address offset: 0x38 *\/$/;"	m	struct:__anon141
 K3RR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t K3RR;       \/*!< CRYP key right register 3,                                Address offset: 0x3C *\/$/;"	m	struct:__anon141
+KEY0	hardware/KEY/key.h	/^	KEY0,$/;"	e	enum:_KEY
+KEY0PRESS	hardware/KEY/key.h	27;"	d
+KEY0UNPRESS	hardware/KEY/key.h	22;"	d
+KEY1	hardware/KEY/key.h	/^	KEY1,$/;"	e	enum:_KEY
+KEY1PRESS	hardware/KEY/key.h	28;"	d
+KEY1UNPRESS	hardware/KEY/key.h	23;"	d
+KEY2	hardware/KEY/key.h	/^	KEY2,$/;"	e	enum:_KEY
+KEY2PRESS	hardware/KEY/key.h	29;"	d
+KEY2UNPRESS	hardware/KEY/key.h	24;"	d
+KEYMAXNUM	hardware/KEY/key.h	15;"	d
 KEYR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t KEYR;     \/*!< FLASH key register,              Address offset: 0x04 *\/$/;"	m	struct:__anon109
+KEYTEST	hardware/KEY/key.h	/^typedef void (* KEYTEST) ( u8 );$/;"	t
+KEYWK	hardware/KEY/key.h	/^	KEYWK,$/;"	e	enum:_KEY
+KEYWKPRESS	hardware/KEY/key.h	30;"	d
+KEYWKUNPRESS	hardware/KEY/key.h	25;"	d
 KR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t KR;   \/*!< IWDG Key register,       Address offset: 0x00 *\/$/;"	m	struct:__anon125
 KR_KEY_ENABLE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c	101;"	d	file:
 KR_KEY_RELOAD	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c	100;"	d	file:
+<<<<<<< HEAD
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Kd;               \/**< The derivative gain. *\/$/;"	m	struct:__anon239
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t Kd;           \/**< The derivative gain. *\/$/;"	m	struct:__anon237
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t Kd;            \/**< The derivative gain. *\/$/;"	m	struct:__anon238
@@ -12232,6 +12291,27 @@ LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/
 LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 (  W)  Lock Access Register                      *\/$/;"	m	struct:__anon189
 LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon187
 LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon158
+=======
+Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Kd;               \/**< The derivative gain. *\/$/;"	m	struct:__anon160
+Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t Kd;           \/**< The derivative gain. *\/$/;"	m	struct:__anon158
+Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t Kd;            \/**< The derivative gain. *\/$/;"	m	struct:__anon159
+KeyPinInit	hardware/KEY/key.c	/^void KeyPinInit( void )$/;"	f
+KeyTest	hardware/KEY/key.c	/^void KeyTest( KEYTEST pFun )$/;"	f
+Ki	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Ki;               \/**< The integral gain. *\/$/;"	m	struct:__anon160
+Ki	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t Ki;           \/**< The integral gain. *\/$/;"	m	struct:__anon158
+Ki	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t Ki;            \/**< The integral gain. *\/$/;"	m	struct:__anon159
+Kp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Kp;               \/**< The proportional gain. *\/$/;"	m	struct:__anon160
+Kp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t Kp;           \/**< The proportional gain. *\/$/;"	m	struct:__anon158
+Kp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t Kp;            \/**< The proportional gain. *\/$/;"	m	struct:__anon159
+L	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t L;                      \/**< upsample factor. *\/$/;"	m	struct:__anon185
+L	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t L;                      \/**< upsample factor. *\/$/;"	m	struct:__anon186
+L	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t L;                     \/**< upsample factor. *\/$/;"	m	struct:__anon187
+LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon264
+LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon245
+LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 (  W)  Lock Access Register                      *\/$/;"	m	struct:__anon284
+LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon282
+LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon312
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 LCCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCCR;          \/*!< DSI Host LTDC Current Color Coding Register,               Address offset: 0x110      *\/$/;"	m	struct:__anon106
 LCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCR;           \/*!< DSI Host LTDC Command Configuration Register,              Address offset: 0x64       *\/ $/;"	m	struct:__anon106
 LCKR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCKR;     \/*!< GPIO port configuration lock register, Address offset: 0x1C      *\/$/;"	m	struct:__anon121
@@ -13128,6 +13208,7 @@ MemManage_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device
 MemManage_Handler	src/startup.c	264;"	d	file:
 MemManage_Handler	src/stm32f4xx_it.c	/^void MemManage_Handler(void)$/;"	f
 MemoryManagement_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  MemoryManagement_IRQn       = -12,    \/*!< 4 Cortex-M4 Memory Management Interrupt                           *\/$/;"	e	enum:IRQn
+<<<<<<< HEAD
 Mode	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t Mode;                         \/*!< Video mode type$/;"	m	struct:__anon61
 N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t N;                         \/**< length of the DCT4. *\/$/;"	m	struct:__anon258
 N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t N;                         \/**< length of the DCT4. *\/$/;"	m	struct:__anon259
@@ -13146,6 +13227,27 @@ N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/
 N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon216::__anon217
 N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon146::__anon147
 N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon150::__anon151
+=======
+Mode	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t Mode;                         \/*!< Video mode type$/;"	m	struct:__anon50
+MyKeyTest	src/main.c	/^void MyKeyTest( u8 key )$/;"	f
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t N;                         \/**< length of the DCT4. *\/$/;"	m	struct:__anon179
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t N;                         \/**< length of the DCT4. *\/$/;"	m	struct:__anon180
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t N;                         \/**< length of the DCT4. *\/$/;"	m	struct:__anon181
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon289::__anon290
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon293::__anon294
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon208::__anon209
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon212::__anon213
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon252::__anon253
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon256::__anon257
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon233::__anon234
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon237::__anon238
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon270::__anon271
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon274::__anon275
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon220::__anon221
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon224::__anon225
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon300::__anon301
+N	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t N:1;                        \/*!< bit:     31  Negative condition code flag       *\/$/;"	m	struct:__anon304::__anon305
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 NDTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t NDTR;   \/*!< DMA stream x number of data register     *\/$/;"	m	struct:__anon103
 NIEN_BitNumber	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c	191;"	d	file:
 NLR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t NLR;           \/*!< DMA2D Number of Line Register,                  Address offset: 0x44 *\/$/;"	m	struct:__anon105
@@ -13312,6 +13414,10 @@ OAR1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 OAR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t OAR2;       \/*!< I2C Own address register 2, Address offset: 0x0C *\/$/;"	m	struct:__anon123
 OAR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t OAR2;     \/*!< FMPI2C Own address 2 register,        Address offset: 0x0C *\/$/;"	m	struct:__anon124
 OBJS	hardware/BEEP/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+<<<<<<< HEAD
+=======
+OBJS	hardware/KEY/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 OBJS	hardware/LED/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/Makefile	/^OBJS = $(BUILD_DIR)\/*.o$/;"	m
 OBJS	hardware/USART/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
@@ -13560,6 +13666,7 @@ PGout	inc/sys.h	73;"	d
 PHin	inc/sys.h	77;"	d
 PHout	inc/sys.h	76;"	d
 PI	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	326;"	d
+<<<<<<< HEAD
 PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon206
 PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon299
 PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon187
@@ -13592,6 +13699,44 @@ PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	
 PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon299
 PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon187
 PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon158
+=======
+PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon264
+PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon245
+PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon282
+PID0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID0;                    \/*!< Offset: 0xFE0 (R\/ )  ITM Peripheral Identification Register #0 *\/$/;"	m	struct:__anon312
+PID1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID1;                    \/*!< Offset: 0xFE4 (R\/ )  ITM Peripheral Identification Register #1 *\/$/;"	m	struct:__anon264
+PID1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID1;                    \/*!< Offset: 0xFE4 (R\/ )  ITM Peripheral Identification Register #1 *\/$/;"	m	struct:__anon245
+PID1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID1;                    \/*!< Offset: 0xFE4 (R\/ )  ITM Peripheral Identification Register #1 *\/$/;"	m	struct:__anon282
+PID1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID1;                    \/*!< Offset: 0xFE4 (R\/ )  ITM Peripheral Identification Register #1 *\/$/;"	m	struct:__anon312
+PID2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID2;                    \/*!< Offset: 0xFE8 (R\/ )  ITM Peripheral Identification Register #2 *\/$/;"	m	struct:__anon264
+PID2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID2;                    \/*!< Offset: 0xFE8 (R\/ )  ITM Peripheral Identification Register #2 *\/$/;"	m	struct:__anon245
+PID2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID2;                    \/*!< Offset: 0xFE8 (R\/ )  ITM Peripheral Identification Register #2 *\/$/;"	m	struct:__anon282
+PID2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID2;                    \/*!< Offset: 0xFE8 (R\/ )  ITM Peripheral Identification Register #2 *\/$/;"	m	struct:__anon312
+PID3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID3;                    \/*!< Offset: 0xFEC (R\/ )  ITM Peripheral Identification Register #3 *\/$/;"	m	struct:__anon264
+PID3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID3;                    \/*!< Offset: 0xFEC (R\/ )  ITM Peripheral Identification Register #3 *\/$/;"	m	struct:__anon245
+PID3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID3;                    \/*!< Offset: 0xFEC (R\/ )  ITM Peripheral Identification Register #3 *\/$/;"	m	struct:__anon282
+PID3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID3;                    \/*!< Offset: 0xFEC (R\/ )  ITM Peripheral Identification Register #3 *\/$/;"	m	struct:__anon312
+PID4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID4;                    \/*!< Offset: 0xFD0 (R\/ )  ITM Peripheral Identification Register #4 *\/$/;"	m	struct:__anon264
+PID4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID4;                    \/*!< Offset: 0xFD0 (R\/ )  ITM Peripheral Identification Register #4 *\/$/;"	m	struct:__anon245
+PID4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID4;                    \/*!< Offset: 0xFD0 (R\/ )  ITM Peripheral Identification Register #4 *\/$/;"	m	struct:__anon282
+PID4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID4;                    \/*!< Offset: 0xFD0 (R\/ )  ITM Peripheral Identification Register #4 *\/$/;"	m	struct:__anon312
+PID5	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID5;                    \/*!< Offset: 0xFD4 (R\/ )  ITM Peripheral Identification Register #5 *\/$/;"	m	struct:__anon264
+PID5	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID5;                    \/*!< Offset: 0xFD4 (R\/ )  ITM Peripheral Identification Register #5 *\/$/;"	m	struct:__anon245
+PID5	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID5;                    \/*!< Offset: 0xFD4 (R\/ )  ITM Peripheral Identification Register #5 *\/$/;"	m	struct:__anon282
+PID5	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID5;                    \/*!< Offset: 0xFD4 (R\/ )  ITM Peripheral Identification Register #5 *\/$/;"	m	struct:__anon312
+PID6	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID6;                    \/*!< Offset: 0xFD8 (R\/ )  ITM Peripheral Identification Register #6 *\/$/;"	m	struct:__anon264
+PID6	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID6;                    \/*!< Offset: 0xFD8 (R\/ )  ITM Peripheral Identification Register #6 *\/$/;"	m	struct:__anon245
+PID6	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID6;                    \/*!< Offset: 0xFD8 (R\/ )  ITM Peripheral Identification Register #6 *\/$/;"	m	struct:__anon282
+PID6	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID6;                    \/*!< Offset: 0xFD8 (R\/ )  ITM Peripheral Identification Register #6 *\/$/;"	m	struct:__anon312
+PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon264
+PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon245
+PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon282
+PID7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __I  uint32_t PID7;                    \/*!< Offset: 0xFDC (R\/ )  ITM Peripheral Identification Register #7 *\/$/;"	m	struct:__anon312
+PINKEY0	hardware/KEY/key.h	17;"	d
+PINKEY1	hardware/KEY/key.h	18;"	d
+PINKEY2	hardware/KEY/key.h	19;"	d
+PINKEYWK	hardware/KEY/key.h	20;"	d
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 PIO4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t PIO4;       \/*!< PC Card  I\/O space timing register 4,              Address offset: 0xB0 *\/$/;"	m	struct:__anon114
 PIO4	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t PIO4;       \/*!< PC Card  I\/O space timing register 4,              Address offset: 0xB0 *\/$/;"	m	struct:__anon119
 PIR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t PIR;      \/*!< QUADSPI Polling Interval register,                  Address offset: 0x2C *\/$/;"	m	struct:__anon136
@@ -13827,6 +13972,7 @@ PendSV_Handler	src/stm32f4xx_it.c	/^void PendSV_Handler(void)$/;"	f
 PendSV_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  PendSV_IRQn                 = -2,     \/*!< 14 Cortex-M4 Pend SV Interrupt                                    *\/$/;"	e	enum:IRQn
 PlayMusic	hardware/BEEP/beep.c	/^void PlayMusic( void )$/;"	f
 PlayMusic	hardware/BEEP/beep.h	/^	void (* PlayMusic) ( void );$/;"	m	struct:_BEEP
+<<<<<<< HEAD
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon194::__anon195
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon198::__anon199
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon287::__anon288
@@ -13835,6 +13981,16 @@ Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^ 
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon179::__anon180
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon146::__anon147
 Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon150::__anon151
+=======
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon252::__anon253
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon256::__anon257
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon233::__anon234
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon237::__anon238
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon270::__anon271
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon274::__anon275
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon300::__anon301
+Q	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Q:1;                        \/*!< bit:     27  Saturation condition flag          *\/$/;"	m	struct:__anon304::__anon305
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 QSPI_AbortRequest	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_qspi.c	/^void QSPI_AbortRequest(void)$/;"	f
 QSPI_AutoPollingModeStopCmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_qspi.c	/^void QSPI_AutoPollingModeStopCmd(FunctionalState NewState)$/;"	f
 QSPI_AutoPollingMode_Config	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_qspi.c	/^void QSPI_AutoPollingMode_Config(uint32_t QSPI_Match, uint32_t QSPI_Mask , uint32_t QSPI_Match_Mode)$/;"	f
@@ -17391,8 +17547,13 @@ SMPR1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 SMPR1_SMP_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c	161;"	d	file:
 SMPR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SMPR2;  \/*!< ADC sample time register 2,                  Address offset: 0x10 *\/$/;"	m	struct:__anon90
 SMPR2_SMP_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c	162;"	d	file:
+<<<<<<< HEAD
 SONG_HZ	hardware/BEEP/beep.c	/^u8 SONG_HZ[]={212,212,190,212,159,169,212,212,190,212,142,159,$/;"	v
 SONG_TIME	hardware/BEEP/beep.c	/^u8 SONG_TIME[]={9,3,12,12,12,24,9,3,12,12,12,24,$/;"	v
+=======
+SONG_HZ	hardware/BEEP/beep.c	/^static u8 SONG_HZ[]={212,212,190,212,159,169,212,212,190,212,142,159,212,212,106,126,159,169,190,119,119,126,159,142,159,0};$/;"	v	file:
+SONG_TIME	hardware/BEEP/beep.c	/^static u8 SONG_TIME[]={9,3,12,12,12,24,9,3,12,12,12,24,9,3,12,12,12,12,12,9,3,12,12,12,24,0};$/;"	v	file:
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 SPDIFRX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2301;"	d
 SPDIFRX_16MAX_RETRIES	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_spdifrx.h	101;"	d
 SPDIFRX_1MAX_RETRIES	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_spdifrx.h	99;"	d
@@ -17857,6 +18018,10 @@ SRAM_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM3
 SRAM_BB_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2082;"	d
 SRCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SRCR;          \/*!< LTDC Shadow Reload Configuration Register,           Address offset: 0x24 *\/$/;"	m	struct:__anon126
 SRCS	hardware/BEEP/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+<<<<<<< HEAD
+=======
+SRCS	hardware/KEY/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 SRCS	hardware/LED/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/USART/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SSCGR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SSCGR;         \/*!< RCC spread spectrum clock generation register,               Address offset: 0x80 *\/$/;"	m	struct:__anon129
@@ -18160,7 +18325,11 @@ SetSysClock	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/ST
 SetSysClock	src/system_stm32f4xx.c	/^static void SetSysClock(void)$/;"	f	file:
 SetValue	hardware/LED/led.c	/^void SetValue( LED* led, u8 value )$/;"	f
 SetValue	hardware/LED/led.h	/^	void (*SetValue) ( LED*, u8 );$/;"	m	struct:_LED
+<<<<<<< HEAD
 Sint	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_instance_f32 Sint;      \/**< Internal CFFT structure. *\/$/;"	m	struct:__anon257
+=======
+Sint	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_instance_f32 Sint;      \/**< Internal CFFT structure. *\/$/;"	m	struct:__anon178
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40_41xxx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40xx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
@@ -20184,6 +20353,7 @@ WWDG_SetCounter	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdP
 WWDG_SetPrescaler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c	/^void WWDG_SetPrescaler(uint32_t WWDG_Prescaler)$/;"	f
 WWDG_SetWindowValue	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c	/^void WWDG_SetWindowValue(uint8_t WindowValue)$/;"	f
 WWDG_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^} WWDG_TypeDef;$/;"	t	typeref:struct:__anon140
+<<<<<<< HEAD
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon164::__anon165
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon168::__anon169
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon306::__anon307
@@ -20198,6 +20368,23 @@ Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon216::__anon217
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon146::__anon147
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon150::__anon151
+=======
+WhichKeyPress	hardware/KEY/key.c	/^u8 WhichKeyPress( void )$/;"	f
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon289::__anon290
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon293::__anon294
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon208::__anon209
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon212::__anon213
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon252::__anon253
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon256::__anon257
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon233::__anon234
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon237::__anon238
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon270::__anon271
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon274::__anon275
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon220::__anon221
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon224::__anon225
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon300::__anon301
+Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon304::__anon305
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 _ARM_COMMON_TABLES_H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_common_tables.h	42;"	d
 _ARM_CONST_STRUCTS_H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_const_structs.h	44;"	d
 _ARM_MATH_H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	289;"	d
@@ -20208,6 +20395,11 @@ _BIT_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	560;"	d
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	674;"	d
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	684;"	d
+<<<<<<< HEAD
+=======
+_KEY	hardware/KEY/key.h	/^enum _KEY{$/;"	g
+_KEYNUM	hardware/KEY/key.h	/^	_KEYNUM$/;"	e	enum:_KEY
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 _LED	hardware/LED/led.h	/^typedef struct _LED{$/;"	s
 _Next	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^_Next:$/;"	l
 _SHP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	559;"	d
@@ -20427,6 +20619,7 @@ __IO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.
 __IO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	203;"	d
 __ISB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE void __ISB(void)$/;"	f
 __ISB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	92;"	d
+__KEY_H__	hardware/KEY/key.h	2;"	d
 __LDRBT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint8_t __LDRBT(volatile uint8_t *addr)$/;"	f
 __LDRBT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	343;"	d
 __LDREXB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint8_t __LDREXB(volatile uint8_t *addr)$/;"	f
@@ -21156,6 +21349,7 @@ g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/S
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f429_439xx.s	/^g_pfnVectors:$/;"	l
 g_pfnVectors	src/startup.c	/^void (* const g_pfnVectors[])(void) =$/;"	v
 hz	hardware/BEEP/beep.h	/^	u16		hz;$/;"	m	struct:_BEEP
+<<<<<<< HEAD
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon249
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon250
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon245
@@ -21165,6 +21359,17 @@ ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_mat
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon255
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon256
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                        \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon254
+=======
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon170
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon171
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon166
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon167
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon168
+ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon169
+ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon176
+ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon177
+ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                        \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon175
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 main	src/main.c	/^int main(int argc, char *argv[])$/;"	f
 maxDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t maxDelay;            \/**< maximum offset specified by the pTapDelay array. *\/$/;"	m	struct:__anon283
 maxDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t maxDelay;            \/**< maximum offset specified by the pTapDelay array. *\/$/;"	m	struct:__anon284
@@ -21183,6 +21388,7 @@ multSub_32x32_keep32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Inc
 multSub_32x32_keep32_R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	7450;"	d
 mult_32x32_keep32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	7466;"	d
 mult_32x32_keep32_R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	7454;"	d
+<<<<<<< HEAD
 nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon312::__anon313
 nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon200::__anon201
 nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon293::__anon294
@@ -21370,6 +21576,195 @@ postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_ma
 postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;       \/**< additional shift, in bits, applied to each output sample. *\/$/;"	m	struct:__anon267
 postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;    \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon281
 postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;   \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon282
+=======
+nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon214::__anon215
+nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon258::__anon259
+nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon239::__anon240
+nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon276::__anon277
+nPRIV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t nPRIV:1;                    \/*!< bit:      0  Execution privilege in Thread mode *\/$/;"	m	struct:__anon306::__anon307
+nValues	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t nValues;           \/**< nValues *\/$/;"	m	struct:__anon161
+normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t normalize;                \/**< normalizing factor. *\/$/;"	m	struct:__anon179
+normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t normalize;                    \/**< normalizing factor. *\/$/;"	m	struct:__anon181
+normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t normalize;                    \/**< normalizing factor. *\/$/;"	m	struct:__anon180
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon154
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon155
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon156
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon157
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;   \/**< number of columns in the data table. *\/$/;"	m	struct:__anon162
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;   \/**< number of columns in the data table. *\/$/;"	m	struct:__anon163
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;   \/**< number of columns in the data table. *\/$/;"	m	struct:__anon164
+numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;   \/**< number of columns in the data table. *\/$/;"	m	struct:__anon165
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;     \/**< number of rows of the matrix.     *\/$/;"	m	struct:__anon154
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;     \/**< number of rows of the matrix.     *\/$/;"	m	struct:__anon155
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;     \/**< number of rows of the matrix.     *\/$/;"	m	struct:__anon156
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;     \/**< number of rows of the matrix.     *\/$/;"	m	struct:__anon157
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;   \/**< number of rows in the data table. *\/$/;"	m	struct:__anon162
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;   \/**< number of rows in the data table. *\/$/;"	m	struct:__anon163
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;   \/**< number of rows in the data table. *\/$/;"	m	struct:__anon164
+numRows	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numRows;   \/**< number of rows in the data table. *\/$/;"	m	struct:__anon165
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int8_t numStages;         \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon151
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                          \/**< number of filter stages. *\/$/;"	m	struct:__anon192
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                          \/**< number of filter stages. *\/$/;"	m	struct:__anon193
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                         \/**< number of stages in the filter. *\/$/;"	m	struct:__anon195
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                         \/**< number of stages in the filter. *\/$/;"	m	struct:__anon196
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                         \/**< number of stages in the filter. *\/$/;"	m	struct:__anon197
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numStages;                  \/**< number of filter stages. *\/$/;"	m	struct:__anon194
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t numStages;         \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon153
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t numStages;      \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon152
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t numStages;         \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon189
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t numStages;         \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon190
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t numStages;         \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon191
+numStages	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t numStages;       \/**< number of 2nd order stages in the filter.  Overall order is 2*numStages. *\/$/;"	m	struct:__anon188
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;                   \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon184
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;               \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon182
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;             \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon204
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;             \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon205
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;             \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon206
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;             \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon207
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;           \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon183
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;         \/**< number of filter coefficients in the filter. *\/$/;"	m	struct:__anon148
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;         \/**< number of filter coefficients in the filter. *\/$/;"	m	struct:__anon149
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;        \/**< number of filter coefficients in the filter. *\/$/;"	m	struct:__anon147
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;     \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon201
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;     \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon202
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;     \/**< number of filter coefficients in the filter. *\/$/;"	m	struct:__anon150
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;    \/**< Number of coefficients in the filter. *\/$/;"	m	struct:__anon203
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;    \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon198
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;    \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon199
+numTaps	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numTaps;    \/**< number of coefficients in the filter. *\/$/;"	m	struct:__anon200
+onebyfftLen	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t onebyfftLen;                 \/**< value of 1\/fftLen. *\/$/;"	m	struct:__anon170
+onebyfftLen	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t onebyfftLen;                 \/**< value of 1\/fftLen. *\/$/;"	m	struct:__anon171
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon172
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon173
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon174
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;            \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon170
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;            \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon171
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;          \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon166
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;          \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon167
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;          \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon168
+pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t *pBitRevTable;          \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon169
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_radix4_instance_f32 *pCfft;        \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon177
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_radix4_instance_f32 *pCfft; \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon179
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_radix4_instance_q15 *pCfft; \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon181
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_radix4_instance_q31 *pCfft; \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon180
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const arm_cfft_instance_q15 *pCfft;       \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon175
+pCfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const arm_cfft_instance_q31 *pCfft;         \/**< points to the complex FFT instance. *\/$/;"	m	struct:__anon176
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;                  \/**< points to the coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon194
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;                  \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon184
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;             \/**< points to the coefficient array. The array is of length L*phaseLength. *\/$/;"	m	struct:__anon187
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;           \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon204
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;         \/**< Points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon153
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;        \/**< points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon189
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;        \/**< points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon190
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;   \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon150
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;   \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon201
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCoeffs;  \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon198
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float64_t *pCoeffs;        \/**< points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon191
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;                              \/**< points to the coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon192
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;                  \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon182
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;                 \/**< points to the coefficient array. The array is of length L*phaseLength. *\/$/;"	m	struct:__anon185
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;               \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon206
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;           \/**< Points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon151
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;           \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon148
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;       \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon203
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCoeffs;      \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon199
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;                              \/**< points to the coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon193
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;                  \/**< points to the coefficient array. The array is of length L*phaseLength. *\/$/;"	m	struct:__anon186
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;               \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon205
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;              \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon183
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;           \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon149
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;          \/**< Points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon152
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;          \/**< points to the array of coefficients.  The array is of length 5*numStages. *\/$/;"	m	struct:__anon188
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;       \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon202
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCoeffs;      \/**< points to the coefficient array. The array is of length numTaps. *\/$/;"	m	struct:__anon200
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q7_t *pCoeffs;                \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon207
+pCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q7_t *pCoeffs;           \/**< points to the coefficient array. The array is of length numTaps.*\/$/;"	m	struct:__anon147
+pCosFactor	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pCosFactor;              \/**< points to the cosFactor table. *\/$/;"	m	struct:__anon179
+pCosFactor	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pCosFactor;                  \/**< points to the cosFactor table. *\/$/;"	m	struct:__anon181
+pCosFactor	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pCosFactor;                  \/**< points to the cosFactor table. *\/$/;"	m	struct:__anon180
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pData;     \/**< points to the data of the matrix. *\/$/;"	m	struct:__anon154
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pData;   \/**< points to the data table. *\/$/;"	m	struct:__anon162
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float64_t *pData;     \/**< points to the data of the matrix. *\/$/;"	m	struct:__anon155
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pData;         \/**< points to the data of the matrix. *\/$/;"	m	struct:__anon156
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pData;       \/**< points to the data table. *\/$/;"	m	struct:__anon164
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pData;         \/**< points to the data of the matrix. *\/$/;"	m	struct:__anon157
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pData;       \/**< points to the data table. *\/$/;"	m	struct:__anon163
+pData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q7_t *pData;                \/**< points to the data table. *\/$/;"	m	struct:__anon165
+pRfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_rfft_instance_f32 *pRfft;        \/**< points to the real FFT instance. *\/$/;"	m	struct:__anon179
+pRfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_rfft_instance_q15 *pRfft;        \/**< points to the real FFT instance. *\/$/;"	m	struct:__anon181
+pRfft	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_rfft_instance_q31 *pRfft;        \/**< points to the real FFT instance. *\/$/;"	m	struct:__anon180
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;                          \/**< points to the state variable array. The array is of length numStages+blockSize. *\/$/;"	m	struct:__anon197
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;                   \/**< points to the state variable array. The array is of length numStages. *\/$/;"	m	struct:__anon194
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;                   \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon184
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;              \/**< points to the state variable array. The array is of length phaseLength+numTaps-1. *\/$/;"	m	struct:__anon187
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;            \/**< points to the state buffer array. The array is of length maxDelay+blockSize-1. *\/$/;"	m	struct:__anon204
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;          \/**< Points to the array of state coefficients.  The array is of length 4*numStages. *\/$/;"	m	struct:__anon153
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;         \/**< points to the array of state coefficients.  The array is of length 2*numStages. *\/$/;"	m	struct:__anon189
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;         \/**< points to the array of state coefficients.  The array is of length 4*numStages. *\/$/;"	m	struct:__anon190
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;    \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon150
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;    \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon201
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pState;   \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon198
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float64_t *pState;         \/**< points to the array of state coefficients.  The array is of length 2*numStages. *\/$/;"	m	struct:__anon191
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;                               \/**< points to the state variable array. The array is of length numStages. *\/$/;"	m	struct:__anon192
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;                              \/**< points to the state variable array. The array is of length numStages+blockSize. *\/$/;"	m	struct:__anon195
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;                   \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon182
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;                  \/**< points to the state variable array. The array is of length blockSize+phaseLength-1. *\/$/;"	m	struct:__anon185
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;                \/**< points to the state buffer array. The array is of length maxDelay+blockSize-1. *\/$/;"	m	struct:__anon206
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;            \/**< Points to the array of state coefficients.  The array is of length 4*numStages. *\/$/;"	m	struct:__anon151
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;            \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon148
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;        \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon203
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pState;       \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon199
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;                               \/**< points to the state variable array. The array is of length numStages. *\/$/;"	m	struct:__anon193
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;                              \/**< points to the state variable array. The array is of length numStages+blockSize. *\/$/;"	m	struct:__anon196
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;                   \/**< points to the state variable array. The array is of length blockSize+phaseLength-1. *\/$/;"	m	struct:__anon186
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;                \/**< points to the state buffer array. The array is of length maxDelay+blockSize-1. *\/$/;"	m	struct:__anon205
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;               \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon183
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;            \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon149
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;           \/**< Points to the array of state coefficients.  The array is of length 4*numStages. *\/$/;"	m	struct:__anon152
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;        \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon202
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pState;       \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon200
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q63_t *pState;           \/**< points to the array of state coefficients.  The array is of length 4*numStages. *\/$/;"	m	struct:__anon188
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q7_t *pState;                 \/**< points to the state buffer array. The array is of length maxDelay+blockSize-1. *\/$/;"	m	struct:__anon207
+pState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q7_t *pState;            \/**< points to the state variable array. The array is of length numTaps+blockSize-1. *\/$/;"	m	struct:__anon147
+pTapDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int32_t *pTapDelay;           \/**< points to the array of delay values.  The array is of length numTaps. *\/$/;"	m	struct:__anon204
+pTapDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int32_t *pTapDelay;           \/**< points to the array of delay values.  The array is of length numTaps. *\/$/;"	m	struct:__anon205
+pTapDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int32_t *pTapDelay;           \/**< points to the array of delay values.  The array is of length numTaps. *\/$/;"	m	struct:__anon206
+pTapDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int32_t *pTapDelay;           \/**< points to the array of delay values.  The array is of length numTaps. *\/$/;"	m	struct:__anon207
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const float32_t *pTwiddle;         \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon174
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const q15_t *pTwiddle;             \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon172
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const q31_t *pTwiddle;             \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon173
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pTwiddle;                \/**< points to the twiddle factor table. *\/$/;"	m	struct:__anon179
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pTwiddle;               \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon170
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pTwiddle;               \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon171
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pTwiddle;                     \/**< points to the Sin twiddle factor table. *\/$/;"	m	struct:__anon166
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pTwiddle;                    \/**< points to the twiddle factor table. *\/$/;"	m	struct:__anon181
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pTwiddle;                 \/**< points to the twiddle factor table. *\/$/;"	m	struct:__anon167
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pTwiddle;                     \/**< points to the Twiddle factor table. *\/$/;"	m	struct:__anon168
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pTwiddle;                    \/**< points to the twiddle factor table. *\/$/;"	m	struct:__anon180
+pTwiddle	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pTwiddle;                 \/**< points to the twiddle factor table. *\/$/;"	m	struct:__anon169
+pTwiddleAReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pTwiddleAReal;                   \/**< points to the real twiddle factor table. *\/$/;"	m	struct:__anon177
+pTwiddleAReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pTwiddleAReal;                     \/**< points to the real twiddle factor table. *\/$/;"	m	struct:__anon175
+pTwiddleAReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pTwiddleAReal;                       \/**< points to the real twiddle factor table. *\/$/;"	m	struct:__anon176
+pTwiddleBReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pTwiddleBReal;                   \/**< points to the imag twiddle factor table. *\/$/;"	m	struct:__anon177
+pTwiddleBReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pTwiddleBReal;                     \/**< points to the imag twiddle factor table. *\/$/;"	m	struct:__anon175
+pTwiddleBReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pTwiddleBReal;                       \/**< points to the imag twiddle factor table. *\/$/;"	m	struct:__anon176
+pTwiddleRFFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^	float32_t * pTwiddleRFFT;					\/**< Twiddle factors real stage  *\/$/;"	m	struct:__anon178
+pYData	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pYData;          \/**< pointer to the table of Y values *\/$/;"	m	struct:__anon161
+phaseLength	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t phaseLength;           \/**< length of each polyphase filter component. *\/$/;"	m	struct:__anon185
+phaseLength	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t phaseLength;           \/**< length of each polyphase filter component. *\/$/;"	m	struct:__anon186
+phaseLength	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t phaseLength;          \/**< length of each polyphase filter component. *\/$/;"	m	struct:__anon187
+pin	hardware/LED/led.h	/^	u16  pin;$/;"	m	struct:_LED
+pkCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pkCoeffs;                        \/**< points to the reflection coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon197
+pkCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pkCoeffs;                            \/**< points to the reflection coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon195
+pkCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *pkCoeffs;                            \/**< points to the reflection coefficient array. The array is of length numStages. *\/$/;"	m	struct:__anon196
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    int8_t postShift;         \/**< Additional shift, in bits, applied to each output sample. *\/$/;"	m	struct:__anon151
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t postShift;  \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon199
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t postShift;  \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon200
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;       \/**< Additional shift, in bits, applied to each output sample. *\/$/;"	m	struct:__anon152
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;       \/**< additional shift, in bits, applied to each output sample. *\/$/;"	m	struct:__anon188
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;    \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon202
+postShift	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t postShift;   \/**< bit shift applied to coefficients. *\/$/;"	m	struct:__anon203
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 pulStack	src/startup.c	/^unsigned long pulStack[STACK_SIZE];      $/;"	v
 pvCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t *pvCoeffs;                        \/**< points to the ladder coefficient array. The array is of length numStages+1. *\/$/;"	m	struct:__anon276
 pvCoeffs	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *pvCoeffs;                            \/**< points to the ladder coefficient array. The array is of length numStages+1. *\/$/;"	m	struct:__anon274
@@ -21389,6 +21784,7 @@ sTxMailBox	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM
 sc16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int16_t sc16;  \/*!< Read Only *\/$/;"	t
 sc32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int32_t sc32;  \/*!< Read Only *\/$/;"	t
 sc8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int8_t sc8;   \/*!< Read Only *\/$/;"	t
+<<<<<<< HEAD
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t state[3];    \/**< The state array of length 3. *\/$/;"	m	struct:__anon239
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t state[3];       \/**< The state array of length 3. *\/$/;"	m	struct:__anon237
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t state[3];      \/**< The state array of length 3. *\/$/;"	m	struct:__anon238
@@ -21406,6 +21802,25 @@ twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include
 twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;                     \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon256
 twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;                 \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon255
 twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;               \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon254
+=======
+state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t state[3];    \/**< The state array of length 3. *\/$/;"	m	struct:__anon160
+state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t state[3];       \/**< The state array of length 3. *\/$/;"	m	struct:__anon158
+state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t state[3];      \/**< The state array of length 3. *\/$/;"	m	struct:__anon159
+stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon204
+stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon205
+stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon206
+stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon207
+time	hardware/BEEP/beep.h	/^	u32		time;		\/\/time for beepon, ms$/;"	m	struct:_BEEP
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;         \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon170
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;         \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon171
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;       \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon166
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;       \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon167
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;       \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon168
+twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;       \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon169
+twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;                     \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon177
+twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;                 \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon176
+twidCoefRModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t twidCoefRModifier;               \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon175
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 twiddleCoef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_common_tables.h	60;"	d
 u16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef uint16_t u16;$/;"	t
 u16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^    __O  uint16_t   u16;                 \/*!< Offset: 0x000 ( \/W)  ITM Stimulus Port 16-bit                  *\/$/;"	m	union:__anon206::__anon207

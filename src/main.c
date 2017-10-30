@@ -23,16 +23,26 @@ void MyKeyTest( u8 key );
 
 int main(int argc, char *argv[])
 {
-
+	
 	HardInit();
 	while(1)
 	{
+<<<<<<< HEAD
 		delay_ms(1000);
 		KeyTest( MyKeyTest );	
 	}
 }
 
 	
+=======
+		//delay_ms(1000);
+		KeyTest( MyKeyTest );	
+
+
+	}
+}
+
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 void MyKeyTest( u8 key )
 {
 	switch (key)
@@ -41,10 +51,17 @@ void MyKeyTest( u8 key )
 				LedRed.LedBlink( &LedRed, 1000 );
 			break;
 		case KEY1:
+<<<<<<< HEAD
 				LedGreen.LedBlink( &LedGreen, 5000 );
 			break;
 		case KEY2:
 				LedRed.LedOFF( &LedRed );
+=======
+				LedGreen.LedBlink( &LedGreen, 500 );
+			break;
+		case KEY2:
+				LedRed.LedRollBack( &LedRed );
+>>>>>>> f95aa9d0679305427ea9271eb560c1da698539a0
 			break;
 		case KEYWK:
 				Beep.PlayMusic( );	
