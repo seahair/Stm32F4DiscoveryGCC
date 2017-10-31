@@ -5,13 +5,13 @@
 #include "delay.h"
 #include "beep.h"
 #include "key.h"
+#include "time3.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
 #include "usart.h"
 #include "delay.h"
 #include "exti.h"
-#include "time.h"
 #include "pwm.h"
 #include "capture.h"
 #include <stdio.h>
@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
 	while(1)
 	{
 		delay_ms(1000);
-		KeyTest( MyKeyTest );	
+		//KeyTest( MyKeyTest );	
+		LedGreen.LedRollBack( &LedGreen );
 	}
 }
 
@@ -53,3 +54,11 @@ void MyKeyTest( u8 key )
 }
 
 
+void TIM3_IRQHandler(void)
+{
+	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //溢出中断
+	{
+		LedRed.LedRollBack( &LedRed );
+	}
+	TIM_ClearITPendingBit(TIM3,TIM_IT_Update); //清除中断标志位
+}

@@ -5,6 +5,7 @@
 #include "beep.h"
 #include "key.h"
 #include "iwdg.h"
+#include "time3.h"
 //#include "stm32f4xx_rcc.h"
 
 
@@ -62,8 +63,7 @@ void HardInit( void )
 	BEEP_INIT();
 	KeyPinInit( );
 	IwdgStart1S( );
-//	TIM3_Int_Init(5000-1,8400-1);
-//	Tim3Init_ms( 1000 );
+	Time3InitMs( 1000 );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
