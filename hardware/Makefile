@@ -13,8 +13,8 @@ TEST += KEY
 TEST += USART
 TEST += IWDG 
 #TEST += EXTI
-#TEST += TIME
-#TEST += PWM
+TEST += TIME3
+TEST += PWM
 #TEST += CAPTURE
 #TEST += PAD
 #TEST += SRAM
@@ -41,8 +41,8 @@ USART:
 EXTI:
 	make -C EXTI
 
-TIME:
-	make -C TIME
+TIME3:
+	make -C TIME3
 
 PWM:
 	make -C PWM

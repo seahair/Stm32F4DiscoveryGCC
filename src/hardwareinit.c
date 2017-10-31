@@ -5,17 +5,32 @@
 #include "beep.h"
 #include "key.h"
 #include "iwdg.h"
-//#include "stm32f4xx_rcc.h"
+#include "time3.h"
+#include "pwm.h"
 
 
 void LED_Init( void )
 {
 
 	LedRed.pin = LEDRED;
+    LedRed.LedInit = LedInit;
+    LedRed.LedON = LedOn;
+    LedRed.LedOFF = LedOff;
+    LedRed.SetValue = SetValue;
+    LedRed.GetLedStatus = GetLedStatus;
+    LedRed.LedBlink = LedBlink;
+    LedRed.LedRollBack = LedRollBack;
 	LedRed.LedInit( &LedRed );
 
 	LedGreen.pin = LEDGREEN;
-	LedRed.LedInit( &LedGreen );
+    LedGreen.LedInit = LedInit;
+    LedGreen.LedON = LedOn;
+    LedGreen.LedOFF = LedOff;
+    LedGreen.SetValue = SetValue;
+    LedGreen.GetLedStatus = GetLedStatus;
+    LedGreen.LedBlink = LedBlink;
+    LedGreen.LedRollBack = LedRollBack;
+	LedGreen.LedInit( &LedGreen );
 
 #if 0
 //	LedRed.pin = LEDRED;
@@ -61,9 +76,9 @@ void HardInit( void )
 	LED_Init( );
 	BEEP_INIT();
 	KeyPinInit( );
-	IwdgStart1S( );
-//	TIM3_Int_Init(5000-1,8400-1);
-//	Tim3Init_ms( 1000 );
+//	IwdgStart1S( );
+	//Time3InitMs( 1000 );
+	PwmInit( );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
