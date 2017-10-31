@@ -30,16 +30,16 @@ s8 GetKeyStatus( u8 pin )
 	switch (pin)
 	{
 		case KEY0:
-			return GPIO_ReadOutputDataBit( GPIOE, PINKEY0 );
+			return GPIO_ReadInputDataBit( GPIOE, PINKEY0 );
 			break;
 		case KEY1:
-			return GPIO_ReadOutputDataBit( GPIOE, PINKEY1 );
+			return GPIO_ReadInputDataBit( GPIOE, PINKEY1 );
 			break;
 		case KEY2:
-			return GPIO_ReadOutputDataBit( GPIOE, PINKEY2 );
+			return GPIO_ReadInputDataBit( GPIOE, PINKEY2 );
 			break;
 		case KEYWK:
-			return GPIO_ReadOutputDataBit( GPIOA, PINKEYWK );
+			return GPIO_ReadInputDataBit( GPIOA, PINKEYWK );
 			break;
 		default:
 			return -1;
@@ -86,7 +86,7 @@ u8 WhichKeyPress( void )
 void KeyTest( KEYTEST pFun )
 {
 	KEYTEST  KeyTestHandle = pFun;
-	KeyTestHandle( WhichKeyPress );
+	KeyTestHandle( WhichKeyPress() );
 }
 
 

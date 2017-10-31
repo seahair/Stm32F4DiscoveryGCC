@@ -27,11 +27,13 @@ void MyKeyTest( u8 key );
 int main(int argc, char *argv[])
 {
 	HardInit();
+    //Time3Start( );
+    PwmStart( );
 	while(1)
 	{
-		delay_ms(1000);
-		//KeyTest( MyKeyTest );	
-		LedGreen.LedRollBack( &LedGreen );
+		//delay_ms(1000);
+		KeyTest( MyKeyTest );	
+		//LedGreen.LedRollBack( &LedGreen );
 	}
 }
 
@@ -41,11 +43,12 @@ void MyKeyTest( u8 key )
 	switch (key)
 	{
 		case KEY0:
+				LedGreen.LedRollBack( &LedGreen );
 				//LedRed.LedBlink( &LedRed, 1000 );
 				PwmSetDutyCycle( DutyCycle+10 ); 
 			break;
 		case KEY1:
-				//LedGreen.LedBlink( &LedGreen, 5000 );
+				LedGreen.LedRollBack( &LedGreen );
 				PwmSetDutyCycle( DutyCycle-10 ); 
 			break;
 		case KEY2:

@@ -24,6 +24,7 @@ void Time3InitMs( u16 time )
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x03; //响应优先级 3
 	NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
+	//TIM_Cmd(TIM3,ENABLE); 
 }
 
 
