@@ -26,34 +26,35 @@ void MyKeyTest( u8 key );
 
 int main(int argc, char *argv[])
 {
-	HardInit();
+	HardInit( );
+	PwmStart( );
 	while(1)
 	{
 		delay_ms(1000);
 		//KeyTest( MyKeyTest );	
-		LedGreen.LedRollBack( &LedGreen );
+		//LedGreen.LedRollBack( &LedGreen );
 	}
 }
 
-	
+
 void MyKeyTest( u8 key )
 {
 	switch (key)
 	{
 		case KEY0:
-				//LedRed.LedBlink( &LedRed, 1000 );
-				PwmSetDutyCycle( DutyCycle+10 ); 
+			//LedRed.LedBlink( &LedRed, 1000 );
+			PwmSetDutyCycle( DutyCycle+10 ); 
 			break;
 		case KEY1:
-				//LedGreen.LedBlink( &LedGreen, 5000 );
-				PwmSetDutyCycle( DutyCycle-10 ); 
+			//LedGreen.LedBlink( &LedGreen, 5000 );
+			PwmSetDutyCycle( DutyCycle-10 ); 
 			break;
 		case KEY2:
-				//LedRed.LedOFF( &LedRed );
-				PwmSetPeriodUs( Period+50 ); 
+			//LedRed.LedOFF( &LedRed );
+			PwmSetPeriodUs( Period+50 ); 
 			break;
 		case KEYWK:
-				Beep.PlayMusic( );	
+			Beep.PlayMusic( );	
 			break;
 	}
 }
@@ -67,3 +68,47 @@ void TIM3_IRQHandler(void)
 	}
 	TIM_ClearITPendingBit(TIM3,TIM_IT_Update); //清除中断标志位
 }
+
+void EXTI0_IRQHandler(void)
+{ 
+	delay_ms(10); //消抖
+	if( KEY0PRESS == GetKeyStatus( KEY0 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetDutyCycle( DutyCycle+10 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line0); //清除 LINE0 上的中断标志位
+}
+
+void EXTI2_IRQHandler(void)
+{ 
+	delay_ms(10); //消抖
+	if( KEY1PRESS == GetKeyStatus( KEY1 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetDutyCycle( DutyCycle-10 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line2); //清除 LINE2 上的中断标志位
+}
+
+void EXTI3_IRQHandler(void)
+{ 
+	delay_ms(10); //消抖
+	if( KEY2PRESS == GetKeyStatus( KEY2 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetPeriodUs( Period+50 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line3); //清除 LINE3 上的中断标志位
+}
+
+void EXTI4_IRQHandler(void)
+{ 
+	delay_ms(10); //消抖
+	if( KEYWKPRESS == GetKeyStatus( KEYWK ) )
+	{
+		PwmSetPeriodUs( Period-50 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
+}
+

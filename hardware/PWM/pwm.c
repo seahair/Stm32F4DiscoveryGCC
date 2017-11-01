@@ -5,7 +5,7 @@
 #include "stm32f4xx_tim.h"
 
 
-static u16 Period=0;
+static u16 Period=65535;
 
 
 static void PwmPinInit( void )

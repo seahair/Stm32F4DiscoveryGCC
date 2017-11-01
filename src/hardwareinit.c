@@ -62,7 +62,8 @@ void HardInit( void )
 	LED_Init( );
 	BEEP_INIT();
 	KeyPinInit( );
-	IwdgStart1S( );
+	KeyExtiInit( );
+	//IwdgStart1S( );
 	Time3InitMs( 1000 );
 	//PwmInit( );
 //	TIM14_PWM_Init(500-1,84-1);
