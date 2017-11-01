@@ -37,6 +37,7 @@ void KeyPinInit( void );
 s8   GetKeyStatus( u8 pin );
 u8   WhichKeyPress( void );
 void KeyTest( KEYTEST pFun );
+void KeyExtiInit( void );
 
 
 

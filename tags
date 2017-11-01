@@ -691,6 +691,7 @@ APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	247;"	d
 APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	249;"	d
 AR	hardware/BEEP/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+AR	hardware/CAPTURE/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/IWDG/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/KEY/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/LED/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -800,6 +801,7 @@ BTCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 BTCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BTCR[8];    \/*!< NOR\/PSRAM chip-select control register(BCR) and chip-select timing register(BTR), Address offset: 0x00-1C *\/   $/;"	m	struct:__anon115
 BTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t              BTR;                 \/*!< CAN bit timing register,             Address offset: 0x1C          *\/$/;"	m	struct:__anon95
 BUILD_DIR	hardware/BEEP/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+BUILD_DIR	hardware/CAPTURE/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/IWDG/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/KEY/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/LED/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -2323,7 +2325,15 @@ CAN_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/ST
 CAN_WakeUp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	/^uint8_t CAN_WakeUp(CAN_TypeDef* CANx)$/;"	f
 CAN_WakeUp_Failed	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	464;"	d
 CAN_WakeUp_Ok	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	465;"	d
+CAPTUREDOING	hardware/CAPTURE/capture.h	9;"	d
+CAPTUREFINSH	hardware/CAPTURE/capture.h	11;"	d
+CAPTUREHZ	hardware/CAPTURE/capture.h	6;"	d
+CAPTURENUM	hardware/CAPTURE/capture.h	7;"	d
+CAPTUREOCNUM	hardware/CAPTURE/capture.h	10;"	d
+CAPTURESTART	hardware/CAPTURE/capture.h	12;"	d
+CAPTURESTATUS	hardware/CAPTURE/capture.h	8;"	d
 CC	hardware/BEEP/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	hardware/CAPTURE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/IWDG/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/KEY/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/LED/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -2958,6 +2968,16 @@ CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.
 CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t CYCCNT;                  \/*!< Offset: 0x004 (R\/W)  Cycle Count Register                      *\/$/;"	m	struct:__anon314
 CanRxMsg	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^} CanRxMsg;$/;"	t	typeref:struct:__anon74
 CanTxMsg	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^} CanTxMsg;$/;"	t	typeref:struct:__anon73
+CaptureClacTime	hardware/CAPTURE/capture.c	/^uint64_t CaptureClacTime( u32 num )$/;"	f
+CaptureCount	hardware/CAPTURE/capture.c	/^u32 CaptureCount  = 0;$/;"	v
+CaptureGetValue	hardware/CAPTURE/capture.c	/^u32 CaptureGetValue( void )$/;"	f
+CaptureInit	hardware/CAPTURE/capture.c	/^void CaptureInit( void )$/;"	f
+CaptureInterruptInit	hardware/CAPTURE/capture.c	/^void CaptureInterruptInit( void )$/;"	f
+CapturePinInit	hardware/CAPTURE/capture.c	/^void CapturePinInit( void )$/;"	f
+CaptureStart	hardware/CAPTURE/capture.c	/^void CaptureStart( void )$/;"	f
+CaptureStatus	hardware/CAPTURE/capture.c	/^u8  CaptureStatus = 0; $/;"	v
+CaptureStop	hardware/CAPTURE/capture.c	/^void CaptureStop( void )$/;"	f
+CaptureTimeInit1us	hardware/CAPTURE/capture.c	/^void CaptureTimeInit1us( u16 per )$/;"	f
 CheckITStatus	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	/^static ITStatus CheckITStatus(uint32_t CAN_Reg, uint32_t It_Bit)$/;"	f	file:
 ClockLaneHS2LPTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneHS2LPTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from high-speed$/;"	m	struct:__anon53
 ClockLaneLP2HSTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneLP2HSTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from low-power$/;"	m	struct:__anon53
@@ -3616,6 +3636,7 @@ DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon288
 DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t DEMCR;                   \/*!< Offset: 0x00C (R\/W)  Debug Exception and Monitor Control Register *\/$/;"	m	struct:__anon317
 DEPS	hardware/BEEP/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/CAPTURE/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/IWDG/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/KEY/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/LED/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
@@ -7054,6 +7075,7 @@ EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/
 EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^EXTI0_IRQHandler  $/;"	l
 EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^EXTI0_IRQHandler  $/;"	l
 EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^EXTI0_IRQHandler  $/;"	l
+EXTI0_IRQHandler	src/main.c	/^void EXTI0_IRQHandler(void)$/;"	f
 EXTI0_IRQHandler	src/startup.c	277;"	d	file:
 EXTI0_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  EXTI0_IRQn                  = 6,      \/*!< EXTI Line0 Interrupt                                              *\/$/;"	e	enum:IRQn
 EXTI15_10_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^EXTI15_10_IRQHandler                                            $/;"	l
@@ -7132,6 +7154,7 @@ EXTI2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/
 EXTI2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^EXTI2_IRQHandler  $/;"	l
 EXTI2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^EXTI2_IRQHandler  $/;"	l
 EXTI2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^EXTI2_IRQHandler  $/;"	l
+EXTI2_IRQHandler	src/main.c	/^void EXTI2_IRQHandler(void)$/;"	f
 EXTI2_IRQHandler	src/startup.c	279;"	d	file:
 EXTI2_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  EXTI2_IRQn                  = 8,      \/*!< EXTI Line2 Interrupt                                              *\/$/;"	e	enum:IRQn
 EXTI3_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^EXTI3_IRQHandler                                                         $/;"	l
@@ -7158,6 +7181,7 @@ EXTI3_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/
 EXTI3_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^EXTI3_IRQHandler$/;"	l
 EXTI3_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^EXTI3_IRQHandler$/;"	l
 EXTI3_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^EXTI3_IRQHandler$/;"	l
+EXTI3_IRQHandler	src/main.c	/^void EXTI3_IRQHandler(void)$/;"	f
 EXTI3_IRQHandler	src/startup.c	280;"	d	file:
 EXTI3_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  EXTI3_IRQn                  = 9,      \/*!< EXTI Line3 Interrupt                                              *\/$/;"	e	enum:IRQn
 EXTI4_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^EXTI4_IRQHandler                                                          $/;"	l
@@ -7184,6 +7208,7 @@ EXTI4_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/
 EXTI4_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^EXTI4_IRQHandler  $/;"	l
 EXTI4_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^EXTI4_IRQHandler  $/;"	l
 EXTI4_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^EXTI4_IRQHandler  $/;"	l
+EXTI4_IRQHandler	src/main.c	/^void EXTI4_IRQHandler(void)$/;"	f
 EXTI4_IRQHandler	src/startup.c	281;"	d	file:
 EXTI4_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  EXTI4_IRQn                  = 10,     \/*!< EXTI Line4 Interrupt                                              *\/$/;"	e	enum:IRQn
 EXTI9_5_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^EXTI9_5_IRQHandler                                                $/;"	l
@@ -12252,6 +12277,7 @@ KR_KEY_RELOAD	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPer
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Kd;               \/**< The derivative gain. *\/$/;"	m	struct:__anon160
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t Kd;           \/**< The derivative gain. *\/$/;"	m	struct:__anon158
 Kd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t Kd;            \/**< The derivative gain. *\/$/;"	m	struct:__anon159
+KeyExtiInit	hardware/KEY/key.c	/^void KeyExtiInit( void )$/;"	f
 KeyPinInit	hardware/KEY/key.c	/^void KeyPinInit( void )$/;"	f
 KeyTest	hardware/KEY/key.c	/^void KeyTest( KEYTEST pFun )$/;"	f
 Ki	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t Ki;               \/**< The integral gain. *\/$/;"	m	struct:__anon160
@@ -13349,6 +13375,7 @@ OAR1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 OAR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t OAR2;       \/*!< I2C Own address register 2, Address offset: 0x0C *\/$/;"	m	struct:__anon123
 OAR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t OAR2;     \/*!< FMPI2C Own address 2 register,        Address offset: 0x0C *\/$/;"	m	struct:__anon124
 OBJS	hardware/BEEP/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+OBJS	hardware/CAPTURE/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/IWDG/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/KEY/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/LED/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
@@ -13873,7 +13900,7 @@ PendSV_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST
 PendSV_Handler	src/startup.c	269;"	d	file:
 PendSV_Handler	src/stm32f4xx_it.c	/^void PendSV_Handler(void)$/;"	f
 PendSV_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  PendSV_IRQn                 = -2,     \/*!< 14 Cortex-M4 Pend SV Interrupt                                    *\/$/;"	e	enum:IRQn
-Period	hardware/PWM/pwm.c	/^static u16 Period=0;$/;"	v	file:
+Period	hardware/PWM/pwm.c	/^static u16 Period=65535;$/;"	v	file:
 Period	src/main.c	/^u16 Period = 500;$/;"	v
 PlayMusic	hardware/BEEP/beep.c	/^void PlayMusic( void )$/;"	f
 PlayMusic	hardware/BEEP/beep.h	/^	void (* PlayMusic) ( void );$/;"	m	struct:_BEEP
@@ -17915,6 +17942,7 @@ SRAM_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM3
 SRAM_BB_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2082;"	d
 SRCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SRCR;          \/*!< LTDC Shadow Reload Configuration Register,           Address offset: 0x24 *\/$/;"	m	struct:__anon126
 SRCS	hardware/BEEP/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	hardware/CAPTURE/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/IWDG/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/KEY/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/LED/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
@@ -18735,6 +18763,7 @@ TIM5_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/S
 TIM5_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^TIM5_IRQHandler  $/;"	l
 TIM5_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^TIM5_IRQHandler  $/;"	l
 TIM5_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^TIM5_IRQHandler  $/;"	l
+TIM5_IRQHandler	src/main.c	/^void TIM5_IRQHandler(void)$/;"	f
 TIM5_IRQHandler	src/startup.c	321;"	d	file:
 TIM5_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  TIM5_IRQn                   = 50,     \/*!< TIM5 global Interrupt                                             *\/$/;"	e	enum:IRQn
 TIM5_LSE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h	921;"	d
@@ -20330,6 +20359,7 @@ __ASM	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300
 __BEEP_H__	hardware/BEEP/beep.h	2;"	d
 __BKPT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	180;"	d
 __BKPT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	566;"	d
+__CAPTURE_H__	hardware/CAPTURE/capture.h	2;"	d
 __CLREX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE void __CLREX(void)$/;"	f
 __CLREX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	294;"	d
 __CLZ	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE uint32_t __CLZ($/;"	f
