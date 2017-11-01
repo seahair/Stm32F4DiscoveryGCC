@@ -7,6 +7,7 @@
 #include "iwdg.h"
 #include "time3.h"
 #include "pwm.h"
+#include "capture.h"
 
 
 void LED_Init( void )
@@ -65,7 +66,8 @@ void HardInit( void )
 	KeyExtiInit( );
 	//IwdgStart1S( );
 	Time3InitMs( 1000 );
-	//PwmInit( );
+	PwmInit( );
+	//CaptureInit( );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
