@@ -18,7 +18,7 @@ extern u8  CaptureStatus;
 
 
 void CapturePinInit( void );
-void CaptureTimeInit1us( u16 per );
+void CaptureTimeInit1us( u32 per );
 void CaptureInterruptInit( void );
 void CaptureInit( void );
 void CaptureStart( void );

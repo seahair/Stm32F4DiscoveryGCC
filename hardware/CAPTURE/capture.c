@@ -31,13 +31,15 @@ void CapturePinInit( void )
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource0,GPIO_AF_TIM5); //PA0 复用位定时器 5
 }
 
-void CaptureTimeInit1us( u16 per )
+void CaptureTimeInit1us( u32 per )
 {
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5,ENABLE); 
+
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 
 	TIM_TimeBaseStructure.TIM_Prescaler = CAPTUREHZ-1; //定时器分频
 	TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up; //向上计数模式
-	TIM_TimeBaseStructure.TIM_Period = per+1; //自动重装载值
+	TIM_TimeBaseStructure.TIM_Period = 0XFFFFFFFF ; //per+1; //自动重装载值
 	TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
 	TIM_TimeBaseInit(TIM5,&TIM_TimeBaseStructure);
 }
