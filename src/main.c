@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
                 LedGreen.LedRollBack( &LedGreen );
                 //LedRed.LedRollBack( &LedRed );
                 //TIM_SetCompare1(TIM14,led0pwmval);
-          //      if( CaptureStatus&CAPTUREFINSH )
+                if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
                 {
-                    printf("Time is %lld us \r\n", CaptureCount );
+                    printf("Time is %lld us \r\n", CaptureTime );
                 }
         }
 }
@@ -120,11 +120,12 @@ void EXTI4_IRQHandler(void)
         EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
 }
 
+#if 0
 void TIM5_IRQHandler(void)
 {
         if( CAPTURESTART == (CaptureStatus&CAPTURESTATUS) )
         {
-                if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //更新中断
+                if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //溢出中断
                 {
                         if( CaptureStatus&CAPTUREDOING )
                         {
@@ -167,6 +168,54 @@ void TIM5_IRQHandler(void)
                 LedRed.LedRollBack( &LedRed );
         TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
 }
+#endif
 
 
+void TIM5_IRQHandler(void)
+{
+	switch ( CaptureStatus )	
+	{	
+		case CAPTURESTART :
+            if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
+			{
+				TIM_SetCounter(TIM5,0);
+				TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Falling);
+				CaptureCount = 0;
+				CaptureStatus = CAPTUREWAIT;
+				CaptureStart( );
+			}
+			break;
+		case CAPTUREWAIT :
+            if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
+			{
+				CaptureTime = CaptureClacTime( CaptureGetValue() );
+                TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
+				CaptureStatus = CAPTUREFINSH;
+				CaptureCount = 0;
+			}
+
+            if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //溢出中断
+			{
+				if( CaptureCount > 20 )
+				{
+					CaptureTime = CaptureClacTime( CaptureGetValue() );
+					TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
+					CaptureStatus = CAPTURETIMEOUT;
+					CaptureCount = 0;
+				}
+				else
+					CaptureCount++ ;
+			}
+			
+			break;
+		case CAPTUREFINSH :
+		case CAPTURETIMEOUT :
+			break;
+		default:
+			break;
+	}
+
+    LedRed.LedRollBack( &LedRed );
+    TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
+}
 

@@ -9,10 +9,12 @@
 
 
 u32 CaptureCount  = 0;
+uint64_t CaptureTime = 0;
 
-//Bit7=1:Capture Finish  Bit7=0:Capture uncurror
-//Bit6=1:Up Capture ouccer, wait for down Capture
-//Bit6=0:Up Capture Uncurror,wait for Up Capture
+//=0: CaptureFinsh
+//=1: CaptureStart
+//=2: Capturewait
+//=3: CaptureTimeout
 u8  CaptureStatus = 0; 
 
 
@@ -77,11 +79,14 @@ void CaptureInit( void )
 void CaptureStart( void )
 {
 	TIM_Cmd(TIM5, ENABLE ); //使能定时器 5
+	CaptureStatus = CAPTURESTART;
+
 }
 
 void CaptureStop( void )
 {
 	TIM_Cmd(TIM5, DISABLE ); //定时器 5
+	CaptureStatus = CAPTUREFINSH;
 }
 
 u32 CaptureGetValue( void )
@@ -92,7 +97,7 @@ u32 CaptureGetValue( void )
 uint64_t CaptureClacTime( u32 num )
 {
 	uint64_t tmp = CAPTURENUM;
-	return (CaptureStatus&CAPTUREOCNUM)*tmp + num;
+	return (CaptureCount*tmp + num);
 }
 
 
