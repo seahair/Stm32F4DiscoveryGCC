@@ -31,7 +31,7 @@ void CaptureInit( void );
 void CaptureStart( void );
 u32  CaptureGetValue( void );
 void CaptureStop( void );
-uint64_t  CaptureClacTime( u32 num );
+uint64_t CaptureClacTime( u32 num );
 
 
 

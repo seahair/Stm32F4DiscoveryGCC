@@ -19,6 +19,9 @@
 
 u16 DutyCycle = 100;
 u16 Period = 500;
+u8  CaptureStatus = 0; 
+uint64_t CaptureTime = 0;
+u32 CaptureCount  = 0;
 
 void MyKeyTest( u8 key );
 
@@ -27,7 +30,8 @@ int main(int argc, char *argv[])
         HardInit( );
         //PwmStart( );
         //Time3Start( );
-        CaptureStart( );
+        CaptureStart( );    
+        CaptureStatus = CAPTURESTART;
         while(1)
         {
                 delay_ms(1000);
@@ -37,7 +41,9 @@ int main(int argc, char *argv[])
                 //TIM_SetCompare1(TIM14,led0pwmval);
                 if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
                 {
-                    printf("Time is %lld us \r\n", CaptureTime );
+                    printf("Time is %u us \r\n", CaptureTime );
+                    CaptureStatus = CAPTURESTART;
+                    CaptureTime = 0;
                 }
         }
 }
@@ -173,6 +179,7 @@ void TIM5_IRQHandler(void)
 
 void TIM5_IRQHandler(void)
 {
+    u32 temp;
 	switch ( CaptureStatus )	
 	{	
 		case CAPTURESTART :
@@ -188,7 +195,9 @@ void TIM5_IRQHandler(void)
 		case CAPTUREWAIT :
             if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
 			{
-				CaptureTime = CaptureClacTime( CaptureGetValue() );
+				temp =  CaptureGetValue();
+				CaptureTime = CaptureClacTime( temp );
+				//CaptureTime = 6789; 
                 TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
 				CaptureStatus = CAPTUREFINSH;
 				CaptureCount = 0;
