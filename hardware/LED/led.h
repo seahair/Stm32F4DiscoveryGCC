@@ -45,7 +45,7 @@ extern LED LedGreen;
 void LedInit( LED* led );
 void LedOn( LED* led );
 void LedOff( LED* led );
-void SetValue( LED*led, u8 value );
+void SetValue( LED* led, u8 value );
 u8 GetLedStatus( LED* led );
 void LedBlink( LED*led, u16 time );
 void LedRollBack( LED* led );
