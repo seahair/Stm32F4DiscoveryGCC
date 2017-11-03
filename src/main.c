@@ -20,7 +20,8 @@
 u16 DutyCycle = 100;
 u16 Period = 500;
 u8  CaptureStatus = 0; 
-uint64_t CaptureTime = 0;
+//uint64_t CaptureTime = 0;
+u32 CaptureTime = 0;
 u32 CaptureCount  = 0;
 
 void MyKeyTest( u8 key );

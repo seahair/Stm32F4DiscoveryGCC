@@ -39,7 +39,7 @@ void CaptureTimeInit1us( u32 per )
 
 	TIM_TimeBaseStructure.TIM_Prescaler = CAPTUREHZ-1; //定时器分频
 	TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up; //向上计数模式
-	TIM_TimeBaseStructure.TIM_Period = per; //per+1; //自动重装载值
+	TIM_TimeBaseStructure.TIM_Period = per-1; //per+1; //自动重装载值
 	TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1; 
 	TIM_TimeBaseInit(TIM5,&TIM_TimeBaseStructure);
 }
@@ -93,13 +93,19 @@ u32 CaptureGetValue( void )
 	return temp;
 }
 
+#if 0
 uint64_t CaptureClacTime( u32 num )
 {
-	uint64_t tmp = (CaptureCount*654 + num);
+	uint64_t tmp = (CaptureCount*CPATURENUM + num);
 	return tmp;
 }
+#endif
 
-
+u32 CaptureClacTime( u32 num )
+{
+	u32 tmp = (CaptureCount*CAPTURENUM + num);
+	return tmp;
+}
 
 
 

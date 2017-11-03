@@ -21,7 +21,8 @@
 
 extern u32 CaptureCount;			//用于记录 溢出的 次数
 extern u8  CaptureStatus;			//用于捕获 状态机
-extern uint64_t CaptureTime;		//用于记录 最终结果，捕获的时间 单位us
+//extern uint64_t CaptureTime;		//用于记录 最终结果，捕获的时间 单位us
+extern u32 CaptureTime;		//用于记录 最终结果，捕获的时间 单位us
 
 
 void CapturePinInit( void );
@@ -31,7 +32,8 @@ void CaptureInit( void );
 void CaptureStart( void );
 u32  CaptureGetValue( void );
 void CaptureStop( void );
-uint64_t CaptureClacTime( u32 num );
+//uint64_t CaptureClacTime( u32 num );
+u32 CaptureClacTime( u32 num );
 
 
 
