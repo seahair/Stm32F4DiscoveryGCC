@@ -103,7 +103,8 @@ uint64_t CaptureClacTime( u32 num )
 
 u32 CaptureClacTime( u32 num )
 {
-	u32 tmp = (CaptureCount*CAPTURENUM + num);
+	//u32 tmp = (CaptureCount*CAPTURENUM + num);  //使用CaptureCount就出问题，不知道原因。
+	u32 tmp = num;
 	return tmp;
 }
 

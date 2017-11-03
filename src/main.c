@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
                 //TIM_SetCompare1(TIM14,led0pwmval);
                 if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
                 {
-                    printf("Time is %u us \r\n", CaptureTime );
+                    printf("Time is %d us \r\n", CaptureTime );
                     CaptureStatus = CAPTURESTART;
                     CaptureTime = 0;
                 }
@@ -127,55 +127,6 @@ void EXTI4_IRQHandler(void)
         EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
 }
 
-#if 0
-void TIM5_IRQHandler(void)
-{
-        if( CAPTURESTART == (CaptureStatus&CAPTURESTATUS) )
-        {
-                if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //溢出中断
-                {
-                        if( CaptureStatus&CAPTUREDOING )
-                        {
-                                if( (CaptureStatus & CAPTUREOCNUM) < 64)
-                                {
-                                        CaptureStatus ++;
-                                }
-                                else
-                                {
-                                        CaptureCount = CaptureClacTime( CaptureGetValue() );
-                                        CaptureStatus = 0;
-                                        CaptureStatus |= CAPTUREFINSH;
-                                        TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
-                                }
-                        }
-                }
-
-                if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
-                {
-                        if( CaptureStatus&CAPTUREDOING )
-                        {
-                                CaptureCount = CaptureClacTime( CaptureGetValue() );
-                                CaptureStatus = 0;
-                                CaptureStatus |= CAPTUREFINSH;
-                                TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
-                        }
-                        else
-                        {
-                                CaptureStatus = 0;
-                                CaptureCount  = 0;
-                                CaptureStatus |= CAPTUREDOING;
-                                TIM_SetCounter(TIM5,0);
-                                TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Falling);
-                                CaptureStart( );
-                        }
-                }
-
-        }
-
-                LedRed.LedRollBack( &LedRed );
-        TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
-}
-#endif
 
 
 void TIM5_IRQHandler(void)
