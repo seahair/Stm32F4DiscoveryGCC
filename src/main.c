@@ -42,16 +42,22 @@ int main(int argc, char *argv[])
 
         while(1)
         {
-                //delay_ms(1000);
+                delay_ms(10);
                 //KeyTest( MyKeyTest );	
                 //LedRed.LedRollBack( &LedRed );
 				TPADTime = TpadGetCapTime( );
 				if( TPADTime > TPADDefaultTime+TPADTHRESHOLD )	
 				{
-					LedGreen.LedRollBack( &LedGreen );
+                    TPADStatus++ ;
 				}
 
-
+                if( TPADStatus> 7 )
+                {
+                    printf("TPADDefaultTime is %d \r\n",TPADDefaultTime );
+                    printf("TPADTime is %d \r\n",TPADTime );
+					LedGreen.LedRollBack( &LedGreen );
+                    TPADStatus= 0;
+                }
 
 
 
@@ -197,22 +203,25 @@ void TIM5_IRQHandler(void)
 			break;
 	}
 
-    LedRed.LedRollBack( &LedRed );
+    //LedRed.LedRollBack( &LedRed );
     TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
 }
 
 
+#if 0
 void TIM2_IRQHandler(void)
 {
+    LedRed.LedRollBack( &LedRed );
 	switch ( TPADStatus )
 	{
 		case TPADSTUSSTART:
             if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
 			{
+				TPADTime = TpadGetCapTime( );
 				TIM_SetCounter(TIM2, 0);
-				TIM_OC1PolarityConfig(TIM2,TIM_ICPolarity_Falling);
+				//TIM_OC1PolarityConfig(TIM2,TIM_ICPolarity_Falling);
 				TPADStatus = TPADSTUSWAIT;
-				TpadInterruptStart( );
+				//TpadInterruptStart( );
 			}
 			break;
 		case TPADSTUSWAIT:
@@ -228,5 +237,6 @@ void TIM2_IRQHandler(void)
 			break;
 	}
 }
+#endif
 
 

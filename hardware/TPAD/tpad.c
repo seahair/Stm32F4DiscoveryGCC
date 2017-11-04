@@ -82,7 +82,7 @@ void TpadInit( void )
     TIM2_ICInitStructure.TIM_ICFilter = 0x00;
     TIM_ICInit(TIM2, &TIM2_ICInitStructure);
 
-    TpadInterruptInit( );
+    //TpadInterruptInit( );
 }
 
 void TpadClear( void )
@@ -90,15 +90,18 @@ void TpadClear( void )
     TpadPinInitIO( );
     TpadPinPullDown( );
     delay_ms( 5 );    
+    TIM_ClearITPendingBit(TIM2, TIM_IT_CC1|TIM_IT_Update); //Çå³ýÖÐ¶Ï±êÖŸ
+    TIM_SetCounter(TIM2,0); 
     TpadPinInitCap( );
+    //TpadInit( );
 }
 
-void TpadInterruptStart( void )
+void TpadCaptureStart( void )
 {
     TIM_Cmd(TIM2, ENABLE );
 }
 
-void TpadInterruptStop( void )
+void TpadCaptureStop( void )
 {
     TIM_Cmd(TIM2, DISABLE );
 }
@@ -106,17 +109,21 @@ void TpadInterruptStop( void )
 u32 TpadGetCapTime( void )
 {
 	TpadClear( );
-	TpadInterruptStart( );
-	TPADStatus = TPADSTUSSTART;
-	while( TPADStatus != TPADSTUSFINISH );
-
+	//TPADStatus = TPADSTUSSTART;
+	TpadCaptureStart( );
+	//while( TPADStatus != TPADSTUSWAIT );
+    while(TIM_GetFlagStatus(TIM2, TIM_IT_CC1) == RESET)
+    {
+        if(TIM_GetCounter(TIM2)>TPADPERIOD-500)return TIM_GetCounter(TIM2);
+    }
     return  TIM_GetCapture1(TIM2);
 }
 
 u32 TpadTestDefaultTime( u8 num )
 {
-	u8 i;
+	u8 i,j;
 	u32 Value[10];
+    u32 temp=0;
 	u8  testnum = num<10 ? num:10 ;
 	u32  AverageValue=0;
 
@@ -125,10 +132,29 @@ u32 TpadTestDefaultTime( u8 num )
 		//TpadClear( );
 		//TPADStatus = TPADSTUSSTART;
 		Value[i] = TpadGetCapTime( );
-		AverageValue += (Value[i]/testnum) ;
+		//AverageValue += (Value[i]/testnum) ;
 	}
+
+    for( i=0; i<testnum; i++ )
+    {
+        temp = Value[i];
+        for( j=1; j<(testnum-i); j++ )
+        { 
+            if( temp > Value[i+j]) 
+            {
+                Value[i] = Value[i+j];
+                Value[i+j] = temp;
+                temp = Value[i]; 
+            }
+        } 
+    } 
+
+    for( i=1; i<(testnum-1); i++ )
+    {
+        AverageValue += Value[i]/(testnum-2);
+    }
 	
-	TpadInterruptStop( );
+	TpadCaptureStop( );
 	
 	return AverageValue;
 	

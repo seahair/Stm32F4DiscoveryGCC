@@ -698,6 +698,7 @@ AR	hardware/LED/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/PWM/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/TIME3/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+AR	hardware/TPAD/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/USART/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t AR;       \/*!< QUADSPI Address register,                           Address offset: 0x18 *\/$/;"	m	struct:__anon136
 ARG	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ARG;            \/*!< SDIO argument register,         Address offset: 0x08 *\/$/;"	m	struct:__anon133
@@ -808,6 +809,7 @@ BUILD_DIR	hardware/LED/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/Makefile	/^BUILD_DIR = build$/;"	m
 BUILD_DIR	hardware/PWM/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/TIME3/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+BUILD_DIR	hardware/TPAD/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/USART/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BWTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BWTR[7];    \/*!< NOR\/PSRAM write timing registers, Address offset: 0x104-0x11C *\/$/;"	m	struct:__anon111
 BWTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BWTR[7];    \/*!< NOR\/PSRAM write timing registers, Address offset: 0x104-0x11C *\/$/;"	m	struct:__anon116
@@ -2325,13 +2327,12 @@ CAN_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/ST
 CAN_WakeUp	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	/^uint8_t CAN_WakeUp(CAN_TypeDef* CANx)$/;"	f
 CAN_WakeUp_Failed	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	464;"	d
 CAN_WakeUp_Ok	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	465;"	d
-CAPTUREDOING	hardware/CAPTURE/capture.h	9;"	d
-CAPTUREFINSH	hardware/CAPTURE/capture.h	11;"	d
+CAPTUREFINSH	hardware/CAPTURE/capture.h	8;"	d
 CAPTUREHZ	hardware/CAPTURE/capture.h	6;"	d
 CAPTURENUM	hardware/CAPTURE/capture.h	7;"	d
-CAPTUREOCNUM	hardware/CAPTURE/capture.h	10;"	d
-CAPTURESTART	hardware/CAPTURE/capture.h	12;"	d
-CAPTURESTATUS	hardware/CAPTURE/capture.h	8;"	d
+CAPTURESTART	hardware/CAPTURE/capture.h	9;"	d
+CAPTURETIMEOUT	hardware/CAPTURE/capture.h	11;"	d
+CAPTUREWAIT	hardware/CAPTURE/capture.h	10;"	d
 CC	hardware/BEEP/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/CAPTURE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/IWDG/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -2340,6 +2341,7 @@ CC	hardware/LED/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/PWM/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/TIME3/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	hardware/TPAD/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/USART/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CCER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t CCER;        \/*!< TIM capture\/compare enable register, Address offset: 0x20 *\/$/;"	m	struct:__anon138
 CCER_CCE_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	137;"	d	file:
@@ -2968,16 +2970,17 @@ CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.
 CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t CYCCNT;                  \/*!< Offset: 0x004 (R\/W)  Cycle Count Register                      *\/$/;"	m	struct:__anon314
 CanRxMsg	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^} CanRxMsg;$/;"	t	typeref:struct:__anon74
 CanTxMsg	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^} CanTxMsg;$/;"	t	typeref:struct:__anon73
-CaptureClacTime	hardware/CAPTURE/capture.c	/^uint64_t CaptureClacTime( u32 num )$/;"	f
-CaptureCount	hardware/CAPTURE/capture.c	/^u32 CaptureCount  = 0;$/;"	v
+CaptureClacTime	hardware/CAPTURE/capture.c	/^u32 CaptureClacTime( u32 num )$/;"	f
+CaptureCount	src/main.c	/^u32 CaptureCount  = 0;$/;"	v
 CaptureGetValue	hardware/CAPTURE/capture.c	/^u32 CaptureGetValue( void )$/;"	f
 CaptureInit	hardware/CAPTURE/capture.c	/^void CaptureInit( void )$/;"	f
 CaptureInterruptInit	hardware/CAPTURE/capture.c	/^void CaptureInterruptInit( void )$/;"	f
 CapturePinInit	hardware/CAPTURE/capture.c	/^void CapturePinInit( void )$/;"	f
 CaptureStart	hardware/CAPTURE/capture.c	/^void CaptureStart( void )$/;"	f
-CaptureStatus	hardware/CAPTURE/capture.c	/^u8  CaptureStatus = 0; $/;"	v
+CaptureStatus	src/main.c	/^u8  CaptureStatus = 0; $/;"	v
 CaptureStop	hardware/CAPTURE/capture.c	/^void CaptureStop( void )$/;"	f
-CaptureTimeInit1us	hardware/CAPTURE/capture.c	/^void CaptureTimeInit1us( u16 per )$/;"	f
+CaptureTime	src/main.c	/^u32 CaptureTime = 0;$/;"	v
+CaptureTimeInit1us	hardware/CAPTURE/capture.c	/^void CaptureTimeInit1us( u32 per )$/;"	f
 CheckITStatus	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	/^static ITStatus CheckITStatus(uint32_t CAN_Reg, uint32_t It_Bit)$/;"	f	file:
 ClockLaneHS2LPTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneHS2LPTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from high-speed$/;"	m	struct:__anon53
 ClockLaneLP2HSTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneLP2HSTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from low-power$/;"	m	struct:__anon53
@@ -3642,6 +3645,7 @@ DEPS	hardware/KEY/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/LED/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/PWM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/TIME3/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/TPAD/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/USART/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPolarity	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t DEPolarity;                   \/*!< Data Enable pin polarity$/;"	m	struct:__anon50
 DEPolarity	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t DEPolarity;            \/*!< Data Enable pin polarity$/;"	m	struct:__anon51
@@ -13382,6 +13386,7 @@ OBJS	hardware/LED/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$
 OBJS	hardware/Makefile	/^OBJS = $(BUILD_DIR)\/*.o$/;"	m
 OBJS	hardware/PWM/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/TIME3/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+OBJS	hardware/TPAD/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/USART/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OB_BOR_LEVEL1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h	330;"	d
 OB_BOR_LEVEL2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_flash.h	329;"	d
@@ -17948,6 +17953,7 @@ SRCS	hardware/KEY/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/LED/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/PWM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/TIME3/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	hardware/TPAD/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/USART/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SSCGR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SSCGR;         \/*!< RCC spread spectrum clock generation register,               Address offset: 0x80 *\/$/;"	m	struct:__anon129
 SSCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t SSCR;          \/*!< LTDC Synchronization Size Configuration Register,    Address offset: 0x08 *\/$/;"	m	struct:__anon126
@@ -18678,6 +18684,7 @@ TIM2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/S
 TIM2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^TIM2_IRQHandler  $/;"	l
 TIM2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^TIM2_IRQHandler  $/;"	l
 TIM2_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^TIM2_IRQHandler  $/;"	l
+TIM2_IRQHandler	src/main.c	/^void TIM2_IRQHandler(void)$/;"	f
 TIM2_IRQHandler	src/startup.c	299;"	d	file:
 TIM2_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  TIM2_IRQn                   = 28,     \/*!< TIM2 global Interrupt                                             *\/$/;"	e	enum:IRQn
 TIM2_TIM8_TRGO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h	914;"	d
@@ -19438,6 +19445,16 @@ TIM_UpdateSource_Global	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F
 TIM_UpdateSource_Regular	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_tim.h	815;"	d
 TIR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t TIR;  \/*!< CAN TX mailbox identifier register *\/$/;"	m	struct:__anon92
 TMIDxR_TXRQ	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	102;"	d	file:
+TPADDefaultTime	src/main.c	/^u32 TPADDefaultTime = 0;$/;"	v
+TPADHZ	hardware/TPAD/tpad.h	8;"	d
+TPADPERIOD	hardware/TPAD/tpad.h	9;"	d
+TPADPIN	hardware/TPAD/tpad.h	7;"	d
+TPADSTUSFINISH	hardware/TPAD/tpad.h	12;"	d
+TPADSTUSSTART	hardware/TPAD/tpad.h	10;"	d
+TPADSTUSWAIT	hardware/TPAD/tpad.h	11;"	d
+TPADStatus	src/main.c	/^u8  TPADStatus = 0; $/;"	v
+TPADTHRESHOLD	hardware/TPAD/tpad.h	13;"	d
+TPADTime	src/main.c	/^u32 TPADTime = 0;$/;"	v
 TPI	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	1308;"	d
 TPI	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	1468;"	d
 TPI	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	1655;"	d
@@ -19755,6 +19772,17 @@ Time3InitMs	hardware/TIME3/time3.c	/^void Time3InitMs( u16 time )$/;"	f
 Time3Start	hardware/TIME3/time3.c	/^void Time3Start( void )$/;"	f
 Time3Stop	hardware/TIME3/time3.c	/^void Time3Stop( void )$/;"	f
 TimeoutCkdiv	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t TimeoutCkdiv;                 \/*!< Time-out clock division                                  *\/$/;"	m	struct:__anon54
+TpadClear	hardware/TPAD/tpad.c	/^void TpadClear( void )$/;"	f
+TpadGetCapTime	hardware/TPAD/tpad.c	/^u32 TpadGetCapTime( void )$/;"	f
+TpadInit	hardware/TPAD/tpad.c	/^void TpadInit( void )$/;"	f
+TpadInterruptInit	hardware/TPAD/tpad.c	/^static void TpadInterruptInit( void )$/;"	f	file:
+TpadInterruptStart	hardware/TPAD/tpad.c	/^void TpadInterruptStart( void )$/;"	f
+TpadInterruptStop	hardware/TPAD/tpad.c	/^void TpadInterruptStop( void )$/;"	f
+TpadPinInitCap	hardware/TPAD/tpad.c	/^static void TpadPinInitCap( void )$/;"	f	file:
+TpadPinInitIO	hardware/TPAD/tpad.c	/^static void TpadPinInitIO( void )$/;"	f	file:
+TpadPinPullDown	hardware/TPAD/tpad.c	/^static void TpadPinPullDown( void )$/;"	f	file:
+TpadTestDefaultTime	hardware/TPAD/tpad.c	/^u32 TpadTestDefaultTime( u8 num )$/;"	f
+TpadTimeInit1us	hardware/TPAD/tpad.c	/^static void TpadTimeInit1us( u32 per )$/;"	f	file:
 UART10	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2330;"	d
 UART10_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2143;"	d
 UART10_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f413_423xx.s	/^UART10_IRQHandler$/;"	l
@@ -20810,6 +20838,7 @@ __SXTB16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm
 __SYSTEM_STM32F4XX_H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h	40;"	d
 __SYS_H	inc/sys.h	2;"	d
 __TIME3_H__	hardware/TIME3/time3.h	2;"	d
+__TPAD_H__	hardware/TPAD/tpad.h	2;"	d
 __UADD16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmSimd.h	/^__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __UADD16(uint32_t op1, uint32_t op2)$/;"	f
 __UADD16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmSimd.h	78;"	d
 __UADD8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmSimd.h	/^__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __UADD8(uint32_t op1, uint32_t op2)$/;"	f

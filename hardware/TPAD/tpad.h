@@ -5,7 +5,7 @@
 #include "stm32f4xx_gpio.h"
 
 #define  TPADPIN			GPIO_Pin_5
-#define  TPADHZ				84 
+#define  TPADHZ				8 
 #define  TPADPERIOD			0XFFFFFFFF 
 #define  TPADSTUSSTART		0X00
 #define  TPADSTUSWAIT		0X01
@@ -24,8 +24,8 @@
 //void TpadInterruptInit( void );
 void TpadInit( void );
 void TpadClear( void );
-void TpadInterruptStart( void );
-void TpadInterruptStop( void );
+void TpadCaptureStart( void );
+void TpadCaptureStop( void );
 u32  TpadGetCapTime( void );
 u32  TpadTestDefaultTime( u8 num );  //num < 10
 
