@@ -6,6 +6,7 @@
 #include "stm32f4xx_tim.h"
 
 
+extern u8  TPADStatus ; 
 
 
 static void TpadPinInitIO( void )
@@ -47,7 +48,7 @@ static void TpadTimeInit1us( u32 per )
     TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);  
 
-    TIM_TimeBaseStructure.TIM_Period = per; 
+    TIM_TimeBaseStructure.TIM_Period = per-1; 
     TIM_TimeBaseStructure.TIM_Prescaler = TPADHZ-1 ;
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
     TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -72,7 +73,7 @@ void TpadInit( void )
     TIM_ICInitTypeDef  TIM2_ICInitStructure;
 
     TpadPinInitCap( );
-    TpadTimeInit1us( );
+    TpadTimeInit1us( TPADPERIOD );
 
     TIM2_ICInitStructure.TIM_Channel = TIM_Channel_1; 
     TIM2_ICInitStructure.TIM_ICPolarity = TIM_ICPolarity_Rising;  
@@ -87,7 +88,7 @@ void TpadInit( void )
 void TpadClear( void )
 {
     TpadPinInitIO( );
-    TpadPinPullDown( void );
+    TpadPinPullDown( );
     delay_ms( 5 );    
     TpadPinInitCap( );
 }
@@ -104,10 +105,34 @@ void TpadInterruptStop( void )
 
 u32 TpadGetCapTime( void )
 {
+	TpadClear( );
+	TpadInterruptStart( );
+	TPADStatus = TPADSTUSSTART;
+	while( TPADStatus != TPADSTUSFINISH );
 
+    return  TIM_GetCapture1(TIM2);
 }
 
+u32 TpadTestDefaultTime( u8 num )
+{
+	u8 i;
+	u32 Value[10];
+	u8  testnum = num<10 ? num:10 ;
+	u32  AverageValue=0;
 
+	for( i=0; i<testnum; i++ )
+	{
+		//TpadClear( );
+		//TPADStatus = TPADSTUSSTART;
+		Value[i] = TpadGetCapTime( );
+		AverageValue += (Value[i]/testnum) ;
+	}
+	
+	TpadInterruptStop( );
+	
+	return AverageValue;
+	
+}
 
 
 

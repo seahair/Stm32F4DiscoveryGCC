@@ -8,44 +8,65 @@
 #include "time3.h"
 #include "pwm.h"
 #include "capture.h"
+#include "tpad.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
 #include "usart.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "pad.h"
 #include "sram.h"*/
 
 u16 DutyCycle = 100;
 u16 Period = 500;
 u8  CaptureStatus = 0; 
-//uint64_t CaptureTime = 0;
 u32 CaptureTime = 0;
 u32 CaptureCount  = 0;
+
+u8  TPADStatus = 0; 
+u32 TPADTime = 0;
+u32 TPADDefaultTime = 0;
 
 void MyKeyTest( u8 key );
 
 int main(int argc, char *argv[])
 {
+		
         HardInit( );
         //PwmStart( );
         //Time3Start( );
-        CaptureStart( );    
-        CaptureStatus = CAPTURESTART;
+        //CaptureStart( );    
+        //CaptureStatus = CAPTURESTART;
+
+		TPADDefaultTime = TpadTestDefaultTime( 8 );	
+
         while(1)
         {
-                delay_ms(1000);
+                //delay_ms(1000);
                 //KeyTest( MyKeyTest );	
-                LedGreen.LedRollBack( &LedGreen );
                 //LedRed.LedRollBack( &LedRed );
+				TPADTime = TpadGetCapTime( );
+				if( TPADTime > TPADDefaultTime+TPADTHRESHOLD )	
+				{
+					LedGreen.LedRollBack( &LedGreen );
+				}
+
+
+
+
+
+
+
+
+
                 //TIM_SetCompare1(TIM14,led0pwmval);
-                if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
+
+               /* if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
                 {
                     printf("Time is %d us \r\n", CaptureTime );
                     CaptureStatus = CAPTURESTART;
                     CaptureTime = 0;
-                }
+                }*/
         }
 }
 
@@ -179,4 +200,33 @@ void TIM5_IRQHandler(void)
     LedRed.LedRollBack( &LedRed );
     TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
 }
+
+
+void TIM2_IRQHandler(void)
+{
+	switch ( TPADStatus )
+	{
+		case TPADSTUSSTART:
+            if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
+			{
+				TIM_SetCounter(TIM2, 0);
+				TIM_OC1PolarityConfig(TIM2,TIM_ICPolarity_Falling);
+				TPADStatus = TPADSTUSWAIT;
+				TpadInterruptStart( );
+			}
+			break;
+		case TPADSTUSWAIT:
+            if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
+			{
+				TPADTime = TpadGetCapTime( );
+				TIM_SetCounter(TIM2, 0);
+				TIM_OC1PolarityConfig(TIM2, TIM_ICPolarity_Rising);
+				TPADStatus = TPADSTUSFINISH;
+			}
+			break;
+		case TPADSTUSFINISH:
+			break;
+	}
+}
+
 
