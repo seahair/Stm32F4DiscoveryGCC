@@ -12,11 +12,10 @@ TEST += BEEP
 TEST += KEY
 TEST += USART
 TEST += IWDG 
-#TEST += EXTI
 TEST += TIME3
 TEST += PWM
 TEST += CAPTURE
-#TEST += PAD
+TEST += TPAD
 #TEST += SRAM
 
 
@@ -50,8 +49,8 @@ PWM:
 CAPTURE:
 	make -C CAPTURE
 
-PAD:
-	make -C PAD
+TPAD:
+	make -C TPAD
 
 SRAM:
 	make -C SRAM

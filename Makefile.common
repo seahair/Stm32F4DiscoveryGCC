@@ -61,7 +61,7 @@ INCLUDE+=-I$(TOP)/hardware/EXTI
 INCLUDE+=-I$(TOP)/hardware/TIME3
 INCLUDE+=-I$(TOP)/hardware/PWM
 INCLUDE+=-I$(TOP)/hardware/CAPTURE
-INCLUDE+=-I$(TOP)/hardware/PAD
+INCLUDE+=-I$(TOP)/hardware/TPAD
 INCLUDE+=-I$(TOP)/hardware/SRAM
 INCLUDE+=-I$(TOP)/hardware/IWDG
 

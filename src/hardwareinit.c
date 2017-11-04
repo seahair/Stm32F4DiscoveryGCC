@@ -8,6 +8,7 @@
 #include "time3.h"
 #include "pwm.h"
 #include "capture.h"
+#include "tpad.h"
 
 
 void LED_Init( void )
@@ -81,7 +82,8 @@ void HardInit( void )
 	//IwdgStart1S( );
 	//Time3InitMs( 500 );
 	//PwmInit( );
-	CaptureInit( );
+//	CaptureInit( );
+	TpadInit( );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
