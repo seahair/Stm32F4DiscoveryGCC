@@ -16,6 +16,7 @@ TEST += TIME3
 TEST += PWM
 TEST += CAPTURE
 TEST += TPAD
+TEST += LCD 
 #TEST += SRAM
 
 
@@ -57,6 +58,9 @@ SRAM:
 
 IWDG:
 	make -C IWDG 
+
+LCD:
+	make -C LCD 
 
 #END
 $(OBJS): | $(BUILD_DIR)
