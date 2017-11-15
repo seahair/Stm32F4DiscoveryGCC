@@ -1,49 +1,125 @@
-#ifndef  __LCD_H__
-#define  __LCD_H__
+#ifndef __LCD_H
+#define __LCD_H		
+#include "sys.h"	 
+#include "stdlib.h" 
 
-#include "stm32f4xx.h"
+typedef struct  
+{										    
+	u16 width;			//LCD ¿í¶È
+	u16 height;			//LCD ¸ß¶È
+	u16 id;				//LCD ID
+	u8 dir;			//ºáÆÁ»¹ÊÇÊúÆÁ¿ØÖÆ£º0£¬ÊúÆÁ£»1£¬ºáÆÁ¡£	
+	u16	wramcmd;		//¿ªÊ¼Ğ´gramÖ¸Áî
+	u16  setxcmd;		//ÉèÖÃx×ø±êÖ¸Áî
+	u16  setycmd;		//ÉèÖÃy×ø±êÖ¸Áî 
+}_lcd_dev; 
 
+extern _lcd_dev lcddev;	
+//extern u16 Guolinxin;
+extern u32 Guolinxin;
 
 
 typedef struct
 {
-	u16 LCD_CMD;	// cmd
-	u16 LCD_DATA;	// data
-} LCD_TypeDef;		//LCD æ“ä½œç»“æ„ä½“
+	vu16 LCD_REG;
+	vu16 LCD_RAM;
+} LCD_TypeDef;
+#define LCD_BASE        ((u32)(0x6C000000 | 0x0000007E))
+#define LCD             ((LCD_TypeDef *) LCD_BASE)
+	 
+#define CMD_ADDR    0x6C00007E
+#define DATA_ADDR   0x6C000080      
+
+#define  LCD_WR_REG(cmd)   (*(volatile uint16_t *)(CMD_ADDR)) = (cmd)
+#define  LCD_WR_DATA(val)   (*(volatile uint16_t *)(DATA_ADDR)) = (val)
+#define  LCD_RD_DATA()   (*(volatile uint16_t *)(DATA_ADDR))
 
 
-#define LCD_BASE ((u32)(0x6C000000 | 0x0000007E))
-#define LCD ((LCD_TypeDef *) LCD_BASE)
+#define L2R_U2D  0 //´Ó×óµ½ÓÒ,´ÓÉÏµ½ÏÂ
+#define L2R_D2U  1 //´Ó×óµ½ÓÒ,´ÓÏÂµ½ÉÏ
+#define R2L_U2D  2 //´ÓÓÒµ½×ó,´ÓÉÏµ½ÏÂ
+#define R2L_D2U  3 //´ÓÓÒµ½×ó,´ÓÏÂµ½ÉÏ
+
+#define U2D_L2R  4 //´ÓÉÏµ½ÏÂ,´Ó×óµ½ÓÒ
+#define U2D_R2L  5 //´ÓÉÏµ½ÏÂ,´ÓÓÒµ½×ó
+#define D2U_L2R  6 //´ÓÏÂµ½ÉÏ,´Ó×óµ½ÓÒ
+#define D2U_R2L  7 //´ÓÏÂµ½ÉÏ,´ÓÓÒµ½×ó	 
+
+#define DFT_SCAN_DIR  L2R_U2D  //Ä¬ÈÏµÄÉ¨Ãè·½Ïò
+
+#define WHITE         	 0xFFFF
+#define BLACK         	 0x0000	  
+#define BLUE         	 0x001F  
+#define BRED             0XF81F
+#define GRED 			 0XFFE0
+#define GBLUE			 0X07FF
+#define RED           	 0xF800
+#define MAGENTA       	 0xF81F
+#define GREEN         	 0x07E0
+#define CYAN          	 0x7FFF
+#define YELLOW        	 0xFFE0
+#define BROWN 			 0XBC40 //×ØÉ«
+#define BRRED 			 0XFC07 //×ØºìÉ«
+#define GRAY  			 0X8430 //»ÒÉ«
+
+#define DARKBLUE      	 0X01CF	//ÉîÀ¶É«
+#define LIGHTBLUE      	 0X7D7C	//Ç³À¶É«  
+#define GRAYBLUE       	 0X5458 //»ÒÀ¶É«
+ 
+#define LIGHTGREEN     	 0X841F //Ç³ÂÌÉ«
+#define LGRAY 			 0XC618 //Ç³»ÒÉ«(PANNEL),´°Ìå±³¾°É«
+
+#define LGRAYBLUE        0XA651 //Ç³»ÒÀ¶É«(ÖĞ¼ä²ãÑÕÉ«)
+#define LBBLUE           0X2B12 //Ç³×ØÀ¶É«(Ñ¡ÔñÌõÄ¿µÄ·´É«)
+	    															  
+void LcdTest( u8 num );
+void LcdTest2( u32* val , _lcd_dev* dev );
 
 
-typedef struct 
-{ 
-	u16 width; //LCD å®½åº¦
-	u16 height; //LCD é«˜åº¦
-	u16 id; //LCD ID
-	u8 dir; //æ¨ªå±è¿˜æ˜¯ç«–å±æ§åˆ¶ï¼š0ï¼Œç«–å±ï¼›1ï¼Œæ¨ªå±ã€‚
-	u16 wramcmd; //å¼€å§‹å†™ gram æŒ‡ä»¤
-	u16 setxcmd; //è®¾ç½® x åæ ‡æŒ‡ä»¤
-	u16 setycmd; //è®¾ç½® y åæ ‡æŒ‡ä»¤
-}_lcd_dev;		//LCD é‡è¦å‚æ•°é›†
+void LCD_Init(void);												
+void LCD_DisplayOn(void);											
+void LCD_DisplayOff(void);											
+void LCD_Clear(u16 Color);	 										
+void LCD_SetCursor(u16 Xpos, u16 Ypos);								
+void LCD_DrawPoint(u16 x,u16 y);									
+void LCD_Fast_DrawPoint(u16 x,u16 y,u16 color);						
+u16  LCD_ReadPoint(u16 x,u16 y); 									
+void LCD_Draw_Circle(u16 x0,u16 y0,u8 r);						 	
+void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2);					
+void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2);		   		
+void LCD_Fill(u16 sx,u16 sy,u16 ex,u16 ey,u16 color);		   		
+void LCD_Color_Fill(u16 sx,u16 sy,u16 ex,u16 ey,u16 *color);		
+void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,u8 mode);				
+void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len,u8 size);  				
+void LCD_ShowxNum(u16 x,u16 y,u32 num,u8 len,u8 size,u8 mode);		
+void LCD_ShowString(u16 x,u16 y,u16 width,u16 height,u8 size,u8 *p);
 
-extern _lcd_dev lcddev; //ç®¡ç† LCD é‡è¦å‚æ•°
+void LCD_WriteReg(u16 LCD_Reg, u16 LCD_RegValue);
+u16 LCD_ReadReg(u16 LCD_Reg);
+void LCD_WriteRAM_Prepare(void);
+void LCD_WriteRAM(u16 RGB_Code);
+void LCD_SSD_BackLightSet(u8 pwm);							
+void LCD_Scan_Dir(u8 dir);								
+void LCD_Display_Dir(u8 dir);						
+void LCD_Set_Window(u16 sx,u16 sy,u16 width,u16 height);
+
+#define SSD_HOR_RESOLUTION		800
+#define SSD_VER_RESOLUTION		480
+#define SSD_HOR_PULSE_WIDTH		1
+#define SSD_HOR_BACK_PORCH		46
+#define SSD_HOR_FRONT_PORCH		210
+
+#define SSD_VER_PULSE_WIDTH		1
+#define SSD_VER_BACK_PORCH		23
+#define SSD_VER_FRONT_PORCH		22
+#define SSD_HT	(SSD_HOR_RESOLUTION+SSD_HOR_BACK_PORCH+SSD_HOR_FRONT_PORCH)
+#define SSD_HPS	(SSD_HOR_BACK_PORCH)
+#define SSD_VT 	(SSD_VER_RESOLUTION+SSD_VER_BACK_PORCH+SSD_VER_FRONT_PORCH)
+#define SSD_VPS (SSD_VER_BACK_PORCH)
+
+#endif  
+	 
+	 
 
 
 
-
-
-//void LcdPinInit( void );
-//void LcdFsmcInit( void );
-//void LcdFsmcEnable( void );
-//void LcdFsmcDisable( void );
-void LcdInit( void );
-
-void LcdWriteCmd( u16 value );
-void LcdWriteData( u16 value );
-u16  LcdReadCmd( void );
-u16  LcdReadData( void );
-
-
-
-#endif
