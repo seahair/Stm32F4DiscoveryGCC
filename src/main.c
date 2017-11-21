@@ -28,12 +28,13 @@ u8  TPADStatus = 0;
 u32 TPADTime = 0;
 u32 TPADDefaultTime = 0;
 
-u32 Guolinxin=0;
+//u32 Guolinxin=0;
 //_lcd_dev lcddev ;
-u16 POINT_COLOR=0x0000;	//»­±ÊÑÕÉ«
-u16 BACK_COLOR=0xFFFF;  //±³¾°É«
+//u16 POINT_COLOR=0x0000;	//»­±ÊÑÕÉ«
+//u16 BACK_COLOR=0xFFFF;  //±³¾°É«
 
 void MyKeyTest( u8 key );
+
 
 int main(int argc, char *argv[])
 {
@@ -47,19 +48,21 @@ int main(int argc, char *argv[])
         //CaptureStatus = CAPTURESTART;
         //TPADDefaultTime = TpadTestDefaultTime( 8 );	
 
-        printf("LCD ID:%04X\r\n",lcddev.id);
         while(1)
         {
                 delay_ms(1000);
-                //KeyTest( MyKeyTest );	
                 LedRed.LedRollBack( &LedRed );
 
-                LcdTest2( &Guolinxin,  &lcddev );
-                LcdTest( x++ );
-                //lcddev.id++;
-                //printf("%08X LCD ID2:%04X\r\n",&lcddev.id,lcddev.id);
-                printf("%08X Guolinxin2 is %d \r\n",&Guolinxin, Guolinxin++);
-
+                LCD_Clear(0XF800);
+                delay_ms(1000);
+                LCD_Clear(0X7E0);
+                delay_ms(1000);
+                LCD_Clear(0X1F);
+                delay_ms(1000);
+                LCD_Clear(0XFFFF);
+                delay_ms(1000);
+                LCD_Clear(0);
+                delay_ms(1000);
 
 #if 0
                 switch(x)

@@ -4,17 +4,20 @@ include Makefile.common
 LDFLAGS=$(COMMONFLAGS) -fno-exceptions -ffunction-sections -fdata-sections -L$(LIBDIR) -nostartfiles -Wl,--gc-sections,-Tlinker.ld
 
 LDLIBS+=-lm
+LDLIBS+=-lhardware -L./hardware/
 LDLIBS+=-lstm32
 
 STARTUP=startup.c
 
+
+		#-Wl,--whole-archive\
+		-Wl,--whole-archive\
+		-Wl,--no-whole-archive\
+			hardware/libhardware.a\
+
 all: libs src hardware
 	$(CC) -o $(PROGRAM).elf $(LDFLAGS)\
-		-Wl,--whole-archive\
 			src/app.a\
-		-Wl,--whole-archive\
-			hardware/libhardware.a\
-		-Wl,--no-whole-archive\
 			$(LDLIBS)
 	$(OBJCOPY) -O ihex $(PROGRAM).elf $(PROGRAM).hex
 	$(OBJCOPY) -O binary $(PROGRAM).elf $(PROGRAM).bin

@@ -694,7 +694,6 @@ AR	hardware/BEEP/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/CAPTURE/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/IWDG/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/KEY/Makefile	/^AR = arm-none-eabi-ar$/;"	m
-AR	hardware/LCD (copy)/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/LCD/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/LED/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -792,15 +791,15 @@ BKP8R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 BKP9R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BKP9R;   \/*!< RTC backup register 9,                                    Address offset: 0x74 *\/$/;"	m	struct:__anon130
 BKPSRAM_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2051;"	d
 BKPSRAM_BB_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2078;"	d
-BLACK	hardware/LCD/lcd.h	10;"	d
-BLUE	hardware/LCD/lcd.h	11;"	d
+BLACK	hardware/LCD/lcd.h	9;"	d
+BLUE	hardware/LCD/lcd.h	10;"	d
 BPCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t BPCR;          \/*!< LTDC Back Porch Configuration Register,              Address offset: 0x0C *\/$/;"	m	struct:__anon126
-BRED	hardware/LCD/lcd.h	12;"	d
+BRED	hardware/LCD/lcd.h	11;"	d
 BRE_BitNumber	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c	124;"	d	file:
 BROADCAST_ADDRESS	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cec.c	107;"	d	file:
-BROWN	hardware/LCD/lcd.h	20;"	d
+BROWN	hardware/LCD/lcd.h	19;"	d
 BRR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t BRR;        \/*!< USART Baud rate register,                Address offset: 0x08 *\/$/;"	m	struct:__anon139
-BRRED	hardware/LCD/lcd.h	21;"	d
+BRRED	hardware/LCD/lcd.h	20;"	d
 BSCKSEL_BIT_NUMBER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c	87;"	d	file:
 BSRRH	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t BSRRH;    \/*!< GPIO port bit set\/reset high register, Address offset: 0x1A      *\/$/;"	m	struct:__anon121
 BSRRL	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t BSRRL;    \/*!< GPIO port bit set\/reset low register,  Address offset: 0x18      *\/$/;"	m	struct:__anon121
@@ -812,7 +811,6 @@ BUILD_DIR	hardware/BEEP/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/CAPTURE/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/IWDG/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/KEY/Makefile	/^BUILD_DIR = ..\/build$/;"	m
-BUILD_DIR	hardware/LCD (copy)/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/LCD/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/LED/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/Makefile	/^BUILD_DIR = build$/;"	m
@@ -2346,7 +2344,6 @@ CC	hardware/BEEP/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/CAPTURE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/IWDG/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/KEY/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
-CC	hardware/LCD (copy)/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/LCD/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/LED/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -2577,7 +2574,7 @@ CLUT_CM_ARGB8888	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_Std
 CLUT_CM_RGB888	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h	318;"	d
 CMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t CMCR;           \/*!< DSI Host Command Mode Configuration Register,              Address offset: 0x68       *\/$/;"	m	struct:__anon106
 CMD	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t CMD;            \/*!< SDIO command register,          Address offset: 0x0C *\/$/;"	m	struct:__anon133
-CMD_ADDR	hardware/LCD/lcd.h	6;"	d
+CMD_ADDR	hardware/LCD/lcd.h	5;"	d
 CMD_ATACMD_BB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c	196;"	d	file:
 CMD_CLEAR_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c	235;"	d	file:
 CMD_ENCMDCOMPL_BB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c	188;"	d	file:
@@ -2976,7 +2973,7 @@ CTRL	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.
 CTRL	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t CTRL;                    \/*!< Offset: 0x004 (R\/W)  MPU Control Register                           *\/$/;"	m	struct:__anon316
 CWSIZER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t CWSIZER;  \/*!< DCMI crop window size,                         Address offset: 0x24 *\/$/;"	m	struct:__anon102
 CWSTRTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t CWSTRTR;  \/*!< DCMI crop window start,                        Address offset: 0x20 *\/$/;"	m	struct:__anon102
-CYAN	hardware/LCD/lcd.h	18;"	d
+CYAN	hardware/LCD/lcd.h	17;"	d
 CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t CYCCNT;                  \/*!< Offset: 0x004 (R\/W)  Cycle Count Register                      *\/$/;"	m	struct:__anon266
 CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t CYCCNT;                  \/*!< Offset: 0x004 (R\/W)  Cycle Count Register                      *\/$/;"	m	struct:__anon247
 CYCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t CYCCNT;                  \/*!< Offset: 0x004 (R\/W)  Cycle Count Register                      *\/$/;"	m	struct:__anon284
@@ -3394,7 +3391,7 @@ DATAIN4_DFSDM2_DATAIN5	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4
 DATAIN4_DFSDM2_PAD	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_syscfg.h	119;"	d
 DATAIN6_DFSDM2_DATAIN7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_syscfg.h	129;"	d
 DATAIN6_DFSDM2_PAD	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_syscfg.h	128;"	d
-DATA_ADDR	hardware/LCD/lcd.h	7;"	d
+DATA_ADDR	hardware/LCD/lcd.h	4;"	d
 DBGMCU	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2442;"	d
 DBGMCU_APB1PeriphConfig	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c	/^void DBGMCU_APB1PeriphConfig(uint32_t DBGMCU_Periph, FunctionalState NewState)$/;"	f
 DBGMCU_APB1_FZ_DBG_CAN1_STOP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	11573;"	d
@@ -3656,7 +3653,6 @@ DEPS	hardware/BEEP/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/CAPTURE/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/IWDG/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/KEY/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
-DEPS	hardware/LCD (copy)/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/LCD/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/LED/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/PWM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
@@ -9957,7 +9953,7 @@ FillZerobss	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/ST
 FlagStatus	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus;$/;"	t	typeref:enum:__anon87
 FrameBTAAcknowledgeEnable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t FrameBTAAcknowledgeEnable;    \/*!< Frame bus-turn-around acknowledge enable$/;"	m	struct:__anon50
 FunctionalState	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef enum {DISABLE = 0, ENABLE = !DISABLE} FunctionalState;$/;"	t	typeref:enum:__anon88
-GBLUE	hardware/LCD/lcd.h	14;"	d
+GBLUE	hardware/LCD/lcd.h	13;"	d
 GCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GCR;           \/*!< LTDC Global Control Register,                        Address offset: 0x18 *\/$/;"	m	struct:__anon126
 GCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GCR;      \/*!< SAI global configuration register,        Address offset: 0x00 *\/$/;"	m	struct:__anon131
 GCR_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_ltdc.c	95;"	d	file:
@@ -10433,9 +10429,9 @@ GPIO_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/S
 GPIO_Write	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c	/^void GPIO_Write(GPIO_TypeDef* GPIOx, uint16_t PortVal)$/;"	f
 GPIO_WriteBit	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c	/^void GPIO_WriteBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, BitAction BitVal)$/;"	f
 GPSR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GPSR;           \/*!< DSI Host Generic Packet Status Register,                   Address offset: 0x74       *\/$/;"	m	struct:__anon106
-GRAY	hardware/LCD/lcd.h	22;"	d
-GRED	hardware/LCD/lcd.h	13;"	d
-GREEN	hardware/LCD/lcd.h	17;"	d
+GRAY	hardware/LCD/lcd.h	21;"	d
+GRED	hardware/LCD/lcd.h	12;"	d
+GREEN	hardware/LCD/lcd.h	16;"	d
 GTPR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t GTPR;       \/*!< USART Guard time and prescaler register, Address offset: 0x18 *\/$/;"	m	struct:__anon139
 GVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GVCIDR;         \/*!< DSI Host Generic VCID Register,                            Address offset: 0x30       *\/$/;"	m	struct:__anon106
 GetKeyStatus	hardware/KEY/key.c	/^s8 GetKeyStatus( u8 pin )$/;"	f
@@ -10600,7 +10596,6 @@ Heap_Size	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM3
 Heap_Size	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f429_439xx.s	/^Heap_Size       EQU     0x00000200$/;"	d
 Heap_Size	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f446xx.s	/^Heap_Size       EQU     0x00000200$/;"	d
 Heap_Size	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f469_479xx.s	/^Heap_Size       EQU     0x00000200$/;"	d
-Height	hardware/LCD (copy)/NT35510.c	/^static uint32_t Height = 800;$/;"	v	file:
 Height	hardware/LCD/lcd.c	/^static uint32_t Height = 800;$/;"	v	file:
 HighSpeedReadTimeout	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t HighSpeedReadTimeout;         \/*!< High-speed read time-out                                 *\/$/;"	m	struct:__anon54
 HighSpeedTransmissionTimeout	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t HighSpeedTransmissionTimeout; \/*!< High-speed transmission time-out                         *\/$/;"	m	struct:__anon54
@@ -12322,30 +12317,22 @@ LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/
 LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon312
 LCCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCCR;          \/*!< DSI Host LTDC Current Color Coding Register,               Address offset: 0x110      *\/$/;"	m	struct:__anon106
 LCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCR;           \/*!< DSI Host LTDC Command Configuration Register,              Address offset: 0x64       *\/ $/;"	m	struct:__anon106
-LCD	hardware/LCD (copy)/lcd.h	16;"	d
-LCD_BASE	hardware/LCD (copy)/lcd.h	15;"	d
-LCD_CMD	hardware/LCD (copy)/lcd.h	/^	u16 LCD_CMD;	\/\/ cmd$/;"	m	struct:__anon318
-LCD_CMD	hardware/LCD/lcd.h	/^}LCD_CMD;$/;"	t	typeref:enum:__anon320
-LCD_CMD_SET_DIR	hardware/LCD/lcd.h	/^    LCD_CMD_SET_DIR,$/;"	e	enum:__anon320
-LCD_CMD_SLEEP_IN	hardware/LCD/lcd.h	/^    LCD_CMD_SLEEP_IN = 0,$/;"	e	enum:__anon320
-LCD_CMD_SLEEP_OUT	hardware/LCD/lcd.h	/^    LCD_CMD_SLEEP_OUT,$/;"	e	enum:__anon320
+LCD_CMD	hardware/LCD/lcd.h	/^}LCD_CMD;$/;"	t	typeref:enum:__anon318
+LCD_CMD_SET_DIR	hardware/LCD/lcd.h	/^		LCD_CMD_SET_DIR,$/;"	e	enum:__anon318
+LCD_CMD_SLEEP_IN	hardware/LCD/lcd.h	/^    LCD_CMD_SLEEP_IN = 0,$/;"	e	enum:__anon318
+LCD_CMD_SLEEP_OUT	hardware/LCD/lcd.h	/^    LCD_CMD_SLEEP_OUT,$/;"	e	enum:__anon318
 LCD_CheckID	hardware/LCD/lcd.c	/^uint8_t LCD_CheckID(void)$/;"	f
 LCD_Clear	hardware/LCD/lcd.c	/^void LCD_Clear(uint16_t color)$/;"	f
-LCD_DATA	hardware/LCD (copy)/lcd.h	/^	u16 LCD_DATA;	\/\/ data$/;"	m	struct:__anon318
 LCD_DrawBitmap	hardware/LCD/lcd.c	/^void LCD_DrawBitmap(uint16_t color[], uint16_t x0, uint16_t y0, uint16_t width, uint16_t height)$/;"	f
 LCD_DrawPixel	hardware/LCD/lcd.c	/^void LCD_DrawPixel(uint16_t color, uint16_t x, uint16_t y)$/;"	f
 LCD_FMC_Cfg	hardware/LCD/lcd.c	/^void LCD_FMC_Cfg(void)$/;"	f
 LCD_FillRect	hardware/LCD/lcd.c	/^void LCD_FillRect(uint16_t color, uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)$/;"	f
 LCD_GPIO_Cfg	hardware/LCD/lcd.c	/^void LCD_GPIO_Cfg(void)$/;"	f
 LCD_Init	hardware/LCD/lcd.c	/^void LCD_Init(void)$/;"	f
-LCD_RD_DATA	hardware/LCD (copy)/lcd.c	/^u16 LCD_RD_DATA(void)$/;"	f
-LCD_RD_DATA	hardware/LCD/lcd.h	28;"	d
-LCD_ReadReg	hardware/LCD (copy)/lcd.c	/^u16 LCD_ReadReg(u16 LCD_Reg)$/;"	f
-LCD_TypeDef	hardware/LCD (copy)/lcd.h	/^} LCD_TypeDef;		\/\/LCD 操作结构体$/;"	t	typeref:struct:__anon318
-LCD_WR_DATA	hardware/LCD/lcd.h	27;"	d
-LCD_WR_REG	hardware/LCD (copy)/lcd.c	/^void LCD_WR_REG(vu16 regval)$/;"	f
-LCD_WR_REG	hardware/LCD/lcd.h	26;"	d
-LCD_WriteReg	hardware/LCD (copy)/lcd.c	/^void LCD_WriteReg(u16 LCD_Reg,u16 LCD_RegValue)$/;"	f
+LCD_RD_DATA	hardware/LCD/lcd.h	26;"	d
+LCD_Reset	hardware/LCD/lcd.c	/^void LCD_Reset(void)$/;"	f
+LCD_WR_DATA	hardware/LCD/lcd.h	25;"	d
+LCD_WR_REG	hardware/LCD/lcd.h	24;"	d
 LCKR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCKR;     \/*!< GPIO port configuration lock register, Address offset: 0x1C      *\/$/;"	m	struct:__anon121
 LCOLCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCOLCR;         \/*!< DSI Host LTDC Color Coding Register,                       Address offset: 0x10       *\/ $/;"	m	struct:__anon106
 LCVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCVCIDR;        \/*!< DSI Host LTDC Current VCID Register,                       Address offset: 0x10C      *\/$/;"	m	struct:__anon106
@@ -12796,11 +12783,6 @@ LTDC_colorkeyingConfig	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4
 LTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LTR;    \/*!< ADC watchdog lower threshold register,       Address offset: 0x28 *\/$/;"	m	struct:__anon90
 LVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LVCIDR;         \/*!< DSI Host LTDC VCID Register,                               Address offset: 0x0C       *\/$/;"	m	struct:__anon106
 LWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LWR;           \/*!< DMA2D Line Watermark Register,                  Address offset: 0x48 *\/$/;"	m	struct:__anon105
-LcdFsmcDisable	hardware/LCD (copy)/lcd.c	/^static void LcdFsmcDisable( void )$/;"	f	file:
-LcdFsmcEnable	hardware/LCD (copy)/lcd.c	/^static void LcdFsmcEnable( void )$/;"	f	file:
-LcdFsmcInit	hardware/LCD (copy)/lcd.c	/^static void LcdFsmcInit( void )$/;"	f	file:
-LcdInit	hardware/LCD (copy)/lcd.c	/^void LcdInit( void )$/;"	f
-LcdPinInit	hardware/LCD (copy)/lcd.c	/^static void LcdPinInit( void )$/;"	f	file:
 LedBlink	hardware/LED/led.c	/^void LedBlink( LED* led, u16 time )$/;"	f
 LedBlink	hardware/LED/led.h	/^	void (*LedBlink) ( LED*, u16 );$/;"	m	struct:_LED
 LedGreen	hardware/LED/led.c	/^LED LedGreen;$/;"	v
@@ -12905,7 +12887,7 @@ MACPMTCSR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM3
 MACRWUFFR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t MACRWUFFR;             \/*   11 *\/$/;"	m	struct:__anon107
 MACSR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t MACSR;                 \/*   15 *\/$/;"	m	struct:__anon107
 MACVLANTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t MACVLANTR;             \/*    8 *\/$/;"	m	struct:__anon107
-MAGENTA	hardware/LCD/lcd.h	16;"	d
+MAGENTA	hardware/LCD/lcd.h	15;"	d
 MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t MASK;           \/*!< SDIO mask register,             Address offset: 0x3C *\/$/;"	m	struct:__anon133
 MASK0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/^  __IO uint32_t MASK0;                   \/*!< Offset: 0x024 (R\/W)  Mask Register 0                           *\/$/;"	m	struct:__anon266
 MASK0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t MASK0;                   \/*!< Offset: 0x024 (R\/W)  Mask Register 0                           *\/$/;"	m	struct:__anon247
@@ -13295,31 +13277,18 @@ NMI_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/ST
 NMI_Handler	src/startup.c	262;"	d	file:
 NMI_Handler	src/stm32f4xx_it.c	/^void NMI_Handler(void)$/;"	f
 NO_MODIF_ALPHA_VALUE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h	356;"	d
-NT35510_CheckID	hardware/LCD (copy)/NT35510.c	/^uint32_t NT35510_CheckID(void)$/;"	f
 NT35510_CheckID	hardware/LCD/lcd.c	/^uint32_t NT35510_CheckID(void)$/;"	f
-NT35510_Clear	hardware/LCD (copy)/NT35510.c	/^void NT35510_Clear(uint16_t color)$/;"	f
 NT35510_Clear	hardware/LCD/lcd.c	/^void NT35510_Clear(uint16_t color)$/;"	f
-NT35510_DisplayOff	hardware/LCD (copy)/NT35510.c	/^void NT35510_DisplayOff(void)$/;"	f
 NT35510_DisplayOff	hardware/LCD/lcd.c	/^void NT35510_DisplayOff(void)$/;"	f
-NT35510_DisplayOn	hardware/LCD (copy)/NT35510.c	/^void NT35510_DisplayOn(void)$/;"	f
 NT35510_DisplayOn	hardware/LCD/lcd.c	/^void NT35510_DisplayOn(void)$/;"	f
-NT35510_DrawBitmap	hardware/LCD (copy)/NT35510.c	/^void NT35510_DrawBitmap(uint16_t color[], uint16_t x0, uint16_t y0, uint16_t width, uint16_t height)$/;"	f
 NT35510_DrawBitmap	hardware/LCD/lcd.c	/^void NT35510_DrawBitmap(uint16_t color[], uint16_t x0, uint16_t y0, uint16_t width, uint16_t height)$/;"	f
-NT35510_DrawPixel	hardware/LCD (copy)/NT35510.c	/^void NT35510_DrawPixel(uint16_t color, uint16_t x, uint16_t y)$/;"	f
 NT35510_DrawPixel	hardware/LCD/lcd.c	/^void NT35510_DrawPixel(uint16_t color, uint16_t x, uint16_t y)$/;"	f
-NT35510_FillRect	hardware/LCD (copy)/NT35510.c	/^void NT35510_FillRect(uint16_t color, uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)$/;"	f
 NT35510_FillRect	hardware/LCD/lcd.c	/^void NT35510_FillRect(uint16_t color, uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1)$/;"	f
-NT35510_IOCtrl	hardware/LCD (copy)/NT35510.c	/^int NT35510_IOCtrl(uint32_t cmd, uint32_t param)$/;"	f
 NT35510_IOCtrl	hardware/LCD/lcd.c	/^int NT35510_IOCtrl(uint32_t cmd, uint32_t param)$/;"	f
-NT35510_Init	hardware/LCD (copy)/NT35510.c	/^void NT35510_Init(void)$/;"	f
 NT35510_Init	hardware/LCD/lcd.c	/^void NT35510_Init(void)$/;"	f
-NT35510_ReadReg	hardware/LCD (copy)/NT35510.c	/^uint16_t NT35510_ReadReg(uint16_t LCD_Reg)$/;"	f
 NT35510_ReadReg	hardware/LCD/lcd.c	/^uint16_t NT35510_ReadReg(uint16_t LCD_Reg)$/;"	f
-NT35510_SetWindow	hardware/LCD (copy)/NT35510.c	/^void NT35510_SetWindow(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1)$/;"	f
 NT35510_SetWindow	hardware/LCD/lcd.c	/^void NT35510_SetWindow(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1)$/;"	f
-NT35510_WriteRAM_Prepare	hardware/LCD (copy)/NT35510.c	/^void NT35510_WriteRAM_Prepare(void)$/;"	f
 NT35510_WriteRAM_Prepare	hardware/LCD/lcd.c	/^void NT35510_WriteRAM_Prepare(void)$/;"	f
-NT35510_WriteReg	hardware/LCD (copy)/NT35510.c	/^void NT35510_WriteReg(uint16_t LCD_Reg, uint16_t LCD_RegValue)$/;"	f
 NT35510_WriteReg	hardware/LCD/lcd.c	/^void NT35510_WriteReg(uint16_t LCD_Reg, uint16_t LCD_RegValue)$/;"	f
 NVIC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	530;"	d
 NVIC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	640;"	d
@@ -13460,7 +13429,6 @@ OBJS	hardware/BEEP/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))
 OBJS	hardware/CAPTURE/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/IWDG/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/KEY/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
-OBJS	hardware/LCD (copy)/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/LCD/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/LED/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/Makefile	/^OBJS = $(BUILD_DIR)\/*.o$/;"	m
@@ -15227,7 +15195,7 @@ RDTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 READ_BIT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	12038;"	d
 READ_REG	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	12044;"	d
 RECALPF_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c	312;"	d	file:
-RED	hardware/LCD/lcd.h	15;"	d
+RED	hardware/LCD/lcd.h	14;"	d
 REPLACE_ALPHA_VALUE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h	357;"	d
 RESERVED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^       uint32_t RESERVED[52];     \/*!< Reserved, 0x28-0xF4                                         *\/$/;"	m	struct:__anon142
 RESERVED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  uint32_t      RESERVED;     \/*!< Reserved, 0x18                                                               *\/$/;"	m	struct:__anon122
@@ -18031,7 +17999,6 @@ SRCS	hardware/BEEP/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/CAPTURE/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/IWDG/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/KEY/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
-SRCS	hardware/LCD (copy)/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/LCD/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/LED/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/PWM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
@@ -20300,7 +20267,7 @@ WCFGR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 WCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t WCR;            \/*!< DSI Wrapper Control Register,                             Address offset: 0x404       *\/$/;"	m	struct:__anon106
 WEAK	src/startup.c	27;"	d	file:
 WFI_SET	src/sys.c	/^__asm void WFI_SET(void)$/;"	f
-WHITE	hardware/LCD/lcd.h	9;"	d
+WHITE	hardware/LCD/lcd.h	8;"	d
 WHPCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t WHPCR;         \/*!< LTDC Layerx Window Horizontal Position Configuration Register Address offset: 0x88 *\/$/;"	m	struct:__anon127
 WIER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t WIER;           \/*!< DSI Wrapper Interrupt Enable Register,                    Address offset: 0x408       *\/$/;"	m	struct:__anon106
 WIFCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t WIFCR;          \/*!< DSI Wrapper Interrupt Flag Clear Register,                Address offset: 0x410       *\/$/;"	m	struct:__anon106
@@ -20392,9 +20359,8 @@ WWDG_SetPrescaler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_St
 WWDG_SetWindowValue	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c	/^void WWDG_SetWindowValue(uint8_t WindowValue)$/;"	f
 WWDG_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^} WWDG_TypeDef;$/;"	t	typeref:struct:__anon140
 WhichKeyPress	hardware/KEY/key.c	/^u8 WhichKeyPress( void )$/;"	f
-Width	hardware/LCD (copy)/NT35510.c	/^static uint32_t Width =	480;$/;"	v	file:
 Width	hardware/LCD/lcd.c	/^static uint32_t Width =	480;$/;"	v	file:
-YELLOW	hardware/LCD/lcd.h	19;"	d
+YELLOW	hardware/LCD/lcd.h	18;"	d
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon289::__anon290
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon293::__anon294
 Z	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	/^    uint32_t Z:1;                        \/*!< bit:     30  Zero condition code flag           *\/$/;"	m	struct:__anon208::__anon209
@@ -20422,6 +20388,7 @@ _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc0
 _KEY	hardware/KEY/key.h	/^enum _KEY{$/;"	g
 _KEYNUM	hardware/KEY/key.h	/^	_KEYNUM$/;"	e	enum:_KEY
 _LCD_DRV	hardware/LCD/lcd.h	/^typedef struct _LCD_DRV{$/;"	s
+_LCD_H_	hardware/LCD/lcd.h	2;"	d
 _LED	hardware/LED/led.h	/^typedef struct _LED{$/;"	s
 _Next	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^_Next:$/;"	l
 _SHP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	559;"	d
@@ -20645,8 +20612,6 @@ __ISB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmIns
 __ISB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	92;"	d
 __IWDG_H__	hardware/IWDG/iwdg.h	2;"	d
 __KEY_H__	hardware/KEY/key.h	2;"	d
-__LCD_H__	hardware/LCD (copy)/lcd.h	2;"	d
-__LCD_H__	hardware/LCD/lcd.h	2;"	d
 __LDRBT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint8_t __LDRBT(volatile uint8_t *addr)$/;"	f
 __LDRBT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	343;"	d
 __LDREXB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint8_t __LDREXB(volatile uint8_t *addr)$/;"	f
@@ -21137,7 +21102,6 @@ __vector_table	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST
 __vector_table	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f429_439xx.s	/^__vector_table$/;"	l
 __vector_table	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^__vector_table$/;"	l
 __vector_table	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^__vector_table$/;"	l
-_lcd_dev	hardware/LCD (copy)/lcd.h	/^}_lcd_dev;		\/\/LCD 重要参数集$/;"	t	typeref:struct:__anon319
 _read	hardware/USART/usart.c	/^int _read (int fd, char *pBuffer, int size)  $/;"	f
 _reserved0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t _reserved0:15;              \/*!< bit:  9..23  Reserved                           *\/$/;"	m	struct:__anon293::__anon294
 _reserved0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^    uint32_t _reserved0:1;               \/*!< bit:      0  Reserved                           *\/$/;"	m	struct:__anon295::__anon296
@@ -21318,9 +21282,9 @@ bitReverseFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/a
 bitReverseFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t bitReverseFlagR;                    \/**< flag that enables (bitReverseFlagR=1) or disables (bitReverseFlagR=0) bit reversal of output. *\/$/;"	m	struct:__anon176
 bitReverseFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t bitReverseFlagR;                    \/**< flag that enables (bitReverseFlagR=1) or disables (bitReverseFlagR=0) bit reversal of output. *\/$/;"	m	struct:__anon177
 bitReverseFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t bitReverseFlagR;                  \/**< flag that enables (bitReverseFlagR=1) or disables (bitReverseFlagR=0) bit reversal of output. *\/$/;"	m	struct:__anon175
-bitmap	hardware/LCD/lcd.h	/^    void (*bitmap)(uint16_t color[], uint16_t x0, uint16_t y0, uint16_t width, uint16_t height);$/;"	m	struct:_LCD_DRV
-checkid	hardware/LCD/lcd.h	/^    uint32_t (*checkid)(void);$/;"	m	struct:_LCD_DRV
-clear	hardware/LCD/lcd.h	/^    void (*clear)(uint16_t color);$/;"	m	struct:_LCD_DRV
+bitmap	hardware/LCD/lcd.h	/^	void (*bitmap)(uint16_t color[], uint16_t x0, uint16_t y0, uint16_t width, uint16_t height);$/;"	m	struct:_LCD_DRV
+checkid	hardware/LCD/lcd.h	/^	uint32_t (*checkid)(void);$/;"	m	struct:_LCD_DRV
+clear	hardware/LCD/lcd.h	/^	void (*clear)(uint16_t color);$/;"	m	struct:_LCD_DRV
 clear	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^clear:$/;"	l
 clip_q31_to_q15	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE q15_t clip_q31_to_q15($/;"	f
 clip_q31_to_q7	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE q7_t clip_q31_to_q7($/;"	f
@@ -21329,10 +21293,11 @@ clip_q63_to_q31	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/
 copy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^copy:$/;"	l
 cploop	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^cploop:$/;"	l
 delay_init	src/delay.c	/^void delay_init(u8 SYSCLK)$/;"	f
+delay_ms	hardware/LCD/lcd.c	/^static void delay_ms(uint32_t ms)$/;"	f	file:
 delay_ms	src/delay.c	/^void delay_ms(u16 nms)$/;"	f
+delay_us	hardware/LCD/lcd.c	/^static void delay_us(uint32_t us)$/;"	f	file:
 delay_us	src/delay.c	/^void delay_us(u32 nus)$/;"	f
 delay_xms	src/delay.c	/^void delay_xms(u16 nms)$/;"	f
-dir	hardware/LCD (copy)/lcd.h	/^	u8 dir; \/\/横屏还是竖屏控制：0，竖屏；1，横屏。$/;"	m	struct:__anon319
 done	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^done:   $/;"	l
 energy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t energy;    \/**< saves previous frame energy. *\/$/;"	m	struct:__anon201
 energy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t energy;        \/**< saves previous frame energy. *\/$/;"	m	struct:__anon203
@@ -21353,7 +21318,7 @@ fftLenRFFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_m
 fftLenReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t fftLenReal;                        \/**< length of the real FFT. *\/$/;"	m	struct:__anon176
 fftLenReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t fftLenReal;                        \/**< length of the real FFT. *\/$/;"	m	struct:__anon177
 fftLenReal	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint32_t fftLenReal;                      \/**< length of the real FFT. *\/$/;"	m	struct:__anon175
-fillrect	hardware/LCD/lcd.h	/^    void (*fillrect)(uint16_t color, uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);$/;"	m	struct:_LCD_DRV
+fillrect	hardware/LCD/lcd.h	/^	void (*fillrect)(uint16_t color, uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);$/;"	m	struct:_LCD_DRV
 float32_t	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  typedef float float32_t;$/;"	t
 float64_t	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  typedef double float64_t;$/;"	t
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f401xx.s	/^g_pfnVectors:$/;"	l
@@ -21387,10 +21352,8 @@ g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/S
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f427x.s	/^g_pfnVectors:$/;"	l
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f429_439xx.s	/^g_pfnVectors:$/;"	l
 g_pfnVectors	src/startup.c	/^void (* const g_pfnVectors[])(void) =$/;"	v
-getpixel	hardware/LCD/lcd.h	/^    uint16_t (*getpixel)(uint16_t x, uint16_t y);$/;"	m	struct:_LCD_DRV
-height	hardware/LCD (copy)/lcd.h	/^	u16 height; \/\/LCD 高度$/;"	m	struct:__anon319
+getpixel	hardware/LCD/lcd.h	/^	uint16_t (*getpixel)(uint16_t x, uint16_t y);$/;"	m	struct:_LCD_DRV
 hz	hardware/BEEP/beep.h	/^	u16		hz;$/;"	m	struct:_BEEP
-id	hardware/LCD (copy)/lcd.h	/^	u16 id; \/\/LCD ID$/;"	m	struct:__anon319
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon170
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon171
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon166
@@ -21400,12 +21363,11 @@ ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_mat
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon176
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                          \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon177
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                        \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon175
-init	hardware/LCD/lcd.h	/^    void (*init)(void);$/;"	m	struct:_LCD_DRV
-ioctrl	hardware/LCD/lcd.h	/^    int (*ioctrl)(uint32_t cmd, uint32_t param);$/;"	m	struct:_LCD_DRV
+init	hardware/LCD/lcd.h	/^	void (*init)(void);$/;"	m	struct:_LCD_DRV
+ioctrl	hardware/LCD/lcd.h	/^	int (*ioctrl)(uint32_t cmd, uint32_t param);$/;"	m	struct:_LCD_DRV
 lcd_drv	hardware/LCD/lcd.c	/^const lcd_drv_t *lcd_drv = 0;$/;"	v
 lcd_drv_t	hardware/LCD/lcd.h	/^}lcd_drv_t;$/;"	t	typeref:struct:_LCD_DRV
 lcd_module	hardware/LCD/lcd.c	/^const lcd_drv_t* lcd_module[] = {$/;"	v
-lcddev	hardware/LCD (copy)/lcd.c	/^_lcd_dev lcddev;$/;"	v
 main	src/main.c	/^int main(int argc, char *argv[])$/;"	f
 maxDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t maxDelay;            \/**< maximum offset specified by the pTapDelay array. *\/$/;"	m	struct:__anon204
 maxDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t maxDelay;            \/**< maximum offset specified by the pTapDelay array. *\/$/;"	m	struct:__anon205
@@ -21433,7 +21395,6 @@ nValues	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math
 normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t normalize;                \/**< normalizing factor. *\/$/;"	m	struct:__anon179
 normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t normalize;                    \/**< normalizing factor. *\/$/;"	m	struct:__anon181
 normalize	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t normalize;                    \/**< normalizing factor. *\/$/;"	m	struct:__anon180
-nt35510_module	hardware/LCD (copy)/NT35510.c	/^const lcd_drv_t nt35510_module = {$/;"	v
 nt35510_module	hardware/LCD/lcd.c	/^const lcd_drv_t nt35510_module = {$/;"	v
 numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon154
 numCols	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t numCols;     \/**< number of columns of the matrix.  *\/$/;"	m	struct:__anon155
@@ -21632,9 +21593,7 @@ sTxMailBox	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM
 sc16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int16_t sc16;  \/*!< Read Only *\/$/;"	t
 sc32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int32_t sc32;  \/*!< Read Only *\/$/;"	t
 sc8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef const int8_t sc8;   \/*!< Read Only *\/$/;"	t
-setpixel	hardware/LCD/lcd.h	/^    void (*setpixel)(uint16_t color, uint16_t x, uint16_t y);$/;"	m	struct:_LCD_DRV
-setxcmd	hardware/LCD (copy)/lcd.h	/^	u16 setxcmd; \/\/设置 x 坐标指令$/;"	m	struct:__anon319
-setycmd	hardware/LCD (copy)/lcd.h	/^	u16 setycmd; \/\/设置 y 坐标指令$/;"	m	struct:__anon319
+setpixel	hardware/LCD/lcd.h	/^	void (*setpixel)(uint16_t color, uint16_t x, uint16_t y);$/;"	m	struct:_LCD_DRV
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t state[3];    \/**< The state array of length 3. *\/$/;"	m	struct:__anon160
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t state[3];       \/**< The state array of length 3. *\/$/;"	m	struct:__anon158
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t state[3];      \/**< The state array of length 3. *\/$/;"	m	struct:__anon159
@@ -21713,8 +21672,6 @@ w	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/
 w	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  uint32_t w;                            \/*!< Type      used for word access                  *\/$/;"	m	union:__anon302
 w	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  uint32_t w;                            \/*!< Type      used for word access                  *\/$/;"	m	union:__anon304
 w	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  uint32_t w;                            \/*!< Type      used for word access                  *\/$/;"	m	union:__anon306
-width	hardware/LCD (copy)/lcd.h	/^	u16 width; \/\/LCD 宽度$/;"	m	struct:__anon319
-wramcmd	hardware/LCD (copy)/lcd.h	/^	u16 wramcmd; \/\/开始写 gram 指令$/;"	m	struct:__anon319
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t x0;        \/**< saves previous input sample. *\/$/;"	m	struct:__anon201
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t x0;            \/**< saves previous input sample. *\/$/;"	m	struct:__anon203
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t x0;             \/**< saves previous input sample. *\/$/;"	m	struct:__anon202
