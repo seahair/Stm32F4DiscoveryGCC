@@ -512,7 +512,15 @@ static void NT35510_Init(void)
 	delay_us(120);
 	LCDWRCMD(0x2900);
 
-	NT35510_Clear(WHITE);
+	//NT35510_Clear(WHITE);
+	
+	nt35510_atr.width = 480;
+	nt35510_atr.height = 800;
+	nt35510_atr.cmdwrdata = 0X2C00;
+	nt35510_atr.cmdsetx = 0X2A00;
+	nt35510_atr.cmdsety = 0X2B00;
+	
+
 }
 
 static void NT35510_FillRect( u16 x0, u16 y0, u16 x1, u16 y1, u16 color)

@@ -1,4 +1,5 @@
 #include "lcd.h"
+#include "NT33510.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_fsmc.h"
@@ -12,7 +13,7 @@ const lcd_drv_t *lcd_drv = 0;
 const lcd_drv_t *LcdModule[] = {
 	&nt35510_module,
 
-}
+};
 
 #define  LCDMODULELEN	(sizeof(LcdModule)/sizeof(LcdModule[0]))
 
@@ -163,6 +164,7 @@ void LcdInit( void )
 	{
 		lcd_drv->init( );
 		LcdBackLedOn( );
+		lcd_drv->clear(WHITE);
 	}
 }
 

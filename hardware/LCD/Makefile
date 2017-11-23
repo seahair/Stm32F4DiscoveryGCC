@@ -13,7 +13,15 @@ DEPS = $(patsubst %.o, %.d, $(OBJS))
 -include $(DEPS)
 
 #$(BUILD_DIR)/%.o: %.c
-$(OBJS): $(SRCS)
+#$(OBJS): $(SRCS)
+#	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
+
+all : $(BUILD_DIR)/lcd.o $(BUILD_DIR)/NT33510.o
+
+$(BUILD_DIR)/lcd.o: lcd.c
+	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
+
+$(BUILD_DIR)/NT33510.o: NT33510.c
 	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
 
 $(OBJS): | $(BUILD_DIR)
