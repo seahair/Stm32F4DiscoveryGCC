@@ -16,6 +16,7 @@ STARTUP=startup.c
 			hardware/libhardware.a\
 
 all: libs src hardware
+	ctags -R
 	$(CC) -o $(PROGRAM).elf $(LDFLAGS)\
 			src/app.a\
 			$(LDLIBS)

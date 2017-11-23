@@ -53,16 +53,6 @@ int main(int argc, char *argv[])
                 delay_ms(1000);
                 LedRed.LedRollBack( &LedRed );
 
-                LCD_Clear(0XF800);
-                delay_ms(1000);
-                LCD_Clear(0X7E0);
-                delay_ms(1000);
-                LCD_Clear(0X1F);
-                delay_ms(1000);
-                LCD_Clear(0XFFFF);
-                delay_ms(1000);
-                LCD_Clear(0);
-                delay_ms(1000);
 
 #if 0
                 switch(x)

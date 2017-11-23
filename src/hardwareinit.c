@@ -85,8 +85,7 @@ void HardInit( void )
 	//PwmInit( );
 //	CaptureInit( );
 	//TpadInit( );
-    //LcdInit( );
-    LCD_Init( );
+    LcdInit( );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);
