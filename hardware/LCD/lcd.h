@@ -64,7 +64,9 @@ typedef struct _LCD_DRV{
 	void  (*drawbitmap) ( u16 x0, u16 y0, u16 width, u16 height, u16* bmp );
 	void  (*clear) ( u16 color );
 	s8    (*ioctl) ( u32 cmd, u32 param );
-	u16   (*getpixel) (u16 x, u16 y );
+	u16   (*getpixel) ( u16 x, u16 y );
+	void  (*drawline) ( u16 x0, u16 y0, u16 x1, u16 y1 );
+	void  (*showchar) ( u16 x, u16 y, u8 value, u8 size, u8 mode );
 }lcd_drv_t;
 
 extern const lcd_drv_t *lcd_drv;
@@ -76,6 +78,8 @@ void  LcdDrawBitmap ( u16 x0, u16 y0, u16 width, u16 height, u16* bmp );
 void  LcdClear ( u16 color );
 s8    LcdIoctl ( u32 cmd, u32 param );
 u16   LcdGetPixel (u16 x, u16 y );
+void  LcdDrawLine ( u16 x0, u16 y0, u16 x1, u16 y1 );
+void  LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode );
 
 
 

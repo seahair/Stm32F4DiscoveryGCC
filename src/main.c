@@ -38,8 +38,8 @@ void MyKeyTest( u8 key );
 
 int main(int argc, char *argv[])
 {
-        u8 x = 0;
-        u8 lcd_id[12];
+        u16 x = 0;
+        u16 y = 1000;
 
         HardInit( );
         //PwmStart( );
@@ -53,28 +53,15 @@ int main(int argc, char *argv[])
                 delay_ms(1000);
                 LedRed.LedRollBack( &LedRed );
 
-
+				//LcdIoctl( LCDCMDSETDIR, D2U_R2L );
 #if 1
-                switch(x)
-                {
-                        case 0:LcdClear(WHITE);break;
-                        case 1:LcdClear(BLACK);break;
-                        case 2:LcdClear(BLUE);break;
-                        case 3:LcdClear(RED);break;
-                        case 4:LcdClear(MAGENTA);break;
-                        case 5:LcdClear(GREEN);break;
-                        case 6:LcdClear(CYAN);break; 
-                        case 7:LcdClear(YELLOW);break;
-                        case 8:LcdClear(BRRED);break;
-                        case 9:LcdClear(GRAY);break;
-                        case 11:LcdClear(BROWN);break;
-                }
-
-				LcdFillRect( 0, 0, 50, 50, RED );
-
                 x++;
-
-                if(x==12)x=0;
+				y--;
+				//LcdDrawLine( x, y, 240-x, 480-y );
+				LcdDrawLine( 10, 10, 470, 790 );
+				LcdDrawLine( 10, 10, 300, 1500 );
+				LcdDrawLine( 10, 710, 900, 500 );
+				LcdDrawLine( 1000, 710, 100, 60 );
 #endif
 
 

@@ -204,10 +204,17 @@ u16 LcdGetPixel (u16 x, u16 y )
 		lcd_drv->getpixel( x, y);
 }
 
+void LcdDrawLine ( u16 x0, u16 y0, u16 x1, u16 y1 )
+{
+	if( lcd_drv )
+		lcd_drv->drawline( x0, y0, x1, y1 );
+}
 
-
-
-
+void LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode )
+{
+	if( lcd_drv )
+		lcd_drv->showchar(x, y, value, size, mode );
+}
 
 
 

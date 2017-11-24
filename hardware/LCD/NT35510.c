@@ -1,9 +1,12 @@
 #include "lcd.h"
+#include "font.h"
 #include "NT35510.h"
 #include "stm32f4xx.h"
 #include "usart.h"
 #include "delay.h"
 
+#define MIN(x, y) ((x)<(y)? (x):(y))
+#define MAX(x, y) ((x)>(y)? (x):(y))
 
 static lcd_atr_t  nt35510_atr;
 static const u32 NT35510_DIR[]={0X0000, 0X0080, 0X0040, 0X00C0, 0X0020, 0X0060, 0X00A0, 0X00E0};
@@ -588,6 +591,12 @@ s8 NT35510_IOCtrl(u32 cmd, u32 param)
 
 		case LCDCMDSETDIR :
 			NT35510_WriteReg( 0X3600, NT35510_DIR[param] );	
+			if( NT35510_DIR[param] == 7 )
+			{
+				u16 temp = nt35510_atr.width;
+				nt35510_atr.width = nt35510_atr.height;
+				nt35510_atr.height = temp;
+			}	
 			break;
 
 		default:
@@ -628,6 +637,24 @@ static u16 NT35510_GetPixel( u16 x, u16 y )
 
 }
 
+static void NT35510_DrawLine( u16 x0, u16 y0, u16 x1, u16 y1 )
+{
+	float k=0, b=0;
+	float x=0, y=0;
+	
+	k = ((float)(y1-y0))/(x1-x0);
+	b = y1 - k*x1;
+
+	for(x=MIN(x0, nt35510_atr.width); x<MIN(x1,nt35510_atr.width); x++)
+	{
+		NT35510_DrawPixel( (u16)x, (u16)MIN(k*x+b, nt35510_atr.height), BLACK );
+	}
+}
+
+static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
+{
+	
+}
 
 const lcd_drv_t nt35510_module = {
 	NT35510_CheckID,
@@ -637,7 +664,9 @@ const lcd_drv_t nt35510_module = {
 	NT35510_DrawBitmap,
 	NT35510_Clear,
 	NT35510_IOCtrl,
-	NT35510_GetPixel
+	NT35510_GetPixel,
+	NT35510_DrawLine,
+	NT35510_ShowChar
 };
 
 
