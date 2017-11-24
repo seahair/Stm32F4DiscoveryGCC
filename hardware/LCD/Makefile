@@ -12,17 +12,12 @@ DEPS = $(patsubst %.o, %.d, $(OBJS))
 
 -include $(DEPS)
 
-#$(BUILD_DIR)/%.o: %.c
-#$(OBJS): $(SRCS)
-#	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
+all : $(OBJS)
 
-all : $(BUILD_DIR)/lcd.o $(BUILD_DIR)/NT33510.o
-
-$(BUILD_DIR)/lcd.o: lcd.c
+$(BUILD_DIR)/%.o: %.c
+	@echo make $(OBJS)
 	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
 
-$(BUILD_DIR)/NT33510.o: NT33510.c
-	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
 
 $(OBJS): | $(BUILD_DIR)
 

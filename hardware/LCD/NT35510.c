@@ -1,11 +1,12 @@
 #include "lcd.h"
-#include "NT33510.h"
+#include "NT35510.h"
 #include "stm32f4xx.h"
 #include "usart.h"
 #include "delay.h"
 
 
 static lcd_atr_t  nt35510_atr;
+static const u32 NT35510_DIR[]={0X0000, 0X0080, 0X0040, 0X00C0, 0X0020, 0X0060, 0X00A0, 0X00E0};
 
 static void NT35510_WriteReg( u16 LCD_Reg, u16 LCD_RegValue )
 {	
@@ -25,6 +26,14 @@ static void NT35510_WriteRAM_Prepare( void )
 	LCDWRCMD(nt35510_atr.cmdwrdata);
 }
 
+static void NT35510_SetCursor( u16 x, u16 y )
+{
+	NT35510_WriteReg(nt35510_atr.cmdsetx, x >> 8);  
+	NT35510_WriteReg(nt35510_atr.cmdsetx+1, x & 0XFF);	  
+	NT35510_WriteReg(nt35510_atr.cmdsety, y >> 8);   
+	NT35510_WriteReg(nt35510_atr.cmdsety+1, y & 0XFF);  
+}
+
 static void NT35510_SetWindow(u16 x0,u16 y0,u16 x1,u16 y1)
 {   
 	NT35510_WriteReg(nt35510_atr.cmdsetx, x0 >> 8);  
@@ -39,7 +48,7 @@ static void NT35510_SetWindow(u16 x0,u16 y0,u16 x1,u16 y1)
 
 static void NT35510_DrawPixel( u16 x, u16 y, u16 color )
 {
-	NT35510_SetWindow(x, y, x, y);		//设置光标位置
+	NT35510_SetCursor( x, y );		//设置光标位置
 	NT35510_WriteRAM_Prepare();	//开始写入GRAM
 	LCDWRDATA(color);
 }
@@ -70,6 +79,15 @@ static uint32_t NT35510_CheckID(void)
 	else
 		return 0;
 
+}
+
+static void NT35510_AtrInit( void )
+{
+	nt35510_atr.width = 480;
+	nt35510_atr.height = 800;
+	nt35510_atr.cmdwrdata = 0X2C00;
+	nt35510_atr.cmdsetx = 0X2A00;
+	nt35510_atr.cmdsety = 0X2B00;
 }
 
 static void NT35510_Init(void)
@@ -506,7 +524,7 @@ static void NT35510_Init(void)
 
 	NT35510_WriteReg(0x3500,0x00);
 	NT35510_WriteReg(0x3A00,0x55);  //16-bit/pixel
-	NT35510_WriteReg(0x3600,0x00);		//默认为竖屏
+	NT35510_WriteReg(0x3600,NT35510_DIR[DFT_SCAN_DIR]);		//默认为竖屏
 
 	LCDWRCMD(0x1100);
 	delay_us(120);
@@ -514,12 +532,7 @@ static void NT35510_Init(void)
 
 	//NT35510_Clear(WHITE);
 	
-	nt35510_atr.width = 480;
-	nt35510_atr.height = 800;
-	nt35510_atr.cmdwrdata = 0X2C00;
-	nt35510_atr.cmdsetx = 0X2A00;
-	nt35510_atr.cmdsety = 0X2B00;
-	
+	NT35510_AtrInit( );
 
 }
 
@@ -573,16 +586,46 @@ s8 NT35510_IOCtrl(u32 cmd, u32 param)
 		case LCDCMDSLEEPOUT :
 			break;
 
-		case LCDCMDSETDIRH :
-			break;
-
-		case LCDCMDSETDIRV :
+		case LCDCMDSETDIR :
+			NT35510_WriteReg( 0X3600, NT35510_DIR[param] );	
 			break;
 
 		default:
 			break;
 	}
 	return 0;
+}
+
+static u16 NT35510_Data2RGB( u16 data0, u16 data1 )
+{
+	u16 r=0, g=0, b=0;
+
+	g = (data0&0X00FF) >> 2;
+	r = (data0>>11) & 0X1F;
+	b = (data1>>11) & 0X1F;
+
+	return ((r<<11) | (g<<5) | b);
+}
+
+static u16 NT35510_GetPixel( u16 x, u16 y )
+{	
+	u16 data0=0, data1=0;
+	
+	if( x<nt35510_atr.width && y<nt35510_atr.height )
+	{
+		NT35510_SetCursor( x, y );
+		LCDWRCMD( 0X2E00 );	
+		data0 = LCDRDDATA( );	//dummy data
+		delay_us( 2 );
+		data0 = LCDRDDATA( );	//R and G
+		delay_us( 2 );
+		data1 = LCDRDDATA( );	//B
+
+		return NT35510_Data2RGB( data0, data1 );
+	}
+	else
+		return 0;
+
 }
 
 
@@ -593,7 +636,8 @@ const lcd_drv_t nt35510_module = {
 	NT35510_FillRect,
 	NT35510_DrawBitmap,
 	NT35510_Clear,
-	NT35510_IOCtrl
+	NT35510_IOCtrl,
+	NT35510_GetPixel
 };
 
 

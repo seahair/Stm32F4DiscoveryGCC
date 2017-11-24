@@ -26,13 +26,24 @@
 #define BRRED			0XFC07 //棕红色
 #define GRAY			0X8430 //灰色
 
+//扫描方向定义
+#define L2R_U2D  0 //从左到右,从上到下
+#define L2R_D2U  1 //从左到右,从下到上
+#define R2L_U2D  2 //从右到左,从上到下
+#define R2L_D2U  3 //从右到左,从下到上
+
+#define U2D_L2R  4 //从上到下,从左到右
+#define U2D_R2L  5 //从上到下,从右到左
+#define D2U_L2R  6 //从下到上,从左到右
+#define D2U_R2L  7 //从下到上,从右到左	 
+
+#define DFT_SCAN_DIR  L2R_U2D  //默认的扫描方向
 
 
 typedef enum{
 	LCDCMDSLEEPIN  = 0,
 	LCDCMDSLEEPOUT,
-	LCDCMDSETDIRH,
-	LCDCMDSETDIRV
+	LCDCMDSETDIR
 }LCDCMD;
 
 typedef struct _LCD_ATR{

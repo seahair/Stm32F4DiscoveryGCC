@@ -1,5 +1,5 @@
 #include "lcd.h"
-#include "NT33510.h"
+#include "NT35510.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_fsmc.h"
