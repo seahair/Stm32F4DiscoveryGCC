@@ -39,7 +39,8 @@ void MyKeyTest( u8 key );
 int main(int argc, char *argv[])
 {
 	u16 x = 0;
-	u16 y = 1000;
+	u16 y = 790;
+	s8 lcd_id[12];
 
 	HardInit( );
 	//PwmStart( );
@@ -48,22 +49,27 @@ int main(int argc, char *argv[])
 	//CaptureStatus = CAPTURESTART;
 	//TPADDefaultTime = TpadTestDefaultTime( 8 );	
 
+
+	LcdIoctl( LCDCMDSETASC2SIZE, ASC2_24 );
+	LcdIoctl( LCDCMDSETBRUSHCOLOR, RED );
+	LcdIoctl( LCDCMDSETBACKCOLOR, YELLOW );
+	LcdIoctl( LCDCMDSETSHOWMODE, LCDMODENOBACK );
+	LcdIoctl( LCDCMDSETDIR, D2U_L2R );
+
 	while(1)
 	{
-		delay_ms(500);
+		delay_ms(1000);
 		LedRed.LedRollBack( &LedRed );
 
-		//LcdIoctl( LCDCMDSETDIR, D2U_R2L );
 #if 1
 		x++;
 		y--;
-		//LcdDrawLine( x, y, 240-x, 480-y );
-		LcdDrawLine( 20, 20, 300, 500 );
-		LcdDrawLine( 100, 50, 700, 500 );
-		LcdDrawLine( 600, 100, 50, 500 );
-		LcdDrawLine( 600, 400, 100, 900 );
-		LcdDrawLine( 600, 1500, 350, 50 );
-		LcdDrawLine( 350, 750, 20, 50 );
+		sprintf((char*)lcd_id,"LcdID:%04X", x);
+		//LcdDrawLine( x, y, 480-x, 800-y );
+		LcdShowString( 20, 20, lcd_id );
+		LcdShowString( 400, 240, "Hello Linus" );
+		LcdIoctl( LCDCMDSETSHOWMODE, LCDMODEADDBACK );
+		LcdShowChar( 700, 440, '2' );
 #endif
 
 

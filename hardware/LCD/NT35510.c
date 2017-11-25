@@ -90,8 +90,9 @@ static void NT35510_AtrInit( void )
 	nt35510_atr.height = 800;
 	nt35510_atr.asc2size = ASC2_12;
 	nt35510_atr.showmode = LCDMODENOBACK;
+	nt35510_atr.showdir  = LCDSHOWV;
 	nt35510_atr.brushcolor = BLACK;
-	nt35510_atr.backcolor = WHITE;
+	nt35510_atr.backcolor = RED;
 	nt35510_atr.cmdwrdata = 0X2C00;
 	nt35510_atr.cmdsetx = 0X2A00;
 	nt35510_atr.cmdsety = 0X2B00;
@@ -595,8 +596,9 @@ s8 NT35510_IOCtrl(u32 cmd, u32 param)
 
 		case LCDCMDSETDIR :
 			NT35510_WriteReg( 0X3600, NT35510_DIR[param] );	
-			if( NT35510_DIR[param] == 7 )
+			if( (param>=U2D_L2R) && (nt35510_atr.width<nt35510_atr.height)  )
 			{
+				nt35510_atr.showdir = LCDSHOWH;
 				u16 temp = nt35510_atr.width;
 				nt35510_atr.width = nt35510_atr.height;
 				nt35510_atr.height = temp;
@@ -613,6 +615,10 @@ s8 NT35510_IOCtrl(u32 cmd, u32 param)
 
 		case LCDCMDSETBACKCOLOR :
 			nt35510_atr.backcolor = param;
+			break;
+
+		case LCDCMDSETSHOWMODE :
+			nt35510_atr.showmode = param;
 			break;
 
 		default:
@@ -677,30 +683,43 @@ static void NT35510_DrawLine( u16 x0, u16 y0, u16 x1, u16 y1 )
 	}
 }
 
-static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
+static void NT35510_ShowChar( u16 x, u16 y, u8 value )
 {
 	u8 charlen=0;
 	u8 num;
 	u8 t;
+	u32 temp1,temp2;
 	u16 temp16;
+	u32 temp3;
 	u32 temp32;
 	
-	charlen = (size/8+((size%8)?1:0))*(size/2);	//计算该size下字摸占的字节数
+	charlen = (nt35510_atr.asc2size/8+((nt35510_atr.asc2size%8)?1:0))*(nt35510_atr.asc2size/2);	//计算该nt35510_atr.asc2size下字摸占的字节数
 	num = value - ' ';		//计算该字符在码表中的位置
+	
+#if 0
+	if( nt35510_atr.showdir == LCDSHOWH )	//横屏的话，交换x y坐标
+	{
+		temp16 = x;
+		x = y;
+		y = temp16;
+	}
+#endif
 
-	switch (size)
+	switch (nt35510_atr.asc2size)
 	{
 		case ASC2_12 :
 				for( t=0; t<charlen; t+=2 )
 				{
-					temp16 = asc2_1206[num][t]<<8 + asc2_1206[num][t+1];
+					temp1 = asc2_1206[num][t];
+					temp2 = asc2_1206[num][t+1];
+					temp16 = (temp1<<8) + temp2;
 					for( u8 i=0; i<ASC2_12; i++ )
 					{
 						if( temp16&0X8000 ) 
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
 						}
-						else if( mode == nt35510_atr.showmode )
+						else if( nt35510_atr.showmode == LCDMODEADDBACK )
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
 						}
@@ -713,14 +732,16 @@ static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
 		case ASC2_16 :
 				for( t=0; t<charlen; t+=2 )
 				{
-					temp16 = asc2_1608[num][t]<<8 + asc2_1608[num][t+1];
+					temp1 = asc2_1608[num][t];
+					temp2 = asc2_1608[num][t+1];
+					temp16 = (temp1<<8) + temp2;
 					for( u8 i=0; i<ASC2_16; i++ )
 					{
 						if( temp16&0X8000 ) 
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
 						}
-						else if( mode == nt35510_atr.showmode )
+						else if( nt35510_atr.showmode == LCDMODEADDBACK )
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
 						}
@@ -733,14 +754,17 @@ static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
 		case ASC2_24 :
 				for( t=0; t<charlen; t+=3 )
 				{
-					temp32 = asc2_2412[num][t]<<16 + asc2_2412[num][t+1]<<8 + asc2_2412[num][t+2];
+					temp1 = asc2_2412[num][t];
+					temp2 = asc2_2412[num][t+1];
+					temp3 = asc2_2412[num][t+2];
+					temp32 = (temp1<<16) + (temp2<<8) + temp3;
 					for( u8 i=0; i<ASC2_24; i++ )
 					{
 						if( temp32&0X800000 ) 
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
 						}
-						else if( mode == nt35510_atr.showmode )
+						else if( nt35510_atr.showmode == LCDMODEADDBACK )
 						{
 							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
 						}
@@ -753,13 +777,15 @@ static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
 		default :
 			break;
 	}
+	//printf(" nt35510_atr.width= %d \r\n", nt35510_atr.width ); 
+	//printf(" nt35510_atr.height= %d \r\n", nt35510_atr.height ); 
 }
 
 static void NT35510_ShowString( u16 x, u16 y, u8 *p )
 {
 	while( (*p<='~')&&(*p>=' ') )
 	{
-		NT35510_ShowChar( x, y, *p, nt35510_atr.asc2size, nt35510_atr.showmode );
+		NT35510_ShowChar( x, y, *p );
 		p++;
 		x += nt35510_atr.asc2size/2;
 	}

@@ -35,15 +35,21 @@
 #define  LCDMODENOBACK	0
 #define  LCDMODEADDBACK 1
 
+//屏幕横竖方向
+#define  LCDSHOWV	0
+#define  LCDSHOWH	1
+
 //扫描方向定义
-#define L2R_U2D  0 //从左到右,从上到下
+//竖屏的四种方向
+#define L2R_U2D  0 //从左到右,从上到下 左上角作为起点，方便阅读
 #define L2R_D2U  1 //从左到右,从下到上
 #define R2L_U2D  2 //从右到左,从上到下
-#define R2L_D2U  3 //从右到左,从下到上
+#define R2L_D2U  3 //从右到左,从下到上 右下角作为起点，旋转180度后方便阅读
 
+//横屏的四种方向
 #define U2D_L2R  4 //从上到下,从左到右
-#define U2D_R2L  5 //从上到下,从右到左
-#define D2U_L2R  6 //从下到上,从左到右
+#define U2D_R2L  5 //从上到下,从右到左 右上角作为起点，横屏旋转180度后方便阅读
+#define D2U_L2R  6 //从下到上,从左到右 左下角作为起点，横屏方便阅读
 #define D2U_R2L  7 //从下到上,从右到左	 
 
 #define DFT_SCAN_DIR  L2R_U2D  //默认的扫描方向
@@ -64,6 +70,7 @@ typedef struct _LCD_ATR{
 	u16   height;
 	u16   asc2size;
 	u16   showmode;
+	u16   showdir;
 	u16   brushcolor;
 	u16   backcolor;
 	u16   cmdwrdata;
@@ -82,7 +89,7 @@ typedef struct _LCD_DRV{
 	s8    (*ioctl) ( u32 cmd, u32 param );
 	u16   (*getpixel) ( u16 x, u16 y );
 	void  (*drawline) ( u16 x0, u16 y0, u16 x1, u16 y1 );
-	void  (*showchar) ( u16 x, u16 y, u8 value, u8 size, u8 mode );
+	void  (*showchar) ( u16 x, u16 y, u8 value );
 	void  (*showstring) ( u16 x, u16 y, u8* p );
 }lcd_drv_t;
 
@@ -96,7 +103,7 @@ void  LcdClear ( u16 color );
 s8    LcdIoctl ( u32 cmd, u32 param );
 u16   LcdGetPixel (u16 x, u16 y );
 void  LcdDrawLine ( u16 x0, u16 y0, u16 x1, u16 y1 );
-void  LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode );
+void  LcdShowChar ( u16 x, u16 y, u8 value );
 void  LcdShowString ( u16 x, u16 y, u8* p );
 
 

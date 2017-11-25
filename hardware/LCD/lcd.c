@@ -210,10 +210,10 @@ void LcdDrawLine ( u16 x0, u16 y0, u16 x1, u16 y1 )
 		lcd_drv->drawline( x0, y0, x1, y1 );
 }
 
-void LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode )
+void LcdShowChar ( u16 x, u16 y, u8 value )
 {
 	if( lcd_drv )
-		lcd_drv->showchar(x, y, value, size, mode );
+		lcd_drv->showchar(x, y, value );
 }
 
 void LcdShowString( u16 x, u16 y, u8* p )
