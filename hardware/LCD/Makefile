@@ -12,9 +12,12 @@ DEPS = $(patsubst %.o, %.d, $(OBJS))
 
 -include $(DEPS)
 
-#$(BUILD_DIR)/%.o: %.c
-$(OBJS): $(SRCS)
-	$(CC)  -MMD $(CFLAGS) -c -g -o  $@ $<
+all : $(OBJS)
+
+$(BUILD_DIR)/%.o: %.c
+	@echo make $(OBJS)
+	$(CC) -MMD $(CFLAGS) -c -g -o  $@ $<
+
 
 $(OBJS): | $(BUILD_DIR)
 

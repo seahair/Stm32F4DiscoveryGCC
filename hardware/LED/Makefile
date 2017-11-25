@@ -14,7 +14,7 @@ DEPS = $(patsubst %.o, %.d, $(OBJS))
 
 #$(BUILD_DIR)/%.o: %.c
 $(OBJS): $(SRCS)
-	$(CC) -fPIC -MMD $(CFLAGS) -c -g -o  $@ $<
+	$(CC)  -MMD $(CFLAGS) -c -g -o  $@ $<
 
 $(OBJS): | $(BUILD_DIR)
 

@@ -9,6 +9,7 @@
 #include "pwm.h"
 #include "capture.h"
 #include "tpad.h"
+#include "lcd.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
@@ -27,142 +28,164 @@ u8  TPADStatus = 0;
 u32 TPADTime = 0;
 u32 TPADDefaultTime = 0;
 
+//u32 Guolinxin=0;
+//_lcd_dev lcddev ;
+//u16 POINT_COLOR=0x0000;	//»­±ÊÑÕÉ«
+//u16 BACK_COLOR=0xFFFF;  //±³¾°É«
+
 void MyKeyTest( u8 key );
+
 
 int main(int argc, char *argv[])
 {
-		
-        HardInit( );
-        //PwmStart( );
-        //Time3Start( );
-        //CaptureStart( );    
-        //CaptureStatus = CAPTURESTART;
+	u16 x = 0;
+	u16 y = 790;
+	s8 lcd_id[12];
 
-		TPADDefaultTime = TpadTestDefaultTime( 8 );	
-
-        while(1)
-        {
-                delay_ms(10);
-                //KeyTest( MyKeyTest );	
-                //LedRed.LedRollBack( &LedRed );
-				TPADTime = TpadGetCapTime( );
-				if( TPADTime > TPADDefaultTime+TPADTHRESHOLD )	
-				{
-                    TPADStatus++ ;
-				}
-
-                if( TPADStatus> 7 )
-                {
-                    printf("TPADDefaultTime is %d \r\n",TPADDefaultTime );
-                    printf("TPADTime is %d \r\n",TPADTime );
-					LedGreen.LedRollBack( &LedGreen );
-                    TPADStatus= 0;
-                }
+	HardInit( );
+	//PwmStart( );
+	//Time3Start( );
+	//CaptureStart( );    
+	//CaptureStatus = CAPTURESTART;
+	//TPADDefaultTime = TpadTestDefaultTime( 8 );	
 
 
+	LcdIoctl( LCDCMDSETASC2SIZE, ASC2_24 );
+	LcdIoctl( LCDCMDSETBRUSHCOLOR, RED );
+	LcdIoctl( LCDCMDSETBACKCOLOR, YELLOW );
+	LcdIoctl( LCDCMDSETSHOWMODE, LCDMODENOBACK );
+	LcdIoctl( LCDCMDSETDIR, D2U_L2R );
+
+	while(1)
+	{
+		delay_ms(1000);
+		LedRed.LedRollBack( &LedRed );
+
+#if 1
+		x++;
+		y--;
+		sprintf((char*)lcd_id,"LcdID:%04X", x);
+		//LcdDrawLine( x, y, 480-x, 800-y );
+		LcdShowString( 20, 20, lcd_id );
+		LcdShowString( 400, 240, "Hello Linus" );
+		LcdIoctl( LCDCMDSETSHOWMODE, LCDMODEADDBACK );
+		LcdShowChar( 700, 440, '2' );
+#endif
 
 
+#if 0
+		TPADTime = TpadGetCapTime( );
+		if( TPADTime > TPADDefaultTime+TPADTHRESHOLD )	
+		{
+			TPADStatus++ ;
+		} 
+		if( TPADStatus> 7 )
+		{
+			printf("TPADDefaultTime is %d \r\n",TPADDefaultTime );
+			printf("TPADTime is %d \r\n",TPADTime );
+			LedGreen.LedRollBack( &LedGreen );
+			TPADStatus= 0;
+		}
+#endif 
 
+		//TIM_SetCompare1(TIM14,led0pwmval);
 
-
-                //TIM_SetCompare1(TIM14,led0pwmval);
-
-               /* if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
-                {
-                    printf("Time is %d us \r\n", CaptureTime );
-                    CaptureStatus = CAPTURESTART;
-                    CaptureTime = 0;
-                }*/
-        }
+		/* if( CaptureStatus==CAPTUREFINSH || CaptureStatus==CAPTURETIMEOUT )
+		   {
+		   printf("Time is %d us \r\n", CaptureTime );
+		   CaptureStatus = CAPTURESTART;
+		   CaptureTime = 0;
+		   }*/
+	}
 }
 
 
 void MyKeyTest( u8 key )
 {
-        switch (key)
-        {
-                case KEY0:
-                        LedGreen.LedRollBack( &LedGreen );
-                        //LedRed.LedBlink( &LedRed, 1000 );
-                        PwmSetDutyCycle( DutyCycle+10 ); 
-                        break;
-                case KEY1:
-                        LedGreen.LedRollBack( &LedGreen );
-                        PwmSetDutyCycle( DutyCycle-10 ); 
-                        break;
-                case KEY2:
-                        //LedRed.LedOFF( &LedRed );
-                        PwmSetPeriodUs( Period+50 ); 
-                        break;
-                case KEYWK:
-                        Beep.PlayMusic( );	
-                        break;
-        }
+	switch (key)
+	{
+		case KEY0:
+			LedGreen.LedRollBack( &LedGreen );
+			//LedRed.LedBlink( &LedRed, 1000 );
+			PwmSetDutyCycle( DutyCycle+10 ); 
+			break;
+		case KEY1:
+			LedGreen.LedRollBack( &LedGreen );
+			PwmSetDutyCycle( DutyCycle-10 ); 
+			break;
+		case KEY2:
+			//LedRed.LedOFF( &LedRed );
+			PwmSetPeriodUs( Period+50 ); 
+			break;
+		case KEYWK:
+			Beep.PlayMusic( );	
+			break;
+	}
 }
 
 
 void TIM3_IRQHandler(void)
 {
-        if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //溢出中断
-        {
-                LedRed.LedRollBack( &LedRed );
-        }
-        TIM_ClearITPendingBit(TIM3,TIM_IT_Update); //清除中断标志位
+	if(TIM_GetITStatus(TIM3,TIM_IT_Update)==SET) //溢出中断
+	{
+		LedRed.LedRollBack( &LedRed );
+	}
+	TIM_ClearITPendingBit(TIM3,TIM_IT_Update); //清除中断标志位
 }
 
 void EXTI0_IRQHandler(void)
 { 
-        delay_ms(10); //消抖
-        if( KEYWKPRESS == GetKeyStatus( KEYWK ) )
-        {
-                LedGreen.LedRollBack( &LedGreen );
-                PwmSetDutyCycle( DutyCycle+=10 ); 
-        }
-        EXTI_ClearITPendingBit(EXTI_Line0); //清除 LINE0 上的中断标志位
+	delay_ms(10); //消抖
+	if( KEYWKPRESS == GetKeyStatus( KEYWK ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetDutyCycle( DutyCycle+=10 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line0); //清除 LINE0 上的中断标志位
 }
 
 void EXTI2_IRQHandler(void)
 { 
-        delay_ms(10); //消抖
-        if( KEY2PRESS == GetKeyStatus( KEY2 ) )
-        {
-                LedGreen.LedRollBack( &LedGreen );
-                PwmSetDutyCycle( DutyCycle-=10 ); 
-        }
-        EXTI_ClearITPendingBit(EXTI_Line2); //清除 LINE2 上的中断标志位
+	delay_ms(10); //消抖
+	if( KEY2PRESS == GetKeyStatus( KEY2 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetDutyCycle( DutyCycle-=10 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line2); //清除 LINE2 上的中断标志位
 }
 
 void EXTI3_IRQHandler(void)
 { 
-        delay_ms(10); //消抖
-        if( KEY1PRESS == GetKeyStatus( KEY1 ) )
-        {
-                LedGreen.LedRollBack( &LedGreen );
-                PwmSetPeriodUs( Period+=50 ); 
-        }
-        EXTI_ClearITPendingBit(EXTI_Line3); //清除 LINE3 上的中断标志位
+	delay_ms(10); //消抖
+	if( KEY1PRESS == GetKeyStatus( KEY1 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetPeriodUs( Period+=50 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line3); //清除 LINE3 上的中断标志位
 }
 
 void EXTI4_IRQHandler(void)
 { 
-        delay_ms(10); //消抖
-        if( KEY0PRESS == GetKeyStatus( KEY0 ) )
-        {
-                LedGreen.LedRollBack( &LedGreen );
-                PwmSetPeriodUs( Period-=50 ); 
-        }
-        EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
+	delay_ms(10); //消抖
+	if( KEY0PRESS == GetKeyStatus( KEY0 ) )
+	{
+		LedGreen.LedRollBack( &LedGreen );
+		PwmSetPeriodUs( Period-=50 ); 
+	}
+	EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
 }
 
 
 
 void TIM5_IRQHandler(void)
 {
-    u32 temp;
+	u32 temp;
 	switch ( CaptureStatus )	
 	{	
 		case CAPTURESTART :
-            if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
+			if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
 			{
 				TIM_SetCounter(TIM5,0);
 				TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Falling);
@@ -172,17 +195,17 @@ void TIM5_IRQHandler(void)
 			}
 			break;
 		case CAPTUREWAIT :
-            if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
+			if(TIM_GetITStatus(TIM5, TIM_IT_CC1)==SET) //捕获中断
 			{
 				temp =  CaptureGetValue();
 				CaptureTime = CaptureClacTime( temp );
 				//CaptureTime = 6789; 
-                TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
+				TIM_OC1PolarityConfig(TIM5,TIM_ICPolarity_Rising);
 				CaptureStatus = CAPTUREFINSH;
 				CaptureCount = 0;
 			}
 
-            if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //溢出中断
+			if(TIM_GetITStatus(TIM5, TIM_IT_Update)==SET) //溢出中断
 			{
 				if( CaptureCount > 20 )
 				{
@@ -194,7 +217,7 @@ void TIM5_IRQHandler(void)
 				else
 					CaptureCount++ ;
 			}
-			
+
 			break;
 		case CAPTUREFINSH :
 		case CAPTURETIMEOUT :
@@ -203,19 +226,19 @@ void TIM5_IRQHandler(void)
 			break;
 	}
 
-    //LedRed.LedRollBack( &LedRed );
-    TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
+	//LedRed.LedRollBack( &LedRed );
+	TIM_ClearITPendingBit(TIM5, TIM_IT_CC1|TIM_IT_Update);
 }
 
 
 #if 0
 void TIM2_IRQHandler(void)
 {
-    LedRed.LedRollBack( &LedRed );
+	LedRed.LedRollBack( &LedRed );
 	switch ( TPADStatus )
 	{
 		case TPADSTUSSTART:
-            if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
+			if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
 			{
 				TPADTime = TpadGetCapTime( );
 				TIM_SetCounter(TIM2, 0);
@@ -225,7 +248,7 @@ void TIM2_IRQHandler(void)
 			}
 			break;
 		case TPADSTUSWAIT:
-            if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
+			if(TIM_GetITStatus(TIM2, TIM_IT_CC1)==SET) //捕获中断
 			{
 				TPADTime = TpadGetCapTime( );
 				TIM_SetCounter(TIM2, 0);
