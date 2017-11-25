@@ -216,7 +216,11 @@ void LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode )
 		lcd_drv->showchar(x, y, value, size, mode );
 }
 
-
+void LcdShowString( u16 x, u16 y, u8* p )
+{
+	if( lcd_drv )
+		lcd_drv->showstring( x, y, p );
+}
 
 
 

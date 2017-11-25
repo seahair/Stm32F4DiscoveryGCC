@@ -88,6 +88,10 @@ static void NT35510_AtrInit( void )
 {
 	nt35510_atr.width = 480;
 	nt35510_atr.height = 800;
+	nt35510_atr.asc2size = ASC2_12;
+	nt35510_atr.showmode = LCDMODENOBACK;
+	nt35510_atr.brushcolor = BLACK;
+	nt35510_atr.backcolor = WHITE;
 	nt35510_atr.cmdwrdata = 0X2C00;
 	nt35510_atr.cmdsetx = 0X2A00;
 	nt35510_atr.cmdsety = 0X2B00;
@@ -599,6 +603,18 @@ s8 NT35510_IOCtrl(u32 cmd, u32 param)
 			}	
 			break;
 
+		case LCDCMDSETASC2SIZE :
+			nt35510_atr.asc2size = param;
+			break;
+
+		case LCDCMDSETBRUSHCOLOR :
+			nt35510_atr.brushcolor = param;
+			break;
+
+		case LCDCMDSETBACKCOLOR :
+			nt35510_atr.backcolor = param;
+			break;
+
 		default:
 			break;
 	}
@@ -645,15 +661,108 @@ static void NT35510_DrawLine( u16 x0, u16 y0, u16 x1, u16 y1 )
 	k = ((float)(y1-y0))/(x1-x0);
 	b = y1 - k*x1;
 
-	for(x=MIN(x0, nt35510_atr.width); x<MIN(x1,nt35510_atr.width); x++)
+	if( x0 < x1 )
 	{
-		NT35510_DrawPixel( (u16)x, (u16)MIN(k*x+b, nt35510_atr.height), BLACK );
+		for(x=MIN(x0, nt35510_atr.width); x<MIN(x1,nt35510_atr.width); x++)
+		{
+			NT35510_DrawPixel( (u16)x, (u16)MIN(k*x+b, nt35510_atr.height), nt35510_atr.brushcolor );
+		}
+	}
+	else
+	{
+		for(x=MIN(x0, nt35510_atr.width); x>MIN(x1,nt35510_atr.width); x--)
+		{
+			NT35510_DrawPixel( (u16)x, (u16)MIN(k*x+b, nt35510_atr.height), nt35510_atr.brushcolor );
+		}
 	}
 }
 
 static void NT35510_ShowChar( u16 x, u16 y, u8 value, u8 size, u8 mode )
 {
+	u8 charlen=0;
+	u8 num;
+	u8 t;
+	u16 temp16;
+	u32 temp32;
 	
+	charlen = (size/8+((size%8)?1:0))*(size/2);	//计算该size下字摸占的字节数
+	num = value - ' ';		//计算该字符在码表中的位置
+
+	switch (size)
+	{
+		case ASC2_12 :
+				for( t=0; t<charlen; t+=2 )
+				{
+					temp16 = asc2_1206[num][t]<<8 + asc2_1206[num][t+1];
+					for( u8 i=0; i<ASC2_12; i++ )
+					{
+						if( temp16&0X8000 ) 
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
+						}
+						else if( mode == nt35510_atr.showmode )
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
+						}
+						temp16 <<= 1;
+					}
+					x++;
+				}
+			break;
+
+		case ASC2_16 :
+				for( t=0; t<charlen; t+=2 )
+				{
+					temp16 = asc2_1608[num][t]<<8 + asc2_1608[num][t+1];
+					for( u8 i=0; i<ASC2_16; i++ )
+					{
+						if( temp16&0X8000 ) 
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
+						}
+						else if( mode == nt35510_atr.showmode )
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
+						}
+						temp16 <<= 1;
+					}
+					x++;
+				}
+			break;
+
+		case ASC2_24 :
+				for( t=0; t<charlen; t+=3 )
+				{
+					temp32 = asc2_2412[num][t]<<16 + asc2_2412[num][t+1]<<8 + asc2_2412[num][t+2];
+					for( u8 i=0; i<ASC2_24; i++ )
+					{
+						if( temp32&0X800000 ) 
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.brushcolor );
+						}
+						else if( mode == nt35510_atr.showmode )
+						{
+							NT35510_DrawPixel( x, y+i, nt35510_atr.backcolor );
+						}
+						temp32 <<= 1;
+					}
+					x++;
+				}
+			break;
+
+		default :
+			break;
+	}
+}
+
+static void NT35510_ShowString( u16 x, u16 y, u8 *p )
+{
+	while( (*p<='~')&&(*p>=' ') )
+	{
+		NT35510_ShowChar( x, y, *p, nt35510_atr.asc2size, nt35510_atr.showmode );
+		p++;
+		x += nt35510_atr.asc2size/2;
+	}
 }
 
 const lcd_drv_t nt35510_module = {
@@ -666,10 +775,9 @@ const lcd_drv_t nt35510_module = {
 	NT35510_IOCtrl,
 	NT35510_GetPixel,
 	NT35510_DrawLine,
-	NT35510_ShowChar
+	NT35510_ShowChar,
+	NT35510_ShowString
 };
-
-
 
 
 

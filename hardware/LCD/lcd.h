@@ -26,6 +26,15 @@
 #define BRRED			0XFC07 //棕红色
 #define GRAY			0X8430 //灰色
 
+//字摸大小类型
+#define  ASC2_12		12
+#define  ASC2_16		16
+#define  ASC2_24		24
+
+//字体显示类型
+#define  LCDMODENOBACK	0
+#define  LCDMODEADDBACK 1
+
 //扫描方向定义
 #define L2R_U2D  0 //从左到右,从上到下
 #define L2R_D2U  1 //从左到右,从下到上
@@ -43,13 +52,20 @@
 typedef enum{
 	LCDCMDSLEEPIN  = 0,
 	LCDCMDSLEEPOUT,
-	LCDCMDSETDIR
+	LCDCMDSETDIR,
+	LCDCMDSETASC2SIZE,
+	LCDCMDSETBRUSHCOLOR,
+	LCDCMDSETBACKCOLOR,
+	LCDCMDSETSHOWMODE
 }LCDCMD;
 
 typedef struct _LCD_ATR{
 	u16	  width;
 	u16   height;
-	u16   id;
+	u16   asc2size;
+	u16   showmode;
+	u16   brushcolor;
+	u16   backcolor;
 	u16   cmdwrdata;
 	u16   cmdsetx;
 	u16   cmdsety;
@@ -67,6 +83,7 @@ typedef struct _LCD_DRV{
 	u16   (*getpixel) ( u16 x, u16 y );
 	void  (*drawline) ( u16 x0, u16 y0, u16 x1, u16 y1 );
 	void  (*showchar) ( u16 x, u16 y, u8 value, u8 size, u8 mode );
+	void  (*showstring) ( u16 x, u16 y, u8* p );
 }lcd_drv_t;
 
 extern const lcd_drv_t *lcd_drv;
@@ -80,6 +97,7 @@ s8    LcdIoctl ( u32 cmd, u32 param );
 u16   LcdGetPixel (u16 x, u16 y );
 void  LcdDrawLine ( u16 x0, u16 y0, u16 x1, u16 y1 );
 void  LcdShowChar ( u16 x, u16 y, u8 value, u8 size, u8 mode );
+void  LcdShowString ( u16 x, u16 y, u8* p );
 
 
 
