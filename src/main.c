@@ -11,6 +11,7 @@
 #include "tpad.h"
 #include "lcd.h"
 #include "rtc.h"
+#include "randomnum.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
@@ -57,27 +58,42 @@ int main(int argc, char *argv[])
 	LcdIoctl( LCDCMDSETBACKCOLOR, YELLOW );
 	LcdIoctl( LCDCMDSETSHOWMODE, LCDMODENOBACK );
 	LcdIoctl( LCDCMDSETDIR, D2U_L2R );
+	LcdIoctl( LCDCMDSETSHOWMODE, LCDMODEADDBACK );
 
 	RTC_ATTR myrtc;	
+	myrtc.year = 17;
+	myrtc.month = 11;
+	myrtc.date = 27;
+	myrtc.hours = 22;
+	myrtc.minutes = 10;
+	myrtc.seconds = 0;
+	myrtc.weekday = 1;
+	myrtc.hourformat = RTC_HourFormat_24;
+
+	//RtcIoctrl( RTCCMDSETTIME, &myrtc );
+	//RtcIoctrl( RTCCMDSETDATE, &myrtc ); 
+
+	RN_ATTR myrn = { 50, 199, 0 };
+	RnIoctrl( RNCMDSETRANGE, &myrn );
 
 	while(1)
 	{
 		delay_ms(1000);
 		LedRed.LedRollBack( &LedRed );
 
-#if 1
-		x++;
-		y--;
-		sprintf((char*)lcd_id,"LcdID:%04X", x);
-		//LcdDrawLine( x, y, 480-x, 800-y );
-		LcdShowString( 20, 20, lcd_id );
-		LcdShowString( 400, 240, "Hello Linus" );
-		LcdIoctl( LCDCMDSETSHOWMODE, LCDMODEADDBACK );
-#endif
-
+		LcdShowString( 600, 20, "Hello Linus" );
 		RtcRead( &myrtc );			
+		sprintf((char*)rtcbuf,"Date:%02d.%02d.%02d",myrtc.year,myrtc.month,myrtc.date);
+		LcdShowString( 20, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Time:%02d:%02d:%02d",myrtc.hours,myrtc.minutes,myrtc.seconds);
-		LcdShowString( 20, 400, rtcbuf );
+		LcdShowString( 20, 70, rtcbuf );
+		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
+		LcdShowString( 20, 120, rtcbuf );
+	
+		u32 rdnum = RnRead( );
+		sprintf((char*)rtcbuf,"RandomNum:%04d", rdnum);
+		LcdShowString( 20, 170, rtcbuf );
+		
 
 #if 0
 		TPADTime = TpadGetCapTime( );

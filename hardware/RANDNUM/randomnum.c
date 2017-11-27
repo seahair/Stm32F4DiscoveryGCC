@@ -40,6 +40,8 @@ static s8 RnMatch( void )
 	{
 		rn_dir = rn_modules[i];
 	}
+	
+	return 0;
 }
 
 void RnInit( void )
