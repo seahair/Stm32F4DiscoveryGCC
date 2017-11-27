@@ -17,7 +17,7 @@ TEST += PWM
 TEST += CAPTURE
 TEST += TPAD
 TEST += LCD 
-#TEST += SRAM
+TEST += RTC
 
 
 .PHONY: $(TEST)
@@ -61,6 +61,9 @@ IWDG:
 
 LCD:
 	make -C LCD 
+
+RTC:
+	make -C RTC 
 
 #END
 $(OBJS): | $(BUILD_DIR)

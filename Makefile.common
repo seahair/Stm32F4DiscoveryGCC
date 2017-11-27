@@ -65,6 +65,7 @@ INCLUDE+=-I$(TOP)/hardware/TPAD
 INCLUDE+=-I$(TOP)/hardware/SRAM
 INCLUDE+=-I$(TOP)/hardware/IWDG
 INCLUDE+=-I$(TOP)/hardware/LCD
+INCLUDE+=-I$(TOP)/hardware/RTC
 
 
 
