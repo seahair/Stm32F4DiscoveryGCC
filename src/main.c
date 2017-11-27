@@ -10,6 +10,7 @@
 #include "capture.h"
 #include "tpad.h"
 #include "lcd.h"
+#include "rtc.h"
 /*#include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_flash.h"
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
 	u16 x = 0;
 	u16 y = 790;
 	s8 lcd_id[12];
+	u8 rtcbuf[40];
 
 	HardInit( );
 	//PwmStart( );
@@ -56,6 +58,8 @@ int main(int argc, char *argv[])
 	LcdIoctl( LCDCMDSETSHOWMODE, LCDMODENOBACK );
 	LcdIoctl( LCDCMDSETDIR, D2U_L2R );
 
+	RTC_ATTR myrtc;	
+
 	while(1)
 	{
 		delay_ms(1000);
@@ -69,9 +73,11 @@ int main(int argc, char *argv[])
 		LcdShowString( 20, 20, lcd_id );
 		LcdShowString( 400, 240, "Hello Linus" );
 		LcdIoctl( LCDCMDSETSHOWMODE, LCDMODEADDBACK );
-		LcdShowChar( 700, 440, '2' );
 #endif
 
+		RtcRead( &myrtc );			
+		sprintf((char*)rtcbuf,"Time:%02d:%02d:%02d",myrtc.hours,myrtc.minutes,myrtc.seconds);
+		LcdShowString( 20, 400, rtcbuf );
 
 #if 0
 		TPADTime = TpadGetCapTime( );
@@ -262,4 +268,27 @@ void TIM2_IRQHandler(void)
 }
 #endif
 
+
+//RTC闹钟中断服务函数
+void RTC_Alarm_IRQHandler(void)
+{    
+	if(RTC_GetFlagStatus(RTC_FLAG_ALRAF)==SET)//ALARM A中断?
+	{
+		RTC_ClearFlag(RTC_FLAG_ALRAF);//清除中断标志
+		printf("ALARM A!\r\n");
+	}   
+	EXTI_ClearITPendingBit(EXTI_Line17);	//清除中断线17的中断标志											 
+}
+
+
+//RTC WAKE UP中断服务函数
+void RTC_WKUP_IRQHandler(void)
+{    
+	if(RTC_GetFlagStatus(RTC_FLAG_WUTF)==SET)//WK_UP中断?
+	{ 
+		RTC_ClearFlag(RTC_FLAG_WUTF);	//清除中断标志
+		LedRed.LedRollBack( &LedRed );
+	}   
+	EXTI_ClearITPendingBit(EXTI_Line22);//清除中断线22的中断标志								
+}
 
