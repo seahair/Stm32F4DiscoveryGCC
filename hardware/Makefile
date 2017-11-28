@@ -19,6 +19,7 @@ TEST += TPAD
 TEST += LCD 
 TEST += RTC
 TEST += RANDNUM
+TEST += PM
 
 
 .PHONY: $(TEST)
@@ -68,6 +69,9 @@ RTC:
 
 RANDNUM:
 	make -C RANDNUM 
+
+PM:
+	make -C PM 
 
 #END
 $(OBJS): | $(BUILD_DIR)
