@@ -12,6 +12,7 @@
 #include "lcd.h"
 #include "rtc.h"
 #include "randomnum.h"
+#include "pm.h"
 
 
 void LED_Init( void )
@@ -81,15 +82,16 @@ void HardInit( void )
 	LED_Init( );
 	BEEP_INIT();
 	KeyPinInit( );
+    LcdInit( );
+	RtcInit( );
 	//KeyExtiInit( );
 	//IwdgStart1S( );
 	//Time3InitMs( 500 );
 	//PwmInit( );
 //	CaptureInit( );
 	//TpadInit( );
-    LcdInit( );
-	RtcInit( );
-	RnInit( );
+	//RnInit( );
+	PmInit( );
 //	TIM14_PWM_Init(500-1,84-1);
 //	Time14PwmInit_HZ( 2000 );
 //	TIM5_CH1_Cap_Init(0XFFFFFFFF, 84-1);

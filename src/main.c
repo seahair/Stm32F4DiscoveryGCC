@@ -12,13 +12,12 @@
 #include "lcd.h"
 #include "rtc.h"
 #include "randomnum.h"
-/*#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
-#include "stm32f4xx_flash.h"
-#include "usart.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include "sram.h"*/
+#include "pm.h"
+
+
+
+
+
 
 u16 DutyCycle = 100;
 u16 Period = 500;
@@ -155,6 +154,7 @@ void TIM3_IRQHandler(void)
 	TIM_ClearITPendingBit(TIM3,TIM_IT_Update); //清除中断标志位
 }
 
+#if 0
 void EXTI0_IRQHandler(void)
 { 
 	delay_ms(10); //消抖
@@ -165,6 +165,7 @@ void EXTI0_IRQHandler(void)
 	}
 	EXTI_ClearITPendingBit(EXTI_Line0); //清除 LINE0 上的中断标志位
 }
+#endif
 
 void EXTI2_IRQHandler(void)
 { 
@@ -307,4 +308,16 @@ void RTC_WKUP_IRQHandler(void)
 	}   
 	EXTI_ClearITPendingBit(EXTI_Line22);//清除中断线22的中断标志								
 }
+
+//中断,检测到PA0脚的一个上升沿.	  
+//中断线0线上的中断检测
+void EXTI0_IRQHandler(void)
+{													    
+	EXTI_ClearITPendingBit(EXTI_Line0); // 清除LINE10上的中断标志位
+	if(PmRead())//关机?
+	{		  
+		PM_ATTR mypmattr;
+		PmIoctrl( PMCMDSTART, &mypmattr ); 
+	}
+} 
 
