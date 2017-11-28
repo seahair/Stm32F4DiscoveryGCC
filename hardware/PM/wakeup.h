@@ -5,8 +5,8 @@
 #include "pm.h"
 
 
-#define   KEYWAKEUPPRESSDOWN	 0
-#define	  KEYWAKEUPPRESSUP       1
+#define   KEYWAKEUPPRESSDOWN	 1
+#define	  KEYWAKEUPPRESSUP       0
 
 
 

@@ -49,7 +49,8 @@ static s8 wakeup_init( void )
 {
 	wakeup_gpioinit( );
 	wakeup_extiinit( );
-
+	pm_attr.holdtime = 3000;
+	
 	return 0;
 }
 
@@ -84,7 +85,7 @@ static void wakeup_ioctrl( u8 cmd, PM_ATTR *ppmattr )
 
 static u8 wakeup_getextistatus( void )
 {
-	return GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_0);
+	return GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0);
 }
 
 static s8 wakeup_read( void )
@@ -93,29 +94,37 @@ static s8 wakeup_read( void )
 	u8 tx=0;
 	while( 1 )
 	{
-		if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
-		{
-			t++;
-			if( t>(pm_attr.holdtime/30) )
+			if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
 			{
-				return 1;
+					delay_ms( 10 );
+					if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
+					{
+							t++;
+							if( t>(pm_attr.holdtime/30) )
+							{
+									return 1;
+							}
+					}
 			}
-		}
-		else
-		{
-			tx++;
-			if(tx>3)
-				return 0;
-		}
-		
-		delay_ms( 30 );
+			else
+			{
+					delay_ms( 10 );
+					if( KEYWAKEUPPRESSUP == wakeup_getextistatus() )
+					{
+							tx++;
+							if(tx>30)
+									return 0;
+					}
+			}
+
+			delay_ms( 30 );
 	}
 }
 
 const PM_DIR wakeup_module = {
-	wakeup_init,
-	wakeup_ioctrl,
-	wakeup_read
+		wakeup_init,
+		wakeup_ioctrl,
+		wakeup_read
 };
 
 
