@@ -50,7 +50,7 @@ static s8 wakeup_init( void )
 	wakeup_gpioinit( );
 	wakeup_extiinit( );
 	pm_attr.holdtime = 3000;
-	
+
 	return 0;
 }
 
@@ -94,37 +94,37 @@ static s8 wakeup_read( void )
 	u8 tx=0;
 	while( 1 )
 	{
+		if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
+		{
+			delay_ms( 10 );
 			if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
 			{
-					delay_ms( 10 );
-					if( KEYWAKEUPPRESSDOWN == wakeup_getextistatus() )
-					{
-							t++;
-							if( t>(pm_attr.holdtime/30) )
-							{
-									return 1;
-							}
-					}
+				t++;
+				if( t>(pm_attr.holdtime/30) )
+				{
+					return 1;
+				}
 			}
-			else
+		}
+		else
+		{
+			delay_ms( 10 );
+			if( KEYWAKEUPPRESSUP == wakeup_getextistatus() )
 			{
-					delay_ms( 10 );
-					if( KEYWAKEUPPRESSUP == wakeup_getextistatus() )
-					{
-							tx++;
-							if(tx>30)
-									return 0;
-					}
+				tx++;
+				if(tx>30)
+					return 0;
 			}
+		}
 
-			delay_ms( 30 );
+		delay_ms( 30 );
 	}
 }
 
 const PM_DIR wakeup_module = {
-		wakeup_init,
-		wakeup_ioctrl,
-		wakeup_read
+	wakeup_init,
+	wakeup_ioctrl,
+	wakeup_read
 };
 
 

@@ -9,7 +9,7 @@ typedef enum {
 	PMCMDSTART,
 	PMCMDSTOP,
 	PMCMDSETHOLDTIME
-};
+}PM_CMD;
 
 typedef struct _PM_ATTR{
 	u16 holdtime; //ms

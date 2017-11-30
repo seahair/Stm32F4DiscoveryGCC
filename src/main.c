@@ -13,6 +13,7 @@
 #include "rtc.h"
 #include "randomnum.h"
 #include "pm.h"
+#include "adc.h"
 
 
 
@@ -72,8 +73,9 @@ int main(int argc, char *argv[])
 	//RtcIoctrl( RTCCMDSETTIME, &myrtc );
 	//RtcIoctrl( RTCCMDSETDATE, &myrtc ); 
 
-	RN_ATTR myrn = { 50, 199, 0 };
-	RnIoctrl( RNCMDSETRANGE, &myrn );
+	//RN_ATTR myrn = { 50, 199, 0 };
+	//RnIoctrl( RNCMDSETRANGE, &myrn );
+	
 
 	while(1)
 	{
@@ -88,11 +90,16 @@ int main(int argc, char *argv[])
 		LcdShowString( 20, 70, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 20, 120, rtcbuf );
-	
+
+		float value = AdcRead( );
+		sprintf( (char*)rtcbuf, "ADC Value:%04f", value );
+		LcdShowString( 20, 170, rtcbuf );
+
+#if 0
 		u32 rdnum = RnRead( );
 		sprintf((char*)rtcbuf,"RandomNum:%04d", rdnum);
 		LcdShowString( 20, 170, rtcbuf );
-		
+#endif		
 
 #if 0
 		TPADTime = TpadGetCapTime( );
