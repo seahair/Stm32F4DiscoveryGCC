@@ -750,7 +750,7 @@ ARM_MATH_SUCCESS	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include
 ARM_MATH_TEST_FAILURE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    ARM_MATH_TEST_FAILURE = -6           \/**< Test Failed  *\/$/;"	e	enum:__anon231
 ARR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ARR;         \/*!< LPTIM Autoreload register,                          Address offset: 0x18 *\/$/;"	m	struct:__anon151
 ARR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ARR;         \/*!< TIM auto-reload register,            Address offset: 0x2C *\/$/;"	m	struct:__anon144
-ARRAYLEN	hardware/ADC/adc.c	6;"	d	file:
+ARRAYLEN	hardware/ADC/adc.c	8;"	d	file:
 ARRAYLEN	hardware/PM/pm.c	7;"	d	file:
 ARRAYLEN	hardware/RANDNUM/randomnum.c	7;"	d	file:
 ARRAYLEN	hardware/RTC/rtc.c	8;"	d	file:
@@ -20740,6 +20740,7 @@ __INLINE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc
 __INLINE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	81;"	d
 __INLINE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	86;"	d
 __INLINE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	91;"	d
+__INTEMPERATE_H__	hardware/ADC/intemperate.h	2;"	d
 __IO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	198;"	d
 __IO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	208;"	d
 __IO	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	203;"	d
@@ -20765,6 +20766,7 @@ __LDRHT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmI
 __LDRT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint32_t __LDRT(volatile uint32_t *addr)$/;"	f
 __LDRT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	363;"	d
 __LED_H__	hardware/LED/led.h	2;"	d
+__LIGHTSENSE_H__	hardware/ADC/lightsense.h	2;"	d
 __MISC_H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/misc.h	31;"	d
 __MPU_PRESENT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	187;"	d
 __MPU_PRESENT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	174;"	d
@@ -21289,6 +21291,8 @@ _reserved1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 _reserved1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^    uint32_t _reserved1:30;              \/*!< bit:  2..31  Reserved                           *\/$/;"	m	struct:__anon158::__anon159
 _write	hardware/USART/usart.c	/^int _write (int fd, char *pBuffer, int size)  $/;"	f
 adc_attr	hardware/ADC/extgadc.c	/^static ADC_ATTR adc_attr;$/;"	v	file:
+adc_attr	hardware/ADC/intemperate.c	/^static ADC_ATTR adc_attr;$/;"	v	file:
+adc_attr	hardware/ADC/lightsense.c	/^static ADC_ATTR adc_attr;$/;"	v	file:
 adc_dir	hardware/ADC/adc.c	/^const ADC_DIR *adc_dir = 0;$/;"	v
 adc_modules	hardware/ADC/adc.c	/^ADC_DIR *adc_modules[] = {$/;"	v
 arm_bilinear_interp_f32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE float32_t arm_bilinear_interp_f32($/;"	f
@@ -21462,7 +21466,7 @@ drawpixel	hardware/LCD/lcd.h	/^	void  (*drawpixel) ( u16 x, u16 y, u16 color );$
 energy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t energy;    \/**< saves previous frame energy. *\/$/;"	m	struct:__anon286
 energy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t energy;        \/**< saves previous frame energy. *\/$/;"	m	struct:__anon288
 energy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t energy;         \/**< saves previous frame energy. *\/$/;"	m	struct:__anon287
-extgadc_adcinit	hardware/ADC/extgadc.c	/^static void extgadc_adcinit( void )$/;"	f	file:
+extgadc_adc1init	hardware/ADC/extgadc.c	/^static void extgadc_adc1init( void )$/;"	f	file:
 extgadc_getavgvalue	hardware/ADC/extgadc.c	/^static u16 extgadc_getavgvalue( void )$/;"	f	file:
 extgadc_getvalue	hardware/ADC/extgadc.c	/^static u16 extgadc_getvalue( void )$/;"	f	file:
 extgadc_gpioinit	hardware/ADC/extgadc.c	/^static void extgadc_gpioinit( void )$/;"	f	file:
@@ -21543,6 +21547,14 @@ init	hardware/LCD/lcd.h	/^	void  (*init) ( void );$/;"	m	struct:_LCD_DRV
 init	hardware/PM/pm.h	/^	s8 (*init) ( void );$/;"	m	struct:_PM_DIR
 init	hardware/RANDNUM/randomnum.h	/^	void (*init) ( void );$/;"	m	struct:_RN_DIR
 init	hardware/RTC/rtc.h	/^	void (*init) ( void );$/;"	m	struct:_RTC_DIR
+intemperate_adc1init	hardware/ADC/intemperate.c	/^static void intemperate_adc1init( void )$/;"	f	file:
+intemperate_getavgvalue	hardware/ADC/intemperate.c	/^static u16 intemperate_getavgvalue( void )$/;"	f	file:
+intemperate_getvalue	hardware/ADC/intemperate.c	/^static u16 intemperate_getvalue( void )$/;"	f	file:
+intemperate_gpioinit	hardware/ADC/intemperate.c	/^static void intemperate_gpioinit( void )$/;"	f	file:
+intemperate_init	hardware/ADC/intemperate.c	/^static s8 intemperate_init( void )$/;"	f	file:
+intemperate_ioctrl	hardware/ADC/intemperate.c	/^static void intemperate_ioctrl( u8 cmd, ADC_ATTR *padcattr )$/;"	f	file:
+intemperate_module	hardware/ADC/intemperate.c	/^const ADC_DIR intemperate_module = {$/;"	v
+intemperate_read	hardware/ADC/intemperate.c	/^static float intemperate_read( void )$/;"	f	file:
 ioctl	hardware/LCD/lcd.h	/^	s8    (*ioctl) ( u32 cmd, u32 param );$/;"	m	struct:_LCD_DRV
 ioctrl	hardware/ADC/adc.h	/^	void (*ioctrl) ( u8 cmd, ADC_ATTR *padcattr );$/;"	m	struct:_ADC_DIR
 ioctrl	hardware/PM/pm.h	/^	void (*ioctrl) ( u8 cmd, PM_ATTR *ppmattr );$/;"	m	struct:_PM_DIR
@@ -21551,6 +21563,14 @@ ioctrl	hardware/RTC/rtc.h	/^	s8   (*ioctrl) ( u8 cmd, RTC_ATTR *prtcattr );$/;"	
 lcd_atr_t	hardware/LCD/lcd.h	/^}lcd_atr_t;	$/;"	t	typeref:struct:_LCD_ATR
 lcd_drv	hardware/LCD/lcd.c	/^const lcd_drv_t *lcd_drv = 0;$/;"	v
 lcd_drv_t	hardware/LCD/lcd.h	/^}lcd_drv_t;$/;"	t	typeref:struct:_LCD_DRV
+lightsense_adc3init	hardware/ADC/lightsense.c	/^static void lightsense_adc3init( void )$/;"	f	file:
+lightsense_getavgvalue	hardware/ADC/lightsense.c	/^static u16 lightsense_getavgvalue( void )$/;"	f	file:
+lightsense_getvalue	hardware/ADC/lightsense.c	/^static u16 lightsense_getvalue( void )$/;"	f	file:
+lightsense_gpioinit	hardware/ADC/lightsense.c	/^static void lightsense_gpioinit( void )$/;"	f	file:
+lightsense_init	hardware/ADC/lightsense.c	/^static s8 lightsense_init( void )$/;"	f	file:
+lightsense_ioctrl	hardware/ADC/lightsense.c	/^static void lightsense_ioctrl( u8 cmd, ADC_ATTR *padcattr )$/;"	f	file:
+lightsense_module	hardware/ADC/lightsense.c	/^const ADC_DIR lightsense_module = {$/;"	v
+lightsense_read	hardware/ADC/lightsense.c	/^static float lightsense_read( void )$/;"	f	file:
 main	src/main.c	/^int main(int argc, char *argv[])$/;"	f
 max	hardware/RANDNUM/randomnum.h	/^	u32 max;$/;"	m	struct:_RN_ATTR
 maxDelay	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t maxDelay;            \/**< maximum offset specified by the pTapDelay array. *\/$/;"	m	struct:__anon289
