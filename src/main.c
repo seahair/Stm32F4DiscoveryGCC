@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 	u16 y = 790;
 	s8 lcd_id[12];
 	u8 rtcbuf[40];
+	float value; 
 
 	HardInit( );
 	//PwmStart( );
@@ -91,8 +92,10 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 20, 120, rtcbuf );
 
-		float value = AdcRead( );
-		sprintf( (char*)rtcbuf, "ADC Value:%04f", value );
+		value = AdcRead( );
+		sprintf( (char*)rtcbuf, "ADC Value:%.4f", value );
+		rtcbuf[18] = '\0';
+		printf( "ADC Value:%.4f\r\n", value );
 		LcdShowString( 20, 170, rtcbuf );
 
 #if 0

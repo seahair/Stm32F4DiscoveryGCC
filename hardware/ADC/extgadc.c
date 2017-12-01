@@ -14,6 +14,8 @@ static void extgadc_gpioinit( void )
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//使能GPIOA时钟
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;//PA5 通道5
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;//不带上下拉
@@ -53,6 +55,8 @@ static s8 extgadc_init( void )
 
 	extgadc_gpioinit( );
 	extgadc_adcinit( );
+
+	ADC_Cmd(ADC1, ENABLE);//开启 AD 转换器
 }
 
 static void extgadc_ioctrl( u8 cmd, ADC_ATTR *padcattr )
@@ -60,8 +64,10 @@ static void extgadc_ioctrl( u8 cmd, ADC_ATTR *padcattr )
 	switch (cmd)
 	{
 		case ADCCMDENABLE:
+			ADC_Cmd(ADC1, ENABLE);//开启 AD 转换器
 			break;
 		case ADCCMDDISABLE:
+			ADC_Cmd(ADC1, DISABLE);//关闭 AD 转换器
 			break;
 		case ADCCMDSETREFV:
 			adc_attr.refv = padcattr->refv;
@@ -90,7 +96,7 @@ static u16 extgadc_getavgvalue( void )
 
 	for( u8 t=0; t<adc_attr.count; t++ )
 	{
-		temp_value = extgadc_getvalue( );
+		temp_value += extgadc_getvalue( );
 		delay_ms( 5 );
 	}
 
