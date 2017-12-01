@@ -14,6 +14,7 @@
 #include "randomnum.h"
 #include "pm.h"
 #include "adc.h"
+#include "dac.h"
 
 
 
@@ -80,7 +81,7 @@ int main(int argc, char *argv[])
 
 	while(1)
 	{
-		delay_ms(1000);
+		delay_ms(500);
 		LedRed.LedRollBack( &LedRed );
 
 		LcdShowString( 600, 20, "Hello Linus" );
@@ -92,11 +93,14 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 20, 120, rtcbuf );
 
+		DacWrite( x++ );
+
+	
+#if 1
 		value = AdcRead( );
 		sprintf( (char*)rtcbuf, "ADC Value:%.4f", value );
-		rtcbuf[18] = '\0';
-		printf( "ADC Value:%.4f\r\n", value );
 		LcdShowString( 20, 170, rtcbuf );
+#endif
 
 #if 0
 		u32 rdnum = RnRead( );

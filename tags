@@ -39,11 +39,11 @@ ADC2_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM3
 ADC3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2338;"	d
 ADC3_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2146;"	d
 ADC3_IRQHandler	src/startup.c	318;"	d	file:
-ADCCMDDISABLE	hardware/ADC/adc.h	/^	ADCCMDDISABLE,$/;"	e	enum:__anon323
-ADCCMDENABLE	hardware/ADC/adc.h	/^	ADCCMDENABLE = 0,$/;"	e	enum:__anon323
-ADCCMDSERCH	hardware/ADC/adc.h	/^	ADCCMDSERCH,$/;"	e	enum:__anon323
-ADCCMDSETCOUNT	hardware/ADC/adc.h	/^	ADCCMDSETCOUNT$/;"	e	enum:__anon323
-ADCCMDSETREFV	hardware/ADC/adc.h	/^	ADCCMDSETREFV,$/;"	e	enum:__anon323
+ADCCMDDISABLE	hardware/ADC/adc.h	/^	ADCCMDDISABLE,$/;"	e	enum:__anon325
+ADCCMDENABLE	hardware/ADC/adc.h	/^	ADCCMDENABLE = 0,$/;"	e	enum:__anon325
+ADCCMDSERCH	hardware/ADC/adc.h	/^	ADCCMDSERCH,$/;"	e	enum:__anon325
+ADCCMDSETCOUNT	hardware/ADC/adc.h	/^	ADCCMDSETCOUNT$/;"	e	enum:__anon325
+ADCCMDSETREFV	hardware/ADC/adc.h	/^	ADCCMDSETREFV,$/;"	e	enum:__anon325
 ADCRESOLUTION12	hardware/ADC/adc.h	8;"	d
 ADC_ATTR	hardware/ADC/adc.h	/^}ADC_ATTR;$/;"	t	typeref:struct:_ADC_ATTR
 ADC_AnalogWatchdogCmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c	/^void ADC_AnalogWatchdogCmd(ADC_TypeDef* ADCx, uint32_t ADC_AnalogWatchdog)$/;"	f
@@ -80,7 +80,7 @@ ADC_CCR_TSVREFE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/S
 ADC_CCR_VBATE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2819;"	d
 ADC_CDR_DATA1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2823;"	d
 ADC_CDR_DATA2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2824;"	d
-ADC_CMD	hardware/ADC/adc.h	/^}ADC_CMD;$/;"	t	typeref:enum:__anon323
+ADC_CMD	hardware/ADC/adc.h	/^}ADC_CMD;$/;"	t	typeref:enum:__anon325
 ADC_CR1_AWDCH	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2474;"	d
 ADC_CR1_AWDCH_0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2475;"	d
 ADC_CR1_AWDCH_1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2476;"	d
@@ -182,7 +182,7 @@ ADC_CommonStructInit	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx
 ADC_Common_TypeDef	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^} ADC_Common_TypeDef;$/;"	t	typeref:struct:__anon91
 ADC_ContinuousConvMode	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h	/^  FunctionalState ADC_ContinuousConvMode; \/*!< Specifies whether the conversion $/;"	m	struct:__anon11
 ADC_ContinuousModeCmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c	/^void ADC_ContinuousModeCmd(ADC_TypeDef* ADCx, FunctionalState NewState)$/;"	f
-ADC_DEV	hardware/ADC/adc.h	/^}ADC_DEV;$/;"	t	typeref:enum:__anon322
+ADC_DEV	hardware/ADC/adc.h	/^}ADC_DEV;$/;"	t	typeref:enum:__anon324
 ADC_DIR	hardware/ADC/adc.h	/^}ADC_DIR;$/;"	t	typeref:struct:_ADC_DIR
 ADC_DMAAccessMode	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h	/^  uint32_t ADC_DMAAccessMode;             \/*!< Configures the Direct memory access $/;"	m	struct:__anon12
 ADC_DMAAccessMode_1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_adc.h	166;"	d
@@ -707,6 +707,7 @@ APSR_Z_Pos	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 AR	hardware/ADC/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/BEEP/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/CAPTURE/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+AR	hardware/DAC/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/IWDG/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/KEY/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/LCD/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -838,6 +839,7 @@ BTR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/
 BUILD_DIR	hardware/ADC/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/BEEP/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/CAPTURE/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+BUILD_DIR	hardware/DAC/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/IWDG/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/KEY/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/LCD/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -2375,6 +2377,7 @@ CAPTUREWAIT	hardware/CAPTURE/capture.h	10;"	d
 CC	hardware/ADC/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/BEEP/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/CAPTURE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	hardware/DAC/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/IWDG/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/KEY/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/LCD/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -3294,10 +3297,18 @@ CoreDebug_Type	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/c
 D2U_L2R	hardware/LCD/lcd.h	52;"	d
 D2U_R2L	hardware/LCD/lcd.h	53;"	d
 DAC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2326;"	d
+DACCMDDATALENFACE	hardware/DAC/dac.h	/^	DACCMDDATALENFACE,$/;"	e	enum:__anon321
+DACCMDDISABLE	hardware/DAC/dac.h	/^	DACCMDDISABLE,$/;"	e	enum:__anon321
+DACCMDENABLE	hardware/DAC/dac.h	/^	DACCMDENABLE = 0,$/;"	e	enum:__anon321
+DACInitType	hardware/DAC/dac.h	/^	DAC_InitTypeDef DACInitType;$/;"	m	struct:_DAC_ATTR
+DACRESOLUTION12	hardware/DAC/dac.h	7;"	d
+DACSETREFV	hardware/DAC/dac.h	/^	DACSETREFV$/;"	e	enum:__anon321
+DAC_ATTR	hardware/DAC/dac.h	/^}DAC_ATTR;$/;"	t	typeref:struct:_DAC_ATTR
 DAC_Align_12b_L	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dac.h	207;"	d
 DAC_Align_12b_R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dac.h	206;"	d
 DAC_Align_8b_R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dac.h	208;"	d
 DAC_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2133;"	d
+DAC_CMD	hardware/DAC/dac.h	/^}DAC_CMD;$/;"	t	typeref:enum:__anon321
 DAC_CR_BOFF1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4211;"	d
 DAC_CR_BOFF2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4232;"	d
 DAC_CR_DMAEN1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4229;"	d
@@ -3337,6 +3348,7 @@ DAC_Channel_2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPer
 DAC_ClearFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c	/^void DAC_ClearFlag(uint32_t DAC_Channel, uint32_t DAC_FLAG)$/;"	f
 DAC_ClearITPendingBit	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c	/^void DAC_ClearITPendingBit(uint32_t DAC_Channel, uint32_t DAC_IT)$/;"	f
 DAC_Cmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c	/^void DAC_Cmd(uint32_t DAC_Channel, FunctionalState NewState)$/;"	f
+DAC_DEV	hardware/DAC/dac.h	/^}DAC_DEV;$/;"	t	typeref:enum:__anon320
 DAC_DHR12L1_DACC1DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4261;"	d
 DAC_DHR12L2_DACC2DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4270;"	d
 DAC_DHR12LD_DACC1DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4280;"	d
@@ -3349,6 +3361,7 @@ DAC_DHR8R1_DACC1DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Devi
 DAC_DHR8R2_DACC2DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4273;"	d
 DAC_DHR8RD_DACC1DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4284;"	d
 DAC_DHR8RD_DACC2DHR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4285;"	d
+DAC_DIR	hardware/DAC/dac.h	/^}DAC_DIR;$/;"	t	typeref:struct:_DAC_DIR
 DAC_DMACmd	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c	/^void DAC_DMACmd(uint32_t DAC_Channel, FunctionalState NewState)$/;"	f
 DAC_DOR1_DACC1DOR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4288;"	d
 DAC_DOR2_DACC2DOR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	4291;"	d
@@ -3690,6 +3703,7 @@ DEMCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300
 DEPS	hardware/ADC/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/BEEP/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/CAPTURE/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/DAC/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/IWDG/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/KEY/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/LCD/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
@@ -6692,6 +6706,9 @@ DWT_Type	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm
 DWT_Type	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^} DWT_Type;$/;"	t	typeref:struct:__anon247
 DWT_Type	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^} DWT_Type;$/;"	t	typeref:struct:__anon284
 DWT_Type	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^} DWT_Type;$/;"	t	typeref:struct:__anon314
+DacInit	hardware/DAC/dac.c	/^s8 DacInit( u8 dacdev )$/;"	f
+DacIoctrl	hardware/DAC/dac.c	/^void DacIoctrl( u8 cmd, DAC_ATTR *pdacattr )$/;"	f
+DacWrite	hardware/DAC/dac.c	/^void DacWrite( u16 dacnum )$/;"	f
 Data	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^  uint8_t Data[8]; \/*!< Contains the data to be received. It ranges from 0 to $/;"	m	struct:__anon74
 Data	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^  uint8_t Data[8]; \/*!< Contains the data to be transmitted. It ranges from 0 $/;"	m	struct:__anon73
 Data	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h	/^  uint32_t Data[8];      \/*!< Message digest result : 8x 32bit wors for SHA-256,$/;"	m	struct:__anon23
@@ -7109,7 +7126,7 @@ EXCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.
 EXCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __IO uint32_t EXCCNT;                  \/*!< Offset: 0x00C (R\/W)  Exception Overhead Count Register         *\/$/;"	m	struct:__anon247
 EXCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint32_t EXCCNT;                  \/*!< Offset: 0x00C (R\/W)  Exception Overhead Count Register         *\/$/;"	m	struct:__anon284
 EXCCNT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t EXCCNT;                  \/*!< Offset: 0x00C (R\/W)  Exception Overhead Count Register         *\/$/;"	m	struct:__anon314
-EXTGADC	hardware/ADC/adc.h	/^	EXTGADC = 0,$/;"	e	enum:__anon322
+EXTGADC	hardware/ADC/adc.h	/^	EXTGADC = 0,$/;"	e	enum:__anon324
 EXTI	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2343;"	d
 EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^EXTI0_IRQHandler                                                          $/;"	l
 EXTI0_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40_41xxx.s	/^EXTI0_IRQHandler                                                          $/;"	l
@@ -10005,6 +10022,7 @@ GE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^
 GE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^    uint32_t GE:4;                       \/*!< bit: 16..19  Greater than or Equal flags        *\/$/;"	m	struct:__anon237::__anon238
 GE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t GE:4;                       \/*!< bit: 16..19  Greater than or Equal flags        *\/$/;"	m	struct:__anon270::__anon271
 GE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^    uint32_t GE:4;                       \/*!< bit: 16..19  Greater than or Equal flags        *\/$/;"	m	struct:__anon274::__anon275
+GENDAC	hardware/DAC/dac.h	/^	GENDAC = 0,$/;"	e	enum:__anon320
 GHCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GHCR;           \/*!< DSI Host Generic Header Configuration Register,            Address offset: 0x6C       *\/$/;"	m	struct:__anon106
 GPDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GPDR;           \/*!< DSI Host Generic Payload Data Register,                    Address offset: 0x70       *\/$/;"	m	struct:__anon106
 GPIOA	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2385;"	d
@@ -10478,6 +10496,11 @@ GRED	hardware/LCD/lcd.h	18;"	d
 GREEN	hardware/LCD/lcd.h	22;"	d
 GTPR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t GTPR;       \/*!< USART Guard time and prescaler register, Address offset: 0x18 *\/$/;"	m	struct:__anon139
 GVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GVCIDR;         \/*!< DSI Host Generic VCID Register,                            Address offset: 0x30       *\/$/;"	m	struct:__anon106
+Gendac_Dac1Init	hardware/DAC/gendac.c	/^static void Gendac_Dac1Init( void )$/;"	f	file:
+Gendac_GpioInit	hardware/DAC/gendac.c	/^static void Gendac_GpioInit( void )$/;"	f	file:
+Gendac_Init	hardware/DAC/gendac.c	/^static s8 Gendac_Init( void )$/;"	f	file:
+Gendac_Ioctrl	hardware/DAC/gendac.c	/^static void Gendac_Ioctrl( u8 cmd, DAC_ATTR *pdacattr )$/;"	f	file:
+Gendac_Write	hardware/DAC/gendac.c	/^static void Gendac_Write( u16 dacnum )$/;"	f	file:
 GetKeyStatus	hardware/KEY/key.c	/^s8 GetKeyStatus( u8 pin )$/;"	f
 GetLedStatus	hardware/LED/led.c	/^u8 GetLedStatus( LED* led )$/;"	f
 GetLedStatus	hardware/LED/led.h	/^    u8   (*GetLedStatus) ( LED* );$/;"	m	struct:_LED
@@ -11130,7 +11153,7 @@ INAK_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeri
 INDEX_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	324;"	d
 INITMODE_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c	310;"	d	file:
 INPUT_SPACING	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	346;"	d
-INTEMPERATE	hardware/ADC/adc.h	/^	INTEMPERATE,$/;"	e	enum:__anon322
+INTEMPERATE	hardware/ADC/adc.h	/^	INTEMPERATE,$/;"	e	enum:__anon324
 INTX_DISABLE	src/sys.c	/^__asm void INTX_DISABLE(void)$/;"	f
 INTX_ENABLE	src/sys.c	/^__asm void INTX_ENABLE(void)$/;"	f
 IP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	/^  __IO uint32_t IP[8];                   \/*!< Offset: 0x300 (R\/W)  Interrupt Priority Register              *\/$/;"	m	struct:__anon297
@@ -12365,14 +12388,14 @@ LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/
 LAR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __O  uint32_t LAR;                     \/*!< Offset: 0xFB0 ( \/W)  ITM Lock Access Register                  *\/$/;"	m	struct:__anon312
 LCCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCCR;          \/*!< DSI Host LTDC Current Color Coding Register,               Address offset: 0x110      *\/$/;"	m	struct:__anon106
 LCCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LCCR;           \/*!< DSI Host LTDC Command Configuration Register,              Address offset: 0x64       *\/ $/;"	m	struct:__anon106
-LCDCMD	hardware/LCD/lcd.h	/^}LCDCMD;$/;"	t	typeref:enum:__anon321
-LCDCMDSETASC2SIZE	hardware/LCD/lcd.h	/^	LCDCMDSETASC2SIZE,$/;"	e	enum:__anon321
-LCDCMDSETBACKCOLOR	hardware/LCD/lcd.h	/^	LCDCMDSETBACKCOLOR,$/;"	e	enum:__anon321
-LCDCMDSETBRUSHCOLOR	hardware/LCD/lcd.h	/^	LCDCMDSETBRUSHCOLOR,$/;"	e	enum:__anon321
-LCDCMDSETDIR	hardware/LCD/lcd.h	/^	LCDCMDSETDIR,$/;"	e	enum:__anon321
-LCDCMDSETSHOWMODE	hardware/LCD/lcd.h	/^	LCDCMDSETSHOWMODE$/;"	e	enum:__anon321
-LCDCMDSLEEPIN	hardware/LCD/lcd.h	/^	LCDCMDSLEEPIN  = 0,$/;"	e	enum:__anon321
-LCDCMDSLEEPOUT	hardware/LCD/lcd.h	/^	LCDCMDSLEEPOUT,$/;"	e	enum:__anon321
+LCDCMD	hardware/LCD/lcd.h	/^}LCDCMD;$/;"	t	typeref:enum:__anon323
+LCDCMDSETASC2SIZE	hardware/LCD/lcd.h	/^	LCDCMDSETASC2SIZE,$/;"	e	enum:__anon323
+LCDCMDSETBACKCOLOR	hardware/LCD/lcd.h	/^	LCDCMDSETBACKCOLOR,$/;"	e	enum:__anon323
+LCDCMDSETBRUSHCOLOR	hardware/LCD/lcd.h	/^	LCDCMDSETBRUSHCOLOR,$/;"	e	enum:__anon323
+LCDCMDSETDIR	hardware/LCD/lcd.h	/^	LCDCMDSETDIR,$/;"	e	enum:__anon323
+LCDCMDSETSHOWMODE	hardware/LCD/lcd.h	/^	LCDCMDSETSHOWMODE$/;"	e	enum:__anon323
+LCDCMDSLEEPIN	hardware/LCD/lcd.h	/^	LCDCMDSLEEPIN  = 0,$/;"	e	enum:__anon323
+LCDCMDSLEEPOUT	hardware/LCD/lcd.h	/^	LCDCMDSLEEPOUT,$/;"	e	enum:__anon323
 LCDMODEADDBACK	hardware/LCD/lcd.h	36;"	d
 LCDMODENOBACK	hardware/LCD/lcd.h	35;"	d
 LCDMODULELEN	hardware/LCD/lcd.c	18;"	d	file:
@@ -12392,7 +12415,7 @@ LEDRED	hardware/LED/led.h	13;"	d
 LED_Init	src/hardwareinit.c	/^void LED_Init( void )$/;"	f
 LIB_A	hardware/Makefile	/^LIB_A = libhardware.a$/;"	m
 LIFCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LIFCR;  \/*!< DMA low interrupt flag clear register,  Address offset: 0x08 *\/$/;"	m	struct:__anon104
-LIGHTSENSE	hardware/ADC/adc.h	/^	LIGHTSENSE$/;"	e	enum:__anon322
+LIGHTSENSE	hardware/ADC/adc.h	/^	LIGHTSENSE$/;"	e	enum:__anon324
 LINE_WATERMARK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h	421;"	d
 LIPCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LIPCR;         \/*!< LTDC Line Interrupt Position Configuration Register, Address offset: 0x40 *\/$/;"	m	struct:__anon126
 LISR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t LISR;   \/*!< DMA low interrupt status register,      Address offset: 0x00 *\/$/;"	m	struct:__anon104
@@ -13501,6 +13524,7 @@ OAR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 OBJS	hardware/ADC/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/BEEP/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/CAPTURE/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+OBJS	hardware/DAC/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/IWDG/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/KEY/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/LCD/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
@@ -13904,6 +13928,7 @@ PVD_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST
 PVD_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^PVD_IRQHandler  $/;"	l
 PVD_IRQHandler	src/startup.c	272;"	d	file:
 PVD_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  PVD_IRQn                    = 1,      \/*!< PVD through EXTI Line detection Interrupt                         *\/$/;"	e	enum:IRQn
+PWMDAC	hardware/DAC/dac.h	/^	PWMDAC$/;"	e	enum:__anon320
 PWMHZ	hardware/PWM/pwm.h	8;"	d
 PWMPERIOD	hardware/PWM/pwm.h	9;"	d
 PWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2325;"	d
@@ -15577,17 +15602,17 @@ RSERVED1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc
 RSERVED1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^       uint32_t RSERVED1[24];$/;"	m	struct:__anon308
 RTC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2294;"	d
 RTCAlarm_IRQHandler	src/startup.c	312;"	d	file:
-RTCCMDDISABLEALARMA	hardware/RTC/rtc.h	/^	RTCCMDDISABLEALARMA,$/;"	e	enum:__anon320
-RTCCMDDISABLEALARMB	hardware/RTC/rtc.h	/^	RTCCMDDISABLEALARMB,$/;"	e	enum:__anon320
-RTCCMDDISABLEWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDDISABLEWAKEUP$/;"	e	enum:__anon320
-RTCCMDENABLEALARMA	hardware/RTC/rtc.h	/^	RTCCMDENABLEALARMA,$/;"	e	enum:__anon320
-RTCCMDENABLEALARMB	hardware/RTC/rtc.h	/^	RTCCMDENABLEALARMB,$/;"	e	enum:__anon320
-RTCCMDENABLEWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDENABLEWAKEUP,$/;"	e	enum:__anon320
-RTCCMDSETALARMA	hardware/RTC/rtc.h	/^	RTCCMDSETALARMA,$/;"	e	enum:__anon320
-RTCCMDSETALARMB	hardware/RTC/rtc.h	/^	RTCCMDSETALARMB,$/;"	e	enum:__anon320
-RTCCMDSETDATE	hardware/RTC/rtc.h	/^	RTCCMDSETDATE,$/;"	e	enum:__anon320
-RTCCMDSETTIME	hardware/RTC/rtc.h	/^	RTCCMDSETTIME = 0,$/;"	e	enum:__anon320
-RTCCMDSETWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDSETWAKEUP,$/;"	e	enum:__anon320
+RTCCMDDISABLEALARMA	hardware/RTC/rtc.h	/^	RTCCMDDISABLEALARMA,$/;"	e	enum:__anon322
+RTCCMDDISABLEALARMB	hardware/RTC/rtc.h	/^	RTCCMDDISABLEALARMB,$/;"	e	enum:__anon322
+RTCCMDDISABLEWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDDISABLEWAKEUP$/;"	e	enum:__anon322
+RTCCMDENABLEALARMA	hardware/RTC/rtc.h	/^	RTCCMDENABLEALARMA,$/;"	e	enum:__anon322
+RTCCMDENABLEALARMB	hardware/RTC/rtc.h	/^	RTCCMDENABLEALARMB,$/;"	e	enum:__anon322
+RTCCMDENABLEWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDENABLEWAKEUP,$/;"	e	enum:__anon322
+RTCCMDSETALARMA	hardware/RTC/rtc.h	/^	RTCCMDSETALARMA,$/;"	e	enum:__anon322
+RTCCMDSETALARMB	hardware/RTC/rtc.h	/^	RTCCMDSETALARMB,$/;"	e	enum:__anon322
+RTCCMDSETDATE	hardware/RTC/rtc.h	/^	RTCCMDSETDATE,$/;"	e	enum:__anon322
+RTCCMDSETTIME	hardware/RTC/rtc.h	/^	RTCCMDSETTIME = 0,$/;"	e	enum:__anon322
+RTCCMDSETWAKEUP	hardware/RTC/rtc.h	/^	RTCCMDSETWAKEUP,$/;"	e	enum:__anon322
 RTCEN_BitNumber	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c	102;"	d	file:
 RTC_ALRMAR_DT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	9962;"	d
 RTC_ALRMAR_DT_0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	9963;"	d
@@ -15802,7 +15827,7 @@ RTC_CALR_CALM_8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/S
 RTC_CALR_CALP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	10106;"	d
 RTC_CALR_CALW16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	10108;"	d
 RTC_CALR_CALW8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	10107;"	d
-RTC_CMD	hardware/RTC/rtc.h	/^}RTC_CMD;$/;"	t	typeref:enum:__anon320
+RTC_CMD	hardware/RTC/rtc.h	/^}RTC_CMD;$/;"	t	typeref:enum:__anon322
 RTC_CR_ADD1H	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	9911;"	d
 RTC_CR_ALRAE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	9919;"	d
 RTC_CR_ALRAIE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	9915;"	d
@@ -18121,6 +18146,7 @@ SRCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx
 SRCS	hardware/ADC/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/BEEP/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/CAPTURE/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	hardware/DAC/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/IWDG/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/KEY/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/LCD/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
@@ -20513,6 +20539,8 @@ _BEEP	hardware/BEEP/beep.h	/^typedef struct _BEEP{$/;"	s
 _BIT_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	558;"	d
 _BIT_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	672;"	d
 _BIT_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	682;"	d
+_DAC_ATTR	hardware/DAC/dac.h	/^typedef struct _DAC_ATTR{$/;"	s
+_DAC_DIR	hardware/DAC/dac.h	/^typedef struct _DAC_DIR{$/;"	s
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	560;"	d
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0plus.h	674;"	d
 _IP_IDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	684;"	d
@@ -20636,6 +20664,7 @@ __CORTEX_M	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 __CORTEX_M	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	76;"	d
 __CORTEX_SC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	76;"	d
 __CORTEX_SC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	76;"	d
+__DAC_H__	hardware/DAC/dac.h	2;"	d
 __DCACHE_PRESENT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	230;"	d
 __DELAY_H	inc/delay.h	2;"	d
 __DMB	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE void __DMB(void)$/;"	f
@@ -20689,6 +20718,7 @@ __FPU_USED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_
 __FPU_USED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	183;"	d
 __FPU_USED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h	114;"	d
 __FPU_USED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	114;"	d
+__GENDAC_H__	hardware/DAC/gendac.h	2;"	d
 __HARDWAREINIT_H__	src/hardwareinit.h	2;"	d
 __I	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	193;"	d
 __I	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm0.h	195;"	d
@@ -21454,6 +21484,10 @@ cominit	hardware/ADC/adc.h	/^	ADC_CommonInitTypeDef cominit;$/;"	m	struct:_ADC_A
 copy	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^copy:$/;"	l
 count	hardware/ADC/adc.h	/^	u16 count;$/;"	m	struct:_ADC_ATTR
 cploop	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^cploop:$/;"	l
+dac_attr	hardware/DAC/gendac.c	/^static DAC_ATTR dac_attr; $/;"	v	file:
+dac_dir	hardware/DAC/dac.c	/^const DAC_DIR *dac_dir = 0;$/;"	v
+dac_modules	hardware/DAC/dac.c	/^static DAC_DIR *dac_modules[] = {$/;"	v	file:
+datalenface	hardware/DAC/dac.h	/^	u32 datalenface;$/;"	m	struct:_DAC_ATTR
 date	hardware/RTC/rtc.h	/^	u8 date;$/;"	m	struct:_RTC_ATTR
 delay_init	src/delay.c	/^void delay_init(u8 SYSCLK)$/;"	f
 delay_ms	src/delay.c	/^void delay_ms(u16 nms)$/;"	f
@@ -21524,6 +21558,7 @@ g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/S
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f427x.s	/^g_pfnVectors:$/;"	l
 g_pfnVectors	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc_ride7/startup_stm32f429_439xx.s	/^g_pfnVectors:$/;"	l
 g_pfnVectors	src/startup.c	/^void (* const g_pfnVectors[])(void) =$/;"	v
+gendac_module	hardware/DAC/gendac.c	/^const DAC_DIR gendac_module = {$/;"	v
 getpixel	hardware/LCD/lcd.h	/^	u16   (*getpixel) ( u16 x, u16 y );$/;"	m	struct:_LCD_DRV
 gx	stm32.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
 gx	stm32.vim	/^vmap gx <Plug>NetrwBrowseXVis$/;"	m
@@ -21543,6 +21578,7 @@ ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_ma
 ifftFlagR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlagR;                        \/**< flag that selects forward (ifftFlagR=0) or inverse (ifftFlagR=1) transform. *\/$/;"	m	struct:__anon175
 init	hardware/ADC/adc.h	/^	ADC_InitTypeDef	 init;$/;"	m	struct:_ADC_ATTR
 init	hardware/ADC/adc.h	/^	s8   (*init) ( void );$/;"	m	struct:_ADC_DIR
+init	hardware/DAC/dac.h	/^	s8 (*init) ( void );$/;"	m	struct:_DAC_DIR
 init	hardware/LCD/lcd.h	/^	void  (*init) ( void );$/;"	m	struct:_LCD_DRV
 init	hardware/PM/pm.h	/^	s8 (*init) ( void );$/;"	m	struct:_PM_DIR
 init	hardware/RANDNUM/randomnum.h	/^	void (*init) ( void );$/;"	m	struct:_RN_DIR
@@ -21557,6 +21593,7 @@ intemperate_module	hardware/ADC/intemperate.c	/^const ADC_DIR intemperate_module
 intemperate_read	hardware/ADC/intemperate.c	/^static float intemperate_read( void )$/;"	f	file:
 ioctl	hardware/LCD/lcd.h	/^	s8    (*ioctl) ( u32 cmd, u32 param );$/;"	m	struct:_LCD_DRV
 ioctrl	hardware/ADC/adc.h	/^	void (*ioctrl) ( u8 cmd, ADC_ATTR *padcattr );$/;"	m	struct:_ADC_DIR
+ioctrl	hardware/DAC/dac.h	/^	void (*ioctrl) ( u8 cmd, DAC_ATTR *pdacattr );$/;"	m	struct:_DAC_DIR
 ioctrl	hardware/PM/pm.h	/^	void (*ioctrl) ( u8 cmd, PM_ATTR *ppmattr );$/;"	m	struct:_PM_DIR
 ioctrl	hardware/RANDNUM/randomnum.h	/^	s8   (*ioctrl) ( u8 cmd, RN_ATTR *prnattr );$/;"	m	struct:_RN_DIR
 ioctrl	hardware/RTC/rtc.h	/^	s8   (*ioctrl) ( u8 cmd, RTC_ATTR *prtcattr );$/;"	m	struct:_RTC_DIR
@@ -21800,6 +21837,7 @@ read	hardware/RTC/rtc.h	/^	void (*read) ( RTC_ATTR *prtcattr );$/;"	m	struct:_RT
 recipTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *recipTable;   \/**< Points to the reciprocal initial value table. *\/$/;"	m	struct:__anon203
 recipTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *recipTable;    \/**< points to the reciprocal initial value table. *\/$/;"	m	struct:__anon202
 refv	hardware/ADC/adc.h	/^	float refv;$/;"	m	struct:_ADC_ATTR
+refv	hardware/DAC/dac.h	/^	float refv;$/;"	m	struct:_DAC_ATTR
 rn_attr	hardware/RANDNUM/rng.c	/^static RN_ATTR rn_attr;$/;"	v	file:
 rn_dir	hardware/RANDNUM/randomnum.c	/^const RN_DIR *rn_dir=0;$/;"	v
 rn_modules	hardware/RANDNUM/randomnum.c	/^static RN_DIR *rn_modules[] = {$/;"	v	file:
@@ -21924,6 +21962,7 @@ wakeupclk	hardware/RTC/rtc.h	/^	u32 wakeupclk;$/;"	m	struct:_RTC_ATTR
 wakeupcycle	hardware/RTC/rtc.h	/^	u16 wakeupcycle;$/;"	m	struct:_RTC_ATTR
 weekday	hardware/RTC/rtc.h	/^	u8 weekday;$/;"	m	struct:_RTC_ATTR
 width	hardware/LCD/lcd.h	/^	u16	  width;$/;"	m	struct:_LCD_ATR
+write	hardware/DAC/dac.h	/^	void (*write) ( u16 );$/;"	m	struct:_DAC_DIR
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t x0;        \/**< saves previous input sample. *\/$/;"	m	struct:__anon201
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t x0;            \/**< saves previous input sample. *\/$/;"	m	struct:__anon203
 x0	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t x0;             \/**< saves previous input sample. *\/$/;"	m	struct:__anon202
