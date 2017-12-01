@@ -13,11 +13,11 @@ static void lightsense_gpioinit( void )
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);//使能GPIOA时钟
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;//PA5 通道5
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);//使能GPIOA时钟
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;//PA5 通道5
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;//模拟输入
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;//不带上下拉
-	GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化 
+	GPIO_Init(GPIOF, &GPIO_InitStructure);//初始化 
 }
 
 static void lightsense_adc3init( void )
@@ -48,7 +48,7 @@ static s8 lightsense_init( void )
 	adc_attr.init.ADC_DataAlign = ADC_DataAlign_Right;//右对齐
 	adc_attr.init.ADC_NbrOfConversion = 1;//1个转换在规则序列中 也就是只转换规则序列1 
 
-	adc_attr.channel = ADC_Channel_7;
+	adc_attr.channel = ADC_Channel_5;
 	adc_attr.refv = 3.3;
 	adc_attr.count = 10;
 
