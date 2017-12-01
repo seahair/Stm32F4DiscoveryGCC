@@ -93,7 +93,8 @@ void HardInit( void )
 	//TpadInit( );
 	//RnInit( );
 	//PmInit( );
-	AdcInit( EXTGADC );
+	//AdcInit( EXTGADC );
+	AdcInit( INTEMPERATE );
 
 //	FSMC_SRAM_Init( );
 }
