@@ -21,6 +21,7 @@ TEST += RTC
 TEST += RANDNUM
 TEST += PM
 TEST += ADC
+TEST += DAC
 
 
 .PHONY: $(TEST)
@@ -76,6 +77,9 @@ PM:
 
 ADC:
 	make -C ADC 
+
+DAC:
+	make -C DAC 
 
 #END
 $(OBJS): | $(BUILD_DIR)
