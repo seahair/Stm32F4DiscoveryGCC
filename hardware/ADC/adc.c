@@ -1,5 +1,7 @@
 #include "adc.h"
 #include "extgadc.h"
+#include "intemperate.h"
+#include "lightsense.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_adc.h"
 
@@ -9,6 +11,8 @@ const ADC_DIR *adc_dir = 0;
 
 ADC_DIR *adc_modules[] = {
 	&extgadc_module,
+	&intemperate_module,
+	&lightsense_module,
 };
 
 
