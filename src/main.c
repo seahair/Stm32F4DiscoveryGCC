@@ -36,6 +36,8 @@ u32 TPADDefaultTime = 0;
 //u16 POINT_COLOR=0x0000;	//»­±ÊÑÕÉ«
 //u16 BACK_COLOR=0xFFFF;  //±³¾°É«
 
+u16 DacCount= 10;
+
 void MyKeyTest( u8 key );
 
 
@@ -93,7 +95,7 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 20, 120, rtcbuf );
 
-		DacWrite( x++ );
+		DacWrite( DacCount++ );
 
 	
 #if 1
@@ -187,7 +189,8 @@ void EXTI2_IRQHandler(void)
 	if( KEY2PRESS == GetKeyStatus( KEY2 ) )
 	{
 		LedGreen.LedRollBack( &LedGreen );
-		PwmSetDutyCycle( DutyCycle-=10 ); 
+		//PwmSetDutyCycle( DutyCycle-=10 ); 
+		DacCount++;
 	}
 	EXTI_ClearITPendingBit(EXTI_Line2); //清除 LINE2 上的中断标志位
 }
@@ -198,7 +201,7 @@ void EXTI3_IRQHandler(void)
 	if( KEY1PRESS == GetKeyStatus( KEY1 ) )
 	{
 		LedGreen.LedRollBack( &LedGreen );
-		PwmSetPeriodUs( Period+=50 ); 
+		//PwmSetPeriodUs( Period+=50 ); 
 	}
 	EXTI_ClearITPendingBit(EXTI_Line3); //清除 LINE3 上的中断标志位
 }
@@ -209,7 +212,8 @@ void EXTI4_IRQHandler(void)
 	if( KEY0PRESS == GetKeyStatus( KEY0 ) )
 	{
 		LedGreen.LedRollBack( &LedGreen );
-		PwmSetPeriodUs( Period-=50 ); 
+		//PwmSetPeriodUs( Period-=50 ); 
+		DacCount--;
 	}
 	EXTI_ClearITPendingBit(EXTI_Line4); //清除 LINE4 上的中断标志位
 }

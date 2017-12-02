@@ -1,5 +1,6 @@
 #include "dac.h"
 #include "gendac.h"
+#include "pwmdac.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"
 
@@ -8,7 +9,7 @@ const DAC_DIR *dac_dir = 0;
 
 static DAC_DIR *dac_modules[] = {
 	&gendac_module,
-	//&pwmdac_module
+	&pwmdac_module
 };
 
 

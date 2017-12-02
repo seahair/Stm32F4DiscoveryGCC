@@ -5,6 +5,7 @@
 #include "stm32f4xx_dac.h"
 
 #define  DACRESOLUTION12    4096 
+#define  DACRESOLUTION8	    256 
 
 typedef enum {
 	GENDAC = 0,
@@ -16,13 +17,17 @@ typedef enum {
 	DACCMDENABLE = 0,
 	DACCMDDISABLE,
 	DACCMDDATALENFACE,
-	DACSETREFV
+	DACSETREFV,
+	DACSETPSC,
+	DACSETARR,
 }DAC_CMD;
 
 typedef struct _DAC_ATTR{
 	DAC_InitTypeDef DACInitType;
 	u32 datalenface;
 	float refv;
+	u16 psc;
+	u16 arr;
 }DAC_ATTR;
 
 typedef struct _DAC_DIR{

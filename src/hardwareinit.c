@@ -94,10 +94,11 @@ void HardInit( void )
 	//TpadInit( );
 	//RnInit( );
 	//PmInit( );
-	//AdcInit( EXTGADC );
+	AdcInit( EXTGADC );
 	//AdcInit( INTEMPERATE );
 	//AdcInit( LIGHTSENSE );
 	DacInit( GENDAC );	
+	//DacInit( PWMDAC );	
 
 
 //	FSMC_SRAM_Init( );
