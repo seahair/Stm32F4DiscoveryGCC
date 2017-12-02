@@ -70,6 +70,7 @@ INCLUDE+=-I$(TOP)/hardware/RANDNUM
 INCLUDE+=-I$(TOP)/hardware/PM
 INCLUDE+=-I$(TOP)/hardware/ADC
 INCLUDE+=-I$(TOP)/hardware/DAC
+INCLUDE+=-I$(TOP)/hardware/DMA
 
 
 

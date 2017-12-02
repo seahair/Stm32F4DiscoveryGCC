@@ -15,6 +15,7 @@
 #include "pm.h"
 #include "adc.h"
 #include "dac.h"
+#include "dma.h"
 
 
 void LED_Init( void )
@@ -99,7 +100,7 @@ void HardInit( void )
 	//AdcInit( LIGHTSENSE );
 	DacInit( GENDAC );	
 	//DacInit( PWMDAC );	
-
+	//DmaInit( DMAUSART1TX );
 
 //	FSMC_SRAM_Init( );
 }
