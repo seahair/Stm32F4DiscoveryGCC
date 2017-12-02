@@ -15,6 +15,7 @@
 #include "pm.h"
 #include "adc.h"
 #include "dac.h"
+#include "dma.h"
 
 
 
@@ -37,6 +38,9 @@ u32 TPADDefaultTime = 0;
 //u16 BACK_COLOR=0xFFFF;  //±³¾°É«
 
 u16 DacCount= 10;
+
+#define DMATXNUM 8200
+u8 dmatxbuf[DMATXNUM];
 
 void MyKeyTest( u8 key );
 
@@ -80,6 +84,14 @@ int main(int argc, char *argv[])
 	//RN_ATTR myrn = { 50, 199, 0 };
 	//RnIoctrl( RNCMDSETRANGE, &myrn );
 	
+#if 0
+	DMA_ATTR mydmaattr;
+	mydmaattr.memoryaddr = &dmatxbuf; 
+	mydmaattr.txsize = DMATXNUM;
+	DmaIoCtrl( DMACMDSETMEMADDR, &mydmaattr );
+	DmaIoCtrl( DMACMDSETTXSIZE, &mydmaattr );
+	DmaIoCtrl( DMACMDSTART, &mydmaattr ); 
+#endif
 
 	while(1)
 	{
