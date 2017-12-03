@@ -2,6 +2,7 @@
 #include "usart1txdma.h"
 #include "stm32f4xx.h"
 #include "stm32f4xx_dma.h"
+#include "stm32f4xx_usart.h"
 
 
 static DMA_ATTR dma_attr;
@@ -50,20 +51,19 @@ static void usart1tx_dmainit( void )
 	while (DMA_GetCmdStatus(dma_attr.DMA_Streamx) != DISABLE){}//等待DMA可配置 
 }
 
-static s8 usart1tx_init( void )
+static s8 usart1tx_init( DMA_ATTR *pdmaattr )
 {
 	dma_attr.DMA_Streamx = DMA2_Stream7;
 	dma_attr.flag = DMA_FLAG_TCIF7;
 	dma_attr.channel = DMA_Channel_4;
 	dma_attr.periphaddr = (u32)&USART1->DR;
-	dma_attr.memoryaddr = (u32)&USART1->DR;
-	dma_attr.txsize = 8200;
+	dma_attr.memoryaddr = pdmaattr->memoryaddr;
+	dma_attr.txsize = 820;
 
 	usart1tx_gpioinit( );
 	usart1tx_usart1init( );
 	usart1tx_dmainit( );
 
-	USART_DMACmd(USART1,USART_DMAReq_Tx,ENABLE);
 }
 
 static void usart1tx_ioctrl( u8 cmd, DMA_ATTR *pdmaattr )
@@ -71,12 +71,14 @@ static void usart1tx_ioctrl( u8 cmd, DMA_ATTR *pdmaattr )
 	switch ( cmd )
 	{
 		case DMACMDSTART :
+			USART_DMACmd(USART1,USART_DMAReq_Tx,ENABLE);
 			DMA_Cmd(dma_attr.DMA_Streamx, DISABLE);                      //关闭DMA传输 
 			while (DMA_GetCmdStatus(dma_attr.DMA_Streamx) != DISABLE){}	//确保DMA可以被设置  
 			DMA_SetCurrDataCounter(dma_attr.DMA_Streamx,dma_attr.txsize);          //数据传输量  
 			DMA_Cmd(dma_attr.DMA_Streamx, ENABLE);                      //开启DMA传输 
 			break;
 		case DMACMDSTOP :
+			USART_DMACmd(USART1,USART_DMAReq_Tx,DISABLE);
 			DMA_Cmd(dma_attr.DMA_Streamx, DISABLE);                      //关闭DMA传输 
 			break;
 		case DMACMDSETSTREAM :
@@ -105,7 +107,7 @@ static void usart1tx_ioctrl( u8 cmd, DMA_ATTR *pdmaattr )
 
 static u8 usart1tx_getstatus( void )
 {
-	return DMA_GetFlagStatus( dma_attr.DMA_Streamx, dma_attr.flag );	
+	return DMA_GetFlagStatus(DMA2_Stream7,DMA_FLAG_TCIF7);	
 }
 
 static float usart1tx_gettransprogess( void )

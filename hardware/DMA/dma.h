@@ -30,13 +30,13 @@ typedef struct _DMA_ATTR {
 }DMA_ATTR;
 
 typedef struct _DMA_DIR {
-	s8   (*init) ( void );
+	s8   (*init) ( DMA_ATTR *pdmaattr );
 	void (*ioctrl) ( u8 cmd, DMA_ATTR *pdmaattr );
 	u8 (*getstatus) ( void );
 	float (*gettransprogess) ( void );
 }DMA_DIR;
 
-s8 DmaInit( u8 dmadev );
+s8 DmaInit( u8 dmadev, DMA_ATTR *pdmaattr );
 void DmaIoCtrl( u8 cmd, DMA_ATTR *pdmaattr );
 u8   DmaGetStatus ( void );
 float DmaGetTransProgess( void );

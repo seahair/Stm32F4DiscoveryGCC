@@ -84,13 +84,20 @@ int main(int argc, char *argv[])
 	//RN_ATTR myrn = { 50, 199, 0 };
 	//RnIoctrl( RNCMDSETRANGE, &myrn );
 	
-#if 0
+#if 1
+	u16 i = 0;
+	for( i=0; i<DMATXNUM-2; i++ )
+		dmatxbuf[i] = i;
+	dmatxbuf[DMATXNUM-2] = '\r';
+	dmatxbuf[DMATXNUM-1] = '\n';
 	DMA_ATTR mydmaattr;
 	mydmaattr.memoryaddr = &dmatxbuf; 
 	mydmaattr.txsize = DMATXNUM;
+	DmaInit( DMAUSART1TX, &mydmaattr );
 	DmaIoCtrl( DMACMDSETMEMADDR, &mydmaattr );
 	DmaIoCtrl( DMACMDSETTXSIZE, &mydmaattr );
 	DmaIoCtrl( DMACMDSTART, &mydmaattr ); 
+	
 #endif
 
 	while(1)
@@ -103,14 +110,23 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Date:%02d.%02d.%02d",myrtc.year,myrtc.month,myrtc.date);
 		LcdShowString( 20, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Time:%02d:%02d:%02d",myrtc.hours,myrtc.minutes,myrtc.seconds);
-		LcdShowString( 20, 70, rtcbuf );
+		LcdShowString( 210, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
+		LcdShowString( 400, 20, rtcbuf );
+
+		sprintf( (char*)rtcbuf,"DMA Status: %2d", DmaGetStatus( ) );
 		LcdShowString( 20, 120, rtcbuf );
-
-		DacWrite( DacCount++ );
-
 	
-#if 1
+		sprintf( (char*)rtcbuf,"DMA Transprogess: %.2f", DmaGetTransProgess( ) );
+		LcdShowString( 20, 240, rtcbuf );
+
+
+#if 0
+		DacCount += 10;
+		DacWrite( DacCount );
+#endif
+	
+#if 0
 		value = AdcRead( );
 		sprintf( (char*)rtcbuf, "ADC Value:%.4f", value );
 		LcdShowString( 20, 170, rtcbuf );

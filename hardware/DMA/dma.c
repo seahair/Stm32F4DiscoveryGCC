@@ -10,10 +10,10 @@ const DMA_DIR *dma_modules[] = {
 };
 
 
-s8 DmaInit( u8 dmadev )
+s8 DmaInit( u8 dmadev, DMA_ATTR *pdmaattr )
 {
 	dma_dir = dma_modules[dmadev];
-	dma_dir->init( );
+	dma_dir->init( pdmaattr );
 }
 
 void DmaIoCtrl(  u8 cmd, DMA_ATTR *pdmaattr )

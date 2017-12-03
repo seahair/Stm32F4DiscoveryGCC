@@ -95,10 +95,10 @@ void HardInit( void )
 	//TpadInit( );
 	//RnInit( );
 	//PmInit( );
-	AdcInit( EXTGADC );
+	//AdcInit( EXTGADC );
 	//AdcInit( INTEMPERATE );
 	//AdcInit( LIGHTSENSE );
-	DacInit( GENDAC );	
+	//DacInit( GENDAC );	
 	//DacInit( PWMDAC );	
 	//DmaInit( DMAUSART1TX );
 

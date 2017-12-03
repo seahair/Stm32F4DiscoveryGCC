@@ -51,13 +51,13 @@ static void Pwmdac_TimeInit( void )
 static s8 Pwmdac_Init( void )
 {
 	dac_attr.psc = 255;
-	dac_attr.arr = 0;
+	dac_attr.arr = 254;
 
 	Pwmdac_GpioInit( );
 	Pwmdac_TimeInit( );	
 	
 	TIM_Cmd(TIM9, ENABLE); //使能 TIM9
-	TIM_SetCompare2(TIM9,0); //初始值０
+	TIM_SetCompare2(TIM9,200); //初始值０
 }
 
 static void Pwmdac_Ioctrl( u8 cmd, DAC_ATTR *pdacattr )
@@ -81,7 +81,7 @@ static void Pwmdac_Ioctrl( u8 cmd, DAC_ATTR *pdacattr )
 
 static void Pwmdac_Write( u16 dacnum )
 {
-	u8 temp = dacnum;
+	u8 temp = dacnum&0XFF;
 
 	TIM_SetCompare2(TIM9,temp); 
 }
