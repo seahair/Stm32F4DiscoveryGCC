@@ -23,6 +23,7 @@ TEST += PM
 TEST += ADC
 TEST += DAC
 TEST += DMA
+TEST += I2C
 
 
 .PHONY: $(TEST)
@@ -84,6 +85,9 @@ DAC:
 
 DMA:
 	make -C DMA 
+
+I2C:
+	make -C I2C 
 
 #END
 $(OBJS): | $(BUILD_DIR)

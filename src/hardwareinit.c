@@ -16,6 +16,7 @@
 #include "adc.h"
 #include "dac.h"
 #include "dma.h"
+#include "at24cxx.h"
 
 
 void LED_Init( void )
@@ -101,6 +102,7 @@ void HardInit( void )
 	//DacInit( GENDAC );	
 	//DacInit( PWMDAC );	
 	//DmaInit( DMAUSART1TX );
+	at24cxx_init( );
 
 //	FSMC_SRAM_Init( );
 }
