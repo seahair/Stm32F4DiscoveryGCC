@@ -7,7 +7,7 @@
 
 static I2C_ATTR i2c_attr;
 
-static s8 I2cGpioInit( void )
+static void I2cGpioInit( void )
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -50,15 +50,10 @@ s8 I2cInit( I2C_ATTR *pi2cattr )
 	i2c_attr.PinSDA = pi2cattr->PinSDA;
 	i2c_attr.PinSCL = pi2cattr->PinSCL;
 
-	if( I2cGpioInit() == 0 )
-	{
+	I2cGpioInit(); 
 
-		return 0;
-	}
-	else 
-	{
-		return -1;
-	}
+	return 0;
+
 }
 
 static void I2cSDASet( u8 data )
@@ -96,12 +91,14 @@ void I2cStart( void )
 
 void I2cStop( void )
 {
-	I2cSCLSet( I2CSCLLOW );
+	//I2cSCLSet( I2CSCLLOW );
+	I2cSCLSet( I2CSCLHIGH );
 	I2cSDASet( I2CSDALOW );
 	delay_us( 4 );
-	I2cSCLSet( I2CSCLHIGH );
+	//I2cSCLSet( I2CSCLHIGH );
 	I2cSDASet( I2CSDAHIGH );
 	delay_us( 4 );
+	I2cSCLSet( I2CSCLHIGH );
 }
 
 u8 I2cWaitAck( void )

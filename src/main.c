@@ -124,6 +124,7 @@ int main(int argc, char *argv[])
 	
 		at24cxx_read( 0X10, EEPROMLEN, eepromr );
 		LcdShowString( 20, 120, eepromr );
+		LcdShowString( 20, 220, eepromw );
 
 
 
