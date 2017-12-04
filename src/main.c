@@ -16,6 +16,7 @@
 #include "adc.h"
 #include "dac.h"
 #include "dma.h"
+#include "at24cxx.h"
 
 
 
@@ -39,9 +40,14 @@ u32 TPADDefaultTime = 0;
 
 u16 DacCount= 10;
 
+#if 0
 #define DMATXNUM 8200
 u8 dmatxbuf[DMATXNUM];
+#endif
 
+#define  EEPROMLEN 12
+u8  eepromw[EEPROMLEN] = "I LOVE YOU\r\n";
+u8  eepromr[EEPROMLEN];
 void MyKeyTest( u8 key );
 
 
@@ -84,7 +90,7 @@ int main(int argc, char *argv[])
 	//RN_ATTR myrn = { 50, 199, 0 };
 	//RnIoctrl( RNCMDSETRANGE, &myrn );
 	
-#if 1
+#if 0
 	u16 i = 0;
 	for( i=0; i<DMATXNUM-2; i++ )
 		dmatxbuf[i] = i;
@@ -97,8 +103,9 @@ int main(int argc, char *argv[])
 	DmaIoCtrl( DMACMDSETMEMADDR, &mydmaattr );
 	DmaIoCtrl( DMACMDSETTXSIZE, &mydmaattr );
 	DmaIoCtrl( DMACMDSTART, &mydmaattr ); 
-	
 #endif
+
+	at24cxx_write( 0X10, EEPROMLEN, eepromw );
 
 	while(1)
 	{
@@ -114,12 +121,19 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+	
+		at24cxx_read( 0X10, EEPROMLEN, eepromr );
+		LcdShowString( 20, 120, eepromr );
+
+
+
+#if 0
 		sprintf( (char*)rtcbuf,"DMA Status: %2d", DmaGetStatus( ) );
 		LcdShowString( 20, 120, rtcbuf );
 	
 		sprintf( (char*)rtcbuf,"DMA Transprogess: %.2f", DmaGetTransProgess( ) );
 		LcdShowString( 20, 240, rtcbuf );
-
+#endif
 
 #if 0
 		DacCount += 10;
