@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 	DmaIoCtrl( DMACMDSTART, &mydmaattr ); 
 #endif
 
-	at24cxx_write( 0X10, EEPROMLEN, eepromw );
+	//at24cxx_write( 0X10, EEPROMLEN, eepromw );
 
 	while(1)
 	{

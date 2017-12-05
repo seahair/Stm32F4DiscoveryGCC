@@ -16,9 +16,7 @@ static u8 At24cxx_readByte( u16 Addr )
 	u8 temp=0;
 	
 	I2cStart( );
-	I2cSendByte( 0XA0 );	//发送　写　命令
-	I2cWaitAck( );
-	I2cSendByte( Addr>>8 );		//发送　地址
+	I2cSendByte( 0XA0+ ((Addr/256)<<1) );	//发送　写　命令
 	I2cWaitAck( );
 	I2cSendByte( Addr%256 );
 	I2cWaitAck( );
@@ -34,9 +32,7 @@ static u8 At24cxx_readByte( u16 Addr )
 static void At24cxx_writeByte( u16 Addr, u8 data )
 {
 	I2cStart( );
-	I2cSendByte( 0XA0 );	//发送　写　命令
-	I2cWaitAck( );
-	I2cSendByte( Addr>>8 );		//发送　地址
+	I2cSendByte( 0XA0+ ((Addr/256)<<1) );	//发送　写　命令
 	I2cWaitAck( );
 	I2cSendByte( Addr%256 );
 	I2cWaitAck( );
