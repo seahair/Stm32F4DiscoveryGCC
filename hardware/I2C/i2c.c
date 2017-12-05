@@ -58,7 +58,7 @@ s8 I2cInit( I2C_ATTR *pi2cattr )
 
 static void I2cSDASet( u8 data )
 {
-	I2cSDAOut( );	
+	//I2cSDAOut( );	
 	if( I2CSDAHIGH == data )
 		GPIO_SetBits( GPIOB, i2c_attr.PinSDA );
 	else if( I2CSDALOW == data )
@@ -75,12 +75,13 @@ static void I2cSCLSet( u8 data )
 
 static u8 I2cSDAGet( void )
 {
-	I2cSDAIn( );	
+	//I2cSDAIn( );	
 	return GPIO_ReadInputDataBit( GPIOB, i2c_attr.PinSDA );
 }
 
 void I2cStart( void )
 {
+	I2cSDAOut( );	
 	I2cSDASet( I2CSDAHIGH );
 	I2cSCLSet( I2CSCLHIGH );
 	delay_us( 4 );
@@ -91,23 +92,25 @@ void I2cStart( void )
 
 void I2cStop( void )
 {
-	//I2cSCLSet( I2CSCLLOW );
-	I2cSCLSet( I2CSCLHIGH );
+	I2cSDAOut( );	
+	I2cSCLSet( I2CSCLLOW );
+	//I2cSCLSet( I2CSCLHIGH );
 	I2cSDASet( I2CSDALOW );
 	delay_us( 4 );
-	//I2cSCLSet( I2CSCLHIGH );
+	I2cSCLSet( I2CSCLHIGH );
 	I2cSDASet( I2CSDAHIGH );
 	delay_us( 4 );
-	I2cSCLSet( I2CSCLHIGH );
+	//I2cSCLSet( I2CSCLHIGH );
 }
 
 u8 I2cWaitAck( void )
 {
 	u8 ucErrTime = 0;
 
-	I2cSCLSet( I2CSCLHIGH );
-	delay_us( 1 );
+	I2cSDAIn( );	
 	I2cSDASet( I2CSDAHIGH );
+	delay_us( 1 );
+	I2cSCLSet( I2CSCLHIGH );
 	delay_us( 1 );
 	
 	while( I2cSDAGet() )
@@ -126,6 +129,7 @@ u8 I2cWaitAck( void )
 static void I2cAck( void )
 {
 	I2cSCLSet( I2CSCLLOW );
+	I2cSDAOut( );	
 	I2cSDASet( I2CSDALOW );
 	delay_us( 2 );
 	I2cSCLSet( I2CSCLHIGH );
@@ -136,6 +140,7 @@ static void I2cAck( void )
 static void I2cNoAck( void )
 {
 	I2cSCLSet( I2CSCLLOW );
+	I2cSDAOut( );	
 	I2cSDASet( I2CSDAHIGH );
 	delay_us( 2 );
 	I2cSCLSet( I2CSCLHIGH );
@@ -154,6 +159,7 @@ void I2cSendByte( u8 data )
 {
 	u8 t;
 
+	I2cSDAOut( );	
 	I2cSCLSet( I2CSCLLOW );
 	for( t=0; t<8; t++ )
 	{
@@ -171,6 +177,7 @@ u8 I2cRecvByte( u8 ack )
 {
 	u8 i, receive=0;
 	
+	I2cSDAIn( );	
 	for( i=0; i<8; i++ )
 	{
 		I2cSCLSet( I2CSCLLOW );
