@@ -72,6 +72,7 @@ INCLUDE+=-I$(TOP)/hardware/ADC
 INCLUDE+=-I$(TOP)/hardware/DAC
 INCLUDE+=-I$(TOP)/hardware/DMA
 INCLUDE+=-I$(TOP)/hardware/I2C
+INCLUDE+=-I$(TOP)/hardware/RS485
 
 
 
