@@ -25,6 +25,7 @@ TEST += DAC
 TEST += DMA
 TEST += I2C
 TEST += RS485
+TEST += CAN
 
 
 .PHONY: $(TEST)
@@ -92,6 +93,9 @@ I2C:
 
 RS485:
 	make -C RS485 
+
+CAN:
+	make -C CAN 
 
 #END
 $(OBJS): | $(BUILD_DIR)
