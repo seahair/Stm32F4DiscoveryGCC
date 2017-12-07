@@ -17,6 +17,8 @@
 #include "dac.h"
 #include "dma.h"
 #include "at24cxx.h"
+#include "spi.h"
+#include "w25qxx.h"
 
 
 
