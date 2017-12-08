@@ -1,5 +1,7 @@
 #ifndef __W25QXX_H
 #define __W25QXX_H			    
+
+#include "spi.h"
 #include "stm32f4xx.h"  
 
 #define W25Q80 	0XEF13 	
@@ -10,7 +12,7 @@
 
 extern u16 W25QXX_TYPE;					
 
-#define	W25QXX_CS 		PBout(14)  	
+//#define	W25QXX_CS 		PBout(14)  	
 
 #define W25X_WriteEnable		0x06 
 #define W25X_WriteDisable		0x04 
@@ -30,6 +32,9 @@ extern u16 W25QXX_TYPE;
 #define W25X_JedecDeviceID		0x9F 
 
 void W25QXX_Init(void);
+//void W25QXX_CS_ENABLE( void );
+//void W25QXX_CS_DISABLE( void );
+
 u16  W25QXX_ReadID(void);  	    		//¶ÁÈ¡FLASH ID
 u8	 W25QXX_ReadSR(void);        		//¶ÁÈ¡×´Ì¬¼Ä´æÆ÷ 
 void W25QXX_Write_SR(u8 sr);  			//Ð´×´Ì¬¼Ä´æÆ÷

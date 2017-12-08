@@ -49,6 +49,9 @@ s8 SpiInit( SPI_ATTR *pspiattr )
 	spi_attr.spitype.SPI_BaudRatePrescaler = pspiattr->spitype.SPI_BaudRatePrescaler; 
 	spi_attr.spitype.SPI_FirstBit = pspiattr->spitype.SPI_FirstBit; 
 	spi_attr.spitype.SPI_CRCPolynomial = pspiattr->spitype.SPI_CRCPolynomial; 
+	spi_attr.PinMISO = pspiattr->PinMISO;
+	spi_attr.PinMOSI = pspiattr->PinMOSI;
+	spi_attr.PinSCK = pspiattr->PinSCK;
 
 	spi_gpioinit( );
 	spi_structinit( );
