@@ -27,6 +27,7 @@ TEST += I2C
 TEST += RS485
 TEST += CAN
 TEST += SPI
+TEST += REMOTE 
 
 
 .PHONY: $(TEST)
@@ -100,6 +101,9 @@ CAN:
 
 SPI:
 	make -C SPI 
+
+REMOTE:
+	make -C REMOTE 
 
 #END
 $(OBJS): | $(BUILD_DIR)

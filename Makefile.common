@@ -75,6 +75,7 @@ INCLUDE+=-I$(TOP)/hardware/I2C
 INCLUDE+=-I$(TOP)/hardware/RS485
 INCLUDE+=-I$(TOP)/hardware/CAN
 INCLUDE+=-I$(TOP)/hardware/SPI
+INCLUDE+=-I$(TOP)/hardware/REMOTE
 
 
 
