@@ -105,7 +105,7 @@ void HardInit( void )
 	//DacInit( PWMDAC );	
 	//DmaInit( DMAUSART1TX );
 	//at24cxx_init( );
-	W25QXX_Init( );
+	//W25QXX_Init( );
 
 //	FSMC_SRAM_Init( );
 }

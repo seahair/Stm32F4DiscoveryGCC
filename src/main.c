@@ -109,6 +109,9 @@ int main(int argc, char *argv[])
 
 	//at24cxx_write( 0X10, EEPROMLEN, eepromw );
 
+	//const u8 TEXT_Buffer[]={"Explorer STM32F4 SPI TEST"};
+//#define SIZE sizeof(TEXT_Buffer)
+//	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
 	while(1)
 	{
 		delay_ms(500);
@@ -123,6 +126,7 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+#if 0
 		if(W25QXX_ReadID()!=W25Q128)
 		{
 				LcdShowString(20, 120, "W25Q128 Check Failed!");
@@ -131,6 +135,12 @@ int main(int argc, char *argv[])
 				delay_ms(500);
 		}
 
+		LcdShowString(30,170,"Start Read W25Q128.... ");
+		u8 datatemp[SIZE];
+		W25QXX_Read(datatemp,200,SIZE);
+		LcdShowString(30,170,"The Data Readed Is:   ");	
+		LcdShowString(30,190,datatemp);
+#endif
 
 #if 0	
 		at24cxx_read( 0X10, EEPROMLEN, eepromr );

@@ -306,28 +306,3 @@ void W25QXX_WAKEUP(void)
 	delay_us(3);                               //µÈ´ýTRES1
 }   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

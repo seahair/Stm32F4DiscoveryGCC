@@ -21,9 +21,9 @@ static void spi_gpioinit( void )
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
 	GPIO_Init(GPIOB, &GPIO_InitStructure);// 初始化
 
-	GPIO_PinAFConfig(GPIOB,spi_attr.PinSCK,GPIO_AF_SPI1); //PB3 复用为 SPI1
-	GPIO_PinAFConfig(GPIOB,spi_attr.PinMISO,GPIO_AF_SPI1); //PB4 复用为 SPI1
-	GPIO_PinAFConfig(GPIOB,spi_attr.PinMOSI,GPIO_AF_SPI1); //PB5 复用为 SPI1
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource3,GPIO_AF_SPI1); //PB3 复用为 SPI1
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource4,GPIO_AF_SPI1); //PB4 复用为 SPI1
+	GPIO_PinAFConfig(GPIOB,GPIO_PinSource5,GPIO_AF_SPI1); //PB5 复用为 SPI1
 }
 
 static void spi_structinit( void )
