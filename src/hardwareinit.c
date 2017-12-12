@@ -19,6 +19,7 @@
 #include "at24cxx.h"
 #include "spi.h"
 #include "w25qxx.h"
+#include "remote.h"
 
 
 void LED_Init( void )
@@ -106,6 +107,7 @@ void HardInit( void )
 	//DmaInit( DMAUSART1TX );
 	//at24cxx_init( );
 	//W25QXX_Init( );
+	RemoteInit( );
 
 //	FSMC_SRAM_Init( );
 }

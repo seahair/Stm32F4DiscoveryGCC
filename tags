@@ -747,6 +747,7 @@ AR	hardware/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/PM/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/PWM/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/RANDNUM/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+AR	hardware/REMOTE/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/RS485/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/RTC/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/SPI/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -928,6 +929,7 @@ BUILD_DIR	hardware/Makefile	/^BUILD_DIR = build$/;"	m
 BUILD_DIR	hardware/PM/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/PWM/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/RANDNUM/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+BUILD_DIR	hardware/REMOTE/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/RS485/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/RTC/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/SPI/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -2479,6 +2481,7 @@ CC	hardware/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/PM/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/PWM/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/RANDNUM/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	hardware/REMOTE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/RS485/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/RTC/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/SPI/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -3853,6 +3856,7 @@ DEPS	hardware/LED/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/PM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/PWM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/RANDNUM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/REMOTE/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/RS485/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/RTC/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/SPI/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
@@ -7486,7 +7490,7 @@ ECCR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 ECCR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR2;      \/*!< NAND Flash ECC result registers 2,                   Address offset: 0x74 *\/$/;"	m	struct:__anon130
 ECCR3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR3;      \/*!< NAND Flash ECC result registers 3,                   Address offset: 0x94 *\/$/;"	m	struct:__anon126
 ECCR3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR3;      \/*!< NAND Flash ECC result registers 3,                   Address offset: 0x94 *\/$/;"	m	struct:__anon131
-EEPROMLEN	src/main.c	50;"	d	file:
+EEPROMLEN	src/main.c	51;"	d	file:
 EGR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t EGR;         \/*!< TIM event generation register,       Address offset: 0x14 *\/$/;"	m	struct:__anon151
 EMR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t EMR;    \/*!< EXTI Event mask register,                Address offset: 0x04 *\/$/;"	m	struct:__anon121
 ENABLE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef enum {DISABLE = 0, ENABLE = !DISABLE} FunctionalState;$/;"	e	enum:__anon101
@@ -11232,6 +11236,7 @@ Gendac_Write	hardware/DAC/gendac.c	/^static void Gendac_Write( u16 dacnum )$/;"	
 GetKeyStatus	hardware/KEY/key.c	/^s8 GetKeyStatus( u8 pin )$/;"	f
 GetLedStatus	hardware/LED/led.c	/^u8 GetLedStatus( LED* led )$/;"	f
 GetLedStatus	hardware/LED/led.h	/^    u8   (*GetLedStatus) ( LED* );$/;"	m	struct:_LED
+GetRemotePinStatus	hardware/REMOTE/remote.c	/^static u8 GetRemotePinStatus( void )$/;"	f	file:
 HASH	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2421;"	d
 HASH_AlgoMode	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h	/^  uint32_t HASH_AlgoMode;      \/*!< HASH or HMAC. This parameter can be a value $/;"	m	struct:__anon30
 HASH_AlgoMode_HASH	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_hash.h	113;"	d
@@ -14669,6 +14674,7 @@ OBJS	hardware/Makefile	/^OBJS = $(BUILD_DIR)\/*.o$/;"	m
 OBJS	hardware/PM/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/PWM/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/RANDNUM/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+OBJS	hardware/REMOTE/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/RS485/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/RTC/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/SPI/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
@@ -16469,6 +16475,13 @@ READ_BIT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32
 READ_REG	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	12044;"	d
 RECALPF_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c	312;"	d	file:
 RED	hardware/LCD/lcd.h	20;"	d
+REMOTEPINDOWN	hardware/REMOTE/remote.h	11;"	d
+REMOTEPINUP	hardware/REMOTE/remote.h	10;"	d
+REMOTESTAREPEAT	hardware/REMOTE/remote.h	8;"	d
+REMOTESTASTART	hardware/REMOTE/remote.h	7;"	d
+REMOTESTASTOP	hardware/REMOTE/remote.h	9;"	d
+REMOTESTAWAIT	hardware/REMOTE/remote.h	6;"	d
+REMOTE_ATTR	hardware/REMOTE/remote.h	/^}REMOTE_ATTR;$/;"	t	typeref:struct:_REMOTE_ATTR
 REPLACE_ALPHA_VALUE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dma2d.h	357;"	d
 RESERVED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^       uint32_t RESERVED[52];     \/*!< Reserved, 0x28-0xF4                                         *\/$/;"	m	struct:__anon155
 RESERVED	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  uint32_t      RESERVED;     \/*!< Reserved, 0x18                                                               *\/$/;"	m	struct:__anon135
@@ -17374,6 +17387,13 @@ RWSTOP_BitNumber	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_Std
 RXCRCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t RXCRCR;     \/*!< SPI RX CRC register (not used in I2S mode),         Address offset: 0x14 *\/$/;"	m	struct:__anon147
 RXDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t RXDR;         \/*!< CEC Rx Data Register,              Address offset:0x0C *\/$/;"	m	struct:__anon109
 RXDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t RXDR;     \/*!< FMPI2C Receive data register,         Address offset: 0x24 *\/$/;"	m	struct:__anon137
+RemoteDecode	hardware/REMOTE/remote.c	/^static void RemoteDecode( void )$/;"	f	file:
+RemoteInit	hardware/REMOTE/remote.c	/^void RemoteInit( void )$/;"	f
+RemoteRead	hardware/REMOTE/remote.c	/^u8   RemoteRead( void )$/;"	f
+Remote_captureinit	hardware/REMOTE/remote.c	/^static void Remote_captureinit( void )$/;"	f	file:
+Remote_gpioinit	hardware/REMOTE/remote.c	/^static void Remote_gpioinit( void )$/;"	f	file:
+Remote_intruptinit	hardware/REMOTE/remote.c	/^static void Remote_intruptinit( void )$/;"	f	file:
+Remote_timeinit	hardware/REMOTE/remote.c	/^static void Remote_timeinit( void )$/;"	f	file:
 Reset_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f401xx.s	/^Reset_Handler:  $/;"	l
 Reset_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f40_41xxx.s	/^Reset_Handler:  $/;"	l
 Reset_Handler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f40xx.s	/^Reset_Handler:  $/;"	l
@@ -19336,6 +19356,7 @@ SRCS	hardware/LED/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/PM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/PWM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/RANDNUM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	hardware/REMOTE/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/RS485/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/RTC/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/SPI/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
@@ -19990,6 +20011,7 @@ TIM1_BRK_TIM9_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS
 TIM1_BRK_TIM9_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f446xx.s	/^TIM1_BRK_TIM9_IRQHandler  $/;"	l
 TIM1_BRK_TIM9_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f469_479xx.s	/^TIM1_BRK_TIM9_IRQHandler  $/;"	l
 TIM1_BRK_TIM9_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  TIM1_BRK_TIM9_IRQn          = 24,     \/*!< TIM1 Break interrupt and TIM9 global interrupt                    *\/$/;"	e	enum:IRQn
+TIM1_CC_IRQHandler	hardware/REMOTE/remote.c	/^void TIM1_CC_IRQHandler(void)\/\/定时器1输入捕获中断服务程序	 $/;"	f
 TIM1_CC_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^TIM1_CC_IRQHandler                                               $/;"	l
 TIM1_CC_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40_41xxx.s	/^TIM1_CC_IRQHandler                                               $/;"	l
 TIM1_CC_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40xx.s	/^TIM1_CC_IRQHandler                                               $/;"	l
@@ -20046,6 +20068,7 @@ TIM1_UP_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Devic
 TIM1_UP_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/iar/startup_stm32f410xx.s	/^TIM1_UP_IRQHandler  $/;"	l
 TIM1_UP_IRQHandler	src/startup.c	296;"	d	file:
 TIM1_UP_IRQn	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  TIM1_UP_IRQn                = 25,     \/*!< TIM1 Update Interrupt                                             *\/$/;"	e	enum:IRQn
+TIM1_UP_TIM10_IRQHandler	hardware/REMOTE/remote.c	/^void TIM1_UP_TIM10_IRQHandler(void)\/\/定时器1溢出中断$/;"	f
 TIM1_UP_TIM10_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^TIM1_UP_TIM10_IRQHandler                      $/;"	l
 TIM1_UP_TIM10_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40_41xxx.s	/^TIM1_UP_TIM10_IRQHandler                      $/;"	l
 TIM1_UP_TIM10_IRQHandler	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40xx.s	/^TIM1_UP_TIM10_IRQHandler                      $/;"	l
@@ -21810,6 +21833,7 @@ _LED	hardware/LED/led.h	/^typedef struct _LED{$/;"	s
 _Next	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/TASKING/cstart_thumb2.asm	/^_Next:$/;"	l
 _PM_ATTR	hardware/PM/pm.h	/^typedef struct _PM_ATTR{$/;"	s
 _PM_DIR	hardware/PM/pm.h	/^typedef struct _PM_DIR{$/;"	s
+_REMOTE_ATTR	hardware/REMOTE/remote.h	/^typedef struct _REMOTE_ATTR{$/;"	s
 _RN_ATTR	hardware/RANDNUM/randomnum.h	/^typedef struct _RN_ATTR{$/;"	s
 _RN_DIR	hardware/RANDNUM/randomnum.h	/^typedef struct _RN_DIR{$/;"	s
 _RS485_ATTR	hardware/RS485/rs485.h	/^typedef struct _RS485_ATTR{$/;"	s
@@ -22129,6 +22153,7 @@ __RAM_FUNC	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph
 __RANDOMNUM_H__	hardware/RANDNUM/randomnum.h	2;"	d
 __RBIT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint32_t __RBIT(uint32_t value)$/;"	f
 __RBIT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	191;"	d
+__REMOTE_H__	hardware/REMOTE/remote.h	2;"	d
 __REV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint32_t __REV(uint32_t value)$/;"	f
 __REV	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	127;"	d
 __REV16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	/^__attribute__((always_inline)) __STATIC_INLINE uint32_t __REV16(uint32_t value)$/;"	f
@@ -22607,6 +22632,7 @@ adc_dir	hardware/ADC/adc.c	/^const ADC_DIR *adc_dir = 0;$/;"	v
 adc_modules	hardware/ADC/adc.c	/^ADC_DIR *adc_modules[] = {$/;"	v
 addr	hardware/MPU6050/eMPL/dmpKey.h	/^    unsigned short addr;$/;"	m	struct:__anon8
 addr	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char addr;$/;"	m	struct:hw_s	file:
+addr	hardware/REMOTE/remote.h	/^	u8 addr;$/;"	m	struct:_REMOTE_ATTR
 android_orient_cb	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	/^    void (*android_orient_cb)(unsigned char orientation);$/;"	m	struct:dmp_s	file:
 arm_bilinear_interp_f32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE float32_t arm_bilinear_interp_f32($/;"	f
 arm_bilinear_interp_instance_f32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  } arm_bilinear_interp_instance_f32;$/;"	t	typeref:struct:__anon254
@@ -22780,6 +22806,7 @@ clip_q63_to_q15	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/
 clip_q63_to_q31	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE q31_t clip_q63_to_q31($/;"	f
 clk_src	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char clk_src;$/;"	m	struct:chip_cfg_s	file:
 clock_sel_e	hardware/MPU6050/eMPL/inv_mpu.c	/^enum clock_sel_e {$/;"	g	file:
+cmd	hardware/REMOTE/remote.h	/^	u8 cmd;$/;"	m	struct:_REMOTE_ATTR
 cmdsetx	hardware/LCD/lcd.h	/^	u16   cmdsetx;$/;"	m	struct:_LCD_ATR
 cmdsety	hardware/LCD/lcd.h	/^	u16   cmdsety;$/;"	m	struct:_LCD_ATR
 cmdwrdata	hardware/LCD/lcd.h	/^	u16   cmdwrdata;$/;"	m	struct:_LCD_ATR
@@ -22963,6 +22990,7 @@ i2c_read	hardware/MPU6050/eMPL/inv_mpu.c	75;"	d	file:
 i2c_write	hardware/MPU6050/eMPL/inv_mpu.c	53;"	d	file:
 i2c_write	hardware/MPU6050/eMPL/inv_mpu.c	74;"	d	file:
 i2c_write	hardware/MPU6050/eMPL/inv_mpu.c	99;"	d	file:
+id	hardware/REMOTE/remote.h	/^	u8 id;$/;"	m	struct:_REMOTE_ATTR
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon262
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                  \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon263
 ifftFlag	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint8_t ifftFlag;                \/**< flag that selects forward (ifftFlag=0) or inverse (ifftFlag=1) transform. *\/$/;"	m	struct:__anon258
@@ -23029,6 +23057,8 @@ log_i	hardware/MPU6050/eMPL/inv_mpu.c	83;"	d	file:
 log_i	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	45;"	d	file:
 log_i	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	54;"	d	file:
 log_i	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	67;"	d	file:
+logic0time	hardware/REMOTE/remote.h	/^	u16 logic0time;$/;"	m	struct:_REMOTE_ATTR
+logic1time	hardware/REMOTE/remote.h	/^	u16 logic1time;$/;"	m	struct:_REMOTE_ATTR
 lp_accel_mode	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char lp_accel_mode;$/;"	m	struct:chip_cfg_s	file:
 lp_accel_rate_e	hardware/MPU6050/eMPL/inv_mpu.c	/^enum lp_accel_rate_e {$/;"	g	file:
 lp_exit	hardware/MPU6050/eMPL/inv_mpu.h	/^    unsigned char lp_exit;$/;"	m	struct:int_param_s
@@ -23180,6 +23210,7 @@ num_reg	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char num_reg;$/;"	m	struc
 onebyfftLen	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t onebyfftLen;                 \/**< value of 1\/fftLen. *\/$/;"	m	struct:__anon262
 onebyfftLen	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t onebyfftLen;                 \/**< value of 1\/fftLen. *\/$/;"	m	struct:__anon263
 orient	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	/^    unsigned short orient;$/;"	m	struct:dmp_s	file:
+overcount	hardware/REMOTE/remote.c	/^u32 overcount;$/;"	v
 pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon264
 pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon265
 pBitRevTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    const uint16_t *pBitRevTable;      \/**< points to the bit reversal table. *\/$/;"	m	struct:__anon266
@@ -23341,6 +23372,7 @@ read	hardware/ADC/adc.h	/^	float (*read) ( void );$/;"	m	struct:_ADC_DIR
 read	hardware/PM/pm.h	/^	s8 (*read) ( void );$/;"	m	struct:_PM_DIR
 read	hardware/RANDNUM/randomnum.h	/^	u32  (*read) ( void );$/;"	m	struct:_RN_DIR
 read	hardware/RTC/rtc.h	/^	void (*read) ( RTC_ATTR *prtcattr );$/;"	m	struct:_RTC_DIR
+reattr	hardware/REMOTE/remote.c	/^static REMOTE_ATTR reattr;$/;"	v	file:
 recipTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t *recipTable;   \/**< Points to the reciprocal initial value table. *\/$/;"	m	struct:__anon295
 recipTable	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t *recipTable;    \/**< points to the reciprocal initial value table. *\/$/;"	m	struct:__anon294
 refv	hardware/ADC/adc.h	/^	float refv;$/;"	m	struct:_ADC_ATTR
@@ -23352,6 +23384,8 @@ reg_gyro_fsr	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char reg_gyro_fsr;$/
 reg_int_cb	hardware/MPU6050/eMPL/inv_mpu.c	/^static inline int reg_int_cb(struct int_param_s *int_param)$/;"	f	file:
 reg_lpf	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char reg_lpf;$/;"	m	struct:test_s	file:
 reg_rate_div	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char reg_rate_div;$/;"	m	struct:test_s	file:
+repeatcount	hardware/REMOTE/remote.h	/^	u8 repeatcount;$/;"	m	struct:_REMOTE_ATTR
+repeattime	hardware/REMOTE/remote.h	/^	u16 repeattime;$/;"	m	struct:_REMOTE_ATTR
 rn_attr	hardware/RANDNUM/rng.c	/^static RN_ATTR rn_attr;$/;"	v	file:
 rn_dir	hardware/RANDNUM/randomnum.c	/^const RN_DIR *rn_dir=0;$/;"	v
 rn_modules	hardware/RANDNUM/randomnum.c	/^static RN_DIR *rn_modules[] = {$/;"	v	file:
@@ -23412,6 +23446,8 @@ spi_structinit	hardware/SPI/spi.c	/^static void spi_structinit( void )$/;"	f	fil
 spitype	hardware/SPI/spi.h	/^	SPI_InitTypeDef spitype;$/;"	m	struct:_SPI_ATTR
 st	hardware/MPU6050/eMPL/inv_mpu.c	/^static struct gyro_state_s st = {$/;"	v	typeref:struct:gyro_state_s	file:
 st	hardware/MPU6050/eMPL/inv_mpu.c	/^static struct gyro_state_s st={$/;"	v	typeref:struct:gyro_state_s	file:
+starttime	hardware/REMOTE/remote.h	/^	u16 starttime;$/;"	m	struct:_REMOTE_ATTR
+state	hardware/REMOTE/remote.h	/^	u8 state;$/;"	m	struct:_REMOTE_ATTR
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    float32_t state[3];    \/**< The state array of length 3. *\/$/;"	m	struct:__anon252
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q15_t state[3];       \/**< The state array of length 3. *\/$/;"	m	struct:__anon250
 state	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    q31_t state[3];      \/**< The state array of length 3. *\/$/;"	m	struct:__anon251
@@ -23419,6 +23455,7 @@ stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_m
 stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon297
 stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon298
 stateIndex	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t stateIndex;          \/**< state buffer index.  Points to the oldest sample in the state buffer. *\/$/;"	m	struct:__anon299
+stoptime	hardware/REMOTE/remote.h	/^	u16 stoptime; \/\/10ms$/;"	m	struct:_REMOTE_ATTR
 tKeyLabel	hardware/MPU6050/eMPL/dmpKey.h	/^} tKeyLabel;$/;"	t	typeref:struct:__anon8
 tap_cb	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	/^    void (*tap_cb)(unsigned char count, unsigned char direction);$/;"	m	struct:dmp_s	file:
 temp	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char temp;$/;"	m	struct:gyro_reg_s	file:
@@ -23429,6 +23466,7 @@ test	hardware/MPU6050/eMPL/inv_mpu.c	/^const struct test_s test = {$/;"	v	typere
 test	hardware/MPU6050/eMPL/inv_mpu.c	/^const struct test_s test={$/;"	v	typeref:struct:test_s
 test_s	hardware/MPU6050/eMPL/inv_mpu.c	/^struct test_s {$/;"	s	file:
 time	hardware/BEEP/beep.h	/^	u32		time;		\/\/time for beepon, ms$/;"	m	struct:_BEEP
+timerank	hardware/REMOTE/remote.h	/^	u16 timerank;$/;"	m	struct:_REMOTE_ATTR
 twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;         \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon262
 twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;         \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon263
 twidCoefModifier	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    uint16_t twidCoefModifier;       \/**< twiddle coefficient modifier that supports different size FFTs with the same twiddle factor table. *\/$/;"	m	struct:__anon258
@@ -23470,6 +23508,7 @@ usart1tx_usart1init	hardware/DMA/usart1txdma.c	/^static void usart1tx_usart1init
 user_ctrl	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char user_ctrl;$/;"	m	struct:gyro_reg_s	file:
 value	hardware/BEEP/beep.h	/^	u8		value;$/;"	m	struct:_BEEP
 value	hardware/RANDNUM/randomnum.h	/^	u32 value;$/;"	m	struct:_RN_ATTR
+value	hardware/REMOTE/remote.h	/^	u32 value;$/;"	m	struct:_REMOTE_ATTR
 vs16	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef __IO int16_t  vs16;$/;"	t
 vs32	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef __IO int32_t  vs32;$/;"	t
 vs8	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef __IO int8_t   vs8;$/;"	t
