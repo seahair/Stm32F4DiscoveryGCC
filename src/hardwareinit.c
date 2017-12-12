@@ -1,4 +1,5 @@
 #include "hardwareinit.h"
+#include "misc.h"
 #include "led.h"
 #include "usart.h"
 #include "delay.h"
