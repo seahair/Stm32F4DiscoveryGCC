@@ -28,6 +28,7 @@ TEST += RS485
 TEST += CAN
 TEST += SPI
 TEST += REMOTE 
+TEST +=	TOUCH 
 
 
 .PHONY: $(TEST)
@@ -104,6 +105,9 @@ SPI:
 
 REMOTE:
 	make -C REMOTE 
+
+TOUCH:
+	make -C TOUCH 
 
 #END
 $(OBJS): | $(BUILD_DIR)
