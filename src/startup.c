@@ -65,7 +65,7 @@ void WEAK  CAN1_RX1_IRQHandler(void);
 void WEAK  CAN1_SCE_IRQHandler(void);
 void WEAK  EXTI9_5_IRQHandler(void);
 void WEAK  TIM1_BRK_IRQHandler(void);
-void WEAK  TIM1_UP_IRQHandler(void);
+void WEAK  TIM1_UP_TIM10_IRQHandler(void);
 void WEAK  TIM1_TRG_COM_IRQHandler(void);
 void WEAK  TIM1_CC_IRQHandler(void);
 void WEAK  TIM2_IRQHandler(void);
@@ -173,7 +173,7 @@ void (* const g_pfnVectors[])(void) =
   CAN1_SCE_IRQHandler,          /*!< 22: CAN1 SCE                             */
   EXTI9_5_IRQHandler,           /*!< 23: EXTI Line 9..5                       */
   TIM1_BRK_IRQHandler,          /*!< 24: TIM1 Break                           */
-  TIM1_UP_IRQHandler,           /*!< 25: TIM1 Update                          */
+  TIM1_UP_TIM10_IRQHandler,           /*!< 25: TIM1 Update                          */
   TIM1_TRG_COM_IRQHandler,      /*!< 26: TIM1 Trigger and Commutation         */
   TIM1_CC_IRQHandler,           /*!< 27: TIM1 Capture Compare                 */
   TIM2_IRQHandler,              /*!< 28: TIM2                                 */

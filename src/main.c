@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 
 		u8 cmd = RemoteRead( );
 		sprintf((char*)rtcbuf,"Recv Remote Cmd:%02d", cmd);
-		LcdShowString( 20, 20, rtcbuf );
+		LcdShowString( 20, 200, rtcbuf );
 
 #if 0
 		if(W25QXX_ReadID()!=W25Q128)

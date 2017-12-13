@@ -67,7 +67,7 @@ static void Remote_intruptinit( void )
 		NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1;//抢占优先级3
 		NVIC_InitStructure.NVIC_IRQChannelSubPriority =2;		//子优先级2
 		NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
-		//NVIC_Init(&NVIC_InitStructure);	//初始化NVIC寄存器
+		NVIC_Init(&NVIC_InitStructure);	//初始化NVIC寄存器
 
 		TIM_ITConfig(TIM1,TIM_IT_CC1,ENABLE);//允许更新中断 ,允许CC1IE捕获中断	
 		TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE);//允许更新中断 ,允许CC1IE捕获中断	
@@ -207,6 +207,7 @@ u8   RemoteRead( void )
 		if( reattr.state == REMOTESTASTOP )
 		{
 				RemoteDecode( );
+				reattr.state = REMOTESTASTART;
 		}
 
 		return reattr.cmd;
