@@ -6,6 +6,8 @@
 const I2C_ATTR at24c02_attr = {
 	GPIO_Pin_9,
 	GPIO_Pin_8,
+	GPIOB,
+	GPIOB,
 	0X2402,
 	0XFF
 };

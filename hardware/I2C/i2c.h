@@ -16,6 +16,8 @@
 typedef struct _I2C_ATTR{
 	u16  PinSDA;
 	u16  PinSCL;
+	GPIO_TypeDef* TypeSDA;
+	GPIO_TypeDef* TypeSCL;
 	u16  name;
 	u16  size;
 }I2C_ATTR;

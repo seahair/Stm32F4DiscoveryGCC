@@ -11,14 +11,21 @@ static void I2cGpioInit( void )
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);//使能 GPIOB 时钟
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB|RCC_AHB1Periph_GPIOF, ENABLE);//使能 GPIOB 时钟
 
-	GPIO_InitStructure.GPIO_Pin = i2c_attr.PinSDA | i2c_attr.PinSCL;
+	GPIO_InitStructure.GPIO_Pin = i2c_attr.PinSDA;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//普通输出模式
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
-	GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
+	GPIO_Init(i2c_attr.TypeSDA, &GPIO_InitStructure);//初始化
+
+	GPIO_InitStructure.GPIO_Pin = i2c_attr.PinSCL;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//普通输出模式
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
+	GPIO_Init(i2c_attr.TypeSCL, &GPIO_InitStructure);//初始化
 }
 
 static void I2cSDAOut( void )
@@ -30,7 +37,7 @@ static void I2cSDAOut( void )
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
-	GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
+	GPIO_Init(i2c_attr.TypeSDA, &GPIO_InitStructure);//初始化
 }
 
 static void I2cSDAIn( void )
@@ -42,13 +49,15 @@ static void I2cSDAIn( void )
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
-	GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
+	GPIO_Init(i2c_attr.TypeSDA, &GPIO_InitStructure);//初始化
 }
 
 s8 I2cInit( I2C_ATTR *pi2cattr )
 {
 	i2c_attr.PinSDA = pi2cattr->PinSDA;
 	i2c_attr.PinSCL = pi2cattr->PinSCL;
+	i2c_attr.TypeSDA = pi2cattr->TypeSDA;
+	i2c_attr.TypeSCL = pi2cattr->TypeSCL;
 
 	I2cGpioInit(); 
 
@@ -60,23 +69,23 @@ static void I2cSDASet( u8 data )
 {
 	//I2cSDAOut( );	
 	if( I2CSDAHIGH == data )
-		GPIO_SetBits( GPIOB, i2c_attr.PinSDA );
+		GPIO_SetBits(i2c_attr.TypeSDA, i2c_attr.PinSDA );
 	else if( I2CSDALOW == data )
-		GPIO_ResetBits( GPIOB, i2c_attr.PinSDA );
+		GPIO_ResetBits(i2c_attr.TypeSDA, i2c_attr.PinSDA );
 }
 
 static void I2cSCLSet( u8 data )
 {
 	if( I2CSCLHIGH == data )
-		GPIO_SetBits( GPIOB, i2c_attr.PinSCL );
+		GPIO_SetBits( i2c_attr.TypeSCL, i2c_attr.PinSCL );
 	else if( I2CSCLLOW == data )
-		GPIO_ResetBits( GPIOB, i2c_attr.PinSCL );
+		GPIO_ResetBits(i2c_attr.TypeSCL, i2c_attr.PinSCL );
 }
 
 static u8 I2cSDAGet( void )
 {
 	//I2cSDAIn( );	
-	return GPIO_ReadInputDataBit( GPIOB, i2c_attr.PinSDA );
+	return GPIO_ReadInputDataBit(i2c_attr.TypeSDA, i2c_attr.PinSDA );
 }
 
 void I2cStart( void )

@@ -7,7 +7,7 @@
 const TOUCH_DIR *touch_dir = 0;
 
 TOUCH_DIR *touch_modules = {
-	&gt811_module,
+	&gt9147_module,
 };
 
 #define  TOUCHDMODULELEN	(sizeof(touch_modules)/sizeof(touch_modules[0]))
@@ -15,7 +15,7 @@ TOUCH_DIR *touch_modules = {
 
 s8 TouchInit( TOUCH_ATTR *ptouchattr )
 {
-	I2c_init( );
+	//I2c_init( );
 
 	if( 0 == TouchMatch() )
 	{
