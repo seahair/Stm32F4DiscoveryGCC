@@ -29,12 +29,12 @@ typedef struct _TOUCH_ATTR{
 }TOUCH_ATTR;
 
 typedef struct _TOUCH_DIR{
-	s8 (*init) ( TOUCH_ATTR *ptouchattr );
+	s8 (*init) ( void );
 	s8 (*match) ( void );
 	void (*getxy) ( u16 *x, u16 *y );
 }TOUCH_DIR;
 
-s8 TouchInit( TOUCH_ATTR *ptouchattr );
+s8 TouchInit( void );
 s8 TouchMatch( void );
 void TouchGetxy( u16 *x, u16 *y );
 

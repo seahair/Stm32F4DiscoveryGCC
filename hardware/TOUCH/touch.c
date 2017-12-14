@@ -1,4 +1,5 @@
 #include "touch.h"
+#include "gt9147.h"
 #include "stm32f4xx.h"
 
 
@@ -6,20 +7,20 @@
 
 const TOUCH_DIR *touch_dir = 0;
 
-TOUCH_DIR *touch_modules = {
+TOUCH_DIR *touch_modules[] = {
 	&gt9147_module,
 };
 
 #define  TOUCHDMODULELEN	(sizeof(touch_modules)/sizeof(touch_modules[0]))
 
 
-s8 TouchInit( TOUCH_ATTR *ptouchattr )
+s8 TouchInit( )
 {
 	//I2c_init( );
 
 	if( 0 == TouchMatch() )
 	{
-		touch_dir->init( ptouchattr );	
+		touch_dir->init( );	
 		return 0;
 	}
 	else

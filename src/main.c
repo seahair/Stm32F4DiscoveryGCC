@@ -20,6 +20,7 @@
 #include "spi.h"
 #include "w25qxx.h"
 #include "remote.h"
+#include "touch.h"
 
 
 
