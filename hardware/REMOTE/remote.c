@@ -104,14 +104,20 @@ void TIM1_UP_TIM10_IRQHandler(void)//定时器1溢出中断
 {
 	if(TIM_GetITStatus(TIM1,TIM_IT_Update)==SET) //溢出中断
 	{
-		overcount++;
 		switch ( reattr.state ) 
 		{
 			case REMOTESTAWAIT:
 				break;
 			case REMOTESTASTART:
+				overcount++;
+				if( overcount>reattr.stoptime )
+				{
+					reattr.state = REMOTESTASTOP;
+					overcount = 0;
+				}
 				break;
 			case REMOTESTAREPEAT:
+				overcount++;
 				if( overcount>reattr.stoptime )
 				{
 					reattr.state = REMOTESTASTOP;
@@ -152,7 +158,7 @@ void TIM1_CC_IRQHandler(void)//定时器1输入捕获中断服务程序
 				case REMOTESTASTART:
 					if( dval>(reattr.logic0time-reattr.timerank) && dval<(reattr.logic0time+reattr.timerank) )
 					{
-						reattr.value<<=0;
+						reattr.value<<=1;
 						reattr.value|=0;
 					}
 					if( dval>(reattr.logic1time-reattr.timerank) && dval<(reattr.logic1time+reattr.timerank) )
@@ -175,7 +181,8 @@ void TIM1_CC_IRQHandler(void)//定时器1输入捕获中断服务程序
 				case REMOTESTASTOP:
 					break;
 			}
-
+			TIM_SetCounter(TIM1,0);		//清空定时器值
+			
 		}
 
 	}
@@ -199,7 +206,8 @@ static void RemoteDecode( void )
 			reattr.cmd = t1;
 		reattr.state = REMOTESTAWAIT;
 	}
-
+	
+	reattr.value = 0;
 }
 
 u8   RemoteRead( void )
@@ -207,7 +215,9 @@ u8   RemoteRead( void )
 	if( reattr.state == REMOTESTASTOP )
 	{
 		RemoteDecode( );
-		reattr.state = REMOTESTASTART;
+		reattr.state = REMOTESTAWAIT;
+		reattr.value = 0;
+		reattr.repeatcount = 0;
 	}
 
 	return reattr.cmd;
