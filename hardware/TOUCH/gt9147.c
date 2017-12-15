@@ -19,7 +19,7 @@ const TOUCH_ATTR gt9147_attr = {
 //flash原有版本号,才会更新配置.
 const u8 GT9147_CFG_TBL[]=
 { 
-		0X61,0XE0,0X01,0X20,0X03,0X05,0X35,0X00,0X02,0X08,
+		0X60,0XE0,0X01,0X20,0X03,0X05,0X35,0X00,0X02,0X08,
 		0X1E,0X08,0X50,0X3C,0X0F,0X05,0X00,0X00,0XFF,0X67,
 		0X50,0X00,0X00,0X18,0X1A,0X1E,0X14,0X89,0X28,0X0A,
 		0X30,0X2E,0XBB,0X0A,0X03,0X00,0X00,0X02,0X33,0X1D,
@@ -85,7 +85,7 @@ static void GT9147_RD_Reg(u16 reg,u8 *buf,u8 len)
 		I2cWaitAck();	   
 		for(i=0;i<len;i++)
 		{	   
-				buf[i]=I2cSendByte(i==(len-1)?0:1); //发数据	  
+				buf[i]=I2cRecvByte(i==(len-1)?0:1); //发数据	  
 		} 
 		I2cStop();//产生一个停止条件    
 } 
