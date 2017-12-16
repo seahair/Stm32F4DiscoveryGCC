@@ -170,6 +170,7 @@ void TIM1_CC_IRQHandler(void)//定时器1输入捕获中断服务程序
 					{
 						reattr.state = REMOTESTAREPEAT;
 						reattr.repeatcount++;
+						overcount = 0;
 					}
 					break;
 				case REMOTESTAREPEAT:
