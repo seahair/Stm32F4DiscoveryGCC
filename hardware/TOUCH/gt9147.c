@@ -140,6 +140,7 @@ static s8 gt9147_match( void )
 		I2cInit( &gt9147_attr );
 		gt9147_resetinit(  );
 		gt9147_reset(  );
+		delay_ms( 100 );
 
 		GT9147_RD_Reg(GT_PID_REG,temp,4);//读取产品ID
 		temp[4]=0;

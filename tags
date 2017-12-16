@@ -11237,18 +11237,18 @@ GT9147_RD_Reg	hardware/TOUCH/gt9147.c	/^static void GT9147_RD_Reg(u16 reg,u8 *bu
 GT9147_Send_Cfg	hardware/TOUCH/gt9147.c	/^static u8 GT9147_Send_Cfg(u8 mode)$/;"	f	file:
 GT9147_WR_Reg	hardware/TOUCH/gt9147.c	/^static u8 GT9147_WR_Reg(u16 reg,u8 *buf,u8 len)$/;"	f	file:
 GTPR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t GTPR;       \/*!< USART Guard time and prescaler register, Address offset: 0x18 *\/$/;"	m	struct:__anon152
-GT_CFGS_REG	hardware/TOUCH/touch.h	13;"	d
-GT_CHECK_REG	hardware/TOUCH/touch.h	14;"	d
-GT_CMD_RD	hardware/TOUCH/touch.h	8;"	d
-GT_CMD_WR	hardware/TOUCH/touch.h	7;"	d
-GT_CTRL_REG	hardware/TOUCH/touch.h	12;"	d
-GT_GSTID_REG	hardware/TOUCH/touch.h	17;"	d
-GT_PID_REG	hardware/TOUCH/touch.h	15;"	d
-GT_TP1_REG	hardware/TOUCH/touch.h	18;"	d
-GT_TP2_REG	hardware/TOUCH/touch.h	19;"	d
-GT_TP3_REG	hardware/TOUCH/touch.h	20;"	d
-GT_TP4_REG	hardware/TOUCH/touch.h	21;"	d
-GT_TP5_REG	hardware/TOUCH/touch.h	22;"	d
+GT_CFGS_REG	hardware/TOUCH/gt9147.h	14;"	d
+GT_CHECK_REG	hardware/TOUCH/gt9147.h	15;"	d
+GT_CMD_RD	hardware/TOUCH/gt9147.h	9;"	d
+GT_CMD_WR	hardware/TOUCH/gt9147.h	8;"	d
+GT_CTRL_REG	hardware/TOUCH/gt9147.h	13;"	d
+GT_GSTID_REG	hardware/TOUCH/gt9147.h	18;"	d
+GT_PID_REG	hardware/TOUCH/gt9147.h	16;"	d
+GT_TP1_REG	hardware/TOUCH/gt9147.h	19;"	d
+GT_TP2_REG	hardware/TOUCH/gt9147.h	20;"	d
+GT_TP3_REG	hardware/TOUCH/gt9147.h	21;"	d
+GT_TP4_REG	hardware/TOUCH/gt9147.h	22;"	d
+GT_TP5_REG	hardware/TOUCH/gt9147.h	23;"	d
 GVCIDR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t GVCIDR;         \/*!< DSI Host Generic VCID Register,                            Address offset: 0x30       *\/$/;"	m	struct:__anon119
 GYRO_SF	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	473;"	d	file:
 Gendac_Dac1Init	hardware/DAC/gendac.c	/^static void Gendac_Dac1Init( void )$/;"	f	file:
