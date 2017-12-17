@@ -128,9 +128,11 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+#if 0
 		u8 cmd = RemoteRead( );
 		sprintf((char*)rtcbuf,"Recv Remote Cmd:%02d", cmd);
 		LcdShowString( 20, 200, rtcbuf );
+#endif
 
 #if 0
 		if(W25QXX_ReadID()!=W25Q128)

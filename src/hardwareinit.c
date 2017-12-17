@@ -109,8 +109,9 @@ void HardInit( void )
 	//DmaInit( DMAUSART1TX );
 	//at24cxx_init( );
 	//W25QXX_Init( );
-	RemoteInit( );
-	//TouchInit( );
+	//RemoteInit( );
+	TouchInit( );
+	//GT9147_Init();
 //	FSMC_SRAM_Init( );
 }
 

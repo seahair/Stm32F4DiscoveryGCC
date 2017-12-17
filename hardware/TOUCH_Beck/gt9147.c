@@ -1,13 +1,11 @@
 #include "touch.h"
 #include "stm32f4xx_gpio.h"
 #include "gt9147.h"
-#include "i2c.h"
 #include "delay.h"
-#include "ctiic.h"
 
 
 
-const I2C_ATTR gt9147_attr = {
+const TOUCH_ATTR gt9147_attr = {
 		GPIO_Pin_0,
 		GPIO_Pin_11,
 		GPIOB,
@@ -42,7 +40,6 @@ const u8 GT9147_CFG_TBL[]=
 		0XFF,0XFF,0XFF,0XFF,
 }; 
 
-#if 0
 //向GT9147写入一次数据
 //reg:起始寄存器地址
 //buf:数据缓缓存区
@@ -56,7 +53,7 @@ static u8 GT9147_WR_Reg(u16 reg,u8 *buf,u8 len)
 		I2cSendByte(GT_CMD_WR);	//发送写命令	 
 		I2cWaitAck();
 		I2cSendByte(reg>>8);		//发送高8位地址
-		I2cWaitAck();	
+		I2cWaitAck();													   
 		I2cSendByte(reg&0XFF);		//发送低8位地址
 		I2cWaitAck();  
 		for(i=0;i<len;i++)
@@ -80,7 +77,7 @@ static void GT9147_RD_Reg(u16 reg,u8 *buf,u8 len)
 		I2cSendByte(GT_CMD_WR);   //发送写命令 	 
 		I2cWaitAck();
 		I2cSendByte(reg>>8);   	//发送高8位地址
-		I2cWaitAck(); 	
+		I2cWaitAck(); 	 										  		   
 		I2cSendByte(reg&0XFF);   	//发送低8位地址
 		I2cWaitAck();  
 		I2cStart();  	 	   
@@ -108,75 +105,6 @@ static u8 GT9147_Send_Cfg(u8 mode)
 		GT9147_WR_Reg(GT_CHECK_REG,buf,2);//写入校验和,和配置更新标记
 		return 0;
 }
-#endif 
-
-
-
-//向GT9147写入一次数据
-//reg:起始寄存器地址
-//buf:数据缓缓存区
-//len:写数据长度
-//返回值:0,成功;1,失败.
-u8 GT9147_WR_Reg(u16 reg,u8 *buf,u8 len)
-{
-		u8 i;
-		u8 ret=0;
-		CT_IIC_Start();	
-		CT_IIC_Send_Byte(GT_CMD_WR);   	//发送写命令 	 
-		CT_IIC_Wait_Ack();
-		CT_IIC_Send_Byte(reg>>8);   	//发送高8位地址
-		CT_IIC_Wait_Ack(); 	 										  		   
-		CT_IIC_Send_Byte(reg&0XFF);   	//发送低8位地址
-		CT_IIC_Wait_Ack();  
-		for(i=0;i<len;i++)
-		{	   
-				CT_IIC_Send_Byte(buf[i]);  	//发数据
-				ret=CT_IIC_Wait_Ack();
-				if(ret)break;  
-		}
-		CT_IIC_Stop();					//产生一个停止条件	    
-		return ret; 
-}
-
-//从GT9147读出一次数据
-//reg:起始寄存器地址
-//buf:数据缓缓存区
-//len:读数据长度			  
-void GT9147_RD_Reg(u16 reg,u8 *buf,u8 len)
-{
-		u8 i; 
-		CT_IIC_Start();	
-		CT_IIC_Send_Byte(GT_CMD_WR);   //发送写命令 	 
-		CT_IIC_Wait_Ack();
-		CT_IIC_Send_Byte(reg>>8);   	//发送高8位地址
-		CT_IIC_Wait_Ack(); 	 										  		   
-		CT_IIC_Send_Byte(reg&0XFF);   	//发送低8位地址
-		CT_IIC_Wait_Ack();  
-		CT_IIC_Start();  	 	   
-		CT_IIC_Send_Byte(GT_CMD_RD);   //发送读命令		   
-		CT_IIC_Wait_Ack();	   
-		for(i=0;i<len;i++)
-		{	   
-				buf[i]=CT_IIC_Read_Byte(i==(len-1)?0:1); //发数据	  
-		} 
-		CT_IIC_Stop();//产生一个停止条件    
-} 
-
-//发送GT9147配置参数
-//mode:0,参数不保存到flash
-//     1,参数保存到flash
-u8 GT9147_Send_Cfg(u8 mode)
-{
-		u8 buf[2];
-		u8 i=0;
-		buf[0]=0;
-		buf[1]=mode;	//是否写入到GT9147 FLASH?  即是否掉电保存
-		for(i=0;i<sizeof(GT9147_CFG_TBL);i++)buf[0]+=GT9147_CFG_TBL[i];//计算校验和
-		buf[0]=(~buf[0])+1;
-		GT9147_WR_Reg(GT_CFGS_REG,(u8*)GT9147_CFG_TBL,sizeof(GT9147_CFG_TBL));//发送寄存器配置
-		GT9147_WR_Reg(GT_CHECK_REG,buf,2);//写入校验和,和配置更新标记
-		return 0;
-} 
 
 static void gt9147_resetinit( void )
 {
@@ -209,11 +137,10 @@ static s8 gt9147_match( void )
 {
 		u8 temp[5]; 
 
-		//I2cInit( &gt9147_attr );
-		CT_IIC_Init( );
+		I2cInit( &gt9147_attr );
 		gt9147_resetinit(  );
 		gt9147_reset(  );
-		//delay_ms( 100 );
+		delay_ms( 100 );
 
 		GT9147_RD_Reg(GT_PID_REG,temp,4);//读取产品ID
 		temp[4]=0;

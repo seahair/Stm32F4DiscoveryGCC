@@ -93,22 +93,23 @@ void I2cStart( void )
 	I2cSDAOut( );	
 	I2cSDASet( I2CSDAHIGH );
 	I2cSCLSet( I2CSCLHIGH );
-	delay_us( 4 );
+	delay_us( 30 );
 	I2cSDASet( I2CSDALOW );
-	delay_us( 4 );
+	delay_us( 2 );
 	I2cSCLSet( I2CSCLLOW );
 }
 
 void I2cStop( void )
 {
 	I2cSDAOut( );	
-	I2cSCLSet( I2CSCLLOW );
-	//I2cSCLSet( I2CSCLHIGH );
-	I2cSDASet( I2CSDALOW );
-	delay_us( 4 );
+	//I2cSCLSet( I2CSCLLOW );
 	I2cSCLSet( I2CSCLHIGH );
+	delay_us( 30 );
+	I2cSDASet( I2CSDALOW );
+	delay_us( 2 );
+	//I2cSCLSet( I2CSCLHIGH );
 	I2cSDASet( I2CSDAHIGH );
-	delay_us( 4 );
+	//delay_us( 4 );
 	//I2cSCLSet( I2CSCLHIGH );
 }
 
@@ -118,9 +119,9 @@ u8 I2cWaitAck( void )
 
 	I2cSDAIn( );	
 	I2cSDASet( I2CSDAHIGH );
-	delay_us( 1 );
+	//delay_us( 1 );
 	I2cSCLSet( I2CSCLHIGH );
-	delay_us( 1 );
+	delay_us( 2 );
 	
 	while( I2cSDAGet() )
 	{	
@@ -130,6 +131,7 @@ u8 I2cWaitAck( void )
 			I2cStop( );
 			return 1;
 		}
+		delay_us( 2 );
 	}
 	I2cSCLSet( I2CSCLLOW );
 	return 0;
@@ -139,6 +141,7 @@ static void I2cAck( void )
 {
 	I2cSCLSet( I2CSCLLOW );
 	I2cSDAOut( );	
+	delay_us( 2 );
 	I2cSDASet( I2CSDALOW );
 	delay_us( 2 );
 	I2cSCLSet( I2CSCLHIGH );
@@ -150,6 +153,7 @@ static void I2cNoAck( void )
 {
 	I2cSCLSet( I2CSCLLOW );
 	I2cSDAOut( );	
+	delay_us( 2 );
 	I2cSDASet( I2CSDAHIGH );
 	delay_us( 2 );
 	I2cSCLSet( I2CSCLHIGH );
@@ -170,11 +174,12 @@ void I2cSendByte( u8 data )
 
 	I2cSDAOut( );	
 	I2cSCLSet( I2CSCLLOW );
+	delay_us( 2 );
 	for( t=0; t<8; t++ )
 	{
 		I2cSDASet( (data&0X80)>>7 );
 		data<<=1;	
-		delay_us( 2 );
+		//delay_us( 2 );
 		I2cSCLSet( I2CSCLHIGH );
 		delay_us( 2 );
 		I2cSCLSet( I2CSCLLOW );
@@ -187,6 +192,7 @@ u8 I2cRecvByte( u8 ack )
 	u8 i, receive=0;
 	
 	I2cSDAIn( );	
+	delay_us( 30 );
 	for( i=0; i<8; i++ )
 	{
 		I2cSCLSet( I2CSCLLOW );
@@ -195,7 +201,7 @@ u8 I2cRecvByte( u8 ack )
 		receive <<= 1;
 		if( I2cSDAGet() )
 			receive++;
-		delay_us( 1 );
+		//delay_us( 1 );
 	}
 	
 	if( I2CACK == ack )
