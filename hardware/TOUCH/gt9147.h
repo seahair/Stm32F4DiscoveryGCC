@@ -3,10 +3,15 @@
 
 #include "touch.h"
 #include "stm32f4xx.h"
+#include "i2c.h"
 
 //I2C读写命令	
 #define GT_CMD_WR		0X28		//写命令
 #define GT_CMD_RD		0X29		//读命令
+#define GT_SFTRESET		0X02
+#define GT_SFTUNRESET	0X0
+#define GT_SAVEUPDATE	0X1
+#define GT_UNSAVEUPDATE	0X0
 
 
 //GT9147 部分寄存器定义 
@@ -21,6 +26,17 @@
 #define GT_TP3_REG		0X8160		//第三个触摸点数据地址
 #define GT_TP4_REG		0X8168		//第四个触摸点数据地址
 #define GT_TP5_REG		0X8170		//第五个触摸点数据地址  
+
+
+
+typedef struct _GT9147_ATTR{
+	I2C_ATTR *i2c_gt9147;
+	//TOUCH_ATTR *touch_gt9147;
+	u8 *ID;
+	u8 version;
+	u8 saveupdate;
+}GT9147_ATTR;
+
 
 
 

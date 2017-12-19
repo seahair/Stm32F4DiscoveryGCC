@@ -128,6 +128,9 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+		TOUCH_ATTR mytoucattr;	
+		mytoucattr.dir = TOUCHDIVH;
+		TouchGetxy( &mytoucattr ); 
 #if 0
 		u8 cmd = RemoteRead( );
 		sprintf((char*)rtcbuf,"Recv Remote Cmd:%02d", cmd);

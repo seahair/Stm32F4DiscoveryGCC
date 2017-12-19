@@ -41,8 +41,14 @@ s8 TouchMatch( void )
 	return -1;
 }
 
-void TouchGetxy( u16 *x, u16 *y )
+void TouchGetxy( TOUCH_ATTR *ptouchattr )
 {
-	touch_dir->getxy( x, y );
+	touch_dir->getxy( ptouchattr );
+
+	for( u8 i=0; i<ptouchattr->touchnum; i++ )
+	{
+		printf("Touch [%d] X is: 0X%x \r\n", i, ptouchattr->OriginalXY.x[i]);
+		printf("Touch [%d] Y is: 0X%x \r\n", i, ptouchattr->OriginalXY.y[i]);
+	}
 }
 
