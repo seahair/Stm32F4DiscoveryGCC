@@ -271,7 +271,7 @@ static s8 gt9147_match( void )
 	temp[4]=0;
 	printf("CTP ID:%s\r\n",temp);	//打印ID
 
-	if(strcmp((char*)temp,"9147")==0)//ID==9147
+	if(strcmp((char*)temp, mygt9147_attr.ID)==0)//ID==9147
 	{
 		return 0;
 	} 

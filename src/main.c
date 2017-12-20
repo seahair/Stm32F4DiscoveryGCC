@@ -130,7 +130,11 @@ int main(int argc, char *argv[])
 
 		TOUCH_ATTR mytoucattr;	
 		mytoucattr.dir = TOUCHDIVH;
-		TouchGetxy( &mytoucattr ); 
+		while( 1 )
+		{
+			TouchGetxy( &mytoucattr ); 
+			//delay_ms(5);
+		}
 #if 0
 		u8 cmd = RemoteRead( );
 		sprintf((char*)rtcbuf,"Recv Remote Cmd:%02d", cmd);

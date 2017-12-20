@@ -47,8 +47,8 @@ void TouchGetxy( TOUCH_ATTR *ptouchattr )
 
 	for( u8 i=0; i<ptouchattr->touchnum; i++ )
 	{
-		printf("Touch [%d] X is: 0X%x \r\n", i, ptouchattr->OriginalXY.x[i]);
-		printf("Touch [%d] Y is: 0X%x \r\n", i, ptouchattr->OriginalXY.y[i]);
+		printf("Touch [%d] X is: 0X%d \r\n", i, ptouchattr->OriginalXY.x[i]);
+		printf("Touch [%d] Y is: 0X%d \r\n", i, ptouchattr->OriginalXY.y[i]);
 	}
 }
 
