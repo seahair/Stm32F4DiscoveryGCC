@@ -128,13 +128,31 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+#if 0
 		TOUCH_ATTR mytoucattr;	
 		mytoucattr.dir = TOUCHDIVH;
 		while( 1 )
 		{
 			TouchGetxy( &mytoucattr ); 
-			//delay_ms(5);
+			for( u8 i=0; i<mytoucattr.touchnum; i++ )
+			{
+				for( u8 j=1; j<3; j++ )
+				{
+				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i], RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i], RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i], RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]+j, RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]-j, RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]+j, RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]-j, RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]+j, RED );
+				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]-j, RED );
+				}
+			}
+			delay_ms(10);
 		}
+#endif
+
 #if 0
 		u8 cmd = RemoteRead( );
 		sprintf((char*)rtcbuf,"Recv Remote Cmd:%02d", cmd);

@@ -21298,6 +21298,7 @@ TouchInit	hardware/TOUCH/touch.c	/^s8 TouchInit( )$/;"	f
 TouchInit	hardware/TOUCH_Beck/touch.c	/^s8 TouchInit( )$/;"	f
 TouchMatch	hardware/TOUCH/touch.c	/^s8 TouchMatch( void )$/;"	f
 TouchMatch	hardware/TOUCH_Beck/touch.c	/^s8 TouchMatch( void )$/;"	f
+TouchXYChange	hardware/TOUCH/touch.c	/^static void TouchXYChange( TOUCH_ATTR *ptouchattr )$/;"	f	file:
 TpadCaptureStart	hardware/TPAD/tpad.c	/^void TpadCaptureStart( void )$/;"	f
 TpadCaptureStop	hardware/TPAD/tpad.c	/^void TpadCaptureStop( void )$/;"	f
 TpadClear	hardware/TPAD/tpad.c	/^void TpadClear( void )$/;"	f

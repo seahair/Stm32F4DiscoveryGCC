@@ -289,8 +289,6 @@ static void gt9147_getxy( TOUCH_ATTR *ptouchattr )
 
 	if( mode&0X80 )	//判断有无触点按下，以及按下了几个
 	{
-		temp=0;
-		GT9147_WR_Reg(GT_GSTID_REG,&temp,1);//清标志		
 		if( (mode&0XF)<6 )
 		{
 			ptouchattr->touchnum = (mode&0X0F);
@@ -305,11 +303,13 @@ static void gt9147_getxy( TOUCH_ATTR *ptouchattr )
 				else if( ptouchattr->dir == TOUCHDIVH )
 				{
 					ptouchattr->OriginalXY.y[i] = ((u16)buf[1]<<8)+buf[0];
-					ptouchattr->OriginalXY.x[i] = 800 - ((u16)buf[3]<<8)+buf[2];
+					ptouchattr->OriginalXY.x[i] = 800 - ((u16)buf[3]<<8)-buf[2];
 				}
 			}
 			ptouchattr->sta = TOUCHSTAYES;
 		}
+		temp=0;
+		GT9147_WR_Reg(GT_GSTID_REG,&temp,1);//清标志		
 	}
 	else //无触点按下
 	{
