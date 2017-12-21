@@ -21,6 +21,7 @@
 #include "w25qxx.h"
 #include "remote.h"
 #include "touch.h"
+#include "flash.h"
 
 
 
@@ -53,6 +54,12 @@ u8 dmatxbuf[DMATXNUM];
 u8  eepromw[EEPROMLEN] = "I LOVE YOU\r\n";
 u8  eepromr[EEPROMLEN];
 void MyKeyTest( u8 key );
+
+const u8 TEXT_Buffer[]={"I LOVE YOU FLASH TEST"};
+#define TEXT_LENTH sizeof(TEXT_Buffer) //数组长度
+#define SIZE TEXT_LENTH/4+((TEXT_LENTH%4)?1:0)
+
+#define FLASH_SAVE_ADDR 0X0800C004 
 
 
 int main(int argc, char *argv[])
@@ -114,6 +121,9 @@ int main(int argc, char *argv[])
 	//const u8 TEXT_Buffer[]={"Explorer STM32F4 SPI TEST"};
 //#define SIZE sizeof(TEXT_Buffer)
 //	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
+
+	FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
+
 	while(1)
 	{
 		delay_ms(500);
@@ -127,6 +137,16 @@ int main(int argc, char *argv[])
 		LcdShowString( 210, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
+
+#if 1
+		u8 datatemp[SIZE];
+
+		FlashRead(FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
+		LcdShowString(30,190,datatemp);
+
+#endif
+
+
 
 #if 0
 		TOUCH_ATTR mytoucattr;	

@@ -29,6 +29,7 @@ TEST += CAN
 TEST += SPI
 TEST += REMOTE 
 TEST +=	TOUCH 
+TEST +=	FLASH 
 
 
 .PHONY: $(TEST)
@@ -108,6 +109,9 @@ REMOTE:
 
 TOUCH:
 	make -C TOUCH 
+
+FLASH:
+	make -C FLASH 
 
 #END
 $(OBJS): | $(BUILD_DIR)
