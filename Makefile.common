@@ -78,6 +78,7 @@ INCLUDE+=-I$(TOP)/hardware/SPI
 INCLUDE+=-I$(TOP)/hardware/REMOTE
 INCLUDE+=-I$(TOP)/hardware/TOUCH
 INCLUDE+=-I$(TOP)/hardware/FLASH
+INCLUDE+=-I$(TOP)/hardware/SRAM
 
 
 

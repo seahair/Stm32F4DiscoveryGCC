@@ -764,6 +764,7 @@ AR	hardware/REMOTE/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/RS485/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/RTC/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/SPI/Makefile	/^AR = arm-none-eabi-ar$/;"	m
+AR	hardware/SRAM/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/TIME3/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/TOUCH/Makefile	/^AR = arm-none-eabi-ar$/;"	m
 AR	hardware/TOUCH_Beck/Makefile	/^AR = arm-none-eabi-ar$/;"	m
@@ -949,6 +950,7 @@ BUILD_DIR	hardware/REMOTE/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/RS485/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/RTC/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/SPI/Makefile	/^BUILD_DIR = ..\/build$/;"	m
+BUILD_DIR	hardware/SRAM/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/TIME3/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/TOUCH/Makefile	/^BUILD_DIR = ..\/build$/;"	m
 BUILD_DIR	hardware/TOUCH_Beck/Makefile	/^BUILD_DIR = ..\/build$/;"	m
@@ -2504,6 +2506,7 @@ CC	hardware/REMOTE/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/RS485/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/RTC/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/SPI/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
+CC	hardware/SRAM/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/TIME3/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/TOUCH/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
 CC	hardware/TOUCH_Beck/Makefile	/^CC = arm-none-eabi-gcc$/;"	m
@@ -3898,6 +3901,7 @@ DEPS	hardware/REMOTE/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/RS485/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/RTC/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/SPI/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
+DEPS	hardware/SRAM/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/TIME3/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/TOUCH/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
 DEPS	hardware/TOUCH_Beck/Makefile	/^DEPS = $(patsubst %.o, %.d, $(OBJS))$/;"	m
@@ -7531,7 +7535,7 @@ ECCR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 ECCR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR2;      \/*!< NAND Flash ECC result registers 2,                   Address offset: 0x74 *\/$/;"	m	struct:__anon130
 ECCR3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR3;      \/*!< NAND Flash ECC result registers 3,                   Address offset: 0x94 *\/$/;"	m	struct:__anon126
 ECCR3	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t ECCR3;      \/*!< NAND Flash ECC result registers 3,                   Address offset: 0x94 *\/$/;"	m	struct:__anon131
-EEPROMLEN	src/main.c	53;"	d	file:
+EEPROMLEN	src/main.c	54;"	d	file:
 EGR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t EGR;         \/*!< TIM event generation register,       Address offset: 0x14 *\/$/;"	m	struct:__anon151
 EMR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t EMR;    \/*!< EXTI Event mask register,                Address offset: 0x04 *\/$/;"	m	struct:__anon121
 ENABLE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef enum {DISABLE = 0, ENABLE = !DISABLE} FunctionalState;$/;"	e	enum:__anon101
@@ -8520,7 +8524,7 @@ FLASH_ProgramDoubleWord	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F
 FLASH_ProgramHalfWord	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c	/^FLASH_Status FLASH_ProgramHalfWord(uint32_t Address, uint16_t Data)$/;"	f
 FLASH_ProgramWord	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c	/^FLASH_Status FLASH_ProgramWord(uint32_t Address, uint32_t Data)$/;"	f
 FLASH_R_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2220;"	d
-FLASH_SAVE_ADDR	src/main.c	62;"	d	file:
+FLASH_SAVE_ADDR	src/main.c	63;"	d	file:
 FLASH_SR_BSY	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	5064;"	d
 FLASH_SR_EOP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	5058;"	d
 FLASH_SR_PGAERR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	5061;"	d
@@ -14773,6 +14777,7 @@ OBJS	hardware/REMOTE/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS
 OBJS	hardware/RS485/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/RTC/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/SPI/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
+OBJS	hardware/SRAM/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/TIME3/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/TOUCH/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
 OBJS	hardware/TOUCH_Beck/Makefile	/^OBJS = $(patsubst %.c, $(BUILD_DIR)\/%.o, $(SRCS))$/;"	m
@@ -18952,7 +18957,7 @@ SHP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc000.h
 SHP	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint8_t  SHP[12];                 \/*!< Offset: 0x018 (R\/W)  System Handlers Priority Registers (4-7, 8-11, 12-15) *\/$/;"	m	struct:__anon168
 SHPF_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c	313;"	d	file:
 SHPR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __IO uint8_t  SHPR[12];                \/*!< Offset: 0x018 (R\/W)  System Handlers Priority Registers (4-7, 8-11, 12-15) *\/$/;"	m	struct:__anon197
-SIZE	src/main.c	60;"	d	file:
+SIZE	src/main.c	61;"	d	file:
 SKIP_END_COMPARE	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	92;"	d	file:
 SKIP_SWING_END_1	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	113;"	d	file:
 SKIP_SWING_END_2	hardware/MPU6050/eMPL/inv_mpu_dmp_motion_driver.c	115;"	d	file:
@@ -19461,6 +19466,7 @@ SRCS	hardware/REMOTE/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/RS485/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/RTC/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/SPI/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
+SRCS	hardware/SRAM/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/TIME3/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/TOUCH/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
 SRCS	hardware/TOUCH_Beck/Makefile	/^SRCS = $(wildcard *.c)$/;"	m
@@ -19780,6 +19786,9 @@ SetValue	hardware/LED/led.h	/^	void (*SetValue) ( LED*, u8 );$/;"	m	struct:_LED
 Sint	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^    arm_cfft_instance_f32 Sint;      \/**< Internal CFFT structure. *\/$/;"	m	struct:__anon270
 SpiInit	hardware/SPI/spi.c	/^s8 SpiInit( SPI_ATTR *pspiattr )$/;"	f
 SpiIoctrl	hardware/SPI/spi.c	/^void SpiIoctrl( u8 cmd, SPI_ATTR *pspiattr )$/;"	f
+SramFsmcInit	hardware/SRAM/sram.c	/^static void SramFsmcInit( void )$/;"	f	file:
+SramGpioInit	hardware/SRAM/sram.c	/^static void SramGpioInit( void )$/;"	f	file:
+SramInit	hardware/SRAM/sram.c	/^void SramInit( void )$/;"	f
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40_41xxx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
 Stack_Mem	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f40xx.s	/^Stack_Mem       SPACE   Stack_Size$/;"	l
@@ -20071,7 +20080,7 @@ TER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/
 TER	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __IO uint32_t TER;                     \/*!< Offset: 0xE00 (R\/W)  ITM Trace Enable Register                 *\/$/;"	m	struct:__anon171
 TEST	hardware/Makefile	/^TEST = LED$/;"	m
 TEXT_Buffer	src/main.c	/^const u8 TEXT_Buffer[]={"I LOVE YOU FLASH TEST"};$/;"	v
-TEXT_LENTH	src/main.c	59;"	d	file:
+TEXT_LENTH	src/main.c	60;"	d	file:
 TI1_Config	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	/^static void TI1_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
 TI2_Config	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	/^static void TI2_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
 TI3_Config	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	/^static void TI3_Config(TIM_TypeDef* TIMx, uint16_t TIM_ICPolarity, uint16_t TIM_ICSelection,$/;"	f	file:
@@ -22386,6 +22395,7 @@ __SMUSDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_mat
 __SMUSDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmSimd.h	/^__attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __SMUSDX (uint32_t op1, uint32_t op2)$/;"	f
 __SMUSDX	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmSimd.h	114;"	d
 __SPI_H__	hardware/SPI/spi.h	2;"	d
+__SRAM_H__	hardware/SRAM/sram.h	2;"	d
 __SSAT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	/^  static __INLINE q31_t __SSAT($/;"	f
 __SSAT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	305;"	d
 __SSAT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cmInstr.h	745;"	d
