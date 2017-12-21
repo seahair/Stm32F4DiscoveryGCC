@@ -30,6 +30,7 @@ TEST += SPI
 TEST += REMOTE 
 TEST +=	TOUCH 
 TEST +=	FLASH 
+TEST +=	SRAM 
 
 
 .PHONY: $(TEST)
@@ -112,6 +113,9 @@ TOUCH:
 
 FLASH:
 	make -C FLASH 
+
+SRAM:
+	make -C SRAM 
 
 #END
 $(OBJS): | $(BUILD_DIR)

@@ -22,6 +22,7 @@
 #include "remote.h"
 #include "touch.h"
 #include "flash.h"
+#include "sram.h"
 
 
 

@@ -23,6 +23,7 @@
 #include "remote.h"
 #include "touch.h"
 #include "flash.h"
+#include "sram.h"
 
 
 void LED_Init( void )
@@ -111,8 +112,7 @@ void HardInit( void )
 	//at24cxx_init( );
 	//W25QXX_Init( );
 	//RemoteInit( );
-	TouchInit( );
-	//GT9147_Init();
-//	FSMC_SRAM_Init( );
+	//TouchInit( );
+	SramInit( );
 }
 
