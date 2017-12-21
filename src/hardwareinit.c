@@ -22,6 +22,7 @@
 #include "w25qxx.h"
 #include "remote.h"
 #include "touch.h"
+#include "flash.h"
 
 
 void LED_Init( void )
