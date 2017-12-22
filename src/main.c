@@ -26,8 +26,8 @@
 
 
 
-
-
+#define  SRAMNUM  100
+u8 sramtest[SRAMNUM] __attribute__((section(".glx")));
 
 u16 DutyCycle = 100;
 u16 Period = 500;
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 
 	//RN_ATTR myrn = { 50, 199, 0 };
 	//RnIoctrl( RNCMDSETRANGE, &myrn );
-	
+
 #if 0
 	u16 i = 0;
 	for( i=0; i<DMATXNUM-2; i++ )
@@ -120,8 +120,8 @@ int main(int argc, char *argv[])
 	//at24cxx_write( 0X10, EEPROMLEN, eepromw );
 
 	//const u8 TEXT_Buffer[]={"Explorer STM32F4 SPI TEST"};
-//#define SIZE sizeof(TEXT_Buffer)
-//	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
+	//#define SIZE sizeof(TEXT_Buffer)
+	//	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
 
 	//FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
 
@@ -144,10 +144,7 @@ int main(int argc, char *argv[])
 
 		FlashRead(FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
 		LcdShowString(30,190,datatemp);
-
 #endif
-
-
 
 #if 0
 		TOUCH_ATTR mytoucattr;	
@@ -159,15 +156,15 @@ int main(int argc, char *argv[])
 			{
 				for( u8 j=1; j<3; j++ )
 				{
-				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i], RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i], RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i], RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]+j, RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]-j, RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]+j, RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]-j, RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]+j, RED );
-				LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]-j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i], RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i], RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i], RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]+j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i], mytoucattr.LCDXY.y[i]-j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]+j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]+j, mytoucattr.LCDXY.y[i]-j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]+j, RED );
+					LcdDrawPixel( mytoucattr.LCDXY.x[i]-j, mytoucattr.LCDXY.y[i]-j, RED );
 				}
 			}
 			delay_ms(10);
