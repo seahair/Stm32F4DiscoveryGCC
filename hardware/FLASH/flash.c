@@ -3,17 +3,13 @@
 #include "stm32f4xx_flash.h"
 
 
-void FlashInit( void )
-{
-
-}
 
 static u32 STMFLASH_ReadWord(u32 faddr)
 {
 	return *(vu32*)faddr;
 }
 
-s8 FlashRead( u32 addr, u32 *buf, u32 len )
+s8 FlashRead( MYFLASH* const me, u32 addr, u32 *buf, u32 len )
 {
 	if( addr%4 ) 
 		return -2;
@@ -51,7 +47,7 @@ static uint16_t STMFLASH_GetFlashSector(u32 addr)
 	return FLASH_Sector_11;
 }
 
-s8 FlashWrite( u32 addr, u32 *buf, u32 len )
+s8 FlashWrite( MYFLASH* const me, u32 addr, u32 *buf, u32 len )
 {
 	u32 i;
 
@@ -76,3 +72,24 @@ s8 FlashWrite( u32 addr, u32 *buf, u32 len )
 	FLASH_Lock();//上锁
 
 }
+
+
+static FlashInit( MYFLASH * const me, FLASHREAD read, FLASHWRITE write )
+{
+	
+}
+
+static FlashCleanup( MYFLASH* const me )
+{
+
+}
+
+MYFLASH *FlashCreat( void )
+{
+}
+
+void FlashDestroy( MYFLASH * const me )
+{
+}
+
+

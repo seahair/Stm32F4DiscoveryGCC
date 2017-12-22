@@ -113,8 +113,7 @@ void HardInit( void )
 	//W25QXX_Init( );
 	//RemoteInit( );
 	//TouchInit( );
-	SramInit( );
-	//GT9147_Init();
-//	FSMC_SRAM_Init( );
+	//SramInit( );
+
 }
 

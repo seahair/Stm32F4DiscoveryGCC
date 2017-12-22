@@ -139,11 +139,13 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
+#if 0
 		for( u16 i=0; i<SRAMNUM; i++ )
 		{
 			sramtest[i] = i;
 			printf(" sramtest address is 0x%x \r\n", &sramtest[i] );
 		}
+#endif 
 
 #if 0
 		u8 datatemp[SIZE];

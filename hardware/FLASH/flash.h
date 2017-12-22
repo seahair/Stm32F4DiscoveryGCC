@@ -19,6 +19,7 @@
 #define ADDR_FLASH_SECTOR_10    ((u32)0x080C0000)
 #define ADDR_FLASH_SECTOR_11    ((u32)0x080E0000)
 
+#if 0
 typedef struct _FLASH_ATTR{
 	u32 waddr;
 	u32 *wbuf;
@@ -37,6 +38,19 @@ typedef struct _FLASH_DIR{
 void FlashInit( void );
 s8 FlashRead( u32 addr, u32 *buf, u32 len );
 s8 FlashWrite( u32 addr, u32 *buf, u32 len );
+#endif
 
+typedef struct MYFLASH MYFLASH;
+
+typedef s8 (*FLASHREAD) ( MYFLASH * const me, u32 addr, u32 *buf, u32 len );
+typedef s8 (*FLASHWRIET) ( MYFLASH * const me, u32 addr, u32 *buf, u32 len );
+struct MYFLASH{
+	u8 sta;
+	FLASHREAD read;
+	FLASHWRIET write;
+};
+
+MYFLASH *FlashCreat( void );
+void FlashDestroy( MYFLASH * const me );
 
 #endif
