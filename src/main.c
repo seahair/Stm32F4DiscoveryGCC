@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
 
 	while(1)
 	{
-		delay_ms(500);
+		delay_ms(1000);
 		LedRed.LedRollBack( &LedRed );
 
 		LcdShowString( 600, 20, "Hello Linus" );
@@ -138,6 +138,12 @@ int main(int argc, char *argv[])
 		LcdShowString( 210, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
+
+		for( u16 i=0; i<SRAMNUM; i++ )
+		{
+			sramtest[i] = i;
+			printf(" sramtest address is 0x%x \r\n", &sramtest[i] );
+		}
 
 #if 0
 		u8 datatemp[SIZE];

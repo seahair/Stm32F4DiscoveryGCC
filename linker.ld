@@ -43,6 +43,7 @@ MEMORY
 {
 FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 1024K
 RAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
+GLX (xrw)      : ORIGIN = 0x68000000, LENGTH = 1000K
 CCMRAM (rw)      : ORIGIN = 0x10000000, LENGTH = 64K
 }
 
@@ -144,8 +145,20 @@ SECTIONS
     . = ALIGN(4);
     _eccmram = .;       /* create a global symbol at ccmram end */
   } >CCMRAM AT> FLASH
-
   
+  .glx :
+  {
+    . = ALIGN(4);
+    _sglx = .;       /* create a global symbol at ccmram start */
+    __glx_start__ = _sglx;
+    *(.glx)
+    *(.glx*)
+    
+    . = ALIGN(4);
+    _eglx = .;       /* create a global symbol at ccmram end */
+    __glx_end__ = _eglx;
+  } >GLX
+
   /* Uninitialized data section */
   . = ALIGN(4);
   .bss :
