@@ -60,7 +60,7 @@ const u8 TEXT_Buffer[]={"I LOVE YOU FLASH TEST"};
 #define TEXT_LENTH sizeof(TEXT_Buffer) //数组长度
 #define SIZE TEXT_LENTH/4+((TEXT_LENTH%4)?1:0)
 
-#define FLASH_SAVE_ADDR 0X0800C004 
+#define FLASH_SAVE_ADDR 0X0802C004 
 
 
 int main(int argc, char *argv[])
@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
 //#define SIZE sizeof(TEXT_Buffer)
 //	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
 
-	FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
+	//FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
 
 	while(1)
 	{
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
-#if 1
+#if 0
 		u8 datatemp[SIZE];
 
 		FlashRead(FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
