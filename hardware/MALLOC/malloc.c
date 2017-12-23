@@ -59,9 +59,9 @@ static void MymallocInit( MYMALLOC *me, MEMMALLOC malloc, MEMREALLOC realloc, ME
 
 MYMALLOC *MallocCreat( void )
 {
-	static MYMALLOC mymalloc;
+	static MYMALLOC extimemalloc;
 
-	MymallocInit( &mymalloc, mymalloc, myrealloc, myfree, mypreuse );
+	MymallocInit( &extimemalloc, mymalloc, myrealloc, myfree, mypreuse );
 }
 
 void MallocDestroy( MYMALLOC *me )

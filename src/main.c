@@ -122,11 +122,15 @@ int main(int argc, char *argv[])
 	//#define SIZE sizeof(TEXT_Buffer)
 	//	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
 
+#if 0
 	//FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
+
 	u8 datatemp[SIZE];
 	MYFLASH *myflash = FlashCreat( );
 	myflash->write( myflash, FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE); 
 	myflash->read( myflash, FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
+	LcdShowString(30,190,datatemp);
+#endif
 
 	while(1)
 	{
