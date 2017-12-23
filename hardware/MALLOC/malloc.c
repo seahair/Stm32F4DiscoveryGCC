@@ -15,6 +15,33 @@ static void memset( void *addr, u32 len, u8 data )
 
 static void *mymalloc( MYMALLOC *me, u32 size )
 {
+	u16 num;
+	u32 i,j;
+
+	if( size<me->memsize && (me->sta==MEMINIT) )
+	{
+		num = size/me->blocksize+((size%me->blocksize)>0)?1:0;		
+		for( i=0; i<me->blocknum; i++ )
+		{
+			if( me->memmangebase[i]!=0 )
+				continue;
+			else
+			{
+				if( i+num < me->blocknum )
+				{
+					for( j=0; j<num; j++ )
+						me->memmangebase[i+j] = num;
+					break;
+				}
+				else
+					return NULL;	
+			}
+		}	
+	}
+	else
+		return NULL;
+
+	return me->membase+i*me->blocksize;
 }
 
 static void *myrealloc( MYMALLOC *me, u32 size )
@@ -51,8 +78,8 @@ static void MymallocInit( MYMALLOC *me, MEMMALLOC malloc, MEMREALLOC realloc, ME
 	me->free = free;
 	me->preuse = preuse;
 
-	memset( me->membase, me->memsize, NULL );
-	memset( me->memmangebase, me->blocknum*2, NULL );
+	//memset( me->membase, me->memsize, NULL );
+	//memset( me->memmangebase, me->blocknum*2, NULL );
 	me->sta = MEMINIT;
 }
 
@@ -62,6 +89,8 @@ MYMALLOC *MallocCreat( void )
 	static MYMALLOC extimemalloc;
 
 	MymallocInit( &extimemalloc, mymalloc, myrealloc, myfree, mypreuse );
+	
+	return &extimemalloc;
 }
 
 void MallocDestroy( MYMALLOC *me )

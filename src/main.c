@@ -23,6 +23,7 @@
 #include "touch.h"
 #include "flash.h"
 #include "sram.h"
+#include "malloc.h"
 
 
 
@@ -132,6 +133,16 @@ int main(int argc, char *argv[])
 	LcdShowString(30,190,datatemp);
 #endif
 
+#if 1
+
+	MYMALLOC *mymalloc = MallocCreat( );
+	u8 *psize1 = mymalloc->malloc( mymalloc, 321 );
+	u8 *psize2 = mymalloc->malloc( mymalloc, 321 );
+	u8 *psize3 = mymalloc->malloc( mymalloc, 321 );
+	
+#endif
+
+
 	while(1)
 	{
 		delay_ms(1000);
@@ -145,6 +156,13 @@ int main(int argc, char *argv[])
 		LcdShowString( 210, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
+
+
+		printf("psize1 malloc test address is 0x%x \r\n", psize1 );
+		printf("psize2 malloc test address is 0x%x \r\n", psize2 );
+		printf("psize3 malloc test address is 0x%x \r\n", psize3 );
+
+
 
 #if 0
 		for( u16 i=0; i<SRAMNUM; i++ )

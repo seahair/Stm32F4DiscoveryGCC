@@ -24,7 +24,7 @@
 #include "touch.h"
 #include "flash.h"
 #include "sram.h"
-
+#include "malloc.h"
 
 void LED_Init( void )
 {
