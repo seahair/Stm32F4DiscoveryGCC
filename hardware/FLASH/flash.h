@@ -43,11 +43,11 @@ s8 FlashWrite( u32 addr, u32 *buf, u32 len );
 typedef struct MYFLASH MYFLASH;
 
 typedef s8 (*FLASHREAD) ( MYFLASH * const me, u32 addr, u32 *buf, u32 len );
-typedef s8 (*FLASHWRIET) ( MYFLASH * const me, u32 addr, u32 *buf, u32 len );
+typedef s8 (*FLASHWRITE) ( MYFLASH * const me, u32 addr, u32 *buf, u32 len );
 struct MYFLASH{
 	u8 sta;
 	FLASHREAD read;
-	FLASHWRIET write;
+	FLASHWRITE write;
 };
 
 MYFLASH *FlashCreat( void );

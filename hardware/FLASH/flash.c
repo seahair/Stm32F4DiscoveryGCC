@@ -74,22 +74,30 @@ s8 FlashWrite( MYFLASH* const me, u32 addr, u32 *buf, u32 len )
 }
 
 
-static FlashInit( MYFLASH * const me, FLASHREAD read, FLASHWRITE write )
+static void FlashInit( MYFLASH* const me, FLASHREAD read, FLASHWRITE write )
 {
-	
+	me->sta = 0;
+	me->read = read;
+	me->write = write;
 }
 
-static FlashCleanup( MYFLASH* const me )
+static void FlashCleanup( MYFLASH* const me )
 {
 
 }
 
 MYFLASH *FlashCreat( void )
 {
+	static MYFLASH sflash;
+
+	FlashInit( &sflash, FlashRead, FlashWrite );	
+
+	return &sflash;
 }
 
 void FlashDestroy( MYFLASH * const me )
 {
+
 }
 
 

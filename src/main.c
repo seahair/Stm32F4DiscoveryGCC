@@ -59,7 +59,6 @@ void MyKeyTest( u8 key );
 const u8 TEXT_Buffer[]={"I LOVE YOU FLASH TEST"};
 #define TEXT_LENTH sizeof(TEXT_Buffer) //数组长度
 #define SIZE TEXT_LENTH/4+((TEXT_LENTH%4)?1:0)
-
 #define FLASH_SAVE_ADDR 0X0802C004 
 
 
@@ -124,6 +123,10 @@ int main(int argc, char *argv[])
 	//	W25QXX_Write((u8*)TEXT_Buffer,200,SIZE);
 
 	//FlashWrite(FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE);
+	u8 datatemp[SIZE];
+	MYFLASH *myflash = FlashCreat( );
+	myflash->write( myflash, FLASH_SAVE_ADDR,(u32*)TEXT_Buffer,SIZE); 
+	myflash->read( myflash, FLASH_SAVE_ADDR,(u32*)datatemp,SIZE);
 
 	while(1)
 	{
