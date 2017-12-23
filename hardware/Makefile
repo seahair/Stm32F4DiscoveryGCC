@@ -31,6 +31,7 @@ TEST += REMOTE
 TEST +=	TOUCH 
 TEST +=	FLASH 
 TEST +=	SRAM 
+TEST +=	MALLOC 
 
 
 .PHONY: $(TEST)
@@ -116,6 +117,9 @@ FLASH:
 
 SRAM:
 	make -C SRAM 
+
+MALLOC:
+	make -C MALLOC 
 
 #END
 $(OBJS): | $(BUILD_DIR)
