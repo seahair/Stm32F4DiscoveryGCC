@@ -23070,7 +23070,7 @@ extgadc_init	hardware/ADC/extgadc.c	/^static s8 extgadc_init( void )$/;"	f	file:
 extgadc_ioctrl	hardware/ADC/extgadc.c	/^static void extgadc_ioctrl( u8 cmd, ADC_ATTR *padcattr )$/;"	f	file:
 extgadc_module	hardware/ADC/extgadc.c	/^const ADC_DIR extgadc_module = {$/;"	v
 extgadc_read	hardware/ADC/extgadc.c	/^static float extgadc_read( void )$/;"	f	file:
-extimembase	hardware/MALLOC/malloc.c	/^u8 extimembase[EXTIMEMSIZE] __attribute__((section(".glx"))) __attribute__((align(32)));	\/\/外部SRAM内存池$/;"	v
+extimembase	hardware/MALLOC/malloc.c	/^u8 extimembase[EXTIMEMSIZE] __attribute__((section(".glx"))); __attribute__((aligned(32)));	\/\/外部SRAM内存池$/;"	v
 extimemmangebase	hardware/MALLOC/malloc.c	/^u16 extimemmangebase[EXTIMEMALLOCTABLE];  \/\/外部SRAM内存池MAP$/;"	v
 fabs	hardware/MPU6050/eMPL/inv_mpu.c	112;"	d	file:
 fabs	hardware/MPU6050/eMPL/inv_mpu.c	66;"	d	file:

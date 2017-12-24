@@ -136,9 +136,9 @@ int main(int argc, char *argv[])
 #if 1
 
 	MYMALLOC *mymalloc = MallocCreat( );
-	u8 *psize1 = mymalloc->malloc( mymalloc, 321 );
-	u8 *psize2 = mymalloc->malloc( mymalloc, 321 );
-	u8 *psize3 = mymalloc->malloc( mymalloc, 321 );
+	u8 *psize1 = mymalloc->malloc( mymalloc, 32100 );
+	u8 *psize2 = mymalloc->malloc( mymalloc, 32100 );
+	u8 *psize3 = mymalloc->malloc( mymalloc, 32100 );
 	
 #endif
 
@@ -161,8 +161,8 @@ int main(int argc, char *argv[])
 		printf("psize1 malloc test address is 0x%x \r\n", psize1 );
 		printf("psize2 malloc test address is 0x%x \r\n", psize2 );
 		printf("psize3 malloc test address is 0x%x \r\n", psize3 );
-
-
+		sprintf( (char*)rtcbuf, "exti sram preuse:%2d", mymalloc->preuse(mymalloc));	
+		LcdShowString( 20, 200, rtcbuf );
 
 #if 0
 		for( u16 i=0; i<SRAMNUM; i++ )

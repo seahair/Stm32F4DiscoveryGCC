@@ -57,7 +57,7 @@ update:
 	openocd -f /usr/share/openocd/scripts/interface/jlink.cfg  -f /usr/share/openocd/scripts/target/stm32f4x.cfg -c init -c halt -c "flash write_image erase /home/sea/gitworkspace/Stm32F4DiscoveryGCC/main.hex" # -c reset -c  shutdown
 
 gdb:
-	$(GDB) -iex "target remote localhost:3333" -iex 'monitor reset' -iex 'monitor halt' -iex 'load main.elf' -iex 'b main.c:main'  main.elf
+	$(GDB) -iex "target remote localhost:3333" -iex 'monitor reset' -iex 'monitor halt' -iex 'load main.elf' -iex 'b main.c:main' -iex 'b main.c:138' main.elf
 
 download:
 	openocd -f /usr/share/openocd/scripts/interface/jlink.cfg  -f /usr/share/openocd/scripts/target/stm32f4x.cfg -c init -c halt -c "flash write_image erase /home/sea/gitworkspace/Stm32F4DiscoveryGCC/main.hex"  -c reset -c  shutdown

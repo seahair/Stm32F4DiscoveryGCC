@@ -113,7 +113,7 @@ void HardInit( void )
 	//W25QXX_Init( );
 	//RemoteInit( );
 	//TouchInit( );
-	//SramInit( );
+	SramInit( );
 
 }
 
