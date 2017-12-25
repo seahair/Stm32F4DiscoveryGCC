@@ -96,6 +96,7 @@ void HardInit( void )
 	KeyPinInit( );
     LcdInit( );
 	RtcInit( );
+	SramInit( );
 	//KeyExtiInit( );
 	//IwdgStart1S( );
 	//Time3InitMs( 500 );
@@ -114,7 +115,6 @@ void HardInit( void )
 	//W25QXX_Init( );
 	//RemoteInit( );
 	//TouchInit( );
-	SramInit( );
 
 }
 
