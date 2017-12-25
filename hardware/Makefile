@@ -32,6 +32,7 @@ TEST +=	TOUCH
 TEST +=	FLASH 
 TEST +=	SRAM 
 TEST +=	MALLOC 
+TEST +=	SDCARD 
 
 
 .PHONY: $(TEST)
@@ -120,6 +121,9 @@ SRAM:
 
 MALLOC:
 	make -C MALLOC 
+
+SDCARD:
+	make -C SDCARD 
 
 #END
 $(OBJS): | $(BUILD_DIR)

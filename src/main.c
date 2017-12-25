@@ -24,6 +24,7 @@
 #include "flash.h"
 #include "sram.h"
 #include "malloc.h"
+#include "sdcard.h"
 
 
 
@@ -62,6 +63,20 @@ const u8 TEXT_Buffer[]={"I LOVE YOU FLASH TEST"};
 #define SIZE TEXT_LENTH/4+((TEXT_LENTH%4)?1:0)
 #define FLASH_SAVE_ADDR 0X0802C004 
 
+void show_sdcard_info(void)
+{
+	switch(SDCardInfo.CardType)
+	{
+		case SDIO_STD_CAPACITY_SD_CARD_V1_1:printf("Card Type:SDSC V1.1\r\n");break;
+		case SDIO_STD_CAPACITY_SD_CARD_V2_0:printf("Card Type:SDSC V2.0\r\n");break;
+		case SDIO_HIGH_CAPACITY_SD_CARD:printf("Card Type:SDHC V2.0\r\n");break;
+		case SDIO_MULTIMEDIA_CARD:printf("Card Type:MMC Card\r\n");break;
+	}	
+	printf("Card ManufacturerID:%d\r\n",SDCardInfo.SD_cid.ManufacturerID);	//制造商ID
+	printf("Card RCA:%d\r\n",SDCardInfo.RCA);								//卡相对地址
+	printf("Card Capacity:%d MB\r\n",(u32)(SDCardInfo.CardCapacity>>20));	//显示容量
+	printf("Card BlockSize:%d\r\n\r\n",SDCardInfo.CardBlockSize);			//显示块大小
+}
 
 int main(int argc, char *argv[])
 {
@@ -133,15 +148,26 @@ int main(int argc, char *argv[])
 	LcdShowString(30,190,datatemp);
 #endif
 
-#if 1
+#if 0
 
 	MYMALLOC *mymalloc = MallocCreat( );
 	u8 *psize1 = mymalloc->malloc( mymalloc, 32100 );
 	u8 *psize2 = mymalloc->malloc( mymalloc, 32100 );
 	u8 *psize3 = mymalloc->malloc( mymalloc, 32100 );
-	
+
 #endif
 
+#if 1
+	while(SD_Init())//检测不到SD卡
+	{
+		LcdShowString(20,200,"SD Card Error!");
+		delay_ms(500);					
+		LcdShowString(20,350,"Please Check! ");
+		delay_ms(500);
+		LedGreen.LedRollBack( &LedGreen );
+	}
+	show_sdcard_info();	//打印SD卡相关信息
+#endif
 
 	while(1)
 	{
@@ -158,11 +184,13 @@ int main(int argc, char *argv[])
 		LcdShowString( 400, 20, rtcbuf );
 
 
+#if 0
 		printf("psize1 malloc test address is 0x%x \r\n", psize1 );
 		printf("psize2 malloc test address is 0x%x \r\n", psize2 );
 		printf("psize3 malloc test address is 0x%x \r\n", psize3 );
 		sprintf( (char*)rtcbuf, "exti sram preuse:%2d", mymalloc->preuse(mymalloc));	
 		LcdShowString( 20, 200, rtcbuf );
+#endif
 
 #if 0
 		for( u16 i=0; i<SRAMNUM; i++ )

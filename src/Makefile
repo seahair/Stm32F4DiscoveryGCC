@@ -11,6 +11,7 @@ OBJS+=stm32f4xx_it.o
 OBJS+=system_stm32f4xx.o
 OBJS+=hardwareinit.o
 OBJS+=delay.o
+OBJS+=sys.o
 
 all: src
 src: app.a

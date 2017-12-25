@@ -19,7 +19,8 @@ all: libs src hardware
 	ctags -R
 	$(CC) -o $(PROGRAM).elf $(LDFLAGS)\
 			src/app.a\
-			$(LDLIBS)
+			$(LDLIBS)\
+			src/sys.o
 	$(OBJCOPY) -O ihex $(PROGRAM).elf $(PROGRAM).hex
 	$(OBJCOPY) -O binary $(PROGRAM).elf $(PROGRAM).bin
 #Extract info contained in ELF to readable test-files

@@ -25,6 +25,7 @@
 #include "flash.h"
 #include "sram.h"
 #include "malloc.h"
+#include "sdcard.h"
 
 void LED_Init( void )
 {
