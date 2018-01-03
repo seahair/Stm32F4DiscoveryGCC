@@ -76,6 +76,8 @@ void show_sdcard_info(void)
 	printf("Card RCA:%d\r\n",SDCardInfo.RCA);								//卡相对地址
 	printf("Card Capacity:%d MB\r\n",(u32)(SDCardInfo.CardCapacity>>20));	//显示容量
 	printf("Card BlockSize:%d\r\n\r\n",SDCardInfo.CardBlockSize);			//显示块大小
+	printf("Card rdBlocklen:%d\r\n\r\n",SDCardInfo.SD_csd.RdBlockLen);			//显示块大小
+	printf("Card wrBlocklen:%d\r\n\r\n",SDCardInfo.SD_csd.MaxWrBlockLen);			//显示块大小
 }
 
 int main(int argc, char *argv[])
@@ -186,19 +188,33 @@ int main(int argc, char *argv[])
 		LcdShowString( 400, 20, rtcbuf );
 
 	
-		//show_sdcard_info();	//打印SD卡相关信息
+		show_sdcard_info();	//打印SD卡相关信息
 		buf = extimalloc->malloc( extimalloc, 512 );  
-		if( SD_ReadDisk(buf, 0, 1 ) == 0 )
+		u8 testbuf[512];
+		if( SD_ReadDisk(testbuf, 0, 1 ) == 0 )
 		{
 			LcdShowString( 20, 100, "USART1 send SD Card date......" );
 			printf(" Usart1 send date: \r\n" );
 			for( u32 j=0; j<512; j++ )
 			{
-				printf("%x ", buf[j] );
+				printf("%x ", testbuf[j] );
 			}
 			printf(" \r\nData Send Over....\r\n");	
 			LcdShowString( 20, 200, "USART1 send SD Card date Over......" );
 		}
+
+		if( SD_WriteDisk(testbuf, 2, 1 ) == 0 )
+		{
+			LcdShowString( 20, 100, "USART1 send SD Card date......" );
+			printf(" Usart1 send date: \r\n" );
+			for( u32 j=0; j<512; j++ )
+			{
+				printf("%x ", testbuf[j] );
+			}
+			printf(" \r\nData Send Over....\r\n");	
+			LcdShowString( 20, 200, "USART1 send SD Card date Over......" );
+		}
+
 		extimalloc->free( extimalloc, buf );
 
 #if 0
