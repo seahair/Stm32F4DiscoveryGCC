@@ -188,7 +188,7 @@ int main(int argc, char *argv[])
 		LcdShowString( 400, 20, rtcbuf );
 
 	
-		//show_sdcard_info();	//打印SD卡相关信息
+		show_sdcard_info();	//打印SD卡相关信息
 		buf = extimalloc->malloc( extimalloc, 512 );  
 		if( SD_ReadDisk(buf, 1, 1 ) == 0 )
 		{
@@ -201,6 +201,19 @@ int main(int argc, char *argv[])
 			printf(" \r\nData Send Over....\r\n");	
 			LcdShowString( 20, 200, "USART1 send SD Card date Over......" );
 		}
+
+		if( SD_WriteDisk(buf, 2, 1 ) == 0 )
+		{
+			LcdShowString( 20, 100, "USART1 send SD Card date......" );
+			printf(" Usart1 send date: \r\n" );
+			for( u32 j=0; j<512; j++ )
+			{
+				printf("%x ", buf[j] );
+			}
+			printf(" \r\nData Send Over....\r\n");	
+			LcdShowString( 20, 200, "USART1 send SD Card date Over......" );
+		}
+
 		extimalloc->free( extimalloc, buf );
 
 #if 0

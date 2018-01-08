@@ -98,7 +98,7 @@ SD_Error SD_Init(void)
  	if(errorstatus==SD_OK)errorstatus=SD_InitializeCards();			//初始化SD卡														  
   	if(errorstatus==SD_OK)errorstatus=SD_GetCardInfo(&SDCardInfo);	//获取卡信息
  	if(errorstatus==SD_OK)errorstatus=SD_SelectDeselect((u32)(SDCardInfo.RCA<<16));//选中SD卡   
-   	if(errorstatus==SD_OK)errorstatus=SD_EnableWideBusOperation(SDIO_BusWide_4b);	//4位宽度,如果是MMC卡,则不能用4位模式 
+   	if(errorstatus==SD_OK)errorstatus=SD_EnableWideBusOperation(SDIO_BusWide_1b);	//4位宽度,如果是MMC卡,则不能用4位模式 
   	if((errorstatus==SD_OK)||(SDIO_MULTIMEDIA_CARD==CardType))
 	{  		    
 		if(SDCardInfo.CardType==SDIO_STD_CAPACITY_SD_CARD_V1_1||SDCardInfo.CardType==SDIO_STD_CAPACITY_SD_CARD_V2_0)
@@ -596,6 +596,7 @@ SD_Error SD_ReadBlock(u8 *buf,long long addr,u16 blksize)
  	if(DeviceMode==SD_POLLING_MODE)						//查询模式,轮询数据	 
 	{
  		INTX_DISABLE();//关闭总中断(POLLING模式,严禁中断打断SDIO读写操作!!!)
+		SDIO_ClearFlag(SDIO_STATIC_FLAGS);//清除所有标记
 		while(!(SDIO->STA&((1<<5)|(1<<1)|(1<<3)|(1<<10)|(1<<9))))//无上溢/CRC/超时/完成(标志)/起始位错误
 		{
 			if(SDIO_GetFlagStatus(SDIO_FLAG_RXFIFOHF) != RESET)						//接收区半满,表示至少存了8个字
