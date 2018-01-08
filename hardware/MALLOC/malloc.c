@@ -1,9 +1,19 @@
 #include "malloc.h"
 
 
-//u8 extimembase[2];
 u8 extimembase[EXTIMEMSIZE] __attribute__((section(".glx"))); __attribute__((aligned(32)));	//外部SRAM内存池
 u16 extimemmangebase[EXTIMEMALLOCTABLE];  //外部SRAM内存池MAP
+
+u8 inmembase[INMEMSIZE]; 
+u16 inmemmangebase[INMEMALLOCTABLE];  
+
+u8 ccmmembase[CCMMEMSIZE] __attribute__((section(".ccmram"))); __attribute__((aligned(32)));	//外部SRAM内存池
+u16 ccmmemmangebase[CCMMEMALLOCTABLE];  //外部SRAM内存池MAP
+
+
+MYMALLOC extimemalloc;
+MYMALLOC inmemalloc;
+MYMALLOC ccmmemalloc;
 
 static void memset( void *addr, u32 len, u8 data )
 {
@@ -115,3 +125,62 @@ void MallocDestroy( MYMALLOC *me )
 {
 
 }
+
+void ExtiMallocInit( void )
+{
+	extimemalloc.sta = MEMUNINIT;
+	extimemalloc.memsize = EXTIMEMSIZE;
+	extimemalloc.blocksize = EXTIMEMBLOCKSIZE;
+	extimemalloc.blocknum = extimemalloc.memsize/extimemalloc.blocksize;
+	extimemalloc.membase = extimembase;
+	extimemalloc.memmangebase = extimemmangebase;
+	extimemalloc.malloc = mymalloc;
+	extimemalloc.realloc = myrealloc;
+	extimemalloc.free = myfree;
+	extimemalloc.preuse = mypreuse;
+
+	memset( extimemalloc.membase, extimemalloc.memsize, NULL );
+	memset( extimemalloc.memmangebase, extimemalloc.blocknum*2, NULL );
+	extimemalloc.sta = MEMINIT;
+}
+
+void InMallocInit( void )
+{
+	inmemalloc.sta = MEMUNINIT;
+	inmemalloc.memsize = INMEMSIZE;
+	inmemalloc.blocksize = INMEMBLOCKSIZE;
+	inmemalloc.blocknum = inmemalloc.memsize/inmemalloc.blocksize;
+	inmemalloc.membase = inmembase;
+	inmemalloc.memmangebase = inmemmangebase;
+	inmemalloc.malloc = mymalloc;
+	inmemalloc.realloc = myrealloc;
+	inmemalloc.free = myfree;
+	inmemalloc.preuse = mypreuse;
+
+	memset( inmemalloc.membase, inmemalloc.memsize, NULL );
+	memset( inmemalloc.memmangebase, inmemalloc.blocknum*2, NULL );
+	inmemalloc.sta = MEMINIT;
+}
+
+void CcmMallocInit( void )
+{
+	ccmmemalloc.sta = MEMUNINIT;
+	ccmmemalloc.memsize = INMEMSIZE;
+	ccmmemalloc.blocksize = INMEMBLOCKSIZE;
+	ccmmemalloc.blocknum = ccmmemalloc.memsize/ccmmemalloc.blocksize;
+	ccmmemalloc.membase = ccmmembase;
+	ccmmemalloc.memmangebase = ccmmemmangebase;
+	ccmmemalloc.malloc = mymalloc;
+	ccmmemalloc.realloc = myrealloc;
+	ccmmemalloc.free = myfree;
+	ccmmemalloc.preuse = mypreuse;
+	
+	memset( ccmmemalloc.membase, ccmmemalloc.memsize, NULL );
+	memset( ccmmemalloc.memmangebase, ccmmemalloc.blocknum*2, NULL );
+	ccmmemalloc.sta = MEMINIT;
+}
+
+
+
+
+

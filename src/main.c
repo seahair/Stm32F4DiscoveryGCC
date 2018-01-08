@@ -29,7 +29,7 @@
 
 
 #define  SRAMNUM  100
-u8 sramtest[SRAMNUM] __attribute__((section(".glx")));
+//u8 sramtest[SRAMNUM] __attribute__((section(".glx")));
 
 u16 DutyCycle = 100;
 u16 Period = 500;
@@ -161,6 +161,12 @@ int main(int argc, char *argv[])
 #endif
 
 #if 1
+	u8 *psize1 = extimemalloc.malloc( &extimemalloc, 3000 );
+	u8 *psize2 = inmemalloc.malloc( &inmemalloc, 3000 );
+	u8 *psize3 = ccmmemalloc.malloc( &ccmmemalloc, 3000 );
+#endif 
+
+#if 0
 	while(SD_Init())//检测不到SD卡
 	{
 		LcdShowString(20,200,"SD Card Error!");
@@ -187,7 +193,7 @@ int main(int argc, char *argv[])
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
 
-	
+#if 0
 		show_sdcard_info();	//打印SD卡相关信息
 		buf = extimalloc->malloc( extimalloc, 512 );  
 		if( SD_ReadDisk(buf, 1, 1 ) == 0 )
@@ -215,13 +221,14 @@ int main(int argc, char *argv[])
 		}
 
 		extimalloc->free( extimalloc, buf );
+#endif
 
-#if 0
+#if 1
 		printf("psize1 malloc test address is 0x%x \r\n", psize1 );
 		printf("psize2 malloc test address is 0x%x \r\n", psize2 );
 		printf("psize3 malloc test address is 0x%x \r\n", psize3 );
-		sprintf( (char*)rtcbuf, "exti sram preuse:%2d", mymalloc->preuse(mymalloc));	
-		LcdShowString( 20, 200, rtcbuf );
+		//sprintf( (char*)rtcbuf, "exti sram preuse:%2d", mymalloc->preuse(mymalloc));	
+		//LcdShowString( 20, 200, rtcbuf );
 #endif
 
 #if 0

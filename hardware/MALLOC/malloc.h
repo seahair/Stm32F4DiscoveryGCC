@@ -11,7 +11,16 @@
 #define  EXTIMEMSIZE				(960*1024)
 #define  EXTIMEMALLOCTABLE			EXTIMEMSIZE/EXTIMEMBLOCKSIZE
 
+#define  INMEMBLOCKSIZE				32
+#define  INMEMSIZE					(10*1024)
+#define  INMEMALLOCTABLE			INMEMSIZE/INMEMBLOCKSIZE
  
+#define  CCMMEMBLOCKSIZE				32
+#define  CCMMEMSIZE					(60*1024)
+#define  CCMMEMALLOCTABLE			CCMMEMSIZE/CCMMEMBLOCKSIZE
+
+
+
 typedef struct MYMALLOC MYMALLOC;
 
 typedef void *(*MEMMALLOC) ( MYMALLOC *me, u32 size );
@@ -33,7 +42,14 @@ struct MYMALLOC {
 	MEMPREUSE preuse;
 };
 
+extern MYMALLOC extimemalloc;
+extern MYMALLOC inmemalloc;
+extern MYMALLOC ccmmemalloc;
+
 MYMALLOC *MallocCreat( void );
 void MallocDestroy( MYMALLOC *me );
+void ExtiMallocInit( void );
+void InMallocInit( void );
+void CcmMallocInit( void );
 
 #endif
