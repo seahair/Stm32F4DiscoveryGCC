@@ -2524,6 +2524,9 @@ CCER_CCE_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeri
 CCER_CCNE_SET	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	138;"	d	file:
 CCMDATARAM_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2038;"	d
 CCMDATARAM_BB_BASE	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	2065;"	d
+CCMMEMALLOCTABLE	hardware/MALLOC/malloc.h	20;"	d
+CCMMEMBLOCKSIZE	hardware/MALLOC/malloc.h	18;"	d
+CCMMEMSIZE	hardware/MALLOC/malloc.h	19;"	d
 CCMR1	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t CCMR1;       \/*!< TIM capture\/compare mode register 1, Address offset: 0x18 *\/$/;"	m	struct:__anon156
 CCMR2	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint16_t CCMR2;       \/*!< TIM capture\/compare mode register 2, Address offset: 0x1C *\/$/;"	m	struct:__anon156
 CCMR_OC13M_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c	139;"	d	file:
@@ -3224,6 +3227,7 @@ CardCapacity	hardware/SDCARD/sdcard.h	/^  long long CardCapacity;  	\/\/SD¿¨ÈÝÁ¿
 CardComdClasses	hardware/SDCARD/sdcard.h	/^	u16 CardComdClasses;      \/*!< Card command classes *\/$/;"	m	struct:__anon10
 CardType	hardware/SDCARD/sdcard.c	/^static u8 CardType=SDIO_STD_CAPACITY_SD_CARD_V1_1;		\/\/SD¿¨ÀàÐÍ£¨Ä¬ÈÏÎª1.x¿¨£©$/;"	v	file:
 CardType	hardware/SDCARD/sdcard.h	/^  u8 CardType;				\/\/¿¨ÀàÐÍ$/;"	m	struct:__anon13
+CcmMallocInit	hardware/MALLOC/malloc.c	/^void CcmMallocInit( void )$/;"	f
 CheckITStatus	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	/^static ITStatus CheckITStatus(uint32_t CAN_Reg, uint32_t It_Bit)$/;"	f	file:
 ClockLaneHS2LPTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneHS2LPTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from high-speed$/;"	m	struct:__anon82
 ClockLaneLP2HSTime	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_dsi.h	/^  uint32_t ClockLaneLP2HSTime;        \/*!< The maximum time that the D-PHY clock lane takes to go from low-power$/;"	m	struct:__anon82
@@ -8319,6 +8323,7 @@ EraseGrSize	hardware/SDCARD/sdcard.h	/^	u8  EraseGrSize;          \/*!< Erase gr
 ErrorStatus	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrorStatus;$/;"	t	typeref:enum:__anon107
 ExtId	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^  uint32_t ExtId;  \/*!< Specifies the extended identifier.$/;"	m	struct:__anon40
 ExtId	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_can.h	/^  uint32_t ExtId;  \/*!< Specifies the extended identifier.$/;"	m	struct:__anon41
+ExtiMallocInit	hardware/MALLOC/malloc.c	/^void ExtiMallocInit( void )$/;"	f
 FA1R	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h	/^  __IO uint32_t              FA1R;                \/*!< CAN filter activation register,      Address offset: 0x21C         *\/$/;"	m	struct:__anon113
 FAST_MATH_Q15_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	335;"	d
 FAST_MATH_Q31_SHIFT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	334;"	d
@@ -12043,6 +12048,9 @@ IMSCR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4x
 INAK_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c	108;"	d	file:
 INDEX_MASK	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	324;"	d
 INITMODE_TIMEOUT	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c	310;"	d	file:
+INMEMALLOCTABLE	hardware/MALLOC/malloc.h	16;"	d
+INMEMBLOCKSIZE	hardware/MALLOC/malloc.h	14;"	d
+INMEMSIZE	hardware/MALLOC/malloc.h	15;"	d
 INPUT_SPACING	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/arm_math.h	346;"	d
 INTEMPERATE	hardware/ADC/adc.h	/^	INTEMPERATE,$/;"	e	enum:__anon1
 INTX_DISABLE	src/sys.c	/^inline ATTR_NO_INSTRUMENT_FUNCTION void INTX_DISABLE(void)$/;"	f
@@ -13213,6 +13221,7 @@ IWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm3.h	/
 IWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm4.h	/^  __O  uint32_t IWR;                     \/*!< Offset: 0xEF8 ( \/W)  ITM Integration Write Register            *\/$/;"	m	struct:__anon317
 IWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_cm7.h	/^  __O  uint32_t IWR;                     \/*!< Offset: 0xEF8 ( \/W)  ITM Integration Write Register            *\/$/;"	m	struct:__anon205
 IWR	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Include/core_sc300.h	/^  __O  uint32_t IWR;                     \/*!< Offset: 0xEF8 ( \/W)  ITM Integration Write Register            *\/$/;"	m	struct:__anon176
+InMallocInit	hardware/MALLOC/malloc.c	/^void InMallocInit( void )$/;"	f
 Infinite_Loop	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f401xx.s	/^Infinite_Loop:$/;"	l
 Infinite_Loop	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f40_41xxx.s	/^Infinite_Loop:$/;"	l
 Infinite_Loop	libs/STM32F4xx_DSP_StdPeriph_Lib_V1.8.0/Libraries/CMSIS/Device/ST/STM32F4xx/Source/Templates/SW4STM32/startup_stm32f40xx.s	/^Infinite_Loop:$/;"	l
@@ -23280,6 +23289,9 @@ bypass_mode	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char bypass_mode;$/;"
 cache	hardware/MPU6050/eMPL/inv_mpu.c	/^    struct motion_int_cache_s cache;$/;"	m	struct:chip_cfg_s	typeref:struct:chip_cfg_s::motion_int_cache_s	file:
 can_attr	hardware/CAN/can.c	/^static CAN_ATTR can_attr;$/;"	v	file:
 cb	hardware/MPU6050/eMPL/inv_mpu.h	/^    void (*cb)(void);$/;"	m	struct:int_param_s
+ccmmemalloc	hardware/MALLOC/malloc.c	/^MYMALLOC ccmmemalloc;$/;"	v
+ccmmembase	hardware/MALLOC/malloc.c	/^u8 ccmmembase[CCMMEMSIZE] __attribute__((section(".ccmram"))); __attribute__((aligned(32)));	\/\/å¤–éƒ¨SRAMå†…å­˜æ± $/;"	v
+ccmmemmangebase	hardware/MALLOC/malloc.c	/^u16 ccmmemmangebase[CCMMEMALLOCTABLE];  \/\/å¤–éƒ¨SRAMå†…å­˜æ± MAP$/;"	v
 channel	hardware/ADC/adc.h	/^	u8 channel;$/;"	m	struct:_ADC_ATTR
 channel	hardware/DMA/dma.h	/^	u32 channel;$/;"	m	struct:_DMA_ATTR
 checkid	hardware/LCD/lcd.h	/^	u32   (*checkid) ( void );$/;"	m	struct:_LCD_DRV
@@ -23378,6 +23390,7 @@ extgadc_init	hardware/ADC/extgadc.c	/^static s8 extgadc_init( void )$/;"	f	file:
 extgadc_ioctrl	hardware/ADC/extgadc.c	/^static void extgadc_ioctrl( u8 cmd, ADC_ATTR *padcattr )$/;"	f	file:
 extgadc_module	hardware/ADC/extgadc.c	/^const ADC_DIR extgadc_module = {$/;"	v
 extgadc_read	hardware/ADC/extgadc.c	/^static float extgadc_read( void )$/;"	f	file:
+extimemalloc	hardware/MALLOC/malloc.c	/^MYMALLOC extimemalloc;$/;"	v
 extimembase	hardware/MALLOC/malloc.c	/^u8 extimembase[EXTIMEMSIZE] __attribute__((section(".glx"))); __attribute__((aligned(32)));	\/\/å¤–éƒ¨SRAMå†…å­˜æ± $/;"	v
 extimemmangebase	hardware/MALLOC/malloc.c	/^u16 extimemmangebase[EXTIMEMALLOCTABLE];  \/\/å¤–éƒ¨SRAMå†…å­˜æ± MAP$/;"	v
 fabs	hardware/MPU6050/eMPL/inv_mpu.c	112;"	d	file:
@@ -23523,6 +23536,9 @@ init	hardware/RANDNUM/randomnum.h	/^	void (*init) ( void );$/;"	m	struct:_RN_DIR
 init	hardware/RTC/rtc.h	/^	void (*init) ( void );$/;"	m	struct:_RTC_DIR
 init	hardware/TOUCH/touch.h	/^	s8 (*init) ( void );$/;"	m	struct:_TOUCH_DIR
 init	hardware/TOUCH_Beck/touch.h	/^	s8 (*init) ( void );$/;"	m	struct:_TOUCH_DIR
+inmemalloc	hardware/MALLOC/malloc.c	/^MYMALLOC inmemalloc;$/;"	v
+inmembase	hardware/MALLOC/malloc.c	/^u8 inmembase[INMEMSIZE]; $/;"	v
+inmemmangebase	hardware/MALLOC/malloc.c	/^u16 inmemmangebase[INMEMALLOCTABLE];  $/;"	v
 int_enable	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char int_enable;$/;"	m	struct:chip_cfg_s	file:
 int_enable	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char int_enable;$/;"	m	struct:gyro_reg_s	file:
 int_motion_only	hardware/MPU6050/eMPL/inv_mpu.c	/^    unsigned char int_motion_only;$/;"	m	struct:chip_cfg_s	file:
@@ -23977,7 +23993,6 @@ spi_attr	hardware/SPI/spi.c	/^static SPI_ATTR spi_attr;$/;"	v	file:
 spi_gpioinit	hardware/SPI/spi.c	/^static void spi_gpioinit( void )$/;"	f	file:
 spi_structinit	hardware/SPI/spi.c	/^static void spi_structinit( void )$/;"	f	file:
 spitype	hardware/SPI/spi.h	/^	SPI_InitTypeDef spitype;$/;"	m	struct:_SPI_ATTR
-sramtest	src/main.c	/^u8 sramtest[SRAMNUM] __attribute__((section(".glx")));$/;"	v
 st	hardware/MPU6050/eMPL/inv_mpu.c	/^static struct gyro_state_s st = {$/;"	v	typeref:struct:gyro_state_s	file:
 st	hardware/MPU6050/eMPL/inv_mpu.c	/^static struct gyro_state_s st={$/;"	v	typeref:struct:gyro_state_s	file:
 sta	hardware/FLASH/flash.h	/^	u8 sta;$/;"	m	struct:MYFLASH
