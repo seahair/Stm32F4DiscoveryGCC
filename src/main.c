@@ -113,6 +113,8 @@ int main(int argc, char *argv[])
 	myrtc.seconds = 0;
 	myrtc.weekday = 1;
 	myrtc.hourformat = RTC_HourFormat_24;
+	
+	
 
 	//RtcIoctrl( RTCCMDSETTIME, &myrtc );
 	//RtcIoctrl( RTCCMDSETDATE, &myrtc ); 
@@ -192,6 +194,7 @@ int main(int argc, char *argv[])
 		LcdShowString( 210, 20, rtcbuf );
 		sprintf((char*)rtcbuf,"Weekday:%02d", myrtc.weekday);
 		LcdShowString( 400, 20, rtcbuf );
+
 
 #if 0
 		show_sdcard_info();	//打印SD卡相关信息

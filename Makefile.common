@@ -81,6 +81,7 @@ INCLUDE+=-I$(TOP)/hardware/FLASH
 INCLUDE+=-I$(TOP)/hardware/SRAM
 INCLUDE+=-I$(TOP)/hardware/MALLOC
 INCLUDE+=-I$(TOP)/hardware/SDCARD
+INCLUDE+=-I$(TOP)/hardware/FATFS
 
 
 
